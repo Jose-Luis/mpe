@@ -1,0 +1,7 @@
+syn keyword CTagsMember mParticles mAngularVelocity mSystem mSprite PPS mLinearVelocity TTL TotalParticles mTTL mEmitters
+syn keyword CTagsFunction create Emitter Particle update
+syn keyword CTagsType EmitterPtr SystemPtr
+syn keyword CTagsDefinedName EMITTER_INC CONFIG_INC PARTICLE_INC SYSTEM_INC
+syn keyword CTagsClass Emitter Particle System
+syn keyword CTagsNamespace MPE
+

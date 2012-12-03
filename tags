@@ -1,0 +1,36 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CONFIG_INC	include/MPE/Config.hpp	2;"	d
+EMITTER_INC	include/MPE/Emitter.hpp	3;"	d
+EmitterPtr	include/MPE/Config.hpp	/^   typedef boost::shared_ptr<Emitter> EmitterPtr;$/;"	t	namespace:MPE
+Emitter	include/MPE/Emitter.hpp	/^   class Emitter$/;"	c	namespace:MPE
+Emitter	src/MPE/Emitter.cpp	/^   Emitter::Emitter()$/;"	f	class:MPE::Emitter
+Emitter	src/MPE/Emitter.cpp	/^   Emitter::Emitter(System::Ptr theSystem):$/;"	f	class:MPE::Emitter
+MPE	include/MPE/Config.hpp	/^namespace MPE$/;"	n
+MPE	include/MPE/Emitter.hpp	/^namespace MPE$/;"	n
+MPE	include/MPE/Particle.hpp	/^namespace MPE$/;"	n
+MPE	include/MPE/System.hpp	/^namespace MPE$/;"	n
+MPE	src/MPE/Emitter.cpp	/^namespace MPE$/;"	n	file:
+PARTICLE_INC	include/MPE/Particle.hpp	2;"	d
+PPS	include/MPE/Emitter.hpp	/^         float PPS;$/;"	m	class:MPE::Emitter
+Particle	include/MPE/Particle.hpp	/^   class Particle$/;"	c	namespace:MPE
+Particle	include/MPE/Particle.hpp	/^         Particle(sf::Texture& theTexture, sf::Vector2f thePosition, sf::Vector2f theLinearVelocity, float theAngularVelocity,  sf::Color theColor, float theTTL):$/;"	f	class:MPE::Particle
+SYSTEM_INC	include/MPE/System.hpp	2;"	d
+SystemPtr	include/MPE/Config.hpp	/^   typedef boost::shared_ptr<System> SystemPtr;$/;"	t	namespace:MPE
+System	include/MPE/System.hpp	/^   class System$/;"	c	namespace:MPE
+TTL	include/MPE/Emitter.hpp	/^         float TTL;$/;"	m	class:MPE::Emitter
+TotalParticles	include/MPE/Emitter.hpp	/^         float TotalParticles;$/;"	m	class:MPE::Emitter
+create	src/MPE/Emitter.cpp	/^   Emitter::Ptr Emitter::create()$/;"	f	class:MPE::Emitter
+create	src/MPE/Emitter.cpp	/^   Emitter::Ptr Emitter::create(System::Ptr theSystem)$/;"	f	class:MPE::Emitter
+mAngularVelocity	include/MPE/Particle.hpp	/^         float mAngularVelocity;$/;"	m	class:MPE::Particle
+mEmitters	include/MPE/System.hpp	/^         std::list<EmitterPtr> mEmitters;$/;"	m	class:MPE::System
+mLinearVelocity	include/MPE/Particle.hpp	/^         sf::Vector2f mLinearVelocity;$/;"	m	class:MPE::Particle
+mParticles	include/MPE/System.hpp	/^         std::list<Particle> mParticles;$/;"	m	class:MPE::System
+mSprite	include/MPE/Particle.hpp	/^         sf::Sprite mSprite;$/;"	m	class:MPE::Particle
+mSystem	include/MPE/Emitter.hpp	/^         SystemPtr mSystem;$/;"	m	class:MPE::Emitter
+mTTL	include/MPE/Particle.hpp	/^         float mTTL;$/;"	m	class:MPE::Particle
+update	include/MPE/Particle.hpp	/^         void update(float theElapsedTime)$/;"	f	class:MPE::Particle
