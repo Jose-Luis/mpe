@@ -2,12 +2,12 @@
 #ifndef  EMITTER_INC
 #define  EMITTER_INC
 
+#include <list>
 #include <boost/shared_ptr.hpp>
 #include <boost/make_shared.hpp>
 
-#include "Particle.hpp"
-#include "Config.hpp"
-#include <list>
+#include <MPE/Particle.hpp>
+#include <MPE/Config.hpp>
 
 namespace MPE
 {
@@ -32,7 +32,7 @@ namespace MPE
          };
          struct Adder
          {
-            virtual void addParticles(Emitter::Ptr theEmitter,float theElapsedTime);
+            virtual void addParticle(const Particle& theParticle) = 0;
          };
 
          Emitter();
@@ -40,7 +40,7 @@ namespace MPE
          static Ptr create();
          void emit(Adder& theSystem,float theElapsedTime);
          void addFocus(Focus theFocus);
-         inline ID getID(){return mID;};
+         inline ID getID() const {return mID;};
 
       private:
 

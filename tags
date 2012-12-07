@@ -24,7 +24,6 @@ PARTICLE_INC	include/MPE/Particle.hpp	2;"	d
 Particle	include/MPE/Particle.hpp	/^   class Particle$/;"	c	namespace:MPE
 Particle	include/MPE/Particle.hpp	/^         Particle(sf::Texture& theTexture, sf::Vector2f thePosition, sf::Vector2f theLinearVelocity, float theAngularVelocity,  sf::Color theColor, float theTTL):$/;"	f	class:MPE::Particle
 Ptr	include/MPE/Emitter.hpp	/^         typedef boost::shared_ptr<Emitter> Ptr;$/;"	t	class:MPE::Emitter
-Ptr	include/MPE/System.hpp	/^         typedef boost::shared_ptr<System> Ptr;$/;"	t	class:MPE::System
 RADIAL	include/MPE/Emitter.hpp	/^         enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};$/;"	e	enum:MPE::Emitter::Dispersion
 RANDOM	include/MPE/Emitter.hpp	/^         enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};$/;"	e	enum:MPE::Emitter::Dispersion
 RECTANGLE	include/MPE/Emitter.hpp	/^         enum Shape{RECTANGLE,CIRCLE};$/;"	e	enum:MPE::Emitter::Shape
@@ -32,7 +31,7 @@ REFLECT	include/MPE/Emitter.hpp	/^         enum Dispersion{LINEAR,RADIAL,REFLECT
 STATIC	include/MPE/Emitter.hpp	/^         enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};$/;"	e	enum:MPE::Emitter::Dispersion
 SYSTEM_INC	include/MPE/System.hpp	2;"	d
 Shape	include/MPE/Emitter.hpp	/^         enum Shape{RECTANGLE,CIRCLE};$/;"	g	class:MPE::Emitter
-System	include/MPE/System.hpp	/^   class System$/;"	c	namespace:MPE
+System	include/MPE/System.hpp	/^   class System: Emitter::Adder$/;"	c	namespace:MPE
 angle	include/MPE/Emitter.hpp	/^            Angle angle;$/;"	m	struct:MPE::Emitter::Focus
 cos	include/MPE/Config.hpp	/^   float cos;$/;"	m	struct:Angle
 create	src/MPE/Emitter.cpp	/^   Emitter::Ptr Emitter::create()$/;"	f	class:MPE::Emitter
@@ -43,7 +42,7 @@ height	include/MPE/Emitter.hpp	/^            float height;$/;"	m	struct:MPE::Emi
 lifetime	include/MPE/Emitter.hpp	/^            float lifetime;$/;"	m	struct:MPE::Emitter::Focus
 mAngularVelocity	include/MPE/Particle.hpp	/^         float mAngularVelocity;$/;"	m	class:MPE::Particle
 mDispersion	include/MPE/Emitter.hpp	/^         Dispersion mDispersion;$/;"	m	class:MPE::Emitter
-mEmitters	include/MPE/System.hpp	/^         std::list<Emitter::Ptr> mEmitters;$/;"	m	class:MPE::System
+mEmitters	include/MPE/System.hpp	/^         std::map<Emitter::ID,Emitter::Ptr> mEmitters;$/;"	m	class:MPE::System
 mFocusses	include/MPE/Emitter.hpp	/^         std::list<Focus> mFocusses;$/;"	m	class:MPE::Emitter
 mID	include/MPE/Emitter.hpp	/^         ID mID;$/;"	m	class:MPE::Emitter
 mLinearVelocity	include/MPE/Particle.hpp	/^         sf::Vector2f mLinearVelocity;$/;"	m	class:MPE::Particle

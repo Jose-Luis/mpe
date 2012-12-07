@@ -2,9 +2,10 @@
 #define  SYSTEM_INC
 
 #include <list>
+#include <map>
 #include <boost/shared_ptr.hpp>
 
-#include "Emitter.hpp"
+#include <MPE/Emitter.hpp>
 
 namespace MPE
 {
@@ -12,15 +13,18 @@ namespace MPE
    {
       public:
 
-         typedef boost::shared_ptr<System> Ptr;
          System();
          ~System();
-         void addParticles(float theElapsedTime);
+
+         void addEmitter(Emitter::Ptr theEmitter);
+         void addParticle(const Particle& theParticle);
+         void update(float theElapsedTime);
+         Emitter::Ptr getEmitter(Emitter::ID theID);
 
       private:
 
          std::list<Particle> mParticles;
-         std::list<Emitter::Ptr> mEmitters;
+         std::map<Emitter::ID,Emitter::Ptr> mEmitters;
    };
 }
 #endif   // ----- #ifndef SYSTEM_INC  -----

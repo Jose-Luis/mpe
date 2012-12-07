@@ -2,11 +2,7 @@
 #ifndef  CONFIG_INC
 #define  CONFIG_INC
 
-
 #include <cmath>
-//class Emitter;
-//class Particle;
-//class System;
 
 struct Angle
 {
