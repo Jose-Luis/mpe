@@ -5,8 +5,7 @@
 #include <boost/shared_ptr.hpp>
 
 #include "Emitter.hpp"
-//#include "Config.hpp"
-class Emitter;
+
 namespace MPE
 {
    class System

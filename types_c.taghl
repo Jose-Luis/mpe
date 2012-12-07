@@ -1,6 +1,9 @@
-syn keyword CTagsMember mParticles mAngularVelocity mSystem mSprite PPS mLinearVelocity TTL TotalParticles mTTL mEmitters
+syn keyword CTagsStructure Adder Context
+syn keyword CTagsMember mDispersion mAngularVelocity mSprite angle emittedParticles position mTexture mID height PPS width mLinearVelocity mShape TTL emitterID TotalParticles mTTL mParticles mEmitters lifetime
+syn keyword CTagsEnumeratorName Dispersion Shape
+syn keyword CTagsEnumerationValue LINEAR RANDOM STATIC RADIAL CIRCLE RECTANGLE
 syn keyword CTagsFunction create Emitter Particle update
-syn keyword CTagsType EmitterPtr SystemPtr
+syn keyword CTagsType ID Ptr
 syn keyword CTagsDefinedName EMITTER_INC CONFIG_INC PARTICLE_INC SYSTEM_INC
 syn keyword CTagsClass Emitter Particle System
 syn keyword CTagsNamespace MPE
