@@ -6,6 +6,8 @@
 #include <boost/make_shared.hpp>
 
 #include "Particle.hpp"
+#include "Config.hpp"
+#include <list>
 
 namespace MPE
 {
@@ -18,26 +20,27 @@ namespace MPE
          typedef std::string ID;
 
          enum Shape{RECTANGLE,CIRCLE};
-         enum Dispersion{LINEAR,RADIAL,RANDOM,STATIC};
-         struct Context
+         enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};
+         struct Focus
          {
-            ID emitterID;
             float width;
             float height;
-            float angle;
+            Angle angle;
             sf::Vector2f position;
             int emittedParticles;
             float lifetime;
          };
          struct Adder
          {
-            virtual void addParticles(Context& theEmitter,float theElapsedTime);
-         }
+            virtual void addParticles(Emitter::Ptr theEmitter,float theElapsedTime);
+         };
 
          Emitter();
          ~Emitter();
          static Ptr create();
-         void emit(Adder& theSystem,Context& theEmitter);
+         void emit(Adder& theSystem,float theElapsedTime);
+         void addFocus(Focus theFocus);
+         inline ID getID(){return mID;};
 
       private:
 
@@ -47,9 +50,10 @@ namespace MPE
          Shape mShape;
          Dispersion mDispersion;
 
-         float TTL;
-         float PPS;
-         float TotalParticles;
+         float mTTL; //Time Of Life
+         float mPPS; //Particles Per Second
+         float mTotalParticles;
+         std::list<Focus> mFocusses;
          
    };
 }    

@@ -5,52 +5,59 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
 Adder	include/MPE/Emitter.hpp	/^         struct Adder$/;"	s	class:MPE::Emitter
+Angle	include/MPE/Config.hpp	/^struct Angle$/;"	s
 CIRCLE	include/MPE/Emitter.hpp	/^         enum Shape{RECTANGLE,CIRCLE};$/;"	e	enum:MPE::Emitter::Shape
-CONFIG_INC	include/MPE/Config.hpp	2;"	d
-Context	include/MPE/Emitter.hpp	/^         struct Context$/;"	s	class:MPE::Emitter
-Dispersion	include/MPE/Emitter.hpp	/^         enum Dispersion{LINEAR,RADIAL,RANDOM,STATIC};$/;"	g	class:MPE::Emitter
+CONFIG_INC	include/MPE/Config.hpp	3;"	d
+Dispersion	include/MPE/Emitter.hpp	/^         enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};$/;"	g	class:MPE::Emitter
 EMITTER_INC	include/MPE/Emitter.hpp	3;"	d
 Emitter	include/MPE/Emitter.hpp	/^   class Emitter$/;"	c	namespace:MPE
 Emitter	src/MPE/Emitter.cpp	/^   Emitter::Emitter()$/;"	f	class:MPE::Emitter
 Emitter	src/MPE/Emitter.cpp	/^   Emitter::Emitter(System::Ptr theSystem):$/;"	f	class:MPE::Emitter
+Focus	include/MPE/Emitter.hpp	/^         struct Focus$/;"	s	class:MPE::Emitter
 ID	include/MPE/Emitter.hpp	/^         typedef std::string ID;$/;"	t	class:MPE::Emitter
-LINEAR	include/MPE/Emitter.hpp	/^         enum Dispersion{LINEAR,RADIAL,RANDOM,STATIC};$/;"	e	enum:MPE::Emitter::Dispersion
+LINEAR	include/MPE/Emitter.hpp	/^         enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};$/;"	e	enum:MPE::Emitter::Dispersion
 MPE	include/MPE/Emitter.hpp	/^namespace MPE$/;"	n
 MPE	include/MPE/Particle.hpp	/^namespace MPE$/;"	n
 MPE	include/MPE/System.hpp	/^namespace MPE$/;"	n
 MPE	src/MPE/Emitter.cpp	/^namespace MPE$/;"	n	file:
 PARTICLE_INC	include/MPE/Particle.hpp	2;"	d
-PPS	include/MPE/Emitter.hpp	/^         float PPS;$/;"	m	class:MPE::Emitter
 Particle	include/MPE/Particle.hpp	/^   class Particle$/;"	c	namespace:MPE
 Particle	include/MPE/Particle.hpp	/^         Particle(sf::Texture& theTexture, sf::Vector2f thePosition, sf::Vector2f theLinearVelocity, float theAngularVelocity,  sf::Color theColor, float theTTL):$/;"	f	class:MPE::Particle
 Ptr	include/MPE/Emitter.hpp	/^         typedef boost::shared_ptr<Emitter> Ptr;$/;"	t	class:MPE::Emitter
 Ptr	include/MPE/System.hpp	/^         typedef boost::shared_ptr<System> Ptr;$/;"	t	class:MPE::System
-RADIAL	include/MPE/Emitter.hpp	/^         enum Dispersion{LINEAR,RADIAL,RANDOM,STATIC};$/;"	e	enum:MPE::Emitter::Dispersion
-RANDOM	include/MPE/Emitter.hpp	/^         enum Dispersion{LINEAR,RADIAL,RANDOM,STATIC};$/;"	e	enum:MPE::Emitter::Dispersion
+RADIAL	include/MPE/Emitter.hpp	/^         enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};$/;"	e	enum:MPE::Emitter::Dispersion
+RANDOM	include/MPE/Emitter.hpp	/^         enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};$/;"	e	enum:MPE::Emitter::Dispersion
 RECTANGLE	include/MPE/Emitter.hpp	/^         enum Shape{RECTANGLE,CIRCLE};$/;"	e	enum:MPE::Emitter::Shape
-STATIC	include/MPE/Emitter.hpp	/^         enum Dispersion{LINEAR,RADIAL,RANDOM,STATIC};$/;"	e	enum:MPE::Emitter::Dispersion
+REFLECT	include/MPE/Emitter.hpp	/^         enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};$/;"	e	enum:MPE::Emitter::Dispersion
+STATIC	include/MPE/Emitter.hpp	/^         enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};$/;"	e	enum:MPE::Emitter::Dispersion
 SYSTEM_INC	include/MPE/System.hpp	2;"	d
 Shape	include/MPE/Emitter.hpp	/^         enum Shape{RECTANGLE,CIRCLE};$/;"	g	class:MPE::Emitter
 System	include/MPE/System.hpp	/^   class System$/;"	c	namespace:MPE
-TTL	include/MPE/Emitter.hpp	/^         float TTL;$/;"	m	class:MPE::Emitter
-TotalParticles	include/MPE/Emitter.hpp	/^         float TotalParticles;$/;"	m	class:MPE::Emitter
-angle	include/MPE/Emitter.hpp	/^            float angle;$/;"	m	struct:MPE::Emitter::Context
+angle	include/MPE/Emitter.hpp	/^            Angle angle;$/;"	m	struct:MPE::Emitter::Focus
+cos	include/MPE/Config.hpp	/^   float cos;$/;"	m	struct:Angle
 create	src/MPE/Emitter.cpp	/^   Emitter::Ptr Emitter::create()$/;"	f	class:MPE::Emitter
 create	src/MPE/Emitter.cpp	/^   Emitter::Ptr Emitter::create(System::Ptr theSystem)$/;"	f	class:MPE::Emitter
-emittedParticles	include/MPE/Emitter.hpp	/^            int emittedParticles;$/;"	m	struct:MPE::Emitter::Context
-emitterID	include/MPE/Emitter.hpp	/^            ID emitterID;$/;"	m	struct:MPE::Emitter::Context
-height	include/MPE/Emitter.hpp	/^            float height;$/;"	m	struct:MPE::Emitter::Context
-lifetime	include/MPE/Emitter.hpp	/^            float lifetime;$/;"	m	struct:MPE::Emitter::Context
+emittedParticles	include/MPE/Emitter.hpp	/^            int emittedParticles;$/;"	m	struct:MPE::Emitter::Focus
+getID	include/MPE/Emitter.hpp	/^         inline ID getID(){return mID;};$/;"	f	class:MPE::Emitter
+height	include/MPE/Emitter.hpp	/^            float height;$/;"	m	struct:MPE::Emitter::Focus
+lifetime	include/MPE/Emitter.hpp	/^            float lifetime;$/;"	m	struct:MPE::Emitter::Focus
 mAngularVelocity	include/MPE/Particle.hpp	/^         float mAngularVelocity;$/;"	m	class:MPE::Particle
 mDispersion	include/MPE/Emitter.hpp	/^         Dispersion mDispersion;$/;"	m	class:MPE::Emitter
 mEmitters	include/MPE/System.hpp	/^         std::list<Emitter::Ptr> mEmitters;$/;"	m	class:MPE::System
+mFocusses	include/MPE/Emitter.hpp	/^         std::list<Focus> mFocusses;$/;"	m	class:MPE::Emitter
 mID	include/MPE/Emitter.hpp	/^         ID mID;$/;"	m	class:MPE::Emitter
 mLinearVelocity	include/MPE/Particle.hpp	/^         sf::Vector2f mLinearVelocity;$/;"	m	class:MPE::Particle
+mPPS	include/MPE/Emitter.hpp	/^         float mPPS; \/\/Particles Per Second$/;"	m	class:MPE::Emitter
 mParticles	include/MPE/System.hpp	/^         std::list<Particle> mParticles;$/;"	m	class:MPE::System
 mShape	include/MPE/Emitter.hpp	/^         Shape mShape;$/;"	m	class:MPE::Emitter
 mSprite	include/MPE/Particle.hpp	/^         sf::Sprite mSprite;$/;"	m	class:MPE::Particle
+mTTL	include/MPE/Emitter.hpp	/^         float mTTL; \/\/Time Of Life$/;"	m	class:MPE::Emitter
 mTTL	include/MPE/Particle.hpp	/^         float mTTL;$/;"	m	class:MPE::Particle
 mTexture	include/MPE/Emitter.hpp	/^         sf::Texture mTexture;$/;"	m	class:MPE::Emitter
-position	include/MPE/Emitter.hpp	/^            sf::Vector2f position;$/;"	m	struct:MPE::Emitter::Context
+mTotalParticles	include/MPE/Emitter.hpp	/^         float mTotalParticles;$/;"	m	class:MPE::Emitter
+position	include/MPE/Emitter.hpp	/^            sf::Vector2f position;$/;"	m	struct:MPE::Emitter::Focus
+set	include/MPE/Config.hpp	/^   inline void set(float theValue)$/;"	f	struct:Angle
+sin	include/MPE/Config.hpp	/^   float sin;$/;"	m	struct:Angle
 update	include/MPE/Particle.hpp	/^         void update(float theElapsedTime)$/;"	f	class:MPE::Particle
-width	include/MPE/Emitter.hpp	/^            float width;$/;"	m	struct:MPE::Emitter::Context
+value	include/MPE/Config.hpp	/^   float value;$/;"	m	struct:Angle
+width	include/MPE/Emitter.hpp	/^            float width;$/;"	m	struct:MPE::Emitter::Focus

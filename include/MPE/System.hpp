@@ -8,13 +8,14 @@
 
 namespace MPE
 {
-   class System
+   class System: Emitter::Adder
    {
       public:
 
          typedef boost::shared_ptr<System> Ptr;
          System();
          ~System();
+         void addParticles(float theElapsedTime);
 
       private:
 
