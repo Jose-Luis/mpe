@@ -18,7 +18,7 @@ namespace MPE
    {
       for( auto anEmitter: mEmitters)
       {
-         anEmitter.second->emit
+         anEmitter.second->emit(*this,theElapsedTime);
       }
    }
 

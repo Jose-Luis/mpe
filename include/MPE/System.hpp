@@ -9,7 +9,7 @@
 
 namespace MPE
 {
-   class System: Emitter::Adder
+   class System: public Emitter::Adder
    {
       public:
 

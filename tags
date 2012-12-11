@@ -11,8 +11,7 @@ CONFIG_INC	include/MPE/Config.hpp	3;"	d
 Dispersion	include/MPE/Emitter.hpp	/^         enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};$/;"	g	class:MPE::Emitter
 EMITTER_INC	include/MPE/Emitter.hpp	3;"	d
 Emitter	include/MPE/Emitter.hpp	/^   class Emitter$/;"	c	namespace:MPE
-Emitter	src/MPE/Emitter.cpp	/^   Emitter::Emitter()$/;"	f	class:MPE::Emitter
-Emitter	src/MPE/Emitter.cpp	/^   Emitter::Emitter(System::Ptr theSystem):$/;"	f	class:MPE::Emitter
+Emitter	src/MPE/Emitter.cpp	/^   Emitter::Emitter(Adder& theSystem):$/;"	f	class:MPE::Emitter
 Focus	include/MPE/Emitter.hpp	/^         struct Focus$/;"	s	class:MPE::Emitter
 ID	include/MPE/Emitter.hpp	/^         typedef std::string ID;$/;"	t	class:MPE::Emitter
 LINEAR	include/MPE/Emitter.hpp	/^         enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};$/;"	e	enum:MPE::Emitter::Dispersion
@@ -20,6 +19,7 @@ MPE	include/MPE/Emitter.hpp	/^namespace MPE$/;"	n
 MPE	include/MPE/Particle.hpp	/^namespace MPE$/;"	n
 MPE	include/MPE/System.hpp	/^namespace MPE$/;"	n
 MPE	src/MPE/Emitter.cpp	/^namespace MPE$/;"	n	file:
+MPE	src/MPE/System.cpp	/^namespace MPE$/;"	n	file:
 PARTICLE_INC	include/MPE/Particle.hpp	2;"	d
 Particle	include/MPE/Particle.hpp	/^   class Particle$/;"	c	namespace:MPE
 Particle	include/MPE/Particle.hpp	/^         Particle(sf::Texture& theTexture, sf::Vector2f thePosition, sf::Vector2f theLinearVelocity, float theAngularVelocity,  sf::Color theColor, float theTTL):$/;"	f	class:MPE::Particle
@@ -31,13 +31,15 @@ REFLECT	include/MPE/Emitter.hpp	/^         enum Dispersion{LINEAR,RADIAL,REFLECT
 STATIC	include/MPE/Emitter.hpp	/^         enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};$/;"	e	enum:MPE::Emitter::Dispersion
 SYSTEM_INC	include/MPE/System.hpp	2;"	d
 Shape	include/MPE/Emitter.hpp	/^         enum Shape{RECTANGLE,CIRCLE};$/;"	g	class:MPE::Emitter
-System	include/MPE/System.hpp	/^   class System: Emitter::Adder$/;"	c	namespace:MPE
+System	include/MPE/System.hpp	/^   class System: public Emitter::Adder$/;"	c	namespace:MPE
+addEmitter	src/MPE/System.cpp	/^   void System::addEmitter(Emitter::Ptr theEmitter)$/;"	f	class:MPE::System
+addParticle	src/MPE/System.cpp	/^   void System::addParticle(const Particle& theParticle)$/;"	f	class:MPE::System
 angle	include/MPE/Emitter.hpp	/^            Angle angle;$/;"	m	struct:MPE::Emitter::Focus
 cos	include/MPE/Config.hpp	/^   float cos;$/;"	m	struct:Angle
-create	src/MPE/Emitter.cpp	/^   Emitter::Ptr Emitter::create()$/;"	f	class:MPE::Emitter
-create	src/MPE/Emitter.cpp	/^   Emitter::Ptr Emitter::create(System::Ptr theSystem)$/;"	f	class:MPE::Emitter
+create	src/MPE/Emitter.cpp	/^   Emitter::Ptr Emitter::create(Adder& theSystem)$/;"	f	class:MPE::Emitter
 emittedParticles	include/MPE/Emitter.hpp	/^            int emittedParticles;$/;"	m	struct:MPE::Emitter::Focus
-getID	include/MPE/Emitter.hpp	/^         inline ID getID(){return mID;};$/;"	f	class:MPE::Emitter
+getID	include/MPE/Emitter.hpp	/^         inline ID getID() const {return mID;};$/;"	f	class:MPE::Emitter
+getTTL	include/MPE/Particle.hpp	/^         float inline getTTL() const {return mTTL;};$/;"	f	class:MPE::Particle
 height	include/MPE/Emitter.hpp	/^            float height;$/;"	m	struct:MPE::Emitter::Focus
 lifetime	include/MPE/Emitter.hpp	/^            float lifetime;$/;"	m	struct:MPE::Emitter::Focus
 mAngularVelocity	include/MPE/Particle.hpp	/^         float mAngularVelocity;$/;"	m	class:MPE::Particle
@@ -50,13 +52,17 @@ mPPS	include/MPE/Emitter.hpp	/^         float mPPS; \/\/Particles Per Second$/;"
 mParticles	include/MPE/System.hpp	/^         std::list<Particle> mParticles;$/;"	m	class:MPE::System
 mShape	include/MPE/Emitter.hpp	/^         Shape mShape;$/;"	m	class:MPE::Emitter
 mSprite	include/MPE/Particle.hpp	/^         sf::Sprite mSprite;$/;"	m	class:MPE::Particle
+mSystem	include/MPE/Emitter.hpp	/^         Adder& mSystem;$/;"	m	class:MPE::Emitter
 mTTL	include/MPE/Emitter.hpp	/^         float mTTL; \/\/Time Of Life$/;"	m	class:MPE::Emitter
 mTTL	include/MPE/Particle.hpp	/^         float mTTL;$/;"	m	class:MPE::Particle
 mTexture	include/MPE/Emitter.hpp	/^         sf::Texture mTexture;$/;"	m	class:MPE::Emitter
 mTotalParticles	include/MPE/Emitter.hpp	/^         float mTotalParticles;$/;"	m	class:MPE::Emitter
+nParticles	src/MPE/Emitter.cpp	/^            int nParticles = (mPPS * it->lifetime \/ 1000) - it->emittedParticles;$/;"	l
 position	include/MPE/Emitter.hpp	/^            sf::Vector2f position;$/;"	m	struct:MPE::Emitter::Focus
 set	include/MPE/Config.hpp	/^   inline void set(float theValue)$/;"	f	struct:Angle
 sin	include/MPE/Config.hpp	/^   float sin;$/;"	m	struct:Angle
 update	include/MPE/Particle.hpp	/^         void update(float theElapsedTime)$/;"	f	class:MPE::Particle
+update	src/MPE/Emitter.cpp	/^   void Emitter::update(float theElapsedTime)$/;"	f	class:MPE::Emitter
+update	src/MPE/System.cpp	/^   void System::update(float theElapsedTime)$/;"	f	class:MPE::System
 value	include/MPE/Config.hpp	/^   float value;$/;"	m	struct:Angle
 width	include/MPE/Emitter.hpp	/^            float width;$/;"	m	struct:MPE::Emitter::Focus

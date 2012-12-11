@@ -25,6 +25,9 @@ namespace MPE
             mSprite.move(mLinearVelocity.x*theElapsedTime,mLinearVelocity.y*theElapsedTime);
             mSprite.rotate(mAngularVelocity*theElapsedTime);
          }
+         
+         float inline getTTL() const {return mTTL;};
+
       private:
          sf::Sprite mSprite;
          sf::Vector2f mLinearVelocity;

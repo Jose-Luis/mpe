@@ -35,11 +35,13 @@ namespace MPE
             virtual void addParticle(const Particle& theParticle) = 0;
          };
 
-         Emitter();
+         Emitter(Adder& theSystem);
+         static Ptr create(Adder& theSystem);
          ~Emitter();
-         static Ptr create();
-         void emit(Adder& theSystem,float theElapsedTime);
+         void update(float theElapsedTime);
+         void emit(int theNumberOfParticles);
          void addFocus(Focus theFocus);
+         Particle createParticle();
          inline ID getID() const {return mID;};
 
       private:
@@ -49,6 +51,7 @@ namespace MPE
          sf::Texture mTexture;
          Shape mShape;
          Dispersion mDispersion;
+         Adder& mSystem;
 
          float mTTL; //Time Of Life
          float mPPS; //Particles Per Second
@@ -57,4 +60,4 @@ namespace MPE
          
    };
 }    
-#endif   // ----- #ifndef EMITTER_INC  -----
+   #endif   // ----- #ifndef EMITTER_INC  -----
