@@ -35,6 +35,7 @@ namespace MPE
             virtual void addParticle(const Particle& theParticle) = 0;
          };
 
+         Emitter(ID theID,Adder& theSystem);
          Emitter(Adder& theSystem);
          static Ptr create(Adder& theSystem);
          ~Emitter();
