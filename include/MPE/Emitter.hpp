@@ -39,7 +39,6 @@ namespace MPE
          void update(Real theElapsedTime);
          void emit(Integer theNumberOfParticles, Focus& theFocus);
          void addFocus(Focus theFocus);
-         Particle createParticle(Focus& theFocus);
          inline ID getID() const {return mID;};
 
       private:
@@ -50,6 +49,7 @@ namespace MPE
          Dispersion mDispersion;
          ISystem& mSystem;
 
+         Randomizer mRangeParticleTTL;
          Real mTTL; //Time Of Life
          Real mPPS; //Particles Per Second
          Integer mTotalParticles;
@@ -57,6 +57,10 @@ namespace MPE
          std::list<Focus> mFocusses;
 
          sf::Vector2f generatePosition(Focus& theFocus);
+
+
+      public:
+         
    };
 }    
    #endif   // ----- #ifndef EMITTER_INC  -----

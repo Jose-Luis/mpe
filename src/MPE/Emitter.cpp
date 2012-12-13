@@ -50,8 +50,8 @@ namespace MPE
 
       do
       {
-         anX = 2*std::rand() / RAND_MAX - 1;
-         anY = 2*std::rand() / RAND_MAX - 1;
+         anX = Randomizer::get(-1,1);
+         anY = Randomizer::get(-1,1);
       }
       while(mShape == CIRCLE && (anX*anX + anY*anY > 1));
       
@@ -64,10 +64,26 @@ namespace MPE
       return sf::Vector2f(anX*theFocus.width,anY*theFocus.height);
    }
 
-   //Particle Emitter::createParticle(Focus& theFocus)
-   //{
-      
-         ////Particle(sf::Texture& theTexture, sf::Vector2f thePosition, sf::Vector2f theLinearVelocity, Real theAngularVelocity,  sf::Color theColor, Real theTTL):
-   //}
+   //Accesors
+   //--------------------------------------------------------------------------------------
+   //       Class:  Emitter
+   //      Method:  get_Shape
+   //--------------------------------------------------------------------------------------
+   inline Shape
+      Emitter::getShape (  ) const
+      {
+         return Shape;
+      }		// -----  end of method Emitter::get_Shape  -----
+
+   //--------------------------------------------------------------------------------------
+   //       Class:  Emitter
+   //      Method:  set_Shape
+   //--------------------------------------------------------------------------------------
+   inline void
+      Emitter::setShape ( Shape value )
+      {
+         Shape	= value;
+         return ;
+      }		// -----  end of method Emitter::set_Shape  -----
 }
       

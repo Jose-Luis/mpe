@@ -55,6 +55,7 @@ getTTL	include/MPE/Particle.hpp	/^         Real inline getTTL() const {return mT
 getXFactor	include/MPE/Interfaces.hpp	/^         inline Real getXFactor (  ) const$/;"	f	class:MPE::ISystem
 getYFactor	include/MPE/Interfaces.hpp	/^         inline Real getYFactor (  ) const$/;"	f	class:MPE::ISystem
 get	include/MPE/Config.hpp	/^      Real get()$/;"	f	class:Randomizer
+get	include/MPE/Config.hpp	/^      static inline Real get(Real theMin, Real theMax)$/;"	f	class:Randomizer
 height	include/MPE/Emitter.hpp	/^            Real height;$/;"	m	struct:MPE::Emitter::Focus
 init	include/MPE/Config.hpp	/^      static inline void init()$/;"	f	class:Randomizer
 lifetime	include/MPE/Emitter.hpp	/^            Real lifetime;$/;"	m	struct:MPE::Emitter::Focus
@@ -66,6 +67,7 @@ mID	include/MPE/Emitter.hpp	/^         ID mID;$/;"	m	class:MPE::Emitter
 mLinearVelocity	include/MPE/Particle.hpp	/^         sf::Vector2f mLinearVelocity;$/;"	m	class:MPE::Particle
 mPPS	include/MPE/Emitter.hpp	/^         Real mPPS; \/\/Particles Per Second$/;"	m	class:MPE::Emitter
 mParticles	include/MPE/System.hpp	/^         std::list<Particle> mParticles;$/;"	m	class:MPE::System
+mRangeParticleTTL	include/MPE/Emitter.hpp	/^         Randomizer mRangeParticleTTL;$/;"	m	class:MPE::Emitter
 mShape	include/MPE/Emitter.hpp	/^         Shape mShape;$/;"	m	class:MPE::Emitter
 mSprite	include/MPE/Particle.hpp	/^         sf::Sprite mSprite;$/;"	m	class:MPE::Particle
 mSystem	include/MPE/Emitter.hpp	/^         ISystem& mSystem;$/;"	m	class:MPE::Emitter

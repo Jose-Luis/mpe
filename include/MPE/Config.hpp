@@ -58,6 +58,11 @@ class Randomizer
          std::srand(std::time(NULL));
       }
 
+      static inline Real get(Real theMin, Real theMax)
+      {
+         return (theMax-theMin) * std::rand() / RAND_MAX + theMin;
+      }
+
       Real get()
       {
          return (max-min) * std::rand() / RAND_MAX + min;
