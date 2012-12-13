@@ -1,4 +1,3 @@
-
 #ifndef  CONFIG_INC
 #define  CONFIG_INC
 
@@ -38,6 +37,12 @@ class Randomizer
       Real max;
 
    public:
+
+      Randomizer()
+      {
+         min = -1;
+         max = 1;
+      }
 
       Randomizer(Real theA,Real theB)
       {

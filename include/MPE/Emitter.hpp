@@ -1,3 +1,18 @@
+// =====================================================================================
+// 
+//       Filename:  Emitter.hpp
+// 
+//    Description:  
+// 
+//        Version:  1.0
+//        Created:  13/12/12 21:32:41
+//       Revision:  none
+//       Compiler:  g++
+// 
+//         Author:  Jose Luis Lavado (), joseluislavado@gmail.com
+//        Company:  
+// 
+// =====================================================================================
 
 #ifndef  EMITTER_INC
 #define  EMITTER_INC
@@ -33,22 +48,25 @@ namespace MPE
          };
 
          Emitter(ID theID,ISystem& theSystem);
-         Emitter(ISystem& theSystem);
-         static Ptr create(ISystem& theSystem);
+         static Ptr create(ID theID,ISystem& theSystem);
          ~Emitter();
          void update(Real theElapsedTime);
          void emit(Integer theNumberOfParticles, Focus& theFocus);
          void addFocus(Focus theFocus);
          inline ID getID() const {return mID;};
+         inline Shape getShape (  ) const;
+         inline void setShape ( Shape value );
 
       private:
 
          ID mID;
+         ISystem& mSystem;
          sf::Texture mTexture;
          Shape mShape;
          Dispersion mDispersion;
-         ISystem& mSystem;
 
+         sf::Vector2f mLinearVelocity;
+         Randomizer mRangeStrenght;
          Randomizer mRangeParticleTTL;
          Real mTTL; //Time Of Life
          Real mPPS; //Particles Per Second
@@ -57,10 +75,11 @@ namespace MPE
          std::list<Focus> mFocusses;
 
          sf::Vector2f generatePosition(Focus& theFocus);
+         sf::Vector2f generateVelocity(Focus& theFocus, sf::Vector2f& theParticlePosition);
+         inline void normalize(sf::Vector2f& theVector);
+         inline sf::Vector2f scaleVector(const sf::Vector2f& theVector,Real theScalar);
+         inline sf::Vector2f diffVectors(const sf::Vector2f& theOrigin,const sf::Vector2f& theFinal);
 
-
-      public:
-         
    };
 }    
    #endif   // ----- #ifndef EMITTER_INC  -----
