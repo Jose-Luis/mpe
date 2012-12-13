@@ -6,10 +6,11 @@
 #include <boost/shared_ptr.hpp>
 
 #include <MPE/Emitter.hpp>
+#include <MPE/Interfaces.hpp>
 
 namespace MPE
 {
-   class System: public Emitter::Adder
+   class System: public ISystem
    {
       public:
 
@@ -18,7 +19,7 @@ namespace MPE
 
          void addEmitter(Emitter::Ptr theEmitter);
          void addParticle(const Particle& theParticle);
-         void update(float theElapsedTime);
+         void update(Real theElapsedTime);
          Emitter::Ptr getEmitter(Emitter::ID theID);
 
       private:

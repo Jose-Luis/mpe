@@ -8,6 +8,7 @@
 
 #include <MPE/Particle.hpp>
 #include <MPE/Config.hpp>
+#include <MPE/Interfaces.hpp>
 
 namespace MPE
 {
@@ -23,42 +24,39 @@ namespace MPE
          enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};
          struct Focus
          {
-            float width;
-            float height;
+            Real width;
+            Real height;
             Angle angle;
             sf::Vector2f position;
-            int emittedParticles;
-            float lifetime;
-         };
-         struct Adder
-         {
-            virtual void addParticle(const Particle& theParticle) = 0;
+            Integer emittedParticles;
+            Real lifetime;
          };
 
-         Emitter(ID theID,Adder& theSystem);
-         Emitter(Adder& theSystem);
-         static Ptr create(Adder& theSystem);
+         Emitter(ID theID,ISystem& theSystem);
+         Emitter(ISystem& theSystem);
+         static Ptr create(ISystem& theSystem);
          ~Emitter();
-         void update(float theElapsedTime);
-         void emit(int theNumberOfParticles);
+         void update(Real theElapsedTime);
+         void emit(Integer theNumberOfParticles, Focus& theFocus);
          void addFocus(Focus theFocus);
-         Particle createParticle();
+         Particle createParticle(Focus& theFocus);
          inline ID getID() const {return mID;};
 
       private:
-
 
          ID mID;
          sf::Texture mTexture;
          Shape mShape;
          Dispersion mDispersion;
-         Adder& mSystem;
+         ISystem& mSystem;
 
-         float mTTL; //Time Of Life
-         float mPPS; //Particles Per Second
-         float mTotalParticles;
+         Real mTTL; //Time Of Life
+         Real mPPS; //Particles Per Second
+         Integer mTotalParticles;
+
          std::list<Focus> mFocusses;
-         
+
+         sf::Vector2f generatePosition(Focus& theFocus);
    };
 }    
    #endif   // ----- #ifndef EMITTER_INC  -----

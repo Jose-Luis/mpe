@@ -2,13 +2,14 @@
 #define  PARTICLE_INC
 
 #include <SFML/Graphics.hpp>
+#include <MPE/Config.hpp>
 
 namespace MPE
 {
    class Particle
    {
       public:
-         Particle(sf::Texture& theTexture, sf::Vector2f thePosition, sf::Vector2f theLinearVelocity, float theAngularVelocity,  sf::Color theColor, float theTTL):
+         Particle(sf::Texture& theTexture, sf::Vector2f thePosition, sf::Vector2f theLinearVelocity, Real theAngularVelocity,  sf::Color theColor, Real theTTL):
             mSprite(theTexture),
             mAngularVelocity(theAngularVelocity),
             mLinearVelocity(theLinearVelocity),
@@ -19,21 +20,21 @@ namespace MPE
       }
          ~Particle();
 
-         void update(float theElapsedTime)
+         void update(Real theElapsedTime)
          {
             mTTL -= theElapsedTime;
             mSprite.move(mLinearVelocity.x*theElapsedTime,mLinearVelocity.y*theElapsedTime);
             mSprite.rotate(mAngularVelocity*theElapsedTime);
          }
          
-         float inline getTTL() const {return mTTL;};
+         Real inline getTTL() const {return mTTL;};
 
       private:
          sf::Sprite mSprite;
          sf::Vector2f mLinearVelocity;
-         float mAngularVelocity;
+         Real mAngularVelocity;
          //sf::Color mColorVelocity;
-         float mTTL;
+         Real mTTL;
    };
 }
 #endif   // ----- #ifndef PARTICLE_INC  -----

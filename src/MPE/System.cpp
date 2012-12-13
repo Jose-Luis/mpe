@@ -14,7 +14,7 @@ namespace MPE
       mParticles.push_back(theParticle);
    }
 
-   void System::update(float theElapsedTime)
+   void System::update(Real theElapsedTime)
    {
       for( auto anEmitter: mEmitters)
       {

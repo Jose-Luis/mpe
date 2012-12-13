@@ -1,11 +1,11 @@
-syn keyword CTagsLocalVariable nParticles
-syn keyword CTagsStructure Angle Adder Focus
-syn keyword CTagsMember height lifetime mEmitters mSystem mDispersion angle mPPS mID width sin mParticles emittedParticles mTTL mLinearVelocity mShape cos mAngularVelocity mFocusses value mTotalParticles position mTexture mSprite
+syn keyword CTagsLocalVariable anX anY nParticles
+syn keyword CTagsStructure Angle Focus
+syn keyword CTagsMember mXFactor height lifetime mEmitters mSystem mDispersion angle min mPPS mID width sin mParticles emittedParticles max mTTL mLinearVelocity mShape cos mAngularVelocity mFocusses value mTotalParticles mYFactor position mTexture mSprite
 syn keyword CTagsEnumeratorName Dispersion Shape
 syn keyword CTagsEnumerationValue LINEAR RANDOM REFLECT STATIC RADIAL CIRCLE RECTANGLE
-syn keyword CTagsFunction set Particle create addEmitter update getID addParticle Emitter getTTL
-syn keyword CTagsType ID Ptr
-syn keyword CTagsDefinedName EMITTER_INC CONFIG_INC PARTICLE_INC SYSTEM_INC
-syn keyword CTagsClass Emitter Particle System
+syn keyword CTagsFunction set getYFactor Particle Randomizer create addEmitter setXFactor update getID emit ISystem init getXFactor addParticle setYFactor generatePosition get Emitter getTTL
+syn keyword CTagsType Real Integer ID Ptr
+syn keyword CTagsDefinedName EMITTER_INC CONFIG_INC INTERFACES_INC PARTICLE_INC SYSTEM_INC
+syn keyword CTagsClass System ISystem Emitter Particle Randomizer
 syn keyword CTagsNamespace MPE
 
