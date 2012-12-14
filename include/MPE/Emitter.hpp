@@ -31,7 +31,7 @@ namespace MPE
    class Emitter
    {
       public:
-        
+
          typedef boost::shared_ptr<Emitter> Ptr;
          typedef std::string ID;
 
@@ -53,9 +53,25 @@ namespace MPE
          void update(Real theElapsedTime);
          void emit(Integer theNumberOfParticles, Focus& theFocus);
          void addFocus(Focus theFocus);
+         //////////////////  Accesors  /////////////////
          inline ID getID() const {return mID;};
          inline Shape getShape (  ) const;
          inline void setShape ( Shape value );
+         inline Dispersion getDispersion (  ) const;
+         inline void setDispersion ( Dispersion value );
+         inline Randomizer getRangeStrenght (  ) const;
+         inline void setRangeStrenght ( Randomizer value );
+         inline Randomizer getRangeParticleTTL (  ) const;
+         inline void setRangeParticleTTL ( Randomizer value );
+         inline sf::Vector2f getLinearVelocity (  ) const;
+         inline void setLinearVelocity ( sf::Vector2f value );
+         inline Real getTTL (  ) const;
+         inline void setTTL ( Real value );
+         inline Real getPPS (  ) const;
+         inline void setPPS ( Real value );
+         inline Integer getTotalParticles (  ) const;
+         inline void setTotalParticles ( Integer value );
+         //////////////////////////////////////////////////
 
       private:
 
@@ -82,4 +98,5 @@ namespace MPE
 
    };
 }    
-   #endif   // ----- #ifndef EMITTER_INC  -----
+
+#endif  

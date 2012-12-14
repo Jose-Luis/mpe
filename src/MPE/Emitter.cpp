@@ -195,6 +195,25 @@ namespace MPE
    }
    //--------------------------------------------------------------------------------------
    //       Class:  Emitter
+   //      Method:  getDispersion
+   // Description:  Getter
+   //--------------------------------------------------------------------------------------
+   inline Dispersion Emitter::getDispersion (  ) const
+   {
+      return mDispersion;
+   }
+   //--------------------------------------------------------------------------------------
+   //       Class:  Emitter
+   //      Method:  setDispersion
+   // Description:  Setter
+   //--------------------------------------------------------------------------------------
+   inline void Emitter::setDispersion ( Dispersion value )
+   {
+      mDispersion = value;
+      return;
+   }
+   //--------------------------------------------------------------------------------------
+   //       Class:  Emitter
    //      Method:  getRangeStrenght
    // Description:  Getter
    //--------------------------------------------------------------------------------------
@@ -230,6 +249,82 @@ namespace MPE
    inline void Emitter::setRangeParticleTTL ( Randomizer value )
    {
       mRangeParticleTTL = value;
+      return;
+   }
+   //--------------------------------------------------------------------------------------
+   //       Class:  Emitter
+   //      Method:  getLinearVelocity
+   // Description:  Getter
+   //--------------------------------------------------------------------------------------
+   inline sf::Vector2f Emitter::getLinearVelocity (  ) const
+   {
+      return mLinearVelocity;
+   }
+   //--------------------------------------------------------------------------------------
+   //       Class:  Emitter
+   //      Method:  setLinearVelocity
+   // Description:  Setter
+   //--------------------------------------------------------------------------------------
+   inline void Emitter::setLinearVelocity ( sf::Vector2f value )
+   {
+      mLinearVelocity = value;
+      return;
+   }
+   //--------------------------------------------------------------------------------------
+   //       Class:  Emitter
+   //      Method:  getTTL
+   // Description:  Getter
+   //--------------------------------------------------------------------------------------
+   inline Real Emitter::getTTL (  ) const
+   {
+      return mTTL;
+   }
+   //--------------------------------------------------------------------------------------
+   //       Class:  Emitter
+   //      Method:  setTTL
+   // Description:  Setter
+   //--------------------------------------------------------------------------------------
+   inline void Emitter::setTTL ( Real value )
+   {
+      mTTL = value;
+      return;
+   }
+   //--------------------------------------------------------------------------------------
+   //       Class:  Emitter
+   //      Method:  getPPS
+   // Description:  Getter
+   //--------------------------------------------------------------------------------------
+   inline Real Emitter::getPPS (  ) const
+   {
+      return mPPS;
+   }
+   //--------------------------------------------------------------------------------------
+   //       Class:  Emitter
+   //      Method:  setPPS
+   // Description:  Setter
+   //--------------------------------------------------------------------------------------
+   inline void Emitter::setPPS ( Real value )
+   {
+      mPPS = value;
+      return;
+   }
+   //--------------------------------------------------------------------------------------
+   //       Class:  Emitter
+   //      Method:  getTotalParticles
+   // Description:  Getter
+   //--------------------------------------------------------------------------------------
+   inline Integer Emitter::getTotalParticles (  ) const
+   {
+      return mTotalParticles;
+   }
+   //--------------------------------------------------------------------------------------
+   //       Class:  Emitter
+   //      Method:  setTotalParticles
+   // Description:  Setter
+   //--------------------------------------------------------------------------------------
+   inline void Emitter::setTotalParticles ( Integer value )
+   {
+      mTotalParticles = value;
       return;
    }
 }
