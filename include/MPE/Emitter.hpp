@@ -51,6 +51,7 @@ namespace MPE
          Emitter(ID theID,ISystem& theSystem);
          ~Emitter();
          static Ptr create(ID theID,ISystem& theSystem);
+         void       updateFocusState(Focus& theFocus);
          void       update(Real theElapsedTime);
          void       emit(Integer theNumberOfParticles, Focus& theFocus);
          void       addFocus(Focus theFocus);

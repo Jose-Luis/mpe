@@ -48,15 +48,14 @@ namespace MPE
       for (auto it = mFocusses.begin(); it != mFocusses.end(); it++)
       {
          it->lifetime += theElapsedTime;
-         if ( (mTTL == -1 || it->lifetime < mTTL) 
-               &&
-               (mTotalParticles == -1 || mTotalParticles > it->emittedParticles))
+         updateFocusState(*it);
+         if ( it->alive)
          {
             Integer nParticles = (mPPS * it->lifetime / 1000) - it->emittedParticles;
             it->emittedParticles += nParticles;
             emit(nParticles);
          }
-         else if(it->lifetime > mTTL || it->emittedParticles > mTotalParticles)
+         else 
          {
             mFocusses.erase(it);
          }
@@ -160,7 +159,7 @@ namespace MPE
    //      Method:  diffVectors
    // Description:  
    //--------------------------------------------------------------------------------------
-   inline sf::Vector2f diffVectors(const sf::Vector2f& theOrigin,const sf::Vector2f& theFinal)
+   inline sf::Vector2f Emitter::diffVectors(const sf::Vector2f& theOrigin,const sf::Vector2f& theFinal)
    {
      return sf::Vector2f(theFinal.x-theOrigin.x,theFinal.y-theOrigin.y);
    }
@@ -172,6 +171,18 @@ namespace MPE
    void Emitter::addFocus(Focus theFocus)
    {
       mFocusses.push_back(theFocus);
+   }
+   //--------------------------------------------------------------------------------------
+   //       Class:  Emitter
+   //      Method:  updateFocusState
+   // Description:  
+   //--------------------------------------------------------------------------------------
+   void Emitter::updateFocusState(Focus& theFocus)
+   {
+      if( (theFocus.lifetime > mTTL && mTTL != -1) 
+            || 
+          (theFocus.emittedParticles > mTotalParticles && mTotalParticles != -1) )
+            theFocus.alive = false;
    }
    //--------------------------------------------------------------------------------------
    //       Class:  Emitter
