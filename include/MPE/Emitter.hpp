@@ -68,6 +68,7 @@ namespace MPE
 
          inline void         setShape ( Shape value );
          inline void         setDispersion ( Dispersion value );
+         inline void         setTexture ( std::string theFilename );
          inline void         setRangeStrenght ( Randomizer value );
          inline void         setRangeParticleTTL ( Randomizer value );
          inline void         setLinearVelocity ( sf::Vector2f value );

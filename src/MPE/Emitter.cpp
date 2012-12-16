@@ -208,7 +208,7 @@ namespace MPE
    //      Method:  getDispersion
    // Description:  Getter
    //--------------------------------------------------------------------------------------
-   inline Dispersion Emitter::getDispersion (  ) const
+   inline Emitter::Dispersion Emitter::getDispersion (  ) const
    {
       return mDispersion;
    }
@@ -336,6 +336,16 @@ namespace MPE
    {
       mTotalParticles = value;
       return;
+   }
+   //--------------------------------------------------------------------------------------
+   //       Class:  Emitter
+   //      Method:  setTexture
+   // Description:  
+   //--------------------------------------------------------------------------------------
+   void Emitter::setTexture ( std::string theFilename )
+   {
+      mTexture.loadFromFile(theFilename);
+      return ;
    }
 }
 
