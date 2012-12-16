@@ -13,7 +13,7 @@ namespace MPE
             mSprite(theTexture),
             mAngularVelocity(theAngularVelocity),
             mLinearVelocity(theLinearVelocity),
-            mTTL(theTTL)
+            mTOL(theTTL)
       {
          mSprite.setPosition(thePosition.x,thePosition.y);
          mSprite.setColor(theColor);
@@ -22,19 +22,19 @@ namespace MPE
 
          void update(Real theElapsedTime)
          {
-            mTTL -= theElapsedTime;
+            mTOL -= theElapsedTime;
             mSprite.move(mLinearVelocity.x*theElapsedTime,mLinearVelocity.y*theElapsedTime);
             mSprite.rotate(mAngularVelocity*theElapsedTime);
          }
          
-         Real inline getTTL() const {return mTTL;};
+         Real inline getTTL() const {return mTOL;};
 
       private:
          sf::Sprite mSprite;
          sf::Vector2f mLinearVelocity;
          Real mAngularVelocity;
          //sf::Color mColorVelocity;
-         Real mTTL;
+         Real mTOL;
    };
 }
 #endif   // ----- #ifndef PARTICLE_INC  -----

@@ -179,7 +179,7 @@ namespace MPE
    //--------------------------------------------------------------------------------------
    void Emitter::updateFocusState(Focus& theFocus)
    {
-      if( (theFocus.lifetime > mTTL && mTTL != -1) 
+      if( (theFocus.lifetime > mTOL && mTOL != -1) 
             || 
           (theFocus.emittedParticles > mTotalParticles && mTotalParticles != -1) )
             theFocus.alive = false;
@@ -287,7 +287,7 @@ namespace MPE
    //--------------------------------------------------------------------------------------
    inline Real Emitter::getTTL (  ) const
    {
-      return mTTL;
+      return mTOL;
    }
    //--------------------------------------------------------------------------------------
    //       Class:  Emitter
@@ -296,7 +296,7 @@ namespace MPE
    //--------------------------------------------------------------------------------------
    inline void Emitter::setTTL ( Real value )
    {
-      mTTL = value;
+      mTOL = value;
       return;
    }
    //--------------------------------------------------------------------------------------

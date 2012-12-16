@@ -88,7 +88,7 @@ namespace MPE
          sf::Vector2f mLinearVelocity;
          Randomizer   mRangeStrenght;
          Randomizer   mRangeParticleTTL;
-         Real         mTTL; //Time Of Life
+         Real         mTOL; //Time Of Life
          Real         mPPS; //Particles Per Second
          Integer      mTotalParticles;
 
