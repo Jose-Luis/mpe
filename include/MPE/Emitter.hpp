@@ -39,6 +39,7 @@ namespace MPE
          enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};
          struct Focus
          {
+            bool         alive;
             Real         width;
             Real         height;
             Angle        angle;
@@ -56,20 +57,21 @@ namespace MPE
          //////////////////  Accesors  /////////////////
          inline ID           getID() const {return mID;};
          inline Shape        getShape (  ) const;
-         inline void         setShape ( Shape value );
          inline Dispersion   getDispersion (  ) const;
-         inline void         setDispersion ( Dispersion value );
          inline Randomizer   getRangeStrenght (  ) const;
-         inline void         setRangeStrenght ( Randomizer value );
          inline Randomizer   getRangeParticleTTL (  ) const;
-         inline void         setRangeParticleTTL ( Randomizer value );
          inline sf::Vector2f getLinearVelocity (  ) const;
-         inline void         setLinearVelocity ( sf::Vector2f value );
          inline Real         getTTL (  ) const;
-         inline void         setTTL ( Real value );
          inline Real         getPPS (  ) const;
-         inline void         setPPS ( Real value );
          inline Integer      getTotalParticles (  ) const;
+
+         inline void         setShape ( Shape value );
+         inline void         setDispersion ( Dispersion value );
+         inline void         setRangeStrenght ( Randomizer value );
+         inline void         setRangeParticleTTL ( Randomizer value );
+         inline void         setLinearVelocity ( sf::Vector2f value );
+         inline void         setTTL ( Real value );
+         inline void         setPPS ( Real value );
          inline void         setTotalParticles ( Integer value );
          //////////////////////////////////////////////////
 
@@ -92,10 +94,10 @@ namespace MPE
 
          sf::Vector2f        generatePosition(Focus& theFocus);
          sf::Vector2f        generateVelocity(Focus& theFocus, sf::Vector2f& theParticlePosition);
-         inline void         normalize(sf::Vector2f& theVector);
+
+         inline sf::Vector2f normalizeVector(const sf::Vector2f& theVector);
          inline sf::Vector2f scaleVector(const sf::Vector2f& theVector,Real theScalar);
          inline sf::Vector2f diffVectors(const sf::Vector2f& theOrigin,const sf::Vector2f& theFinal);
-
    };
 }    
 

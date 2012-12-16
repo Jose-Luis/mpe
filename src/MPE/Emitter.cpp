@@ -91,18 +91,18 @@ namespace MPE
             break;
          case RADIAL:
             anVelocity = diffVectors(theFocus.position,theParticlePosition);
-            normalize(anVelocity);
+            anVelocity = normalizeVector(anVelocity);
             break;
          case STATIC:
             anVelocity = sf::Vector2f(0,0);
             break;
          case RANDOM:
-            anVelocity = normalize(sf::Vector2f(Randomizer::get(-1,1),Randomizer::get(-1,1)));
+            anVelocity = normalizeVector(sf::Vector2f(Randomizer::get(-1,1),Randomizer::get(-1,1)));
             break;
         case REFLECT:
             anVelocity = sf::Vector2f(0,0);
             break;
-        case Default:
+        default:
             anVelocity = sf::Vector2f(0,0);
             break;
       }
@@ -139,13 +139,12 @@ namespace MPE
    //      Method:  normalize
    // Description:  
    //--------------------------------------------------------------------------------------
-   inline void Emitter::normalize(sf::Vector2f& theVector)
+   inline sf::Vector2f Emitter::normalizeVector(const sf::Vector2f& theVector)
    {
       Real anModule;
 
       anModule = std::sqrt(theVector.x * theVector.x + theVector.y * theVector.y);
-      theVector.x /= anModule;
-      theVector.y /= anModule;
+      return sf::Vector2f (theVector.x / anModule, theVector.y / anModule);
    }
    //--------------------------------------------------------------------------------------
    //       Class:  Emitter

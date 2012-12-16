@@ -1,9 +1,9 @@
 syn keyword CTagsLocalVariable anModule anVelocity anX anY nParticles
 syn keyword CTagsStructure Angle Focus
-syn keyword CTagsMember mXFactor height lifetime mEmitters mSystem mDispersion angle min mPPS mID width sin mParticles emittedParticles max mTTL mLinearVelocity mShape mRangeStrenght cos mRangeParticleTTL mAngularVelocity mFocusses value mSprite mYFactor position mTexture mTotalParticles
+syn keyword CTagsMember mXFactor alive height lifetime mEmitters mSystem mDispersion angle min mPPS mID width sin mParticles emittedParticles max mTTL mLinearVelocity mShape mRangeStrenght cos mRangeParticleTTL mAngularVelocity mFocusses value mSprite mYFactor position mTexture mTotalParticles
 syn keyword CTagsEnumeratorName Dispersion Shape
 syn keyword CTagsEnumerationValue LINEAR RANDOM REFLECT STATIC RADIAL CIRCLE RECTANGLE
-syn keyword CTagsFunction set setXFactor getID ISystem getDispersion setDispersion setRangeStrenght getTTL addFocus normalize setTotalParticles create diffVectors setTTL init getRangeStrenght setPPS setYFactor generateVelocity addParticle setLinearVelocity Emitter getLinearVelocity Particle get scaleVector getYFactor addEmitter getRangeParticleTTL update setRangeParticleTTL generatePosition getPPS getTotalParticles getXFactor Randomizer getShape emit setShape
+syn keyword CTagsFunction set setXFactor getID ISystem getDispersion setDispersion setRangeStrenght getTTL addFocus setTotalParticles create diffVectors setTTL init getRangeStrenght setPPS setYFactor generateVelocity addParticle setLinearVelocity Emitter getLinearVelocity Particle get scaleVector getYFactor addEmitter getRangeParticleTTL update setRangeParticleTTL generatePosition getPPS normalizeVector getTotalParticles getXFactor Randomizer getShape emit setShape
 syn keyword CTagsType Real Integer ID Ptr
 syn keyword CTagsDefinedName EMITTER_INC CONFIG_INC INTERFACES_INC PARTICLE_INC SYSTEM_INC
 syn keyword CTagsClass System ISystem Emitter Particle Randomizer

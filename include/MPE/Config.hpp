@@ -74,4 +74,5 @@ class Randomizer
       }
 };
 
+
 #endif   // ----- #ifndef CONFIG_INC  -----
