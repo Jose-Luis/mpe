@@ -342,7 +342,7 @@ namespace MPE
    //      Method:  setTexture
    // Description:  
    //--------------------------------------------------------------------------------------
-   void Emitter::setTexture ( std::string theFilename )
+   inline void Emitter::setTexture ( std::string theFilename )
    {
       mTexture.loadFromFile(theFilename);
       return ;
