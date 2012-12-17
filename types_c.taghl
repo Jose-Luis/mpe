@@ -1,6 +1,6 @@
 syn keyword CTagsLocalVariable anResult anVelocity it nParticles anModule anX anY
 syn keyword CTagsStructure Angle Focus
-syn keyword CTagsMember mXFactor alive height lifetime mEmitters mSystem mDispersion angle min mPPS mTOL mID width sin mParticles emittedParticles max mAlive mLinearVelocity mRangeParticleTOL mShape mRangeStrenght cos mAngularVelocity mFocusses value mTotalParticles mYFactor position mTexture mSprite
+syn keyword CTagsMember mXFactor alive height lifetime mEmitters mSystem mDispersion angle min mPPS mTOL mID width sin mParticles emittedParticles max mAlive mLinearVelocity mShape mRangeStrenght cos mAngularVelocity mFocusses value mTotalParticles mYFactor position mTexture mSprite
 syn keyword CTagsEnumeratorName Dispersion Shape
 syn keyword CTagsEnumerationValue LINEAR RANDOM REFLECT STATIC RADIAL CIRCLE RECTANGLE
 syn keyword CTagsFunction setTexture set setXFactor System getID ISystem getDispersion setDispersion setRangeStrenght addFocus setTotalParticles create diffVectors getSprite updateFocusState init getRangeStrenght setPPS setYFactor generateVelocity getEmitter getTOL Emitter getLinearVelocity setSprite draw isAlive setRangeParticleTOL Particle get scaleVector getYFactor addEmitter update generatePosition getPPS normalizeVector getRangeParticleTOL getTotalParticles setLinearVelocity Randomizer setTOL
