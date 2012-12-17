@@ -92,6 +92,7 @@ mLinearVelocity	include/MPE/Emitter.hpp	/^         sf::Vector2f mLinearVelocity;
 mLinearVelocity	include/MPE/Particle.hpp	/^         sf::Vector2f   mLinearVelocity;$/;"	m	class:MPE::Particle
 mPPS	include/MPE/Emitter.hpp	/^         Real         mPPS; \/\/Particles Per Second$/;"	m	class:MPE::Emitter
 mParticles	include/MPE/System.hpp	/^         std::list<Particle>                mParticles;$/;"	m	class:MPE::System
+mRangeParticleTOL	include/MPE/Emitter.hpp	/^         Randomizer   mRangeParticleTOL;$/;"	m	class:MPE::Emitter
 mRangeStrenght	include/MPE/Emitter.hpp	/^         Randomizer   mRangeStrenght;$/;"	m	class:MPE::Emitter
 mShape	include/MPE/Emitter.hpp	/^         Shape        mShape;$/;"	m	class:MPE::Emitter
 mSprite	include/MPE/Particle.hpp	/^         sf::Sprite     mSprite;$/;"	m	class:MPE::Particle

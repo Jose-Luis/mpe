@@ -198,9 +198,9 @@ namespace MPE
    //      Method:  setShape
    // Description:  Setter 
    //--------------------------------------------------------------------------------------
-   inline void Emitter::setShape ( Shape value )
+   inline void Emitter::setShape ( Shape theValue )
    {
-      mShape	= value;
+      mShape	= theValue;
       return ;
    }
    //--------------------------------------------------------------------------------------
@@ -217,9 +217,9 @@ namespace MPE
    //      Method:  setDispersion
    // Description:  Setter
    //--------------------------------------------------------------------------------------
-   inline void Emitter::setDispersion ( Dispersion value )
+   inline void Emitter::setDispersion ( Dispersion theValue )
    {
-      mDispersion = value;
+      mDispersion = theValue;
       return;
    }
    //--------------------------------------------------------------------------------------
@@ -237,9 +237,9 @@ namespace MPE
    //      Method:  setRangeStrenght
    // Description:  Setter
    //--------------------------------------------------------------------------------------
-   inline void Emitter::setRangeStrenght ( Randomizer value )
+   inline void Emitter::setRangeStrenght ( Randomizer theValue )
    {
-      mRangeStrenght = value;
+      mRangeStrenght = theValue;
       return;
    }
    //--------------------------------------------------------------------------------------
@@ -256,9 +256,9 @@ namespace MPE
    //      Method:  setRangeParticleTOL
    // Description:  Setter
    //--------------------------------------------------------------------------------------
-   inline void Emitter::setRangeParticleTOL ( Randomizer value )
+   inline void Emitter::setRangeParticleTOL ( Randomizer theValue )
    {
-      mRangeParticleTOL = value;
+      mRangeParticleTOL = theValue;
       return;
    }
    //--------------------------------------------------------------------------------------
@@ -275,9 +275,9 @@ namespace MPE
    //      Method:  setLinearVelocity
    // Description:  Setter
    //--------------------------------------------------------------------------------------
-   inline void Emitter::setLinearVelocity ( sf::Vector2f value )
+   inline void Emitter::setLinearVelocity ( sf::Vector2f theValue )
    {
-      mLinearVelocity = value;
+      mLinearVelocity = theValue;
       return;
    }
    //--------------------------------------------------------------------------------------
@@ -294,9 +294,9 @@ namespace MPE
    //      Method:  setTOL
    // Description:  Setter
    //--------------------------------------------------------------------------------------
-   inline void Emitter::setTOL ( Real value )
+   inline void Emitter::setTOL ( Real theValue )
    {
-      mTOL = value;
+      mTOL = theValue;
       return;
    }
    //--------------------------------------------------------------------------------------
@@ -313,9 +313,9 @@ namespace MPE
    //      Method:  setPPS
    // Description:  Setter
    //--------------------------------------------------------------------------------------
-   inline void Emitter::setPPS ( Real value )
+   inline void Emitter::setPPS ( Real theValue )
    {
-      mPPS = value;
+      mPPS = theValue;
       return;
    }
    //--------------------------------------------------------------------------------------
@@ -332,9 +332,9 @@ namespace MPE
    //      Method:  setTotalParticles
    // Description:  Setter
    //--------------------------------------------------------------------------------------
-   inline void Emitter::setTotalParticles ( Integer value )
+   inline void Emitter::setTotalParticles ( Integer theValue )
    {
-      mTotalParticles = value;
+      mTotalParticles = theValue;
       return;
    }
    //--------------------------------------------------------------------------------------
