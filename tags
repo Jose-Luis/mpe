@@ -24,10 +24,11 @@ MPE	include/MPE/Interfaces.hpp	/^namespace MPE$/;"	n
 MPE	include/MPE/Particle.hpp	/^namespace MPE$/;"	n
 MPE	include/MPE/System.hpp	/^namespace MPE$/;"	n
 MPE	src/MPE/Emitter.cpp	/^namespace MPE$/;"	n	file:
+MPE	src/MPE/Particle.cpp	/^namespace MPE$/;"	n	file:
 MPE	src/MPE/System.cpp	/^namespace MPE$/;"	n	file:
-PARTICLE_INC	include/MPE/Particle.hpp	2;"	d
+PARTICLE_INC	include/MPE/Particle.hpp	18;"	d
 Particle	include/MPE/Particle.hpp	/^   class Particle$/;"	c	namespace:MPE
-Particle	include/MPE/Particle.hpp	/^         Particle(sf::Texture& theTexture, sf::Vector2f thePosition, sf::Vector2f theLinearVelocity, Real theAngularVelocity,  sf::Color theColor, Real theTTL):$/;"	f	class:MPE::Particle
+Particle	src/MPE/Particle.cpp	/^   Particle::Particle$/;"	f	class:MPE::Particle
 Ptr	include/MPE/Emitter.hpp	/^         typedef boost::shared_ptr<Emitter> Ptr;$/;"	t	class:MPE::Emitter
 RADIAL	include/MPE/Emitter.hpp	/^         enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};$/;"	e	enum:MPE::Emitter::Dispersion
 RANDOM	include/MPE/Emitter.hpp	/^         enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};$/;"	e	enum:MPE::Emitter::Dispersion
@@ -38,14 +39,16 @@ Randomizer	include/MPE/Config.hpp	/^      Randomizer()$/;"	f	class:Randomizer
 Randomizer	include/MPE/Config.hpp	/^      Randomizer(Real theA,Real theB)$/;"	f	class:Randomizer
 Real	include/MPE/Config.hpp	/^typedef float Real;$/;"	t
 STATIC	include/MPE/Emitter.hpp	/^         enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};$/;"	e	enum:MPE::Emitter::Dispersion
-SYSTEM_INC	include/MPE/System.hpp	2;"	d
+SYSTEM_INC	include/MPE/System.hpp	18;"	d
 Shape	include/MPE/Emitter.hpp	/^         enum Shape{RECTANGLE,CIRCLE};$/;"	g	class:MPE::Emitter
 System	include/MPE/System.hpp	/^   class System: public ISystem$/;"	c	namespace:MPE
+System	src/MPE/System.cpp	/^   System::System ( Real theFactor ):$/;"	f	class:MPE::System
 addEmitter	src/MPE/System.cpp	/^   void System::addEmitter(Emitter::Ptr theEmitter)$/;"	f	class:MPE::System
 addFocus	src/MPE/Emitter.cpp	/^   void Emitter::addFocus(Focus theFocus)$/;"	f	class:MPE::Emitter
-addParticle	src/MPE/System.cpp	/^   void System::addParticle(const Particle& theParticle)$/;"	f	class:MPE::System
+addParticle	src/MPE/System.cpp	/^   void System::addParticle(Particle& theParticle)$/;"	f	class:MPE::System
 alive	include/MPE/Emitter.hpp	/^            bool         alive;$/;"	m	struct:MPE::Emitter::Focus
 anModule	src/MPE/Emitter.cpp	/^      Real anModule;$/;"	l
+anResult	src/MPE/System.cpp	/^      Emitter::Ptr anResult;$/;"	l
 anVelocity	src/MPE/Emitter.cpp	/^      sf::Vector2f anVelocity;$/;"	l
 anX	src/MPE/Emitter.cpp	/^      Real anX,anY;$/;"	l
 anY	src/MPE/Emitter.cpp	/^      Real anX,anY;$/;"	l
@@ -53,19 +56,22 @@ angle	include/MPE/Emitter.hpp	/^            Angle        angle;$/;"	m	struct:MPE
 cos	include/MPE/Config.hpp	/^   Real cos;$/;"	m	struct:Angle
 create	src/MPE/Emitter.cpp	/^   Emitter::Ptr Emitter::create(Emitter::ID theID,ISystem& theSystem)$/;"	f	class:MPE::Emitter
 diffVectors	src/MPE/Emitter.cpp	/^   inline sf::Vector2f Emitter::diffVectors(const sf::Vector2f& theOrigin,const sf::Vector2f& theFinal)$/;"	f	class:MPE::Emitter
+draw	src/MPE/System.cpp	/^   void System::draw ( sf::RenderWindow& theWindow ) const$/;"	f	class:MPE::System
 emit	src/MPE/Emitter.cpp	/^   void Emitter::emit(Integer theNumberOfParticles, Focus& theFocus)$/;"	f	class:MPE::Emitter
 emittedParticles	include/MPE/Emitter.hpp	/^            Integer      emittedParticles;$/;"	m	struct:MPE::Emitter::Focus
 generatePosition	src/MPE/Emitter.cpp	/^   sf::Vector2f Emitter::generatePosition(Focus& theFocus)$/;"	f	class:MPE::Emitter
 generateVelocity	src/MPE/Emitter.cpp	/^   sf::Vector2f Emitter::generateVelocity(Focus& theFocus, sf::Vector2f& theParticlePosition)$/;"	f	class:MPE::Emitter
-getDispersion	src/MPE/Emitter.cpp	/^   inline Dispersion Emitter::getDispersion (  ) const$/;"	f	class:MPE::Emitter
+getDispersion	src/MPE/Emitter.cpp	/^   inline Emitter::Dispersion Emitter::getDispersion (  ) const$/;"	f	class:MPE::Emitter
+getEmitter	src/MPE/System.cpp	/^   Emitter::Ptr System::getEmitter ( Emitter::ID theEmitterID ) const$/;"	f	class:MPE::System
 getID	include/MPE/Emitter.hpp	/^         inline ID           getID() const {return mID;};$/;"	f	class:MPE::Emitter
 getLinearVelocity	src/MPE/Emitter.cpp	/^   inline sf::Vector2f Emitter::getLinearVelocity (  ) const$/;"	f	class:MPE::Emitter
 getPPS	src/MPE/Emitter.cpp	/^   inline Real Emitter::getPPS (  ) const$/;"	f	class:MPE::Emitter
-getRangeParticleTTL	src/MPE/Emitter.cpp	/^   inline Randomizer Emitter::getRangeParticleTTL (  ) const$/;"	f	class:MPE::Emitter
+getRangeParticleTOL	src/MPE/Emitter.cpp	/^   inline Randomizer Emitter::getRangeParticleTOL (  ) const$/;"	f	class:MPE::Emitter
 getRangeStrenght	src/MPE/Emitter.cpp	/^   inline Randomizer Emitter::getRangeStrenght (  ) const$/;"	f	class:MPE::Emitter
 getShape	src/MPE/Emitter.cpp	/^   inline Emitter::Shape Emitter::getShape (  ) const$/;"	f	class:MPE::Emitter
-getTTL	include/MPE/Particle.hpp	/^         Real inline getTTL() const {return mTTL;};$/;"	f	class:MPE::Particle
-getTTL	src/MPE/Emitter.cpp	/^   inline Real Emitter::getTTL (  ) const$/;"	f	class:MPE::Emitter
+getSprite	src/MPE/Particle.cpp	/^   inline const sf::Sprite& Particle::getSprite (  ) const$/;"	f	class:MPE::Particle
+getTOL	src/MPE/Emitter.cpp	/^   inline Real Emitter::getTOL (  ) const$/;"	f	class:MPE::Emitter
+getTOL	src/MPE/Particle.cpp	/^   inline Real Particle::getTOL() const {return mTOL;}$/;"	f	class:MPE::Particle
 getTotalParticles	src/MPE/Emitter.cpp	/^   inline Integer Emitter::getTotalParticles (  ) const$/;"	f	class:MPE::Emitter
 getXFactor	include/MPE/Interfaces.hpp	/^         inline Real getXFactor (  ) const$/;"	f	class:MPE::ISystem
 getYFactor	include/MPE/Interfaces.hpp	/^         inline Real getYFactor (  ) const$/;"	f	class:MPE::ISystem
@@ -73,23 +79,26 @@ get	include/MPE/Config.hpp	/^      Real get()$/;"	f	class:Randomizer
 get	include/MPE/Config.hpp	/^      static inline Real get(Real theMin, Real theMax)$/;"	f	class:Randomizer
 height	include/MPE/Emitter.hpp	/^            Real         height;$/;"	m	struct:MPE::Emitter::Focus
 init	include/MPE/Config.hpp	/^      static inline void init()$/;"	f	class:Randomizer
+isAlive	src/MPE/Particle.cpp	/^   inline bool Particle::isAlive() const $/;"	f	class:MPE::Particle
+it	src/MPE/System.cpp	/^      auto it = mEmitters.find(theEmitterID);$/;"	l
 lifetime	include/MPE/Emitter.hpp	/^            Real         lifetime;$/;"	m	struct:MPE::Emitter::Focus
-mAngularVelocity	include/MPE/Particle.hpp	/^         Real mAngularVelocity;$/;"	m	class:MPE::Particle
+mAlive	include/MPE/Particle.hpp	/^         bool           mAlive;$/;"	m	class:MPE::Particle
+mAngularVelocity	include/MPE/Particle.hpp	/^         Real           mAngularVelocity;$/;"	m	class:MPE::Particle
 mDispersion	include/MPE/Emitter.hpp	/^         Dispersion   mDispersion;$/;"	m	class:MPE::Emitter
 mEmitters	include/MPE/System.hpp	/^         std::map<Emitter::ID,Emitter::Ptr> mEmitters;$/;"	m	class:MPE::System
 mFocusses	include/MPE/Emitter.hpp	/^         std::list<Focus> mFocusses;$/;"	m	class:MPE::Emitter
 mID	include/MPE/Emitter.hpp	/^         ID           mID;$/;"	m	class:MPE::Emitter
 mLinearVelocity	include/MPE/Emitter.hpp	/^         sf::Vector2f mLinearVelocity;$/;"	m	class:MPE::Emitter
-mLinearVelocity	include/MPE/Particle.hpp	/^         sf::Vector2f mLinearVelocity;$/;"	m	class:MPE::Particle
+mLinearVelocity	include/MPE/Particle.hpp	/^         sf::Vector2f   mLinearVelocity;$/;"	m	class:MPE::Particle
 mPPS	include/MPE/Emitter.hpp	/^         Real         mPPS; \/\/Particles Per Second$/;"	m	class:MPE::Emitter
-mParticles	include/MPE/System.hpp	/^         std::list<Particle> mParticles;$/;"	m	class:MPE::System
-mRangeParticleTTL	include/MPE/Emitter.hpp	/^         Randomizer   mRangeParticleTTL;$/;"	m	class:MPE::Emitter
+mParticles	include/MPE/System.hpp	/^         std::list<Particle>                mParticles;$/;"	m	class:MPE::System
+mRangeParticleTOL	include/MPE/Emitter.hpp	/^         Randomizer   mRangeParticleTOL;$/;"	m	class:MPE::Emitter
 mRangeStrenght	include/MPE/Emitter.hpp	/^         Randomizer   mRangeStrenght;$/;"	m	class:MPE::Emitter
 mShape	include/MPE/Emitter.hpp	/^         Shape        mShape;$/;"	m	class:MPE::Emitter
-mSprite	include/MPE/Particle.hpp	/^         sf::Sprite mSprite;$/;"	m	class:MPE::Particle
+mSprite	include/MPE/Particle.hpp	/^         sf::Sprite     mSprite;$/;"	m	class:MPE::Particle
 mSystem	include/MPE/Emitter.hpp	/^         ISystem&     mSystem;$/;"	m	class:MPE::Emitter
-mTTL	include/MPE/Emitter.hpp	/^         Real         mTTL; \/\/Time Of Life$/;"	m	class:MPE::Emitter
-mTTL	include/MPE/Particle.hpp	/^         Real mTTL;$/;"	m	class:MPE::Particle
+mTOL	include/MPE/Emitter.hpp	/^         Real         mTOL; \/\/Time Of Life$/;"	m	class:MPE::Emitter
+mTOL	include/MPE/Particle.hpp	/^         Real           mTOL;$/;"	m	class:MPE::Particle
 mTexture	include/MPE/Emitter.hpp	/^         sf::Texture  mTexture;$/;"	m	class:MPE::Emitter
 mTotalParticles	include/MPE/Emitter.hpp	/^         Integer      mTotalParticles;$/;"	m	class:MPE::Emitter
 mXFactor	include/MPE/Interfaces.hpp	/^         Real mXFactor;$/;"	m	class:MPE::ISystem
@@ -104,19 +113,22 @@ scaleVector	src/MPE/Emitter.cpp	/^   inline sf::Vector2f Emitter::scaleVector(co
 setDispersion	src/MPE/Emitter.cpp	/^   inline void Emitter::setDispersion ( Dispersion value )$/;"	f	class:MPE::Emitter
 setLinearVelocity	src/MPE/Emitter.cpp	/^   inline void Emitter::setLinearVelocity ( sf::Vector2f value )$/;"	f	class:MPE::Emitter
 setPPS	src/MPE/Emitter.cpp	/^   inline void Emitter::setPPS ( Real value )$/;"	f	class:MPE::Emitter
-setRangeParticleTTL	src/MPE/Emitter.cpp	/^   inline void Emitter::setRangeParticleTTL ( Randomizer value )$/;"	f	class:MPE::Emitter
+setRangeParticleTOL	src/MPE/Emitter.cpp	/^   inline void Emitter::setRangeParticleTOL ( Randomizer value )$/;"	f	class:MPE::Emitter
 setRangeStrenght	src/MPE/Emitter.cpp	/^   inline void Emitter::setRangeStrenght ( Randomizer value )$/;"	f	class:MPE::Emitter
 setShape	src/MPE/Emitter.cpp	/^   inline void Emitter::setShape ( Shape value )$/;"	f	class:MPE::Emitter
-setTTL	src/MPE/Emitter.cpp	/^   inline void Emitter::setTTL ( Real value )$/;"	f	class:MPE::Emitter
+setSprite	src/MPE/Particle.cpp	/^   inline void Particle::setSprite ( sf::Sprite value )$/;"	f	class:MPE::Particle
+setTOL	src/MPE/Emitter.cpp	/^   inline void Emitter::setTOL ( Real value )$/;"	f	class:MPE::Emitter
+setTexture	src/MPE/Emitter.cpp	/^   inline void Emitter::setTexture ( std::string theFilename )$/;"	f	class:MPE::Emitter
 setTotalParticles	src/MPE/Emitter.cpp	/^   inline void Emitter::setTotalParticles ( Integer value )$/;"	f	class:MPE::Emitter
 setXFactor	include/MPE/Interfaces.hpp	/^         inline void setXFactor ( Real value )$/;"	f	class:MPE::ISystem
 setYFactor	include/MPE/Interfaces.hpp	/^         inline void setYFactor ( Real value )$/;"	f	class:MPE::ISystem
 set	include/MPE/Config.hpp	/^   inline void set(Real theValue)$/;"	f	struct:Angle
 sin	include/MPE/Config.hpp	/^   Real sin;$/;"	m	struct:Angle
 updateFocusState	src/MPE/Emitter.cpp	/^   void Emitter::updateFocusState(Focus& theFocus)$/;"	f	class:MPE::Emitter
-update	include/MPE/Particle.hpp	/^         void update(Real theElapsedTime)$/;"	f	class:MPE::Particle
 update	src/MPE/Emitter.cpp	/^   void Emitter::update(Real theElapsedTime)$/;"	f	class:MPE::Emitter
+update	src/MPE/Particle.cpp	/^   void Particle::update(Real theElapsedTime)$/;"	f	class:MPE::Particle
 update	src/MPE/System.cpp	/^   void System::update(Real theElapsedTime)$/;"	f	class:MPE::System
 value	include/MPE/Config.hpp	/^   Real value;$/;"	m	struct:Angle
 width	include/MPE/Emitter.hpp	/^            Real         width;$/;"	m	struct:MPE::Emitter::Focus
 ~ISystem	include/MPE/Interfaces.hpp	/^         ~ISystem(){};$/;"	f	class:MPE::ISystem
+~Particle	src/MPE/Particle.cpp	/^   Particle::~Particle(){};$/;"	f	class:MPE::Particle

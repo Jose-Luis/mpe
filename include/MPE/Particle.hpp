@@ -1,3 +1,19 @@
+// =============================================================================
+// 
+//       Filename:  Particle.hpp
+// 
+//    Description:  
+// 
+//        Version:  1.0
+//        Created:  17/12/12 10:12:32
+//       Revision:  none
+//       Compiler:  g++
+// 
+//         Author:  Jose Luis Lavado (), joseluislavado@gmail.com
+//        Company:  
+// 
+// =============================================================================
+
 #ifndef  PARTICLE_INC
 #define  PARTICLE_INC
 
@@ -9,32 +25,33 @@ namespace MPE
    class Particle
    {
       public:
-         Particle(sf::Texture& theTexture, sf::Vector2f thePosition, sf::Vector2f theLinearVelocity, Real theAngularVelocity,  sf::Color theColor, Real theTTL):
-            mSprite(theTexture),
-            mAngularVelocity(theAngularVelocity),
-            mLinearVelocity(theLinearVelocity),
-            mTTL(theTTL)
-      {
-         mSprite.setPosition(thePosition.x,thePosition.y);
-         mSprite.setColor(theColor);
-      }
+         Particle
+            (
+             sf::Texture& theTexture, 
+             sf::Vector2f thePosition, 
+             Real         theAngle, 
+             sf::Vector2f theLinearVelocity, 
+             Real         theAngularVelocity, 
+             sf::Color    theColor, 
+             Real         theTOL
+             );
+
          ~Particle();
 
-         void update(Real theElapsedTime)
-         {
-            mTTL -= theElapsedTime;
-            mSprite.move(mLinearVelocity.x*theElapsedTime,mLinearVelocity.y*theElapsedTime);
-            mSprite.rotate(mAngularVelocity*theElapsedTime);
-         }
-         
-         Real inline getTTL() const {return mTTL;};
+         void                       update(Real theElapsedTime);
+         inline Real                getTOL() const;
+         inline bool                isAlive() const;
+         inline const sf::Sprite&   getSprite ( ) const;
+         inline void                setSprite ( sf::Sprite value );
 
       private:
-         sf::Sprite mSprite;
-         sf::Vector2f mLinearVelocity;
-         Real mAngularVelocity;
+         bool           mAlive;
+         sf::Sprite     mSprite;
+         sf::Vector2f   mLinearVelocity;
+         Real           mAngularVelocity;
+         Real           mTOL;
          //sf::Color mColorVelocity;
-         Real mTTL;
    };
 }
-#endif   // ----- #ifndef PARTICLE_INC  -----
+
+#endif 

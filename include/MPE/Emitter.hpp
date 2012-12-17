@@ -60,9 +60,9 @@ namespace MPE
          inline Shape        getShape (  ) const;
          inline Dispersion   getDispersion (  ) const;
          inline Randomizer   getRangeStrenght (  ) const;
-         inline Randomizer   getRangeParticleTTL (  ) const;
+         inline Randomizer   getRangeParticleTOL (  ) const;
          inline sf::Vector2f getLinearVelocity (  ) const;
-         inline Real         getTTL (  ) const;
+         inline Real         getTOL (  ) const;
          inline Real         getPPS (  ) const;
          inline Integer      getTotalParticles (  ) const;
 
@@ -70,9 +70,9 @@ namespace MPE
          inline void         setDispersion ( Dispersion value );
          inline void         setTexture ( std::string theFilename );
          inline void         setRangeStrenght ( Randomizer value );
-         inline void         setRangeParticleTTL ( Randomizer value );
+         inline void         setRangeParticleTOL ( Randomizer value );
          inline void         setLinearVelocity ( sf::Vector2f value );
-         inline void         setTTL ( Real value );
+         inline void         setTOL ( Real value );
          inline void         setPPS ( Real value );
          inline void         setTotalParticles ( Integer value );
          //////////////////////////////////////////////////
@@ -87,8 +87,8 @@ namespace MPE
 
          sf::Vector2f mLinearVelocity;
          Randomizer   mRangeStrenght;
-         Randomizer   mRangeParticleTTL;
-         Real         mTTL; //Time Of Life
+         Randomizer   mRangeParticleTOL;
+         Real         mTOL; //Time Of Life
          Real         mPPS; //Particles Per Second
          Integer      mTotalParticles;
 

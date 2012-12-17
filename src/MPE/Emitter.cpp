@@ -179,7 +179,7 @@ namespace MPE
    //--------------------------------------------------------------------------------------
    void Emitter::updateFocusState(Focus& theFocus)
    {
-      if( (theFocus.lifetime > mTTL && mTTL != -1) 
+      if( (theFocus.lifetime > mTOL && mTOL != -1) 
             || 
           (theFocus.emittedParticles > mTotalParticles && mTotalParticles != -1) )
             theFocus.alive = false;
@@ -244,21 +244,21 @@ namespace MPE
    }
    //--------------------------------------------------------------------------------------
    //       Class:  Emitter
-   //      Method:  getRangeParticleTTL
+   //      Method:  getRangeParticleTOL
    // Description:  Getter
    //--------------------------------------------------------------------------------------
-   inline Randomizer Emitter::getRangeParticleTTL (  ) const
+   inline Randomizer Emitter::getRangeParticleTOL (  ) const
    {
-      return mRangeParticleTTL;
+      return mRangeParticleTOL;
    }
    //--------------------------------------------------------------------------------------
    //       Class:  Emitter
-   //      Method:  setRangeParticleTTL
+   //      Method:  setRangeParticleTOL
    // Description:  Setter
    //--------------------------------------------------------------------------------------
-   inline void Emitter::setRangeParticleTTL ( Randomizer value )
+   inline void Emitter::setRangeParticleTOL ( Randomizer value )
    {
-      mRangeParticleTTL = value;
+      mRangeParticleTOL = value;
       return;
    }
    //--------------------------------------------------------------------------------------
@@ -282,21 +282,21 @@ namespace MPE
    }
    //--------------------------------------------------------------------------------------
    //       Class:  Emitter
-   //      Method:  getTTL
+   //      Method:  getTOL
    // Description:  Getter
    //--------------------------------------------------------------------------------------
-   inline Real Emitter::getTTL (  ) const
+   inline Real Emitter::getTOL (  ) const
    {
-      return mTTL;
+      return mTOL;
    }
    //--------------------------------------------------------------------------------------
    //       Class:  Emitter
-   //      Method:  setTTL
+   //      Method:  setTOL
    // Description:  Setter
    //--------------------------------------------------------------------------------------
-   inline void Emitter::setTTL ( Real value )
+   inline void Emitter::setTOL ( Real value )
    {
-      mTTL = value;
+      mTOL = value;
       return;
    }
    //--------------------------------------------------------------------------------------

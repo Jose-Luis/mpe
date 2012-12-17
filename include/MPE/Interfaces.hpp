@@ -25,7 +25,7 @@ namespace MPE
 
          ~ISystem(){};
 
-         virtual void addParticle(const Particle&) = 0;
+         virtual void addParticle(Particle&) = 0;
 
          //--------------------------------------------------------------------------------------
          //       Class:  ISystem
