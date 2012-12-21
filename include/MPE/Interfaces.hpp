@@ -70,6 +70,15 @@ namespace mpe
          Real mXFactor;
          Real mYFactor;
    };
+
+   class IFocus
+   {
+      IFocus(
+      virtual emit(Integer theNParticles) = 0;
+
+      private:
+         ISystem* mSystem;
+   }
 }
 
 #endif   // ----- #ifndef INTERFACES_INC  -----

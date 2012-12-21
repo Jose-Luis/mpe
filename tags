@@ -4,131 +4,402 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-Angle	include/MPE/Config.hpp	/^struct Angle$/;"	s
-CIRCLE	include/MPE/Emitter.hpp	/^         enum Shape{RECTANGLE,CIRCLE};$/;"	e	enum:MPE::Emitter::Shape
-CONFIG_INC	include/MPE/Config.hpp	2;"	d
-Dispersion	include/MPE/Emitter.hpp	/^         enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};$/;"	g	class:MPE::Emitter
-EMITTER_INC	include/MPE/Emitter.hpp	18;"	d
-Emitter	include/MPE/Emitter.hpp	/^   class Emitter$/;"	c	namespace:MPE
-Emitter	src/MPE/Emitter.cpp	/^   Emitter::Emitter(Emitter::ID theID,ISystem& theSystem):$/;"	f	class:MPE::Emitter
-Focus	include/MPE/Emitter.hpp	/^         struct Focus$/;"	s	class:MPE::Emitter
-ID	include/MPE/Emitter.hpp	/^         typedef std::string ID;$/;"	t	class:MPE::Emitter
+ANGLE_INC	ext_libs/include/GT/Angle.hpp	7;"	d
+ARCHITECTURE_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	302;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	305;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	308;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	311;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	314;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	317;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	320;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	324;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	289;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	292;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	295;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	298;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	301;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	304;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	307;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	311;"	d	file:
+Angle	ext_libs/include/GT/Angle.hpp	/^   class Angle$/;"	c	namespace:gt
+CIRCLE	include/MPE/Emitter.hpp	/^      enum Shape{RECTANGLE,CIRCLE};$/;"	e	enum:mpe::Emitter::Shape
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	107;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	112;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	119;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	122;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	125;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	133;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	13;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	152;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	160;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	171;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	178;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	195;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	198;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	201;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	24;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	32;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	38;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	44;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	50;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	56;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	70;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	77;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	85;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	88;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	90;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	99;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	104;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	112;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	117;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	124;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	127;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	12;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	135;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	154;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	162;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	165;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	182;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	185;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	188;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	18;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	29;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	37;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	43;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	49;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	55;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	61;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	75;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	82;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	90;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	93;"	d	file:
+COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	95;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	100;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	108;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	114;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	126;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	135;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	154;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	15;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	173;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	181;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	186;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	25;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	33;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	39;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	46;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	52;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	59;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	64;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	72;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	79;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	93;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	105;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	113;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	119;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	128;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	137;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	14;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	156;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	168;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	173;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	20;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	30;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	38;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	44;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	51;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	57;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	64;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	69;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	77;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	84;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	98;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	101;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	109;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	115;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	127;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	136;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	155;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	16;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	174;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	182;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	187;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	26;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	34;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	40;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	47;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	53;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	60;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	65;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	73;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	80;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	94;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	106;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	114;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	120;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	129;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	138;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	157;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	15;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	169;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	174;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	21;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	31;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	39;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	45;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	52;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	58;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	65;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	70;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	78;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	85;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	99;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	103;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	116;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	129;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	140;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	143;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	156;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	175;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	17;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	183;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	188;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	28;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	35;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	41;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	61;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	66;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	74;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	81;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	95;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	100;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	108;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	121;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	131;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	142;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	145;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	158;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	170;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	175;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	22;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	33;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	40;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	46;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	66;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	71;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	79;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	86;"	d	file:
+COMPILER_VERSION_TWEAK	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	147;"	d	file:
+COMPILER_VERSION_TWEAK	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	20;"	d	file:
+COMPILER_VERSION_TWEAK	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	149;"	d	file:
+COMPILER_VERSION_TWEAK	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	25;"	d	file:
+CONFIG_INC	ext_libs/include/GT/Config.hpp	3;"	d
+DEC	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	328;"	d	file:
+DEC	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	315;"	d	file:
+Dispersion	include/MPE/Emitter.hpp	/^      enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};$/;"	g	class:mpe::Emitter
+EMITTER_INC	include/MPE/Emitter.hpp	9;"	d
+Emitter	include/MPE/Emitter.hpp	/^class Emitter$/;"	c	namespace:mpe
+Emitter	src/MPE/Emitter.cpp	/^Emitter::Emitter(Emitter::ID theID,ISystem& theSystem):$/;"	f	class:mpe::Emitter
+FOCUS_INC	include/MPE/Focus.hpp	7;"	d
+Focus	include/MPE/Focus.hpp	/^class Focus$/;"	c	namespace:mpe
+GT_INC	ext_libs/include/GT/GT.hpp	7;"	d
+HEX	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	339;"	d	file:
+HEX	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	326;"	d	file:
+ID_VOID_MAIN	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	9;"	d	file:
+ID	include/MPE/Emitter.hpp	/^      typedef std::string ID;$/;"	t	class:mpe::Emitter
 INTERFACES_INC	include/MPE/Interfaces.hpp	3;"	d
-ISystem	include/MPE/Interfaces.hpp	/^   class ISystem$/;"	c	namespace:MPE
-ISystem	include/MPE/Interfaces.hpp	/^         ISystem(Real theFactor):$/;"	f	class:MPE::ISystem
-ISystem	include/MPE/Interfaces.hpp	/^         ISystem(Real theXFactor,Real theYFactor):$/;"	f	class:MPE::ISystem
-Integer	include/MPE/Config.hpp	/^typedef int Integer;$/;"	t
-LINEAR	include/MPE/Emitter.hpp	/^         enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};$/;"	e	enum:MPE::Emitter::Dispersion
-MPE	include/MPE/Emitter.hpp	/^namespace MPE$/;"	n
-MPE	include/MPE/Interfaces.hpp	/^namespace MPE$/;"	n
-MPE	include/MPE/Particle.hpp	/^namespace MPE$/;"	n
-MPE	include/MPE/System.hpp	/^namespace MPE$/;"	n
-MPE	src/MPE/Emitter.cpp	/^namespace MPE$/;"	n	file:
-MPE	src/MPE/Particle.cpp	/^namespace MPE$/;"	n	file:
-MPE	src/MPE/System.cpp	/^namespace MPE$/;"	n	file:
-PARTICLE_INC	include/MPE/Particle.hpp	18;"	d
-Particle	include/MPE/Particle.hpp	/^   class Particle$/;"	c	namespace:MPE
-Particle	src/MPE/Particle.cpp	/^   Particle::Particle$/;"	f	class:MPE::Particle
-Ptr	include/MPE/Emitter.hpp	/^         typedef boost::shared_ptr<Emitter> Ptr;$/;"	t	class:MPE::Emitter
-RADIAL	include/MPE/Emitter.hpp	/^         enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};$/;"	e	enum:MPE::Emitter::Dispersion
-RANDOM	include/MPE/Emitter.hpp	/^         enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};$/;"	e	enum:MPE::Emitter::Dispersion
-RECTANGLE	include/MPE/Emitter.hpp	/^         enum Shape{RECTANGLE,CIRCLE};$/;"	e	enum:MPE::Emitter::Shape
-REFLECT	include/MPE/Emitter.hpp	/^         enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};$/;"	e	enum:MPE::Emitter::Dispersion
-Randomizer	include/MPE/Config.hpp	/^class Randomizer$/;"	c
-Randomizer	include/MPE/Config.hpp	/^      Randomizer()$/;"	f	class:Randomizer
-Randomizer	include/MPE/Config.hpp	/^      Randomizer(Real theA,Real theB)$/;"	f	class:Randomizer
-Real	include/MPE/Config.hpp	/^typedef float Real;$/;"	t
-STATIC	include/MPE/Emitter.hpp	/^         enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};$/;"	e	enum:MPE::Emitter::Dispersion
-SYSTEM_INC	include/MPE/System.hpp	18;"	d
-Shape	include/MPE/Emitter.hpp	/^         enum Shape{RECTANGLE,CIRCLE};$/;"	g	class:MPE::Emitter
-System	include/MPE/System.hpp	/^   class System: public ISystem$/;"	c	namespace:MPE
-System	src/MPE/System.cpp	/^   System::System ( Real theFactor ):$/;"	f	class:MPE::System
-addEmitter	src/MPE/System.cpp	/^   void System::addEmitter(Emitter::Ptr theEmitter)$/;"	f	class:MPE::System
-addFocus	src/MPE/Emitter.cpp	/^   void Emitter::addFocus(Focus theFocus)$/;"	f	class:MPE::Emitter
-addParticle	src/MPE/System.cpp	/^   void System::addParticle(Particle& theParticle)$/;"	f	class:MPE::System
-alive	include/MPE/Emitter.hpp	/^            bool         alive;$/;"	m	struct:MPE::Emitter::Focus
-anModule	src/MPE/Emitter.cpp	/^      Real anModule;$/;"	l
-anResult	src/MPE/System.cpp	/^      Emitter::Ptr anResult;$/;"	l
-anVelocity	src/MPE/Emitter.cpp	/^      sf::Vector2f anVelocity;$/;"	l
-anX	src/MPE/Emitter.cpp	/^      Real anX,anY;$/;"	l
-anY	src/MPE/Emitter.cpp	/^      Real anX,anY;$/;"	l
-angle	include/MPE/Emitter.hpp	/^            Angle        angle;$/;"	m	struct:MPE::Emitter::Focus
-cos	include/MPE/Config.hpp	/^   Real cos;$/;"	m	struct:Angle
-create	src/MPE/Emitter.cpp	/^   Emitter::Ptr Emitter::create(Emitter::ID theID,ISystem& theSystem)$/;"	f	class:MPE::Emitter
-diffVectors	src/MPE/Emitter.cpp	/^   inline sf::Vector2f Emitter::diffVectors(const sf::Vector2f& theOrigin,const sf::Vector2f& theFinal)$/;"	f	class:MPE::Emitter
-draw	src/MPE/System.cpp	/^   void System::draw ( sf::RenderWindow& theWindow ) const$/;"	f	class:MPE::System
-emit	src/MPE/Emitter.cpp	/^   void Emitter::emit(Integer theNumberOfParticles, Focus& theFocus)$/;"	f	class:MPE::Emitter
-emittedParticles	include/MPE/Emitter.hpp	/^            Integer      emittedParticles;$/;"	m	struct:MPE::Emitter::Focus
-generatePosition	src/MPE/Emitter.cpp	/^   sf::Vector2f Emitter::generatePosition(Focus& theFocus)$/;"	f	class:MPE::Emitter
-generateVelocity	src/MPE/Emitter.cpp	/^   sf::Vector2f Emitter::generateVelocity(Focus& theFocus, sf::Vector2f& theParticlePosition)$/;"	f	class:MPE::Emitter
-getDispersion	src/MPE/Emitter.cpp	/^   inline Emitter::Dispersion Emitter::getDispersion (  ) const$/;"	f	class:MPE::Emitter
-getEmitter	src/MPE/System.cpp	/^   Emitter::Ptr System::getEmitter ( Emitter::ID theEmitterID ) const$/;"	f	class:MPE::System
-getID	include/MPE/Emitter.hpp	/^         inline ID           getID() const {return mID;};$/;"	f	class:MPE::Emitter
-getLinearVelocity	src/MPE/Emitter.cpp	/^   inline sf::Vector2f Emitter::getLinearVelocity (  ) const$/;"	f	class:MPE::Emitter
-getPPS	src/MPE/Emitter.cpp	/^   inline Real Emitter::getPPS (  ) const$/;"	f	class:MPE::Emitter
-getRangeParticleTOL	src/MPE/Emitter.cpp	/^   inline Randomizer Emitter::getRangeParticleTOL (  ) const$/;"	f	class:MPE::Emitter
-getRangeStrenght	src/MPE/Emitter.cpp	/^   inline Randomizer Emitter::getRangeStrenght (  ) const$/;"	f	class:MPE::Emitter
-getShape	src/MPE/Emitter.cpp	/^   inline Emitter::Shape Emitter::getShape (  ) const$/;"	f	class:MPE::Emitter
-getSprite	src/MPE/Particle.cpp	/^   inline const sf::Sprite& Particle::getSprite (  ) const$/;"	f	class:MPE::Particle
-getTOL	src/MPE/Emitter.cpp	/^   inline Real Emitter::getTOL (  ) const$/;"	f	class:MPE::Emitter
-getTOL	src/MPE/Particle.cpp	/^   inline Real Particle::getTOL() const {return mTOL;}$/;"	f	class:MPE::Particle
-getTotalParticles	src/MPE/Emitter.cpp	/^   inline Integer Emitter::getTotalParticles (  ) const$/;"	f	class:MPE::Emitter
-getXFactor	include/MPE/Interfaces.hpp	/^         inline Real getXFactor (  ) const$/;"	f	class:MPE::ISystem
-getYFactor	include/MPE/Interfaces.hpp	/^         inline Real getYFactor (  ) const$/;"	f	class:MPE::ISystem
-get	include/MPE/Config.hpp	/^      Real get()$/;"	f	class:Randomizer
-get	include/MPE/Config.hpp	/^      static inline Real get(Real theMin, Real theMax)$/;"	f	class:Randomizer
-height	include/MPE/Emitter.hpp	/^            Real         height;$/;"	m	struct:MPE::Emitter::Focus
-init	include/MPE/Config.hpp	/^      static inline void init()$/;"	f	class:Randomizer
-isAlive	src/MPE/Particle.cpp	/^   inline bool Particle::isAlive() const $/;"	f	class:MPE::Particle
-it	src/MPE/System.cpp	/^      auto it = mEmitters.find(theEmitterID);$/;"	l
-lifetime	include/MPE/Emitter.hpp	/^            Real         lifetime;$/;"	m	struct:MPE::Emitter::Focus
-mAlive	include/MPE/Particle.hpp	/^         bool           mAlive;$/;"	m	class:MPE::Particle
-mAngularVelocity	include/MPE/Particle.hpp	/^         Real           mAngularVelocity;$/;"	m	class:MPE::Particle
-mDispersion	include/MPE/Emitter.hpp	/^         Dispersion   mDispersion;$/;"	m	class:MPE::Emitter
-mEmitters	include/MPE/System.hpp	/^         std::map<Emitter::ID,Emitter::Ptr> mEmitters;$/;"	m	class:MPE::System
-mFocusses	include/MPE/Emitter.hpp	/^         std::list<Focus> mFocusses;$/;"	m	class:MPE::Emitter
-mID	include/MPE/Emitter.hpp	/^         ID           mID;$/;"	m	class:MPE::Emitter
-mLinearVelocity	include/MPE/Emitter.hpp	/^         sf::Vector2f mLinearVelocity;$/;"	m	class:MPE::Emitter
-mLinearVelocity	include/MPE/Particle.hpp	/^         sf::Vector2f   mLinearVelocity;$/;"	m	class:MPE::Particle
-mPPS	include/MPE/Emitter.hpp	/^         Real         mPPS; \/\/Particles Per Second$/;"	m	class:MPE::Emitter
-mParticles	include/MPE/System.hpp	/^         std::list<Particle>                mParticles;$/;"	m	class:MPE::System
-mRangeParticleTOL	include/MPE/Emitter.hpp	/^         Randomizer   mRangeParticleTOL;$/;"	m	class:MPE::Emitter
-mRangeStrenght	include/MPE/Emitter.hpp	/^         Randomizer   mRangeStrenght;$/;"	m	class:MPE::Emitter
-mShape	include/MPE/Emitter.hpp	/^         Shape        mShape;$/;"	m	class:MPE::Emitter
-mSprite	include/MPE/Particle.hpp	/^         sf::Sprite     mSprite;$/;"	m	class:MPE::Particle
-mSystem	include/MPE/Emitter.hpp	/^         ISystem&     mSystem;$/;"	m	class:MPE::Emitter
-mTOL	include/MPE/Emitter.hpp	/^         Real         mTOL; \/\/Time Of Life$/;"	m	class:MPE::Emitter
-mTOL	include/MPE/Particle.hpp	/^         Real           mTOL;$/;"	m	class:MPE::Particle
-mTexture	include/MPE/Emitter.hpp	/^         sf::Texture  mTexture;$/;"	m	class:MPE::Emitter
-mTotalParticles	include/MPE/Emitter.hpp	/^         Integer      mTotalParticles;$/;"	m	class:MPE::Emitter
-mXFactor	include/MPE/Interfaces.hpp	/^         Real mXFactor;$/;"	m	class:MPE::ISystem
-mYFactor	include/MPE/Interfaces.hpp	/^         Real mYFactor;$/;"	m	class:MPE::ISystem
-max	include/MPE/Config.hpp	/^      Real max;$/;"	m	class:Randomizer
-min	include/MPE/Config.hpp	/^      Real min;$/;"	m	class:Randomizer
-nParticles	src/MPE/Emitter.cpp	/^            Integer nParticles = (mPPS * it->lifetime \/ 1000) - it->emittedParticles;$/;"	l
-normalizeVector	src/MPE/Emitter.cpp	/^   inline sf::Vector2f Emitter::normalizeVector(const sf::Vector2f& theVector)$/;"	f	class:MPE::Emitter
-operator =	include/MPE/Config.hpp	/^   Angle& operator=(Real theValue)$/;"	f	struct:Angle
-position	include/MPE/Emitter.hpp	/^            sf::Vector2f position;$/;"	m	struct:MPE::Emitter::Focus
-scaleVector	src/MPE/Emitter.cpp	/^   inline sf::Vector2f Emitter::scaleVector(const sf::Vector2f& theVector,Real theScalar)$/;"	f	class:MPE::Emitter
-setDispersion	src/MPE/Emitter.cpp	/^   inline void Emitter::setDispersion ( Dispersion value )$/;"	f	class:MPE::Emitter
-setLinearVelocity	src/MPE/Emitter.cpp	/^   inline void Emitter::setLinearVelocity ( sf::Vector2f value )$/;"	f	class:MPE::Emitter
-setPPS	src/MPE/Emitter.cpp	/^   inline void Emitter::setPPS ( Real value )$/;"	f	class:MPE::Emitter
-setRangeParticleTOL	src/MPE/Emitter.cpp	/^   inline void Emitter::setRangeParticleTOL ( Randomizer value )$/;"	f	class:MPE::Emitter
-setRangeStrenght	src/MPE/Emitter.cpp	/^   inline void Emitter::setRangeStrenght ( Randomizer value )$/;"	f	class:MPE::Emitter
-setShape	src/MPE/Emitter.cpp	/^   inline void Emitter::setShape ( Shape value )$/;"	f	class:MPE::Emitter
-setSprite	src/MPE/Particle.cpp	/^   inline void Particle::setSprite ( sf::Sprite value )$/;"	f	class:MPE::Particle
-setTOL	src/MPE/Emitter.cpp	/^   inline void Emitter::setTOL ( Real value )$/;"	f	class:MPE::Emitter
-setTexture	src/MPE/Emitter.cpp	/^   inline void Emitter::setTexture ( std::string theFilename )$/;"	f	class:MPE::Emitter
-setTotalParticles	src/MPE/Emitter.cpp	/^   inline void Emitter::setTotalParticles ( Integer value )$/;"	f	class:MPE::Emitter
-setXFactor	include/MPE/Interfaces.hpp	/^         inline void setXFactor ( Real value )$/;"	f	class:MPE::ISystem
-setYFactor	include/MPE/Interfaces.hpp	/^         inline void setYFactor ( Real value )$/;"	f	class:MPE::ISystem
-set	include/MPE/Config.hpp	/^   inline void set(Real theValue)$/;"	f	struct:Angle
-sin	include/MPE/Config.hpp	/^   Real sin;$/;"	m	struct:Angle
-updateFocusState	src/MPE/Emitter.cpp	/^   void Emitter::updateFocusState(Focus& theFocus)$/;"	f	class:MPE::Emitter
-update	src/MPE/Emitter.cpp	/^   void Emitter::update(Real theElapsedTime)$/;"	f	class:MPE::Emitter
-update	src/MPE/Particle.cpp	/^   void Particle::update(Real theElapsedTime)$/;"	f	class:MPE::Particle
-update	src/MPE/System.cpp	/^   void System::update(Real theElapsedTime)$/;"	f	class:MPE::System
-value	include/MPE/Config.hpp	/^   Real value;$/;"	m	struct:Angle
-width	include/MPE/Emitter.hpp	/^            Real         width;$/;"	m	struct:MPE::Emitter::Focus
-~ISystem	include/MPE/Interfaces.hpp	/^         ~ISystem(){};$/;"	f	class:MPE::ISystem
-~Particle	src/MPE/Particle.cpp	/^   Particle::~Particle(){};$/;"	f	class:MPE::Particle
+ISystem	include/MPE/Interfaces.hpp	/^   class ISystem$/;"	c	namespace:mpe
+ISystem	include/MPE/Interfaces.hpp	/^         ISystem(Real theFactor):$/;"	f	class:mpe::ISystem
+ISystem	include/MPE/Interfaces.hpp	/^         ISystem(Real theXFactor,Real theYFactor):$/;"	f	class:mpe::ISystem
+Integer	ext_libs/include/GT/Config.hpp	/^typedef int Integer;$/;"	t
+LINEAR	include/MPE/Emitter.hpp	/^      enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};$/;"	e	enum:mpe::Emitter::Dispersion
+PARTICLE_INC	include/MPE/Particle.hpp	8;"	d
+PI	ext_libs/include/GT/Angle.hpp	/^         const static Real PI;$/;"	m	class:gt::Angle
+PI	ext_libs/include/GT/Angle.hpp	/^   const static Real PI = 3.14159265f;$/;"	m	namespace:gt
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	213;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	216;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	219;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	222;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	225;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	228;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	231;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	234;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	237;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	240;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	243;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	246;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	249;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	255;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	258;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	261;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	264;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	267;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	270;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	273;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	276;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	279;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	282;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	285;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	288;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	291;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	200;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	203;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	206;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	209;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	212;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	215;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	218;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	221;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	224;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	227;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	230;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	233;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	236;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	242;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	245;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	248;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	251;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	254;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	257;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	260;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	263;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	266;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	269;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	272;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	275;"	d	file:
+PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	278;"	d	file:
+Particle	include/MPE/Particle.hpp	/^class Particle$/;"	c	namespace:mpe
+Particle	src/MPE/Particle.cpp	/^   Particle::Particle$/;"	f	class:mpe::Particle
+Ptr	include/MPE/Emitter.hpp	/^      typedef boost::shared_ptr<Emitter> Ptr;$/;"	t	class:mpe::Emitter
+RADIAL	include/MPE/Emitter.hpp	/^      enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};$/;"	e	enum:mpe::Emitter::Dispersion
+RANDOMIZER_INC	ext_libs/include/GT/Randomizer.hpp	7;"	d
+RANDOM	include/MPE/Emitter.hpp	/^      enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};$/;"	e	enum:mpe::Emitter::Dispersion
+RECTANGLE	include/MPE/Emitter.hpp	/^      enum Shape{RECTANGLE,CIRCLE};$/;"	e	enum:mpe::Emitter::Shape
+REFLECT	include/MPE/Emitter.hpp	/^      enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};$/;"	e	enum:mpe::Emitter::Dispersion
+Randomizer	ext_libs/include/GT/Randomizer.hpp	/^class Randomizer$/;"	c	namespace:gt
+Real	ext_libs/include/GT/Config.hpp	/^typedef float Real;$/;"	t
+STATIC	include/MPE/Emitter.hpp	/^      enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};$/;"	e	enum:mpe::Emitter::Dispersion
+SYSTEM_INC	include/MPE/System.hpp	7;"	d
+Shape	include/MPE/Emitter.hpp	/^      enum Shape{RECTANGLE,CIRCLE};$/;"	g	class:mpe::Emitter
+System	include/MPE/System.hpp	/^   class System: public ISystem$/;"	c	namespace:mpe
+System	src/MPE/System.cpp	/^System::System ( Real theFactor ):$/;"	f	class:mpe::System
+VEC2D_INC	ext_libs/include/GT/Vec2D.hpp	7;"	d
+Vec2D	ext_libs/include/GT/Vec2D.hpp	/^class Vec2D$/;"	c	namespace:gt
+addEmitter	src/MPE/System.cpp	/^void System::addEmitter(Emitter::Ptr theEmitter)$/;"	f	class:mpe::System
+addFocus	src/MPE/Emitter.cpp	/^void Emitter::addFocus(Focus theFocus)$/;"	f	class:mpe::Emitter
+addParticle	src/MPE/System.cpp	/^void System::addParticle(Particle& theParticle)$/;"	f	class:mpe::System
+anModule	src/MPE/Emitter.cpp	/^   Real anModule;$/;"	l
+anResult	src/MPE/System.cpp	/^   Emitter::Ptr anResult;$/;"	l
+anVelocity	src/MPE/Emitter.cpp	/^   sf::Vector2f anVelocity;$/;"	l
+anX	src/MPE/Emitter.cpp	/^   Real anX,anY;$/;"	l
+anY	src/MPE/Emitter.cpp	/^   Real anX,anY;$/;"	l
+create	src/MPE/Emitter.cpp	/^Emitter::Ptr Emitter::create(Emitter::ID theID,ISystem& theSystem)$/;"	f	class:mpe::Emitter
+diffVectors	src/MPE/Emitter.cpp	/^inline sf::Vector2f Emitter::diffVectors(const sf::Vector2f& theOrigin,$/;"	f	class:mpe::Emitter
+draw	src/MPE/System.cpp	/^void System::draw ( sf::RenderWindow& theWindow ) const$/;"	f	class:mpe::System
+emit	src/MPE/Emitter.cpp	/^void Emitter::emit(Integer theNumberOfParticles, Focus& theFocus)$/;"	f	class:mpe::Emitter
+generatePosition	src/MPE/Emitter.cpp	/^sf::Vector2f Emitter::generatePosition(Focus& theFocus)$/;"	f	class:mpe::Emitter
+generateVelocity	src/MPE/Emitter.cpp	/^sf::Vector2f Emitter::generateVelocity(const Focus& theFocus, $/;"	f	class:mpe::Emitter
+getCos	ext_libs/include/GT/Angle.hpp	/^         inline Real getCos ( ) const {return mCos;};$/;"	f	class:gt::Angle
+getDispersion	src/MPE/Emitter.cpp	/^inline Emitter::Dispersion Emitter::getDispersion (  ) const$/;"	f	class:mpe::Emitter
+getEmitter	src/MPE/System.cpp	/^Emitter::Ptr System::getEmitter ( Emitter::ID theEmitterID ) const$/;"	f	class:mpe::System
+getID	src/MPE/Emitter.cpp	/^inline Emitter::ID Emitter::getID (  ) const$/;"	f	class:mpe::Emitter
+getLinearVelocity	src/MPE/Emitter.cpp	/^inline sf::Vector2f Emitter::getLinearVelocity (  ) const$/;"	f	class:mpe::Emitter
+getPPS	src/MPE/Emitter.cpp	/^inline Real Emitter::getPPS (  ) const$/;"	f	class:mpe::Emitter
+getRangeParticleTOL	src/MPE/Emitter.cpp	/^inline Randomizer Emitter::getRangeParticleTOL (  ) const$/;"	f	class:mpe::Emitter
+getRangeStrenght	src/MPE/Emitter.cpp	/^inline Randomizer Emitter::getRangeStrenght (  ) const$/;"	f	class:mpe::Emitter
+getShape	src/MPE/Emitter.cpp	/^inline Emitter::Shape Emitter::getShape (  ) const$/;"	f	class:mpe::Emitter
+getSin	ext_libs/include/GT/Angle.hpp	/^         inline Real getSin ( ) const {return mSin;};$/;"	f	class:gt::Angle
+getSprite	src/MPE/Particle.cpp	/^   inline const sf::Sprite& Particle::getSprite (  ) const$/;"	f	class:mpe::Particle
+getTOL	src/MPE/Emitter.cpp	/^inline Real Emitter::getTOL (  ) const$/;"	f	class:mpe::Emitter
+getTOL	src/MPE/Particle.cpp	/^   inline Real Particle::getTOL() const {return mTOL;}$/;"	f	class:mpe::Particle
+getTotalParticles	src/MPE/Emitter.cpp	/^inline Integer Emitter::getTotalParticles (  ) const$/;"	f	class:mpe::Emitter
+getValue	ext_libs/include/GT/Angle.hpp	/^         inline Real getValue ( ) const {return mValue;};$/;"	f	class:gt::Angle
+getXFactor	include/MPE/Interfaces.hpp	/^         inline Real getXFactor (  ) const$/;"	f	class:mpe::ISystem
+getX	ext_libs/include/GT/Vec2D.hpp	/^      inline Real getX ( ) const {return mX;};$/;"	f	class:gt::Vec2D
+getYFactor	include/MPE/Interfaces.hpp	/^         inline Real getYFactor (  ) const$/;"	f	class:mpe::ISystem
+getY	ext_libs/include/GT/Vec2D.hpp	/^      inline Real getY ( ) const {return mY;};$/;"	f	class:gt::Vec2D
+gt	ext_libs/include/GT/Angle.hpp	/^namespace gt$/;"	n
+gt	ext_libs/include/GT/Randomizer.hpp	/^namespace gt$/;"	n
+gt	ext_libs/include/GT/Vec2D.hpp	/^namespace gt$/;"	n
+info_arch	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	v
+info_arch	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	v
+info_compiler	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	/^char const* info_compiler = "INFO" ":" "compiler[" COMPILER_ID "]";$/;"	v
+info_compiler	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_compiler = "INFO" ":" "compiler[" COMPILER_ID "]";$/;"	v
+info_platform	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	/^char const* info_platform = "INFO" ":" "platform[" PLATFORM_ID "]";$/;"	v
+info_platform	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_platform = "INFO" ":" "platform[" PLATFORM_ID "]";$/;"	v
+info_version	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	/^char const info_version[] = {$/;"	v
+info_version	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_version[] = {$/;"	v
+isAlive	src/MPE/Particle.cpp	/^   inline bool Particle::isAlive() const $/;"	f	class:mpe::Particle
+it	src/MPE/System.cpp	/^   auto it = mEmitters.find(theEmitterID);$/;"	l
+mAlive	include/MPE/Focus.hpp	/^      bool     mAlive;            \/\/\/< Life state.$/;"	m	class:mpe::Focus
+mAlive	include/MPE/Particle.hpp	/^      bool           mAlive;$/;"	m	class:mpe::Particle
+mAngle	include/MPE/Focus.hpp	/^      Angle    mAngle; $/;"	m	class:mpe::Focus
+mAngularVelocity	include/MPE/Particle.hpp	/^      Real           mAngularVelocity;$/;"	m	class:mpe::Particle
+mCos	ext_libs/include/GT/Angle.hpp	/^         Real mCos;$/;"	m	class:gt::Angle
+mDispersion	include/MPE/Emitter.hpp	/^      Dispersion  mDispersion;       \/\/\/< Type of paricles' dispersion.$/;"	m	class:mpe::Emitter
+mEmittedParticles	include/MPE/Focus.hpp	/^      Integer  mEmittedParticles; \/\/\/< Particles emitted by the focus.$/;"	m	class:mpe::Focus
+mEmitters	include/MPE/System.hpp	/^         std::map<Emitter::ID,Emitter::Ptr> mEmitters;$/;"	m	class:mpe::System
+mFocusses	include/MPE/System.hpp	/^         std::list<Focus>                   mFocusses;$/;"	m	class:mpe::System
+mID	include/MPE/Emitter.hpp	/^      ID          mID;               \/\/\/< Unique ID for the emitter.$/;"	m	class:mpe::Emitter
+mLifetime	include/MPE/Focus.hpp	/^      Real     mLifetime;         \/\/\/< The oldness of the focus.$/;"	m	class:mpe::Focus
+mLinearVelocity	include/MPE/Particle.hpp	/^      sf::Vector2f   mLinearVelocity;$/;"	m	class:mpe::Particle
+mMax	ext_libs/include/GT/Randomizer.hpp	/^      Real mMax;$/;"	m	class:gt::Randomizer
+mMin	ext_libs/include/GT/Randomizer.hpp	/^      Real mMin;$/;"	m	class:gt::Randomizer
+mParticles	include/MPE/System.hpp	/^         std::list<Particle>                mParticles;$/;"	m	class:mpe::System
+mPosition	include/MPE/Focus.hpp	/^      Vec2D    mPosition;         \/\/\/< Position.$/;"	m	class:mpe::Focus
+mRangeFocusPPS	include/MPE/Emitter.hpp	/^      Randomizer  mRangeFocusPPS; \/\/\/< Range of particles lifetime.$/;"	m	class:mpe::Emitter
+mRangeFocusTOL	include/MPE/Emitter.hpp	/^      Randomizer  mRangeFocusTOL; \/\/\/< Range of particles lifetime.$/;"	m	class:mpe::Emitter
+mRangeFocusTP	include/MPE/Emitter.hpp	/^      Randomizer  mRangeFocusTP;   \/\/\/< Number of particles emitted.$/;"	m	class:mpe::Emitter
+mRangeParticleStrenght	include/MPE/Emitter.hpp	/^      Randomizer  mRangeParticleStrenght;    \/\/\/< Range of paricles impulsion.$/;"	m	class:mpe::Emitter
+mRangeParticleTOL	include/MPE/Emitter.hpp	/^      Randomizer  mRangeParticleTOL; \/\/\/< Range of particles lifetime.$/;"	m	class:mpe::Emitter
+mShape	include/MPE/Emitter.hpp	/^      Shape       mShape;            \/\/\/< The emitter's shape.$/;"	m	class:mpe::Emitter
+mSin	ext_libs/include/GT/Angle.hpp	/^         Real mSin;$/;"	m	class:gt::Angle
+mSprite	include/MPE/Particle.hpp	/^      sf::Sprite     mSprite;$/;"	m	class:mpe::Particle
+mTOL	include/MPE/Particle.hpp	/^      Real           mTOL;$/;"	m	class:mpe::Particle
+mTexture	include/MPE/Emitter.hpp	/^      sf::Texture mTexture;          \/\/\/< The texture to make an Sprite.$/;"	m	class:mpe::Emitter
+mValue	ext_libs/include/GT/Angle.hpp	/^         Real mValue;$/;"	m	class:gt::Angle
+mWidth	include/MPE/Focus.hpp	/^      Real     mWidth;            \/\/\/< Width.$/;"	m	class:mpe::Focus
+mXFactor	include/MPE/Interfaces.hpp	/^         Real mXFactor;$/;"	m	class:mpe::ISystem
+mX	ext_libs/include/GT/Vec2D.hpp	/^      Real mX;$/;"	m	class:gt::Vec2D
+mYFactor	include/MPE/Interfaces.hpp	/^         Real mYFactor;$/;"	m	class:mpe::ISystem
+mY	ext_libs/include/GT/Vec2D.hpp	/^      Real mY;$/;"	m	class:gt::Vec2D
+main	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	/^int main(int argc, char* argv[])$/;"	f
+main	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	/^void main() {}$/;"	f
+main	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^int main(int argc, char* argv[])$/;"	f
+mheight	include/MPE/Focus.hpp	/^      Real     mheight;           \/\/\/< Height.$/;"	m	class:mpe::Focus
+mpe	include/MPE/Emitter.hpp	/^namespace mpe$/;"	n
+mpe	include/MPE/Focus.hpp	/^namespace mpe$/;"	n
+mpe	include/MPE/Interfaces.hpp	/^namespace mpe$/;"	n
+mpe	include/MPE/Particle.hpp	/^namespace mpe$/;"	n
+mpe	include/MPE/System.hpp	/^namespace mpe$/;"	n
+mpe	src/MPE/Emitter.cpp	/^namespace mpe$/;"	n	file:
+mpe	src/MPE/Particle.cpp	/^namespace mpe$/;"	n	file:
+mpe	src/MPE/System.cpp	/^namespace mpe$/;"	n	file:
+nParticles	src/MPE/Emitter.cpp	/^         Integer nParticles = (mPPS * it->lifetime \/ 1000) - it->emittedParticles;$/;"	l
+normalizeVector	src/MPE/Emitter.cpp	/^inline sf::Vector2f Emitter::normalizeVector(const sf::Vector2f& theVector)$/;"	f	class:mpe::Emitter
+require	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	/^  int require = 0;$/;"	l
+require	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^  int require = 0;$/;"	l
+scaleVector	src/MPE/Emitter.cpp	/^inline sf::Vector2f Emitter::scaleVector(const sf::Vector2f& theVector,$/;"	f	class:mpe::Emitter
+setDispersion	src/MPE/Emitter.cpp	/^inline void Emitter::setDispersion ( Dispersion theValue )$/;"	f	class:mpe::Emitter
+setLinearVelocity	src/MPE/Emitter.cpp	/^inline void Emitter::setLinearVelocity ( sf::Vector2f theValue )$/;"	f	class:mpe::Emitter
+setPPS	src/MPE/Emitter.cpp	/^inline void Emitter::setPPS ( Real theValue )$/;"	f	class:mpe::Emitter
+setRangeParticleTOL	src/MPE/Emitter.cpp	/^inline void Emitter::setRangeParticleTOL ( Randomizer theValue )$/;"	f	class:mpe::Emitter
+setRangeStrenght	src/MPE/Emitter.cpp	/^inline void Emitter::setRangeStrenght ( Randomizer theValue )$/;"	f	class:mpe::Emitter
+setShape	src/MPE/Emitter.cpp	/^inline void Emitter::setShape ( Shape theValue )$/;"	f	class:mpe::Emitter
+setSprite	src/MPE/Particle.cpp	/^   inline void Particle::setSprite ( sf::Sprite value )$/;"	f	class:mpe::Particle
+setTOL	src/MPE/Emitter.cpp	/^inline void Emitter::setTOL ( Real theValue )$/;"	f	class:mpe::Emitter
+setTexture	src/MPE/Emitter.cpp	/^inline void Emitter::setTexture ( std::string theFilename )$/;"	f	class:mpe::Emitter
+setTotalParticles	src/MPE/Emitter.cpp	/^inline void Emitter::setTotalParticles ( Integer theValue )$/;"	f	class:mpe::Emitter
+setXFactor	include/MPE/Interfaces.hpp	/^         inline void setXFactor ( Real value )$/;"	f	class:mpe::ISystem
+setX	ext_libs/include/GT/Vec2D.hpp	/^      inline void setX ( Real theX ) {mX = theX;};$/;"	f	class:gt::Vec2D
+setYFactor	include/MPE/Interfaces.hpp	/^         inline void setYFactor ( Real value )$/;"	f	class:mpe::ISystem
+setY	ext_libs/include/GT/Vec2D.hpp	/^      inline void setY ( Real theY ) {mY = theY;};$/;"	f	class:gt::Vec2D
+set	ext_libs/include/GT/Angle.hpp	/^         inline void set(Real theValue)$/;"	f	class:gt::Angle
+toDegrees	ext_libs/include/GT/Angle.hpp	/^         static inline Real toDegrees(float theRadians)$/;"	f	class:gt::Angle
+toRadians	ext_libs/include/GT/Angle.hpp	/^         static inline Real toRadians(float theDegrees)$/;"	f	class:gt::Angle
+updateFocusState	src/MPE/Emitter.cpp	/^void Emitter::updateFocusState(Focus& theFocus)$/;"	f	class:mpe::Emitter
+update	src/MPE/Emitter.cpp	/^void Emitter::update(Real theElapsedTime)$/;"	f	class:mpe::Emitter
+update	src/MPE/Particle.cpp	/^   void Particle::update(Real theElapsedTime)$/;"	f	class:mpe::Particle
+update	src/MPE/System.cpp	/^void System::update(Real theElapsedTime)$/;"	f	class:mpe::System
+~ISystem	include/MPE/Interfaces.hpp	/^         ~ISystem(){};$/;"	f	class:mpe::ISystem
+~Particle	src/MPE/Particle.cpp	/^   Particle::~Particle(){};$/;"	f	class:mpe::Particle

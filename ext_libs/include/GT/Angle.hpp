@@ -22,21 +22,35 @@ namespace gt
          ~Angle();
          /// @brief getValue 
          /// @return 
-          inline Real getValue ( ) const {return mValue;};
+         inline Real getValue ( ) const {return mValue;};
          /// @brief getSin 
          /// @return 
-          inline Real getSin ( ) const {return mSin;};
+         inline Real getSin ( ) const {return mSin;};
          /// @brief getCos 
          /// @return 
-          inline Real getCos ( ) const {return mCos;};
+         inline Real getCos ( ) const {return mCos;};
          /// @brief set 
          /// @param theValue
-          inline void set(Real theValue)
-          {
-             mValue = theValue;
-             mSin = std::sin(theValue);
-             mCos = std::cos(theValue);
-          };
+         inline void set(Real theValue)
+         {
+            mValue = theValue;
+            mSin = std::sin(theValue);
+            mCos = std::cos(theValue);
+         };
+         /// @brief toRadians 
+         /// @param theDegrees
+         /// @return 
+         static inline Real toRadians(float theDegrees)
+         {
+            return (theDegrees*PI/180);
+         };
+         /// @brief toDegrees 
+         /// @param theRadians
+         /// @return 
+         static inline Real toDegrees(float theRadians)
+         {
+            return (theRadians/PI*180);
+         };
          /// @brief operator= 
          /// @param theValue
          /// @return 
@@ -44,9 +58,12 @@ namespace gt
 
       private:
 
+         const static Real PI;
+
          Real mValue;
          Real mSin;
          Real mCos;
    };
+   const static Real PI = 3.14159265f;
 }
 #endif   // ----- #ifndef ANGLE_INC  -----
