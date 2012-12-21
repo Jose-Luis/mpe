@@ -5,7 +5,7 @@
 #include <MPE/Config.hpp>
 #include <MPE/Particle.hpp>
 
-namespace MPE
+namespace mpe
 {
    class ISystem
    {

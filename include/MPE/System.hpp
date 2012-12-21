@@ -1,18 +1,7 @@
-// =============================================================================
-// 
-//       Filename:  System.hpp
-// 
-//    Description:  
-// 
-//        Version:  1.0
-//        Created:  17/12/12 10:58:57
-//       Revision:  none
-//       Compiler:  g++
-// 
-//         Author:  Jose Luis Lavado (), joseluislavado@gmail.com
-//        Company:  
-// 
-// =============================================================================
+/// @file System.hpp
+/// @author Jose Luis Lavado
+/// @version 0.1
+/// @date 2012-12-18
 
 #ifndef  SYSTEM_INC
 #define  SYSTEM_INC
@@ -26,7 +15,7 @@
 #include <MPE/Emitter.hpp>
 #include <MPE/Interfaces.hpp>
 
-namespace MPE
+namespace mpe
 {
    class System: public ISystem
    {
@@ -44,6 +33,7 @@ namespace MPE
       private:
 
          std::list<Particle>                mParticles;
+         std::list<Focus>                   mFocusses;
          std::map<Emitter::ID,Emitter::Ptr> mEmitters;
    };
 }

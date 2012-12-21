@@ -16,7 +16,7 @@
 
 #include <MPE/Particle.hpp>
 
-namespace MPE
+namespace mpe
 {
    //---------------------------------------------------------------------------
    //      Class:        Particle
