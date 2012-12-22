@@ -66,10 +66,12 @@ void Focus::emit ()
 //------------------------------------------------------------------------------
 Particle Focus::createParticle ()
 {
-   //Particle anParticle = Particle(
-                                 //mEmitter->getTexture(),
-                                 //mEmitter->generateParticlePosition(*this),
-         //)
+   gt::Vec2D anPosition = mEmitter->generateParticlePosition(*this);
+   gt::Vec2D anVelocity = mEmitter->generateParticleVelocity(*this,anPosition);
+   Particle anParticle = Particle(
+                                 mEmitter->getTexture(),
+                                 anPosition,
+                                 );
 }
 //------------------------------------------------------------------------------
 //      Class:        Focus
