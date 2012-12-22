@@ -1,12 +1,11 @@
-syn keyword CTagsLocalVariable anResult anPosition require nParticles it anVelocity
+syn keyword CTagsLocalVariable nParticles anResult anVelocity anPosition it
 syn keyword CTagsMember mMax mXFactor mEmitter mRangeParticlePOW mMin mET mValue mEP mEmitters mPosition mDispersion mPPS mTOL mRangeFocusHeight mID mHeight PI mRangeFocusWidth mParticles mSystem mWidth mAlive mLinearVelocity mRangeParticleTOL mShape x TIME_INFINITY mAngle mCos mRangeFocusTOL mRangeFocusNP mAngularVelocity mTP mFocusses mTT PARTICLES_INFINITY mYFactor y mRangeFocusPPS mTexture mSprite mSin
-syn keyword CTagsConstant info_version info_compiler info_arch info_platform
 syn keyword CTagsEnumeratorName Dispersion Shape
 syn keyword CTagsEnumerationValue LINEAR RANDOM REFLECT STATIC RADIAL CIRCLE RECTANGLE
-syn keyword CTagsFunction setTexture set getTexture setAngle System getID getWidth setRangeFocusPPS getDispersion kill toRadians setDispersion setRangeFocusNP isAlive setWidth setPosition toDegrees setRangeFocusTOL setRangeParticleStrenght getRangeFocusTOL create getHeight getCos getEmitter getSin generateParticlePosition main getRangeFocusNP Emitter getRangeFocusPPS setRangeParticleTOL Particle update generateParticleVelocity getPosition setHeight getRangeParticleTOL getAngle age Focus getValue getShape
-syn keyword CTagsFunction getRangeParticleStrenght setShape
+syn keyword CTagsFunction setTexture set getTexture setAngle System getID getWidth setRangeFocusPPS getDispersion kill toRadians setDispersion setRangeFocusNP isAlive setWidth setPosition toDegrees setRangeFocusTOL setRangeParticleStrenght getRangeFocusTOL create getHeight updateFocusses getShape getEmitter getSin generateParticlePosition updateParticles getRangeFocusNP Emitter getRangeFocusPPS setRangeParticleTOL Particle update generateParticleVelocity getPosition setHeight getRangeParticleTOL drain
+syn keyword CTagsFunction getAngle age Focus getValue getCos getRangeParticleStrenght emit setShape
 syn keyword CTagsType Real Integer ID Ptr
-syn keyword CTagsDefinedName VEC2D_INC ANGLE_INC FOCUS_INC EMITTER_INC COMPILER_VERSION_TWEAK COMPILER_VERSION_MAJOR PARTICLE_INC HEX GT_INC COMPILER_VERSION_PATCH PLATFORM_ID ARCHITECTURE_ID CONFIG_INC SYSTEM_INC ID_VOID_MAIN COMPILER_ID DEC RANDOMIZER_INC COMPILER_VERSION_MINOR
+syn keyword CTagsDefinedName VEC2D_INC ANGLE_INC FOCUS_INC EMITTER_INC CONFIG_INC RANDOMIZER_INC PARTICLE_INC SYSTEM_INC GT_INC
 syn keyword CTagsClass Angle Particle Randomizer System Focus Vec2D Emitter
 syn keyword CTagsNamespace mpe gt
 

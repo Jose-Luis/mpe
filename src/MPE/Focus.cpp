@@ -8,11 +8,11 @@
 namespace mpe
 {
 
-//--------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 //      Class:        Focus
 //      Method:       Focus
 //      Description:  
-//--------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 Focus::Focus(
             Real theWidth,
             Real theHeight,
@@ -35,40 +35,74 @@ Focus::Focus(
    mSystem(theSystem)
 {
 }
-//--------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 //       Class:  Focus
 //      Method:  update
 // Description:  
-//--------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 void Focus::update(Real theElapsedTime)
 {
-   emit();
-   for (auto it = mParticles.begin(); it != mParticles.end(); it++)
-   {
-      if(it->isAlive())
-      {
-         it->update(theElapsedTime);
-      }
-      else 
-      {
-         mParticles.erase(it);
-      }
-   }
-   return ;
+   age(theElapsedTime);
+   Integer nParticles = drain(theElapsedTime);
+   emit(nParticles);
 }
-//--------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 //       Class:  Focus
 //      Method:  emit
 // Description:  
-//--------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 void Focus::emit ()
 {
-   Integer nParticles = (mPPS * mET / 1000) - mEP;
-   mEP += nParticles;
    for(int i = 0; i < nParticles;i++)
    {
       //Particle anParticle = createParticle();
       mParticles.push_back(anParticle);
    }
 }
+//------------------------------------------------------------------------------
+//       Class:  Focus
+//      Method:  createParticle
+// Description:  
+//------------------------------------------------------------------------------
+Particle Focus::createParticle ()
+{
+   //Particle anParticle = Particle(
+                                 //mEmitter->getTexture(),
+                                 //mEmitter->generateParticlePosition(*this),
+         //)
+}
+//------------------------------------------------------------------------------
+//      Class:        Focus
+//      Method:       age
+//      Description:  
+//------------------------------------------------------------------------------
+//void Focus::age(Real theElapsedTime)
+//{
+   //if( mET+theElapsedTime >= mTT )
+      //kill();
+   //else
+      //mET += theElapsedTime;
+//}
+//------------------------------------------------------------------------------
+//      Class:        Focus
+//      Method:       drain
+//      Description:  
+//------------------------------------------------------------------------------
+//Integer Focus::drain(Real theElapsedTime)
+//{
+   //Integer nParticles = 0;
+   //if(isAlive())
+   //{
+      //nParticles = (mPPS * mET / 1000) - mEP;
+   //}
+   //if(mEP + nParticles > mTT)
+   //{
+      //nParticles = nParticles - (mEP + nParticles - mTT);
+      //kill();
+   //}
+   //return nParticles;
+//}
+////////////////////////////////////////////////////////////////////////////////
+// END NAMESPACE mpe
+////////////////////////////////////////////////////////////////////////////////
 }

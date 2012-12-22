@@ -41,7 +41,6 @@ class Focus
       /// @brief update 
       /// @param theElapsedTime
       void update(Real theElapsedTime);
-      void age(Real theElapseTime);
    /////////////////////////////////////////////////////////////////////////////
    //     ACCESSORS AND MUTATORS
    /////////////////////////////////////////////////////////////////////////////
@@ -77,9 +76,6 @@ class Focus
       void setPosition(gt::Vec2D thePosition);
       /// @brief getTP 
       /// @return 
-      Emitter::Ptr getEmitter() const;
-      /// @brief setEmitter 
-      /// @param theEmitter
    private:
    /////////////////////////////////////////////////////////////////////////////
    //     VARIABLES
@@ -102,6 +98,9 @@ class Focus
    //     METHODS
    /////////////////////////////////////////////////////////////////////////////
       void emit();
+      void age(Real theElapseTime);
+      Integer drain(Real theElapsedTime);
+      Particle createParticle();
 };
 //////////////////////////////////////////////////////////////////////////////// 
 //        END OF CLASS FOCUS
@@ -111,51 +110,129 @@ const static Real TIME_INFINITY = std::numeric_limits<Real>::max();
 //////////////////////////////////////////////////////////////////////////////// 
 //        INLINE METHODS 
 //////////////////////////////////////////////////////////////////////////////// 
+//------------------------------------------------------------------------------
+//      Class:        Focus
+//      Method:       isAlive
+//      Description:  
+//------------------------------------------------------------------------------
 inline bool Focus::isAlive() const 
 {
    return mAlive;
 }
+//------------------------------------------------------------------------------
+//      Class:        Focus
+//      Method:       kill
+//      Description:  
+//------------------------------------------------------------------------------
 inline void Focus::kill()
 {
    mAlive=false;
 }
+//------------------------------------------------------------------------------
+//      Class:        Focus
+//      Method:       getWidth
+//      Description:  
+//------------------------------------------------------------------------------
 inline Real Focus::getWidth() const 
 {
    return mWidth;
 }
+//------------------------------------------------------------------------------
+//      Class:        Focus
+//      Method:       setWidth
+//      Description:  
+//------------------------------------------------------------------------------
 inline void Focus::setWidth(Real theWidth)
 {
    mWidth=theWidth;
 }
+//------------------------------------------------------------------------------
+//      Class:        Focus
+//      Method:       getHeight
+//      Description:  
+//------------------------------------------------------------------------------
 inline Real Focus::getHeight() const 
 {
    return mHeight;
 }
+//------------------------------------------------------------------------------
+//      Class:        Focus
+//      Method:       setHeight
+//      Description:  
+//------------------------------------------------------------------------------
 inline void Focus::setHeight(Real theHeight)
 {
    mHeight=theHeight;
 }
+//------------------------------------------------------------------------------
+//      Class:        Focus
+//      Method:       getAngle
+//      Description:  
+//------------------------------------------------------------------------------
 inline gt::Angle Focus::getAngle() const 
 {
    return mAngle;
 }
+//------------------------------------------------------------------------------
+//      Class:        Focus
+//      Method:       setAngle
+//      Description:  
+//------------------------------------------------------------------------------
 inline void Focus::setAngle(gt::Angle theAngle)
 {
    mAngle=theAngle;
 }
+//------------------------------------------------------------------------------
+//      Class:        Focus
+//      Method:       getPosition
+//      Description:  
+//------------------------------------------------------------------------------
 inline gt::Vec2D Focus::getPosition() const 
 {
    return mPosition;
 }
+//------------------------------------------------------------------------------
+//      Class:        Focus
+//      Method:       setPosition
+//      Description:  
+//------------------------------------------------------------------------------
 inline void Focus::setPosition(gt::Vec2D thePosition)
 {
    mPosition=thePosition;
 }
+//------------------------------------------------------------------------------
+//      Class:        Focus
+//      Method:       age
+//      Description:  
+//------------------------------------------------------------------------------
 inline void Focus::age(Real theElapsedTime)
 {
-   mET += theElapsedTime;
-   if(mET >= mTT)
-      mAlive = false;
+   if( mET+theElapsedTime >= mTT )
+      kill();
+   else
+      mET += theElapsedTime;
 }
+//------------------------------------------------------------------------------
+//      Class:        Focus
+//      Method:       drain
+//      Description:  
+//------------------------------------------------------------------------------
+inline Integer Focus::drain(Real theElapsedTime)
+{
+   Integer nParticles = 0;
+   if(isAlive())
+   {
+      nParticles = (mPPS * mET / 1000) - mEP;
+   }
+   if(mEP + nParticles > mTT)
+   {
+      nParticles = nParticles - (mEP + nParticles - mTT);
+      kill();
+   }
+   return nParticles;
+}
+////////////////////////////////////////////////////////////////////////////////
+// END NAMESPACE mpe
+////////////////////////////////////////////////////////////////////////////////
 }
 #endif   

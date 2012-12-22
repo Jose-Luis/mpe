@@ -17,11 +17,11 @@ System::System ( Real theFactor ):
    mYFactor(theFactor)
 {
 }
-//---------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 //       Class:  System
 //      Method:  getEmitter
 // Description:  
-//---------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 Emitter::Ptr System::getEmitter ( Emitter::ID theEmitterID ) const
 {
    Emitter::Ptr anResult;
@@ -33,12 +33,12 @@ Emitter::Ptr System::getEmitter ( Emitter::ID theEmitterID ) const
    }
    return anResult;
 }
-//--------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 //       Class:  System
 //      Method:  update
 // Description:  
-//--------------------------------------------------------------------------------------
-void System::update(Real theElapsedTime)
+//------------------------------------------------------------------------------
+void System::updateFocusses(Real theElapsedTime)
 {
    for (auto it = mFocusses.begin(); it != mFocusses.end(); it++)
    {
@@ -51,6 +51,34 @@ void System::update(Real theElapsedTime)
          mFocusses.erase(it);
       }
    }
-   return ;
+}
+//------------------------------------------------------------------------------
+//       Class:  System
+//      Method:  update
+// Description:  
+//------------------------------------------------------------------------------
+void System::updateParticles(Real theElapsedTime)
+{
+   for (auto it = mParticles.begin(); it != mParticles.end(); it++)
+   {
+      if (it->isAlive())
+      {
+         it->update(theElapsedTime);
+      }
+      else 
+      {
+         mParticles.erase(it);
+      }
+   }
+}
+//------------------------------------------------------------------------------
+//       Class:  System
+//      Method:  update
+// Description:  
+//------------------------------------------------------------------------------
+void System::update (Real theElapsedTime)
+{
+   updateFocusses(theElapsedTime);
+   updateParticles(theElapsedTime);
 }
 }

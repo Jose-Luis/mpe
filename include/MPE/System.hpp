@@ -27,6 +27,7 @@ namespace mpe
 
          void         addEmitter(Emitter::Ptr theEmitter);
          void         addFocus(Emitter::ID theEmitter,gt::Vec2D thePosition);
+         void         addParticle(Particle theParticle);
          void         update(Real theElapsedTime);
          void         draw(sf::RenderWindow& theWindow) const;
          Emitter::Ptr getEmitter(Emitter::ID theEmitterID) const;
@@ -36,7 +37,11 @@ namespace mpe
          Real mXFactor;
          Real mYFactor;
          std::list<Focus>                   mFocusses;
+         std::list<Particle>                mParticles;
          std::map<Emitter::ID,Emitter::Ptr> mEmitters;
+
+         void updateParticles(Real theElapsedTime);
+         void updateFocusses (Real theElapsedTime);
    };
 }
 
