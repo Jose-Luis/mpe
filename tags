@@ -44,9 +44,13 @@ TIME_INFINITY	include/MPE/Focus.hpp	/^const static Real TIME_INFINITY = std::num
 VEC2D_INC	ext_libs/include/GT/Vec2D.hpp	7;"	d
 Vec2D	ext_libs/include/GT/Vec2D.hpp	/^class Vec2D$/;"	c	namespace:gt
 age	include/MPE/Focus.hpp	/^inline void Focus::age(Real theElapsedTime)$/;"	f	class:mpe::Focus
+anParticle	src/MPE/Focus.cpp	/^   Particle anParticle = Particle($/;"	l
 anPosition	src/MPE/Emitter.cpp	/^   Vec2D anPosition;$/;"	l
+anPosition	src/MPE/Focus.cpp	/^   gt::Vec2D anPosition = mEmitter->generateParticlePosition(*this);$/;"	l
 anResult	src/MPE/System.cpp	/^   Emitter::Ptr anResult;$/;"	l
 anVelocity	src/MPE/Emitter.cpp	/^   Vec2D anVelocity;$/;"	l
+anVelocity	src/MPE/Focus.cpp	/^   gt::Vec2D anVelocity = mEmitter->generateParticleVelocity(*this,anPosition);$/;"	l
+createParticle	src/MPE/Focus.cpp	/^Particle Focus::createParticle ()$/;"	f	class:mpe::Focus
 create	src/MPE/Emitter.cpp	/^Emitter::Ptr Emitter::create(Emitter::ID theID)$/;"	f	class:mpe::Emitter
 drain	include/MPE/Focus.hpp	/^inline Integer Focus::drain(Real theElapsedTime)$/;"	f	class:mpe::Focus
 emit	src/MPE/Focus.cpp	/^void Focus::emit ()$/;"	f	class:mpe::Focus
@@ -56,14 +60,14 @@ getAngle	include/MPE/Focus.hpp	/^inline gt::Angle Focus::getAngle() const $/;"	f
 getCos	ext_libs/include/GT/Angle.hpp	/^         inline Real getCos ( ) const {return mCos;};$/;"	f	class:gt::Angle
 getDispersion	include/MPE/Emitter.hpp	/^inline Emitter::Dispersion Emitter::getDispersion() const$/;"	f	class:mpe::Emitter
 getEmitter	src/MPE/System.cpp	/^Emitter::Ptr System::getEmitter ( Emitter::ID theEmitterID ) const$/;"	f	class:mpe::System
+getFocusNP	include/MPE/Emitter.hpp	/^inline gt::Randomizer Emitter::getFocusNP() const $/;"	f	class:mpe::Emitter
+getFocusPPS	include/MPE/Emitter.hpp	/^inline gt::Randomizer Emitter::getFocusPPS() const $/;"	f	class:mpe::Emitter
+getFocusTOL	include/MPE/Emitter.hpp	/^inline gt::Randomizer Emitter::getFocusTOL() const $/;"	f	class:mpe::Emitter
 getHeight	include/MPE/Focus.hpp	/^inline Real Focus::getHeight() const $/;"	f	class:mpe::Focus
 getID	include/MPE/Emitter.hpp	/^inline Emitter::ID Emitter::getID() const$/;"	f	class:mpe::Emitter
+getParticleStrenght	include/MPE/Emitter.hpp	/^inline gt::Randomizer Emitter::getParticleStrenght() const $/;"	f	class:mpe::Emitter
+getParticleTOL	include/MPE/Emitter.hpp	/^inline gt::Randomizer Emitter::getParticleTOL() const $/;"	f	class:mpe::Emitter
 getPosition	include/MPE/Focus.hpp	/^inline gt::Vec2D Focus::getPosition() const $/;"	f	class:mpe::Focus
-getRangeFocusNP	include/MPE/Emitter.hpp	/^inline gt::Randomizer Emitter::getRangeFocusNP() const $/;"	f	class:mpe::Emitter
-getRangeFocusPPS	include/MPE/Emitter.hpp	/^inline gt::Randomizer Emitter::getRangeFocusPPS() const $/;"	f	class:mpe::Emitter
-getRangeFocusTOL	include/MPE/Emitter.hpp	/^inline gt::Randomizer Emitter::getRangeFocusTOL() const $/;"	f	class:mpe::Emitter
-getRangeParticleStrenght	include/MPE/Emitter.hpp	/^inline gt::Randomizer Emitter::getRangeParticleStrenght() const $/;"	f	class:mpe::Emitter
-getRangeParticleTOL	include/MPE/Emitter.hpp	/^inline gt::Randomizer Emitter::getRangeParticleTOL() const $/;"	f	class:mpe::Emitter
 getShape	include/MPE/Emitter.hpp	/^inline Emitter::Shape Emitter::getShape() const$/;"	f	class:mpe::Emitter
 getSin	ext_libs/include/GT/Angle.hpp	/^         inline Real getSin ( ) const {return mSin;};$/;"	f	class:gt::Angle
 getTexture	include/MPE/Emitter.hpp	/^inline sf::Texture Emitter::getTexture() const$/;"	f	class:mpe::Emitter
@@ -125,7 +129,7 @@ mpe	src/MPE/Focus.cpp	/^namespace mpe$/;"	n	file:
 mpe	src/MPE/Particle.cpp	/^namespace mpe$/;"	n	file:
 mpe	src/MPE/System.cpp	/^namespace mpe$/;"	n	file:
 nParticles	include/MPE/Focus.hpp	/^   Integer nParticles = 0;$/;"	l
-nParticles	src/MPE/Focus.cpp	/^   Integer nParticles = (mPPS * mET \/ 1000) - mEP;$/;"	l
+nParticles	src/MPE/Focus.cpp	/^   Integer nParticles = drain(theElapsedTime);$/;"	l
 setAngle	include/MPE/Focus.hpp	/^inline void Focus::setAngle(gt::Angle theAngle)$/;"	f	class:mpe::Focus
 setDispersion	include/MPE/Emitter.hpp	/^inline void Emitter::setDispersion(Dispersion theDispersion) $/;"	f	class:mpe::Emitter
 setHeight	include/MPE/Focus.hpp	/^inline void Focus::setHeight(Real theHeight)$/;"	f	class:mpe::Focus

@@ -69,48 +69,32 @@ class Emitter
       /// @brief getTexture 
       /// @return 
       sf::Texture getTexture() const;
+      Real getParticleStrenght() const;
+      Real getParticleTOL() const;
+      Real getFocusTOL() const;
+      Real getFocusPPS() const;
+      Real getFocusNP() const;
       /// @brief setTexture 
       /// @param theFilename
       void setTexture(std::string theFilename);
-         /// @brief getShape 
-         /// @return 
-      Shape getShape() const;
       /// @brief setShape 
       /// @param theShape
       void setShape(Shape theShape);
-         /// @brief getDispersion 
-         /// @return 
-      Dispersion getDispersion() const;
-      /// @brief setDispersion 
-      /// @param theDispersion
-      void setDispersion(Dispersion theDispersion);
-      /// @brief getRangeParticleStrenght 
+      /// @brief getDispersion 
       /// @return 
-      gt::Randomizer getRangeParticleStrenght() const;
+      void setDispersion(Dispersion theDispersion);
       /// @brief setRangeParticleStrenght 
       /// @param theRangeParticleStrenght
       void setRangeParticleStrenght(gt::Randomizer theRangeParticleStrenght);
-      /// @brief getRangeParticleTOL 
-      /// @return 
-      gt::Randomizer getRangeParticleTOL() const;
       /// @brief setRangeParticleTOL 
       /// @param theRangeParticleTOL
       void setRangeParticleTOL(gt::Randomizer theRangeParticleTOL);
-      /// @brief getRangeFocusTOL 
-      /// @return 
-      gt::Randomizer getRangeFocusTOL() const;
       /// @brief setRangeFocusTOL 
       /// @param theRangeFocusTOL
       void setRangeFocusTOL(gt::Randomizer theRangeFocusTOL);
-      /// @brief getRangeFocusPPS 
-      /// @return 
-      gt::Randomizer getRangeFocusPPS() const;
       /// @brief setRangeFocusPPS 
       /// @param theRangeFocusPPS
       void setRangeFocusPPS(gt::Randomizer theRangeFocusPPS);
-      /// @brief getRangeFocusNP 
-      /// @return 
-      gt::Randomizer getRangeFocusNP() const;
       /// @brief setRangeFocusNP 
       /// @param theRangeFocusNP
       void setRangeFocusNP(gt::Randomizer theRangeFocusNP);
@@ -163,7 +147,7 @@ inline void Emitter::setDispersion(Dispersion theDispersion)
 {
    mDispersion = theDispersion;
 }
-inline gt::Randomizer Emitter::getRangeParticleStrenght() const 
+inline gt::Randomizer Emitter::getParticleStrenght() const 
 {
    return mRangeParticlePOW;
 }
@@ -171,7 +155,7 @@ inline void Emitter::setRangeParticleStrenght(gt::Randomizer theRangeParticleStr
 {
    mRangeParticlePOW=theRangeParticleStrenght;
 }
-inline gt::Randomizer Emitter::getRangeParticleTOL() const 
+inline gt::Randomizer Emitter::getParticleTOL() const 
 {
    return mRangeParticleTOL;
 }
@@ -179,7 +163,7 @@ inline void Emitter::setRangeParticleTOL(gt::Randomizer theRangeParticleTOL)
 {
    mRangeParticleTOL=theRangeParticleTOL;
 }
-inline gt::Randomizer Emitter::getRangeFocusTOL() const 
+inline gt::Randomizer Emitter::getFocusTOL() const 
 {
    return mRangeFocusTOL;
 }
@@ -187,7 +171,7 @@ inline void Emitter::setRangeFocusTOL(gt::Randomizer theRangeFocusTOL)
 {
    mRangeFocusTOL=theRangeFocusTOL;
 }
-inline gt::Randomizer Emitter::getRangeFocusPPS() const 
+inline gt::Randomizer Emitter::getFocusPPS() const 
 {
    return mRangeFocusPPS;
 }
@@ -195,7 +179,7 @@ inline void Emitter::setRangeFocusPPS(gt::Randomizer theRangeFocusPPS)
 {
    mRangeFocusPPS=theRangeFocusPPS;
 }
-inline gt::Randomizer Emitter::getRangeFocusNP() const 
+inline gt::Randomizer Emitter::getFocusNP() const 
 {
    return mRangeFocusNP;
 }
