@@ -13,63 +13,9 @@ namespace mpe
 // Description:  
 //------------------------------------------------------------------------------
 System::System ( Real theFactor ):
-   ISystem(theFactor)
+   mXFactor(theFactor),
+   mYFactor(theFactor)
 {
-}
-//---------------------------------------------------------------------------
-//      Class:        System
-//      Method:       addEmitter
-//      Description:  
-//---------------------------------------------------------------------------
-void System::addEmitter(Emitter::Ptr theEmitter)
-{
-   if(mEmitters.find(theEmitter->getID()) == mEmitters.end())
-   {
-      mEmitters.insert
-       (std::pair<Emitter::ID,Emitter::Ptr>(theEmitter->getID(),theEmitter));
-   }
-}
-//---------------------------------------------------------------------------
-//      Class:        System
-//      Method:       addParticle
-//      Description:  
-//---------------------------------------------------------------------------
-void System::addParticle(Particle& theParticle)
-{
-   mParticles.push_back(theParticle);
-}
-//---------------------------------------------------------------------------
-//      Class:        System
-//      Method:       update
-//      Description:  
-//---------------------------------------------------------------------------
-void System::update(Real theElapsedTime)
-{
-   for( auto anEmitter: mEmitters)
-   {
-      anEmitter.second->update(theElapsedTime);
-   }
-   for( auto it = mParticles.begin(); it != mParticles.end(); it++)
-   {
-      it->update(theElapsedTime);
-
-      if( !it->isAlive() )
-      {
-         mParticles.erase(it);
-      }
-   }
-}
-//--------------------------------------------------------------------------------------
-//      Class:        System
-//      Method:       draw
-//      Description:  
-//--------------------------------------------------------------------------------------
-void System::draw ( sf::RenderWindow& theWindow ) const
-{
-   for( auto anParticle: mParticles)
-   {
-      theWindow.draw(anParticle.getSprite());
-   }
 }
 //---------------------------------------------------------------------------
 //       Class:  System
@@ -86,5 +32,25 @@ Emitter::Ptr System::getEmitter ( Emitter::ID theEmitterID ) const
       anResult = it->second();
    }
    return anResult;
+}
+//--------------------------------------------------------------------------------------
+//       Class:  System
+//      Method:  update
+// Description:  
+//--------------------------------------------------------------------------------------
+void System::update(Real theElapsedTime)
+{
+   for (auto it = mFocusses.begin(); it != mFocusses.end(); it++)
+   {
+      if (it->isAlive())
+      {
+         it->update(theElapsedTime);
+      }
+      else 
+      {
+         mFocusses.erase(it);
+      }
+   }
+   return ;
 }
 }

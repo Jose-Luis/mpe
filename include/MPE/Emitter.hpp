@@ -12,16 +12,14 @@
 #include <boost/shared_ptr.hpp>
 #include <boost/make_shared.hpp>
 
-#include <GT/GT.hpp>
+#include <SFML/Graphics.hpp>
 
-#include <MPE/Particle.hpp>
-#include <MPE/Interfaces.hpp>
+#include <GT/GT.hpp>
 
 namespace mpe
 {
-/// @class Emitter 
+class Focus;
 /// @brief Emitter is a server class for the flyweight client Focus.
-///
 class Emitter
 {
    public:
@@ -29,133 +27,93 @@ class Emitter
       //////////////////////////////////////////////////////////////////////////
       typedef boost::shared_ptr<Emitter> Ptr;
       typedef std::string ID;
-      ///
       /// @enum Shape
       /// @brief The Shape of the emitter. 
-      ///
       enum Shape{RECTANGLE,CIRCLE};
-      ///
       /// @enum Dispersion
       /// @brief The particle dispersion performed by the emitter. 
-      ///
       enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};
-      ///
-      /// @struct Focus
-      /// @brief Focus is the client of the Emitter, represent each one 
-      /// of the particle focus emition units.
-      ///
+      
       //                      LIFE CYCLE
       //////////////////////////////////////////////////////////////////////////
-      ///
       /// @brief Emitter 
       /// @param theID
-      /// @param theSystem
-      ///
-      Emitter(ID theID,ISystem& theSystem);
-      ///
+      Emitter(ID theID);
       /// @brief ~Emitter 
-      ///
       ~Emitter();
-      ///
       /// @brief create an smart pointer to one Emitter. The emitter will
       /// be delete when there isn't any reference to it.
       /// @param theID
-      /// @param theSystem
       /// @return 
-      ///
-      static Ptr create(ID theID,ISystem& theSystem);
-
-      //               PUBLIC METHODS
-      //////////////////////////////////////////////////////////////////////////
-      ///
-      /// @brief updateFocusState check and changed the alive member of the focus.
-      /// @param theFocus
-      ///
-      void updateFocusState(Focus& theFocus);
-      ///
-      /// @brief update all the Focus belonging to it.
-      /// @param theElapsedTime
-      ///
-      void update(Real theElapsedTime);
-      ///
-      /// @brief addFocus one focus to the emitter. 
-      /// @param theFocus
-      ///
-      //                      ACCESORS
-      //////////////////////////////////////////////////////////////////////////
-      /// @brief getID 
-      /// @return Emitter::ID 
-      inline ID           getID() const; 
-      /// @brief getShape 
-      /// @return Emitter::Shape 
-      inline Shape        getShape (  ) const;
-      /// @brief getDispersion 
-      /// @return Emitter::Dispersion 
-      inline Dispersion   getDispersion (  ) const;
-      /// @brief getRangeStrenght 
-      /// @return Randomizer
-      inline Randomizer   getRangeStrenght (  ) const;
-      /// @brief getRangeParticleTOL 
-      /// @return Randomizer
-      inline Randomizer   getRangeParticleTOL (  ) const;
-      /// @brief getLinearVelocity 
-      /// @return Vec2D 
-      inline Vec2D getLinearVelocity (  ) const;
-      /// @brief getTOL 
-      /// @return Real
-      inline Real         getTOL (  ) const;
-      /// @brief getPPS 
-      /// @return Real 
-      inline Real         getPPS (  ) const;
-      /// @brief getTotalParticles 
-      /// @return Integer 
-      inline Integer      getTotalParticles (  ) const;
-      /// @brief setShape 
-      /// @param theValue
-      //                      MUTATORS
-      //////////////////////////////////////////////////////////////////////////
-      inline void   setShape ( Shape theValue );
-      /// @brief setDispersion
-      /// @param theValue
-      inline void   setDispersion ( Dispersion theValue );
-      /// @brief setTexture
-      /// @param theValue
-      inline void   setTexture ( std::string theFilename );
-      /// @brief setRangeStrenght
-      /// @param theValue
-      inline void   setRangeStrenght ( Randomizer theValue );
-      /// @brief setRangeParticleTOL
-      /// @param theValue
-      inline void   setRangeParticleTOL ( Randomizer theValue );
-      /// @brief setLinearVelocity
-      /// @param theValue
-      inline void   setLinearVelocity ( Vec2D theValue );
-      /// @brief setTOL
-      /// @param theValue
-      inline void   setTOL ( Real theValue );
-      /// @brief setPPS
-      /// @param theValue
-      inline void   setPPS ( Real theValue );
-      /// @brief setTotalParticles 
-      /// @param theValue
-      inline void   setTotalParticles ( Integer theValue );
-      ///
+      static Ptr create(ID theID);
+      /// @brief createFocus 
+      /// @return 
+      Focus createFocus();
       /// @brief Generate a random position inside the Shape of the emitter.
       /// The position is transformed by the system factor member to scale it 
       /// to the world coordinates.
       /// @param theFocus
       /// @returns The initial position of the particle.   
-      ///
-      Vec2D generatePariclePosition(const Focus& theFocus);
-      ///
+      gt::Vec2D generateParticlePosition(const Focus& theFocus) const;
       /// @brief Generate a velocity depending of the emitter dispertion.
       /// @param theFocus
       /// @param theParticlePosition
       /// @returns The particle velocity.
-      ///
-      Vec2D generateParticleVelocity(const Focus& theFocus,
-                                     const Vec2D& theParticlePosition) const;
-
+      gt::Vec2D generateParticleVelocity(const Focus& theFocus,
+                                     const gt::Vec2D& theParticlePosition) const;
+      //    ACCESSORS AND MUTATORS
+      //////////////////////////////////////////////////////////////////////////
+      /// @brief getID 
+      /// @return 
+      ID getID() const;
+      /// @brief getTexture 
+      /// @return 
+      sf::Texture getTexture() const;
+      /// @brief setTexture 
+      /// @param theFilename
+      void setTexture(std::string theFilename);
+         /// @brief getShape 
+         /// @return 
+      Shape getShape() const;
+      /// @brief setShape 
+      /// @param theShape
+      void setShape(Shape theShape);
+         /// @brief getDispersion 
+         /// @return 
+      Dispersion getDispersion() const;
+      /// @brief setDispersion 
+      /// @param theDispersion
+      void setDispersion(Dispersion theDispersion);
+      /// @brief getRangeParticleStrenght 
+      /// @return 
+      gt::Randomizer getRangeParticleStrenght() const;
+      /// @brief setRangeParticleStrenght 
+      /// @param theRangeParticleStrenght
+      void setRangeParticleStrenght(gt::Randomizer theRangeParticleStrenght);
+      /// @brief getRangeParticleTOL 
+      /// @return 
+      gt::Randomizer getRangeParticleTOL() const;
+      /// @brief setRangeParticleTOL 
+      /// @param theRangeParticleTOL
+      void setRangeParticleTOL(gt::Randomizer theRangeParticleTOL);
+      /// @brief getRangeFocusTOL 
+      /// @return 
+      gt::Randomizer getRangeFocusTOL() const;
+      /// @brief setRangeFocusTOL 
+      /// @param theRangeFocusTOL
+      void setRangeFocusTOL(gt::Randomizer theRangeFocusTOL);
+      /// @brief getRangeFocusPPS 
+      /// @return 
+      gt::Randomizer getRangeFocusPPS() const;
+      /// @brief setRangeFocusPPS 
+      /// @param theRangeFocusPPS
+      void setRangeFocusPPS(gt::Randomizer theRangeFocusPPS);
+      /// @brief getRangeFocusNP 
+      /// @return 
+      gt::Randomizer getRangeFocusNP() const;
+      /// @brief setRangeFocusNP 
+      /// @param theRangeFocusNP
+      void setRangeFocusNP(gt::Randomizer theRangeFocusNP);
    private:
       //                      VARIABLES
       //////////////////////////////////////////////////////////////////////////
@@ -163,13 +121,87 @@ class Emitter
       sf::Texture mTexture;          ///< The texture to make an Sprite.
       Shape       mShape;            ///< The emitter's shape.
       Dispersion  mDispersion;       ///< Type of paricles' dispersion.
-      Randomizer  mRangeParticleStrenght;    ///< Range of paricles impulsion.
-      Randomizer  mRangeParticleTOL; ///< Range of particles lifetime.
-      Randomizer  mRangeFocusTOL;    ///< Range of particles lifetime.
-      Randomizer  mRangeFocusPPS;    ///< Range of particles lifetime.
-      Randomizer  mRangeFocusTP;     ///< Number of particles emitted.
+      gt::Vec2D   mLinearVelocity;   ///< Type of paricles' dispersion.
+      gt::Randomizer  mRangeParticlePOW; ///< Range of paricles impulsion.
+      gt::Randomizer  mRangeParticleTOL; ///< Range of particles lifetime.
+      gt::Randomizer  mRangeFocusWidth;  ///< Range of focus width.
+      gt::Randomizer  mRangeFocusHeight; ///< Range of focus height.
+      gt::Randomizer  mRangeFocusTOL;    ///< Range of focus time of life.
+      gt::Randomizer  mRangeFocusPPS;    ///< Range of focus particles per second.
+      gt::Randomizer  mRangeFocusNP;     ///< Range of focus number of particles.
+
 };
-//                           END OF THE EMITTER CLASS
+//                END OF THE EMITTER CLASS
 ////////////////////////////////////////////////////////////////////////////////
+//                INLINE METHODS
+////////////////////////////////////////////////////////////////////////////////
+inline Emitter::ID Emitter::getID() const
+{
+   return mID;
+}
+inline sf::Texture Emitter::getTexture() const
+{
+   return mTexture;
+}
+inline void Emitter::setTexture(std::string theFilename)
+{
+   mTexture.loadFromFile(theFilename);
+}
+inline Emitter::Shape Emitter::getShape() const
+{
+   return mShape;
+}
+inline void Emitter::setShape(Shape theShape)
+{
+   mShape = theShape;
+}
+inline Emitter::Dispersion Emitter::getDispersion() const
+{
+   return mDispersion;
+}
+inline void Emitter::setDispersion(Dispersion theDispersion) 
+{
+   mDispersion = theDispersion;
+}
+inline gt::Randomizer Emitter::getRangeParticleStrenght() const 
+{
+   return mRangeParticlePOW;
+}
+inline void Emitter::setRangeParticleStrenght(gt::Randomizer theRangeParticleStrenght)
+{
+   mRangeParticlePOW=theRangeParticleStrenght;
+}
+inline gt::Randomizer Emitter::getRangeParticleTOL() const 
+{
+   return mRangeParticleTOL;
+}
+inline void Emitter::setRangeParticleTOL(gt::Randomizer theRangeParticleTOL)
+{
+   mRangeParticleTOL=theRangeParticleTOL;
+}
+inline gt::Randomizer Emitter::getRangeFocusTOL() const 
+{
+   return mRangeFocusTOL;
+}
+inline void Emitter::setRangeFocusTOL(gt::Randomizer theRangeFocusTOL)
+{
+   mRangeFocusTOL=theRangeFocusTOL;
+}
+inline gt::Randomizer Emitter::getRangeFocusPPS() const 
+{
+   return mRangeFocusPPS;
+}
+inline void Emitter::setRangeFocusPPS(gt::Randomizer theRangeFocusPPS)
+{
+   mRangeFocusPPS=theRangeFocusPPS;
+}
+inline gt::Randomizer Emitter::getRangeFocusNP() const 
+{
+   return mRangeFocusNP;
+}
+inline void Emitter::setRangeFocusNP(gt::Randomizer theRangeFocusNP)
+{
+   mRangeFocusNP=theRangeFocusNP;
+}
 }    
 #endif  

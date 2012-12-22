@@ -13,11 +13,12 @@
 #include <SFML/Graphics.hpp>
 
 #include <MPE/Emitter.hpp>
-#include <MPE/Interfaces.hpp>
+#include <MPE/Focus.hpp>
+#include <GT/GT.hpp>
 
 namespace mpe
 {
-   class System: public ISystem
+   class System
    {
       public:
 
@@ -25,14 +26,15 @@ namespace mpe
          ~System();
 
          void         addEmitter(Emitter::Ptr theEmitter);
-         void         addParticle(Particle& theParticle);
+         void         addFocus(Emitter::ID theEmitter,gt::Vec2D thePosition);
          void         update(Real theElapsedTime);
          void         draw(sf::RenderWindow& theWindow) const;
-         Emitter::Ptr getEmitter ( Emitter::ID theEmitterID ) const;
+         Emitter::Ptr getEmitter(Emitter::ID theEmitterID) const;
 
       private:
 
-         std::list<Particle>                mParticles;
+         Real mXFactor;
+         Real mYFactor;
          std::list<Focus>                   mFocusses;
          std::map<Emitter::ID,Emitter::Ptr> mEmitters;
    };

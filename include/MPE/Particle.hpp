@@ -8,14 +8,14 @@
 #define  PARTICLE_INC
 
 #include <SFML/Graphics.hpp>
-#include <MPE/Config.hpp>
+#include <GT/GT.hpp>
 
 namespace mpe
 {
+/// @brief Particle 
 class Particle
 {
    public:
-      //////////////////////////////////////////////////////////////////////////
       /// @brief  Constructor
       /// @param theTexture
       /// @param thePosition
@@ -23,57 +23,37 @@ class Particle
       /// @param theLinearVelocity
       /// @param theAngularVelocity
       /// @param theColor
-      //////////////////////////////////////////////////////////////////////////
       Particle
          (
           sf::Texture& theTexture, 
-          sf::Vector2f thePosition, 
+          gt::Vec2D    thePosition, 
           Real         theAngle, 
-          sf::Vector2f theLinearVelocity, 
+          gt::Vec2D    theLinearVelocity, 
           Real         theAngularVelocity, 
           sf::Color    theColor, 
           Real         theTOL
           );
-
+      /// @brief ~Particle 
       ~Particle();
-      //////////////////////////////////////////////////////////////////////////
       /// @brief update 
       /// @param theElapsedTime
-      //////////////////////////////////////////////////////////////////////////
-      void                       update(Real theElapsedTime);
-      //////////////////////////////////////////////////////////////////////////
-      /// @brief getTOL 
-      /// @return 
-      //////////////////////////////////////////////////////////////////////////
-      inline Real                getTOL() const;
-      //////////////////////////////////////////////////////////////////////////
-      /// @brief isAlive 
-      /// @return 
-      //////////////////////////////////////////////////////////////////////////
-      inline bool                isAlive() const;
-      //////////////////////////////////////////////////////////////////////////
-      /// @brief getSprite 
-      /// @return 
-      //////////////////////////////////////////////////////////////////////////
-      inline const sf::Sprite&   getSprite ( ) const;
-      //////////////////////////////////////////////////////////////////////////
-      /// @brief setSprite 
-      /// @param value
-      //////////////////////////////////////////////////////////////////////////
-      inline void                setSprite ( sf::Sprite value );
+      void update(Real theElapsedTime);
+      bool isAlive();
 
    private:
-      bool           mAlive;
-      sf::Sprite     mSprite;
-      sf::Vector2f   mLinearVelocity;
-      Real           mAngularVelocity;
-      Real           mTOL;
+      bool        mAlive;
+      sf::Sprite  mSprite;
+      gt::Vec2D   mLinearVelocity;
+      Real        mAngularVelocity;
+      Real        mTOL;
       //sf::Color mColorVelocity;
 };
+inline bool Particle::isAlive()
+{
+   return mAlive;
 }
-
+}
 #endif 
-
 // Copyright (C) 
 // 
 // This program is free software; you can redistribute it and/or

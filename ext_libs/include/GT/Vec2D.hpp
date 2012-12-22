@@ -19,9 +19,12 @@ class Vec2D
 {
    public:
 
+      Real x;
+      Real y;
       //////////////////////////////////////////////////////////////////////////
       //                       LIFECYCLE   
       //////////////////////////////////////////////////////////////////////////
+      Vec2D();                               // constructor
       Vec2D(Real theX, Real theY);                               // constructor
       ~Vec2D();                              // destructor
       //////////////////////////////////////////////////////////////////////////
@@ -30,6 +33,14 @@ class Vec2D
       /// @brief module 
       /// @return 
       Real module ();
+      /// @brief module 
+      /// @return 
+      Real squaremodule ();
+      /// @brief scale 
+      /// @param theXFactor
+      /// @param theYFactor
+      /// @return 
+      Vec2D& scale(Real theXFactor,Real theYFactor);
       /// @brief normalize 
       /// @return 
       Vec2D& normalize(void);
@@ -42,23 +53,8 @@ class Vec2D
       /// @return 
       Vec2D& rotate(Angle theAngle);
       //////////////////////////////////////////////////////////////////////////
-      //                       ACCESORS   
-      //////////////////////////////////////////////////////////////////////////
-      /// @brief getX 
-      /// @return 
-      inline Real getX ( ) const {return mX;};
-      /// @brief getY 
-      /// @return 
-      inline Real getY ( ) const {return mY;};
-      //////////////////////////////////////////////////////////////////////////
-      //                       MUTATORS   
-      //////////////////////////////////////////////////////////////////////////
-      inline void setX ( Real theX ) {mX = theX;};
-      inline void setY ( Real theY ) {mY = theY;};
-      //////////////////////////////////////////////////////////////////////////
       //                       OPERATORS   
       //////////////////////////////////////////////////////////////////////////
-
       Vec2D& operator +=(const Vec2D& theVector);
       Vec2D& operator -=(const Vec2D& theVector);
       Vec2D& operator *=(Real theFloat);
@@ -71,15 +67,6 @@ class Vec2D
       Real operator *(const Vec2D& theVector) const;
       bool operator ==(const Vec2D& theVector) const;
       bool operator !=(const Vec2D& theVector) const;
-   protected:
-
-   private:
-      
-      //////////////////////////////////////////////////////////////////////////
-      //                       DATA MEMBERS   
-      //////////////////////////////////////////////////////////////////////////
-      Real mX;
-      Real mY;
 }; 
 ////////////////////////////////////////////////////////////////////////////////
 //  END OF CLASS Vec2D 
