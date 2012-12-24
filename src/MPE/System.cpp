@@ -17,19 +17,42 @@ System::System ( Real theFactor ):
    mYFactor(theFactor)
 {
 }
+//--------------------------------------------------------------------------------------
+//       Class:  Emitter
+//      Method:  addEmitter
+// Description:  
+//--------------------------------------------------------------------------------------
+void System::addEmitter(Emitter theEmitter)
+{
+   Emitter::ID anEmitterID = theEmitter.getID();
+   auto it = mEmitters.find(anEmitterID);
+   if (it != mEmitters.end() )
+   {
+      mEmitters.insert(std::make_pair<Emitter::ID,Emitter>
+                                     (anEmitterID,theEmitter));
+   }
+}
+//--------------------------------------------------------------------------------------
+//       Class:  Emitter
+//      Method:  addFocus
+// Description:  
+//--------------------------------------------------------------------------------------
+void Emitter::addFocus ( )
+{
+   return ;
+}
 //------------------------------------------------------------------------------
 //       Class:  System
 //      Method:  getEmitter
 // Description:  
 //------------------------------------------------------------------------------
-Emitter::Ptr System::getEmitter ( Emitter::ID theEmitterID ) const
+Emitter& System::getEmitter ( Emitter::ID theEmitterID ) const
 {
-   Emitter::Ptr anResult;
 
    auto it = mEmitters.find(theEmitterID);
    if (it != mEmitters.end() )
    {
-      anResult = it->second();
+      Emitter& anResult = it->second();
    }
    return anResult;
 }

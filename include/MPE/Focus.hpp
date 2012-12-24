@@ -22,8 +22,8 @@ class System;
 class Focus
 {
    public:
-      const static Real TIME_INFINITY;
-      const static Integer PARTICLES_INFINITY;
+      const static Real MAX_REAL;
+      const static Integer MAX_INTEGER;
 
       Focus(
             Real      theWidth,
@@ -91,10 +91,8 @@ class Focus
       Real      mTT;      ///< Time the focus will live. -1 = no time limits
       Real      mET;      ///< Elapsed time.
       Real      mPPS;
-      Emitter::Ptr mEmitter;///< The emitter server for the focus.
+      Emitter&  mEmitter;///< The emitter server for the focus.
       System&   mSystem;
-      std::list<Particle> mParticles;
-      
    /////////////////////////////////////////////////////////////////////////////
    //     METHODS
    /////////////////////////////////////////////////////////////////////////////
@@ -106,8 +104,8 @@ class Focus
 //////////////////////////////////////////////////////////////////////////////// 
 //        END OF CLASS FOCUS
 //////////////////////////////////////////////////////////////////////////////// 
-const static Integer PARTICLES_INFINITY = std::numeric_limits<Integer>::max();
-const static Real TIME_INFINITY = std::numeric_limits<Real>::max();
+const static Integer MAX_INTEGER = std::numeric_limits<Integer>::max();
+const static Real MAX_REAL = std::numeric_limits<Real>::max();
 //////////////////////////////////////////////////////////////////////////////// 
 //        INLINE METHODS 
 //////////////////////////////////////////////////////////////////////////////// 

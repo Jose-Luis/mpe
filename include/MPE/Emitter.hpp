@@ -9,11 +9,8 @@
 #define  EMITTER_INC
 
 #include <list>
-#include <boost/shared_ptr.hpp>
-#include <boost/make_shared.hpp>
 
 #include <SFML/Graphics.hpp>
-
 #include <GT/GT.hpp>
 
 namespace mpe
@@ -24,9 +21,10 @@ class System;
 class Emitter
 {
    public:
+      const static Emitter DUMMY;
       //                      INNER TYPES                                                                    
       //////////////////////////////////////////////////////////////////////////
-      typedef boost::shared_ptr<Emitter> Ptr;
+      /// @brief a typedef for a std::string
       typedef std::string ID;
       /// @enum Shape
       /// @brief The Shape of the emitter. 
@@ -34,7 +32,6 @@ class Emitter
       /// @enum Dispersion
       /// @brief The particle dispersion performed by the emitter. 
       enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};
-      
       //                      LIFE CYCLE
       //////////////////////////////////////////////////////////////////////////
       /// @brief Emitter 
@@ -42,11 +39,6 @@ class Emitter
       Emitter(ID theID);
       /// @brief ~Emitter 
       ~Emitter();
-      /// @brief create an smart pointer to one Emitter. The emitter will
-      /// be delete when there isn't any reference to it.
-      /// @param theID
-      /// @return 
-      static Ptr create(ID theID);
       /// @brief createFocus 
       /// @return 
       Focus createFocus(System& theSystem,gt::Vec2D thePosition,Real theAngle);

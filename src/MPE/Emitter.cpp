@@ -22,15 +22,6 @@ Emitter::Emitter(Emitter::ID theID):
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
-//      Method:  create
-// Description:  
-//------------------------------------------------------------------------------
-Emitter::Ptr Emitter::create(Emitter::ID theID)
-{
-   return boost::make_shared<Emitter>(theID,theSystem);
-}
-//------------------------------------------------------------------------------
-//       Class:  Emitter
 //      Method:  generateVelocity
 // Description:  
 //------------------------------------------------------------------------------

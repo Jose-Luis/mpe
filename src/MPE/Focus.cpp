@@ -20,8 +20,9 @@ Focus::Focus(
             gt::Vec2D thePosition,
             Integer theTP,
             Real theTT,
-            Emitter::Ptr theEmitter,
-            System& theSystem
+            Real thePPS,
+            System& theSystem,
+            Emitter& theEmitter
             ):
    mAlive(true),
    mWidth(theWidth),
@@ -67,12 +68,13 @@ void Focus::emit ()
 //------------------------------------------------------------------------------
 Particle Focus::createParticle ()
 {
-   gt::Vec2D anPosition = mEmitter->generateParticlePosition(*this);
-   gt::Vec2D anVelocity = mEmitter->generateParticleVelocity(*this,anPosition);
-   Particle anParticle = Particle(
-                                 mEmitter->getTexture(),
-                                 anPosition,
-                                 gt::Randomizer::get(0,gt::Angle::PI*2),
+   gt::Vec2D anPosition = mEmitter.generatePosition(*this);
+   gt::Vec2D anVelocity = mEmitter.generateVelocity(*this,anPosition);
+   Particle  anParticle = Particle(mEmitter.getTexture(),
+                                   anPosition.scale(mSystem.,
+                                   gt::Randomizer::get(0,gt::Angle::PI*2),
+                                   anVelocity,
+                                   gt::Randomizer::get(),
 
                                  );
 }

@@ -21,28 +21,84 @@ namespace mpe
    class System
    {
       public:
-
+         /// @brief System    
+         /// @param theFactor
          System(Real theFactor);
+         /// @brief ~System 
          ~System();
-
-         void         addEmitter(Emitter::Ptr theEmitter);
-         void         addFocus(Emitter::ID theEmitter,gt::Vec2D thePosition);
-         void         addParticle(Particle theParticle);
-         void         update(Real theElapsedTime);
-         void         draw(sf::RenderWindow& theWindow) const;
-         Emitter::Ptr getEmitter(Emitter::ID theEmitterID) const;
-
+         /// @brief addEmitter 
+         /// @param theEmitter
+         void     addEmitter(Emitter theEmitter);
+         /// @brief addFocus 
+         /// @param theEmitter
+         /// @param thePosition
+         /// @param theAngle
+         void     addFocus(Emitter::ID theEmitter,
+                           gt::Vec2D   thePosition,
+                           Real        theAngle);
+         /// @brief addParticle 
+         /// @param theParticle
+         void     addParticle(Particle theParticle);
+         /// @brief update 
+         /// @param theElapsedTime
+         void     update(Real theElapsedTime);
+         /// @brief draw 
+         /// @param theWindow
+         void     draw(sf::RenderWindow& theWindow) const;
+         /// @brief getEmitter 
+         /// @param theEmitterID
+         /// @return 
+         Emitter& getEmitter(Emitter::ID theEmitterID) const;
+         /// @brief getXFactor 
+         /// @return 
+         Real     getXFactor() const;
+         /// @brief setXFactor 
+         /// @param theXFactor
+         void     setXFactor(Real theXFactor);
+         /// @brief getYFactor 
+         /// @return 
+         Real     getYFactor() const;
+         /// @brief setYFactor 
+         /// @param theYFactor
+         void     setYFactor(Real theYFactor);
       private:
-
+         //   MEMBERS
+         ///////////////////////////////////////////////////////////////////////
          Real mXFactor;
          Real mYFactor;
-         std::list<Focus>                   mFocusses;
-         std::list<Particle>                mParticles;
-         std::map<Emitter::ID,Emitter::Ptr> mEmitters;
-
+         std::list<Focus>              mFocusses;
+         std::list<Particle>           mParticles;
+         std::map<Emitter::ID,Emitter> mEmitters;
+         //    METHODS
+         ///////////////////////////////////////////////////////////////////////
          void updateParticles(Real theElapsedTime);
          void updateFocusses (Real theElapsedTime);
    };
+////////////////////////////////////////////////////////////////////////////////
+/// @brief The accessor to XFactor
+/// @return Real
+inline Real System::getXFactor() const 
+{
+   return mXFactor;
+}
+/// @brief The mutator for XFactor
+/// @param theXFactor
+inline void System::setXFactor(Real theXFactor)
+{
+   mXFactor=theXFactor;
+}
+/// @brief The accessor to YFactor
+/// @return Real
+inline Real System::getYFactor() const 
+{
+   return mYFactor;
+}
+/// @brief The mutator for YFactor
+/// @param theYFactor
+inline void System::setYFactor(Real theYFactor)
+{
+   mYFactor=theYFactor;
+}
 }
 
 #endif 
