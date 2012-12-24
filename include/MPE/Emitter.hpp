@@ -73,7 +73,7 @@ class Emitter
       Real getParticleTOL() const;
       Real getFocusTOL() const;
       Real getFocusPPS() const;
-      Real getFocusNP() const;
+      Integer getFocusNP() const;
       /// @brief setTexture 
       /// @param theFilename
       void setTexture(std::string theFilename);
@@ -92,6 +92,9 @@ class Emitter
       /// @brief setRangeFocusTOL 
       /// @param theRangeFocusTOL
       void setRangeFocusTOL(gt::Randomizer theRangeFocusTOL);
+      /// @brief setRangeFocusPPS 
+      /// @param theRangeFocusPPS
+      void setRangeFocusPPS(Real theMin,Real theMax);
       /// @brief setRangeFocusPPS 
       /// @param theRangeFocusPPS
       void setRangeFocusPPS(gt::Randomizer theRangeFocusPPS);
@@ -127,65 +130,57 @@ inline sf::Texture Emitter::getTexture() const
 {
    return mTexture;
 }
+inline Real Emitter::getParticleTOL() const 
+{
+   return mRangeParticleTOL;
+}
+inline Real Emitter::getFocusTOL() const 
+{
+   return mRangeFocusTOL;
+}
+inline Real Emitter::getFocusPPS() const 
+{
+   return mRangeFocusPPS;
+}
+inline Integer Emitter::getFocusNP() const 
+{
+   return static_cast<Integer>(mRangeFocusNP.get());
+}
 inline void Emitter::setTexture(std::string theFilename)
 {
    mTexture.loadFromFile(theFilename);
-}
-inline Emitter::Shape Emitter::getShape() const
-{
-   return mShape;
 }
 inline void Emitter::setShape(Shape theShape)
 {
    mShape = theShape;
 }
-inline Emitter::Dispersion Emitter::getDispersion() const
-{
-   return mDispersion;
-}
 inline void Emitter::setDispersion(Dispersion theDispersion) 
 {
    mDispersion = theDispersion;
 }
-inline gt::Randomizer Emitter::getParticleStrenght() const 
+inline void Emitter::setRangeParticleStrenght(Real theMin, Real theMax)
 {
-   return mRangeParticlePOW;
+   mRangeParticlePOW(theMin,theMax);
 }
-inline void Emitter::setRangeParticleStrenght(gt::Randomizer theRangeParticleStrenght)
+inline void Emitter::setRangeParticleTOL(Real theMin, Real theMax)
 {
-   mRangeParticlePOW=theRangeParticleStrenght;
+   mRangeParticleTOL(theMin,theMax);
 }
-inline gt::Randomizer Emitter::getParticleTOL() const 
+inline void Emitter::setRangeFocusTOL(Real theMin, Real theMax)
 {
-   return mRangeParticleTOL;
+   mRangeFocusTOL(theMin,theMax);
 }
-inline void Emitter::setRangeParticleTOL(gt::Randomizer theRangeParticleTOL)
+inline void Emitter::setRangeFocusPPS(Real theMin, Real theMax)
 {
-   mRangeParticleTOL=theRangeParticleTOL;
+   mRangeFocusPPS(theMin,theMax);
 }
-inline gt::Randomizer Emitter::getFocusTOL() const 
+inline void Emitter::setRangeFocusNP(Real theMin,Real theMax)
 {
-   return mRangeFocusTOL;
+   mRangeFocusNP(theMin,theMax);
 }
-inline void Emitter::setRangeFocusTOL(gt::Randomizer theRangeFocusTOL)
+inline void setRangeFocusPPS(Real theMin,Real theMax)
 {
-   mRangeFocusTOL=theRangeFocusTOL;
-}
-inline gt::Randomizer Emitter::getFocusPPS() const 
-{
-   return mRangeFocusPPS;
-}
-inline void Emitter::setRangeFocusPPS(gt::Randomizer theRangeFocusPPS)
-{
-   mRangeFocusPPS=theRangeFocusPPS;
-}
-inline gt::Randomizer Emitter::getFocusNP() const 
-{
-   return mRangeFocusNP;
-}
-inline void Emitter::setRangeFocusNP(gt::Randomizer theRangeFocusNP)
-{
-   mRangeFocusNP=theRangeFocusNP;
+   mRangeFocusPPS(theMin, theMax);
 }
 }    
 #endif  

@@ -71,6 +71,8 @@ Particle Focus::createParticle ()
    Particle anParticle = Particle(
                                  mEmitter->getTexture(),
                                  anPosition,
+                                 gt::Randomizer::get(0,gt::Angle::PI*2),
+
                                  );
 }
 //------------------------------------------------------------------------------
