@@ -6,6 +6,7 @@
  */
 
 #include <MPE/Emitter.hpp>
+#include <MPE/Focus.hpp>
 #include <cstdlib>
 
 namespace mpe
@@ -69,33 +70,35 @@ Emitter::Ptr Emitter::create(Emitter::ID theID)
 //      Method:  generateVelocity
 // Description:  
 //--------------------------------------------------------------------------------------
-Vec2D Emitter::generateParticleVelocity (const Focus& theFocus, 
-                                         const Vec2D& theParticlePosition) const
+gt::Vec2D Emitter::generateVelocity(const Focus& theFocus, 
+                                    const gt::Vec2D& theParticlePosition) const
 {
-   Vec2D anVelocity;
+   gt::Vec2D anVelocity;
 
    switch (mDispersion)
    {
       case LINEAR:
-         anVelocity = mLinearVelocity;
+         anVelocity = gt::Vec2D(theFocus.getAngle().getCos(),
+                                theFocus.getAngle().getSin());
          break;
       case RADIAL:
          anVelocity = theFocus.getPosition() - theParticlePosition;
+         anVelocity.normalize();
          break;
       case STATIC:
-         anVelocity = Vec2D();
+         anVelocity = gt::Vec2D();
          break;
       case RANDOM:
-         anVelocity = Vec2D(Randomizer::get(-1,1),Randomizer::get(-1,1));
+         anVelocity = gt::Vec2D(Randomizer::get(-1,1),Randomizer::get(-1,1));
+         anVelocity.normalize();
          break;
      case REFLECT:
-         anVelocity = Vec2D();
+         anVelocity = gt::Vec2D();
          break;
      default:
-         anVelocity = Vec2D();
+         anVelocity = gt::Vec2D();
          break;
    }
-   anVelocity.normalize();
    anVelocity *= mRangeParticlePOW.get();
 
    return anVelocity;
@@ -105,9 +108,9 @@ Vec2D Emitter::generateParticleVelocity (const Focus& theFocus,
 //      Method:  generatePosition
 // Description:  
 //--------------------------------------------------------------------------------------
-Vec2D Emitter::generateParticlePosition(const Focus& theFocus) const
+gt::Vec2D Emitter::generatePosition(const Focus& theFocus) const
 {
-   Vec2D anPosition;
+   gt::Vec2D anPosition;
    do
    {
       anPosition.setX(Randomizer::get(-1,1));
@@ -116,10 +119,31 @@ Vec2D Emitter::generateParticlePosition(const Focus& theFocus) const
    while(mShape == CIRCLE && anPosition.squaremodule() > 1);
 
    anPosition.rotate(theFocus.getAngle());
-   anPosition += theFocus.getPosition();
    anPosition.scale(theFocus.getWidth(),theFocus.getHeight());
+   anPosition += theFocus.getPosition();
 
    return anPosition;
+}
+//------------------------------------------------------------------------------
+//       Class:  Emitter
+//      Method:  createFocus
+// Description:  
+//------------------------------------------------------------------------------
+Focus Emitter::createFocus(System&   theSystem,
+                           gt::Vec2D thePosition,
+                           Real      theAngle)
+{
+   Focus anFocus(getFocusWidth(),
+                 getFocusHeight(),
+                 gt::Angle(theAngle),
+                 thePosition,
+                 getFocusNP(),
+                 getFocusTOL(),
+                 getFocusPPS(),
+                 theSystem,
+                 (*this));
+
+   return anFocus;
 }
 ////////////////////////////////////////////////////////////////////////////////////////
 }

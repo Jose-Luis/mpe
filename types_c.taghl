@@ -1,9 +1,9 @@
-syn keyword CTagsLocalVariable anResult anPosition anVelocity nParticles it anParticle
+syn keyword CTagsLocalVariable anResult thePosition anPosition anVelocity nParticles it anParticle theSystem
 syn keyword CTagsMember mMax mXFactor mEmitter mRangeParticlePOW mMin mET mValue mEP mEmitters mPosition mDispersion mPPS mTOL mRangeFocusHeight mID mHeight PI mRangeFocusWidth mParticles mSystem mWidth mAlive mLinearVelocity mRangeParticleTOL mShape x TIME_INFINITY mAngle mCos mRangeFocusTOL mRangeFocusNP mAngularVelocity mTP mFocusses mTT PARTICLES_INFINITY mYFactor y mRangeFocusPPS mTexture mSprite mSin
 syn keyword CTagsEnumeratorName Dispersion Shape
 syn keyword CTagsEnumerationValue LINEAR RANDOM REFLECT STATIC RADIAL CIRCLE RECTANGLE
-syn keyword CTagsFunction setTexture set getTexture setAngle getFocusPPS System getID getWidth setRangeFocusPPS getDispersion kill toRadians setDispersion setRangeFocusNP setWidth setPosition toDegrees getParticleTOL setRangeFocusTOL setRangeParticleStrenght create getHeight updateFocusses getShape getEmitter getSin generateParticlePosition updateParticles Emitter isAlive setRangeParticleTOL Particle createParticle update getFocusTOL getFocusNP generateParticleVelocity getPosition setHeight drain getAngle
-syn keyword CTagsFunction age Focus getValue getCos getParticleStrenght emit setShape
+syn keyword CTagsFunction setTexture getTexture setAngle getFocusPPS System getID getWidth setRangeFocusPPS set kill toRadians setDispersion setRangeFocusNP setWidth toDegrees getParticleTOL setRangeFocusTOL getFocusHeight getParticlePOW create getHeight updateFocusses setRangeParticlePOW getEmitter generateVelocity getSin updateParticles Emitter isAlive setRangeParticleTOL Particle createParticle update getFocusWidth createFocus getFocusTOL generatePosition setPosition getPosition setHeight drain getAngle
+syn keyword CTagsFunction age Focus getValue getCos getFocusNP emit setShape
 syn keyword CTagsType Real Integer ID Ptr
 syn keyword CTagsDefinedName VEC2D_INC ANGLE_INC FOCUS_INC EMITTER_INC CONFIG_INC RANDOMIZER_INC PARTICLE_INC SYSTEM_INC GT_INC
 syn keyword CTagsClass Angle Particle Randomizer System Focus Vec2D Emitter

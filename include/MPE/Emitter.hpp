@@ -19,6 +19,7 @@
 namespace mpe
 {
 class Focus;
+class System;
 /// @brief Emitter is a server class for the flyweight client Focus.
 class Emitter
 {
@@ -48,18 +49,18 @@ class Emitter
       static Ptr create(ID theID);
       /// @brief createFocus 
       /// @return 
-      Focus createFocus();
+      Focus createFocus(System& theSystem,gt::Vec2D thePosition,Real theAngle);
       /// @brief Generate a random position inside the Shape of the emitter.
       /// The position is transformed by the system factor member to scale it 
       /// to the world coordinates.
       /// @param theFocus
       /// @returns The initial position of the particle.   
-      gt::Vec2D generateParticlePosition(const Focus& theFocus) const;
+      gt::Vec2D generatePosition(const Focus& theFocus) const;
       /// @brief Generate a velocity depending of the emitter dispertion.
       /// @param theFocus
       /// @param theParticlePosition
       /// @returns The particle velocity.
-      gt::Vec2D generateParticleVelocity(const Focus& theFocus,
+      gt::Vec2D generateVelocity(const Focus& theFocus,
                                      const gt::Vec2D& theParticlePosition) const;
       //    ACCESSORS AND MUTATORS
       //////////////////////////////////////////////////////////////////////////
@@ -69,9 +70,11 @@ class Emitter
       /// @brief getTexture 
       /// @return 
       sf::Texture getTexture() const;
-      Real getParticleStrenght() const;
+      Real getParticlePOW() const;
       Real getParticleTOL() const;
       Real getFocusTOL() const;
+      Real getFocusHeight() const;
+      Real getFocusWidth() const;
       Real getFocusPPS() const;
       Integer getFocusNP() const;
       /// @brief setTexture 
@@ -83,24 +86,27 @@ class Emitter
       /// @brief getDispersion 
       /// @return 
       void setDispersion(Dispersion theDispersion);
-      /// @brief setRangeParticleStrenght 
-      /// @param theRangeParticleStrenght
-      void setRangeParticleStrenght(gt::Randomizer theRangeParticleStrenght);
+      /// @brief setRangeParticlePOW 
+      /// @param theRangeParticlePOW
+      void setRangeParticlePOW(Real theMin,Real theMax);
       /// @brief setRangeParticleTOL 
       /// @param theRangeParticleTOL
-      void setRangeParticleTOL(gt::Randomizer theRangeParticleTOL);
+      void setRangeParticleTOL(Real theMin,Real theMax);
       /// @brief setRangeFocusTOL 
       /// @param theRangeFocusTOL
-      void setRangeFocusTOL(gt::Randomizer theRangeFocusTOL);
+      void setRangeFocusTOL(Real theMin,Real theMax);
+      /// @brief setRangeFocusWidth 
+      /// @param theRangeFocusWidth
+      void setRangeFocusWidth(Real theMin,Real theMax);
+      /// @brief setRangeFocusHeight 
+      /// @param theRangeFocusHeight
+      void setRangeFocusHeight(Real theMin,Real theMax);
       /// @brief setRangeFocusPPS 
       /// @param theRangeFocusPPS
       void setRangeFocusPPS(Real theMin,Real theMax);
-      /// @brief setRangeFocusPPS 
-      /// @param theRangeFocusPPS
-      void setRangeFocusPPS(gt::Randomizer theRangeFocusPPS);
       /// @brief setRangeFocusNP 
       /// @param theRangeFocusNP
-      void setRangeFocusNP(gt::Randomizer theRangeFocusNP);
+      void setRangeFocusNP(Real theMin,Real theMax);
    private:
       //                      VARIABLES
       //////////////////////////////////////////////////////////////////////////
@@ -108,7 +114,6 @@ class Emitter
       sf::Texture mTexture;          ///< The texture to make an Sprite.
       Shape       mShape;            ///< The emitter's shape.
       Dispersion  mDispersion;       ///< Type of paricles' dispersion.
-      gt::Vec2D   mLinearVelocity;   ///< Type of paricles' dispersion.
       gt::Randomizer  mRangeParticlePOW; ///< Range of paricles impulsion.
       gt::Randomizer  mRangeParticleTOL; ///< Range of particles lifetime.
       gt::Randomizer  mRangeFocusWidth;  ///< Range of focus width.
@@ -130,17 +135,29 @@ inline sf::Texture Emitter::getTexture() const
 {
    return mTexture;
 }
+inline Real Emitter::getParticlePOW() const 
+{
+   return mRangeParticlePOW.get();
+}
 inline Real Emitter::getParticleTOL() const 
 {
-   return mRangeParticleTOL;
+   return mRangeParticleTOL.get();
 }
 inline Real Emitter::getFocusTOL() const 
 {
-   return mRangeFocusTOL;
+   return mRangeFocusTOL.get();
+}
+inline Real Emitter::getFocusWidth() const 
+{
+   return mRangeFocusWidth.get();
+}
+inline Real Emitter::getFocusHeight() const 
+{
+   return mRangeFocusHeight.get();
 }
 inline Real Emitter::getFocusPPS() const 
 {
-   return mRangeFocusPPS;
+   return mRangeFocusPPS.get();
 }
 inline Integer Emitter::getFocusNP() const 
 {
@@ -158,7 +175,7 @@ inline void Emitter::setDispersion(Dispersion theDispersion)
 {
    mDispersion = theDispersion;
 }
-inline void Emitter::setRangeParticleStrenght(Real theMin, Real theMax)
+inline void Emitter::setRangeParticlePOW(Real theMin, Real theMax)
 {
    mRangeParticlePOW(theMin,theMax);
 }

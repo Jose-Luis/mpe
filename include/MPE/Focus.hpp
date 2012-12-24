@@ -26,14 +26,15 @@ class Focus
       const static Integer PARTICLES_INFINITY;
 
       Focus(
-            Real theWidth,
-            Real theHeight,
+            Real      theWidth,
+            Real      theHeight,
             gt::Angle theAngle,
             gt::Vec2D thePosition,
-            Integer theTP,
-            Real theTT,
-            Emitter::Ptr theEmitter,
-            System& theSystem
+            Integer   theTP,
+            Real      theTT,
+            Real      thePPS,
+            System&   theSystem,
+            Emitter&  theEmitter
             );
    /////////////////////////////////////////////////////////////////////////////
    //     METHODS

@@ -31,6 +31,7 @@ Focus::Focus(
    mEP(0),
    mTT(theTT),
    mET(0),
+   mPPS(thePPS),
    mEmitter(theEmitter),
    mSystem(theSystem)
 {
