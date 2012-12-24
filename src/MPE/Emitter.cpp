@@ -11,65 +11,29 @@
 
 namespace mpe
 {     
-//--------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 //       Class:  Emitter
 //      Method:  constructor
 // Description:  
-//--------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 Emitter::Emitter(Emitter::ID theID):
    mID(theID)
 {
 }
-//--------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 //       Class:  Emitter
 //      Method:  create
 // Description:  
-//--------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 Emitter::Ptr Emitter::create(Emitter::ID theID)
 {
    return boost::make_shared<Emitter>(theID,theSystem);
 }
-////--------------------------------------------------------------------------------------
-////       Class:  Emitter
-////      Method:  update
-//// Description:  
-////--------------------------------------------------------------------------------------
-//void Emitter::update(Real theElapsedTime)
-//{
-   //for (auto it = mFocusses.begin(); it != mFocusses.end(); it++)
-   //{
-      //it->lifetime += theElapsedTime;
-      //updateFocusState(*it);
-      //if ( it->alive)
-      //{
-         //Integer nParticles = (mPPS * it->lifetime / 1000) - it->emittedParticles;
-         //it->emittedParticles += nParticles;
-         //emit(nParticles);
-      //}
-      //else 
-      //{
-         //mFocusses.erase(it);
-      //}
-   //}
-//}
-////--------------------------------------------------------------------------------------
-////       Class:  Emitter
-////      Method:  emit
-//// Description:  
-////--------------------------------------------------------------------------------------
-//void Emitter::emit(Integer theNumberOfParticles, Focus& theFocus)
-//{
-   //for (Integer i = 0; i < theNumberOfParticles; i++)
-   //{
-      ////Particle anParticle = Particle(...);
-      //mSystem.addParticle(anParticle);
-   //}
-//}
-//--------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 //       Class:  Emitter
 //      Method:  generateVelocity
 // Description:  
-//--------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 gt::Vec2D Emitter::generateVelocity(const Focus& theFocus, 
                                     const gt::Vec2D& theParticlePosition) const
 {
@@ -103,11 +67,11 @@ gt::Vec2D Emitter::generateVelocity(const Focus& theFocus,
 
    return anVelocity;
 }
-//--------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 //       Class:  Emitter
 //      Method:  generatePosition
 // Description:  
-//--------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 gt::Vec2D Emitter::generatePosition(const Focus& theFocus) const
 {
    gt::Vec2D anPosition;
@@ -145,7 +109,7 @@ Focus Emitter::createFocus(System&   theSystem,
 
    return anFocus;
 }
-////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 }
 /* Copyright (C) 
  * 2012 - Jose Luis Lavado
@@ -165,3 +129,39 @@ Focus Emitter::createFocus(System&   theSystem,
  * 
  */
 
+////--------------------------------------------------------------------------------------
+////       Class:  Emitter
+////      Method:  update
+//// Description:  
+////--------------------------------------------------------------------------------------
+//void Emitter::update(Real theElapsedTime)
+//{
+   //for (auto it = mFocusses.begin(); it != mFocusses.end(); it++)
+   //{
+      //it->lifetime += theElapsedTime;
+      //updateFocusState(*it);
+      //if ( it->alive)
+      //{
+         //Integer nParticles = (mPPS * it->lifetime / 1000) - it->emittedParticles;
+         //it->emittedParticles += nParticles;
+         //emit(nParticles);
+      //}
+      //else 
+      //{
+         //mFocusses.erase(it);
+      //}
+   //}
+//}
+////--------------------------------------------------------------------------------------
+////       Class:  Emitter
+////      Method:  emit
+//// Description:  
+////--------------------------------------------------------------------------------------
+//void Emitter::emit(Integer theNumberOfParticles, Focus& theFocus)
+//{
+   //for (Integer i = 0; i < theNumberOfParticles; i++)
+   //{
+      ////Particle anParticle = Particle(...);
+      //mSystem.addParticle(anParticle);
+   //}
+//}

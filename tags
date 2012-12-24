@@ -45,18 +45,18 @@ VEC2D_INC	ext_libs/include/GT/Vec2D.hpp	7;"	d
 Vec2D	ext_libs/include/GT/Vec2D.hpp	/^class Vec2D$/;"	c	namespace:gt
 age	include/MPE/Focus.hpp	/^inline void Focus::age(Real theElapsedTime)$/;"	f	class:mpe::Focus
 anParticle	src/MPE/Focus.cpp	/^   Particle anParticle = Particle($/;"	l
-anPosition	src/MPE/Emitter.cpp	/^   gt::Vec2D anPosition;$/;"	l
 anPosition	src/MPE/Focus.cpp	/^   gt::Vec2D anPosition = mEmitter->generateParticlePosition(*this);$/;"	l
 anResult	src/MPE/System.cpp	/^   Emitter::Ptr anResult;$/;"	l
 anVelocity	src/MPE/Emitter.cpp	/^   gt::Vec2D anVelocity;$/;"	l
 anVelocity	src/MPE/Focus.cpp	/^   gt::Vec2D anVelocity = mEmitter->generateParticleVelocity(*this,anPosition);$/;"	l
-createFocus	src/MPE/Emitter.cpp	/^Focus Emitter::createFocus(System&   theSystem,$/;"	f	class:mpe::Emitter
+anposition	src/MPE/Emitter.cpp	/^   gt::vec2d anposition;$/;"	l
 createParticle	src/MPE/Focus.cpp	/^Particle Focus::createParticle ()$/;"	f	class:mpe::Focus
+createfocus	src/MPE/Emitter.cpp	/^focus emitter::createfocus(system&   thesystem,$/;"	f	class:mpe::emitter
 create	src/MPE/Emitter.cpp	/^Emitter::Ptr Emitter::create(Emitter::ID theID)$/;"	f	class:mpe::Emitter
 drain	include/MPE/Focus.hpp	/^inline Integer Focus::drain(Real theElapsedTime)$/;"	f	class:mpe::Focus
 emit	src/MPE/Focus.cpp	/^void Focus::emit ()$/;"	f	class:mpe::Focus
-generatePosition	src/MPE/Emitter.cpp	/^gt::Vec2D Emitter::generatePosition(const Focus& theFocus) const$/;"	f	class:mpe::Emitter
-generateVelocity	src/MPE/Emitter.cpp	/^gt::Vec2D Emitter::generateVelocity(const Focus& theFocus, $/;"	f	class:mpe::Emitter
+generateVelocity	src/MPE/Emitter.cpp	/^gt::Vec2D Emitter::generateVelocity(const Focus&     theFocus, $/;"	f	class:mpe::Emitter
+generateposition	src/MPE/Emitter.cpp	/^gt::vec2d emitter::generateposition(const focus& thefocus) const$/;"	f	class:mpe::emitter
 getAngle	include/MPE/Focus.hpp	/^inline gt::Angle Focus::getAngle() const $/;"	f	class:mpe::Focus
 getCos	ext_libs/include/GT/Angle.hpp	/^         inline Real getCos ( ) const {return mCos;};$/;"	f	class:gt::Angle
 getEmitter	src/MPE/System.cpp	/^Emitter::Ptr System::getEmitter ( Emitter::ID theEmitterID ) const$/;"	f	class:mpe::System
@@ -144,8 +144,8 @@ setShape	include/MPE/Emitter.hpp	/^inline void Emitter::setShape(Shape theShape)
 setTexture	include/MPE/Emitter.hpp	/^inline void Emitter::setTexture(std::string theFilename)$/;"	f	class:mpe::Emitter
 setWidth	include/MPE/Focus.hpp	/^inline void Focus::setWidth(Real theWidth)$/;"	f	class:mpe::Focus
 set	ext_libs/include/GT/Angle.hpp	/^         inline void set(Real theValue)$/;"	f	class:gt::Angle
-thePosition	src/MPE/Emitter.cpp	/^                 thePosition,$/;"	l
-theSystem	src/MPE/Emitter.cpp	/^                 theSystem,$/;"	l
+theposition	src/MPE/Emitter.cpp	/^                 theposition,$/;"	l
+thesystem	src/MPE/Emitter.cpp	/^                 thesystem,$/;"	l
 toDegrees	ext_libs/include/GT/Angle.hpp	/^         static inline Real toDegrees(float theRadians)$/;"	f	class:gt::Angle
 toRadians	ext_libs/include/GT/Angle.hpp	/^         static inline Real toRadians(float theDegrees)$/;"	f	class:gt::Angle
 updateFocusses	src/MPE/System.cpp	/^void System::updateFocusses(Real theElapsedTime)$/;"	f	class:mpe::System
