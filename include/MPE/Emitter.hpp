@@ -64,12 +64,26 @@ class Emitter
       /// @brief getTexture 
       /// @return 
       const sf::Texture& getTexture() const;
+      /// @brief getParticlePOW 
+      /// @return 
       Real getParticlePOW() const;
+      /// @brief getParticleTOL 
+      /// @return 
       Real getParticleTOL() const;
+      /// @brief getFocusTOL 
+      /// @return 
       Real getFocusTOL() const;
+      /// @brief getFocusHeight 
+      /// @return 
       Real getFocusHeight() const;
+      /// @brief getFocusWidth 
+      /// @return 
       Real getFocusWidth() const;
+      /// @brief getFocusPPS 
+      /// @return 
       Real getFocusPPS() const;
+      /// @brief getFocusNP 
+      /// @return 
       Integer getFocusNP() const;
       /// @brief setTexture 
       /// @param theFilename
