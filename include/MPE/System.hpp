@@ -28,7 +28,7 @@ namespace mpe
          ~System();
          /// @brief addEmitter 
          /// @param theEmitter
-         void     addEmitter(Emitter theEmitter);
+         void     addEmitter(Emitter& theEmitter);
          /// @brief addFocus 
          /// @param theEmitter
          /// @param thePosition
@@ -38,7 +38,7 @@ namespace mpe
                            Real        theAngle);
          /// @brief addParticle 
          /// @param theParticle
-         void     addParticle(Particle theParticle);
+         void     addParticle(Particle& theParticle);
          /// @brief update 
          /// @param theElapsedTime
          void     update(Real theElapsedTime);
@@ -48,7 +48,7 @@ namespace mpe
          /// @brief getEmitter 
          /// @param theEmitterID
          /// @return 
-         Emitter& getEmitter(Emitter::ID theEmitterID) const;
+         Emitter& getEmitter(Emitter::ID theEmitterID);
          /// @brief getXFactor 
          /// @return 
          Real     getXFactor() const;

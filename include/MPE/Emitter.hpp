@@ -21,7 +21,7 @@ class System;
 class Emitter
 {
    public:
-      const static Emitter DUMMY;
+      static Emitter DUMMY;
       //                      INNER TYPES                                                                    
       //////////////////////////////////////////////////////////////////////////
       /// @brief a typedef for a std::string
@@ -41,7 +41,9 @@ class Emitter
       ~Emitter();
       /// @brief createFocus 
       /// @return 
-      Focus createFocus(System& theSystem,gt::Vec2D thePosition,Real theAngle);
+      Focus createFocus(System&   theSystem,
+                        gt::Vec2D thePosition,
+                        Real      theAngle);
       /// @brief Generate a random position inside the Shape of the emitter.
       /// The position is transformed by the system factor member to scale it 
       /// to the world coordinates.
@@ -61,7 +63,7 @@ class Emitter
       ID getID() const;
       /// @brief getTexture 
       /// @return 
-      sf::Texture getTexture() const;
+      const sf::Texture& getTexture() const;
       Real getParticlePOW() const;
       Real getParticleTOL() const;
       Real getFocusTOL() const;
@@ -123,7 +125,7 @@ inline Emitter::ID Emitter::getID() const
 {
    return mID;
 }
-inline sf::Texture Emitter::getTexture() const
+inline const sf::Texture& Emitter::getTexture() const
 {
    return mTexture;
 }
@@ -175,6 +177,14 @@ inline void Emitter::setRangeParticleTOL(Real theMin, Real theMax)
 {
    mRangeParticleTOL(theMin,theMax);
 }
+inline void Emitter::setRangeFocusWidth(Real theMin, Real theMax)
+{
+   mRangeFocusWidth(theMin,theMax);
+}
+inline void Emitter::setRangeFocusHeight(Real theMin, Real theMax)
+{
+   mRangeFocusHeight(theMin,theMax);
+}
 inline void Emitter::setRangeFocusTOL(Real theMin, Real theMax)
 {
    mRangeFocusTOL(theMin,theMax);
@@ -187,9 +197,23 @@ inline void Emitter::setRangeFocusNP(Real theMin,Real theMax)
 {
    mRangeFocusNP(theMin,theMax);
 }
-inline void setRangeFocusPPS(Real theMin,Real theMax)
-{
-   mRangeFocusPPS(theMin, theMax);
-}
+static Emitter DUMMY = Emitter("DUMMY");
 }    
 #endif  
+// Copyright (C) 
+// 
+// This program is free software; you can redistribute it and/or
+// modify it under the terms of the GNU General Public License
+// as published by the Free Software Foundation; either version 2
+// of the License, or (at your option) any later version.
+// 
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+// 
+// You should have received a copy of the GNU General Public License
+// along with this program; if not, write to the Free Software
+// Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+// 
+

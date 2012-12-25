@@ -22,14 +22,13 @@ System::System ( Real theFactor ):
 //      Method:  addEmitter
 // Description:  
 //--------------------------------------------------------------------------------------
-void System::addEmitter(Emitter theEmitter)
+void System::addEmitter(Emitter& theEmitter)
 {
    Emitter::ID anEmitterID = theEmitter.getID();
    auto it = mEmitters.find(anEmitterID);
    if (it != mEmitters.end() )
    {
-      mEmitters.insert(std::make_pair<Emitter::ID,Emitter>
-                                     (anEmitterID,theEmitter));
+      mEmitters.insert(std::pair<Emitter::ID,Emitter>(anEmitterID,theEmitter));
    }
 }
 //--------------------------------------------------------------------------------------
@@ -37,24 +36,36 @@ void System::addEmitter(Emitter theEmitter)
 //      Method:  addFocus
 // Description:  
 //--------------------------------------------------------------------------------------
-void Emitter::addFocus ( )
+void System::addFocus(Emitter::ID theEmitterID,
+                       gt::Vec2D  thePosition,
+                       Real       theAngle)
 {
-   return ;
+   Emitter& anEmitter = getEmitter(theEmitterID);
+   anEmitter.createFocus((*this),thePosition,theAngle);
+}
+//--------------------------------------------------------------------------------------
+//       Class:  System
+//      Method:  addParticle
+// Description:  
+//--------------------------------------------------------------------------------------
+void System::addParticle (Particle& theParticle)
+{
+   mParticles.push_back(theParticle);
 }
 //------------------------------------------------------------------------------
 //       Class:  System
 //      Method:  getEmitter
 // Description:  
 //------------------------------------------------------------------------------
-Emitter& System::getEmitter ( Emitter::ID theEmitterID ) const
+Emitter& System::getEmitter ( Emitter::ID theEmitterID )
 {
 
    auto it = mEmitters.find(theEmitterID);
    if (it != mEmitters.end() )
    {
-      Emitter& anResult = it->second();
+      return it->second;
    }
-   return anResult;
+   return Emitter::DUMMY;
 }
 //------------------------------------------------------------------------------
 //       Class:  System

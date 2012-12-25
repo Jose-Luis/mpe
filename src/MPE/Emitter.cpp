@@ -17,7 +17,9 @@ namespace mpe
 // Description:  
 //------------------------------------------------------------------------------
 Emitter::Emitter(Emitter::ID theID):
-   mID(theID)
+   mID(theID),
+   mRangeFocusTOL(0,0),
+   mRangeFocusPPS(0,0)
 {
 }
 //------------------------------------------------------------------------------
@@ -44,7 +46,8 @@ gt::Vec2D Emitter::generateVelocity(const Focus& theFocus,
          anVelocity = gt::Vec2D();
          break;
       case RANDOM:
-         anVelocity = gt::Vec2D(Randomizer::get(-1,1),Randomizer::get(-1,1));
+         anVelocity = gt::Vec2D(gt::Randomizer::get(-1,1),
+                                gt::Randomizer::get(-1,1));
          anVelocity.normalize();
          break;
      case REFLECT:
@@ -68,8 +71,8 @@ gt::Vec2D Emitter::generatePosition(const Focus& theFocus) const
    gt::Vec2D anPosition;
    do
    {
-      anPosition.setX(Randomizer::get(-1,1));
-      anPosition.setY(Randomizer::get(-1,1));
+      anPosition.x = gt::Randomizer::get(-1,1);
+      anPosition.y = gt::Randomizer::get(-1,1);
    }
    while(mShape == CIRCLE && anPosition.squaremodule() > 1);
 

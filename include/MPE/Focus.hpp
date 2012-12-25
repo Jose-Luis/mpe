@@ -96,7 +96,7 @@ class Focus
    /////////////////////////////////////////////////////////////////////////////
    //     METHODS
    /////////////////////////////////////////////////////////////////////////////
-      void emit();
+      void emit(Integer theNParticles);
       void age(Real theElapseTime);
       Integer drain(Real theElapsedTime);
       Particle createParticle();

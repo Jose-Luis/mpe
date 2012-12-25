@@ -25,13 +25,13 @@ class Particle
       /// @param theColor
       Particle
          (
-          sf::Texture& theTexture, 
-          gt::Vec2D    thePosition, 
-          Real         theAngle, 
-          gt::Vec2D    theLinearVelocity, 
-          Real         theAngularVelocity, 
-          sf::Color    theColor, 
-          Real         theTOL
+          const sf::Texture& theTexture, 
+          gt::Vec2D          thePosition, 
+          Real               theAngle, 
+          gt::Vec2D          theLinearVelocity, 
+          Real               theAngularVelocity, 
+          Real               theTOL,
+          sf::Color          theColor=sf::Color(255,255,255) 
           );
       /// @brief ~Particle 
       ~Particle();

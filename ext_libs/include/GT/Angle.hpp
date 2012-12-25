@@ -55,10 +55,9 @@ namespace gt
          /// @param theValue
          /// @return 
          Angle& operator=(const Real theValue);
-
-      private:
-
+         /// @brief  PI constant
          const static Real PI;
+      private:
 
          Real mValue;
          Real mSin;

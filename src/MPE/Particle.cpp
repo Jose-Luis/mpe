@@ -14,30 +14,30 @@ namespace mpe
    //---------------------------------------------------------------------------
    Particle::Particle
       (
-       sf::Texture& theTexture,
-       gt::Vec2D    thePosition,
-       Real         theAngle, 
-       gt::Vec2D    theLinearVelocity,
-       Real         theAngularVelocity, 
-       sf::Color    theColor, 
-       Real         theTTL
+       const sf::Texture& theTexture,
+       gt::Vec2D          thePosition,
+       Real               theAngle, 
+       gt::Vec2D          theLinearVelocity,
+       Real               theAngularVelocity, 
+       Real               theTTL,
+       sf::Color          theColor 
       ):
          mAlive(true),
          mSprite(theTexture),
-         mAngularVelocity(theAngularVelocity),
          mLinearVelocity(theLinearVelocity),
+         mAngularVelocity(theAngularVelocity),
          mTOL(theTTL)
       {
          mSprite.setPosition(thePosition.x,thePosition.y);
-         mSprite.setColor(theColor);
          mSprite.setRotation(theAngle);
+         mSprite.setColor(theColor);
       }
    //---------------------------------------------------------------------------
    //      Class:        Particle
    //      Method:       Destructor
    //      Description:  
    //---------------------------------------------------------------------------
-   Particle::~Particle(){};
+   Particle::~Particle(){}
    //---------------------------------------------------------------------------
    //      Class:        Particle
    //      Method:       update

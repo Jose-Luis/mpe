@@ -53,12 +53,12 @@ void Focus::update(Real theElapsedTime)
 //      Method:  emit
 // Description:  
 //------------------------------------------------------------------------------
-void Focus::emit ()
+void Focus::emit(Integer theNParticles)
 {
-   for(int i = 0; i < nParticles;i++)
+   for(int i = 0; i < theNParticles; i++)
    {
-      //Particle anParticle = createParticle();
-      mParticles.push_back(anParticle);
+      Particle anParticle = createParticle();
+      mSystem.addParticle(anParticle);
    }
 }
 //------------------------------------------------------------------------------
@@ -71,12 +71,13 @@ Particle Focus::createParticle ()
    gt::Vec2D anPosition = mEmitter.generatePosition(*this);
    gt::Vec2D anVelocity = mEmitter.generateVelocity(*this,anPosition);
    Particle  anParticle = Particle(mEmitter.getTexture(),
-                                   anPosition.scale(mSystem.,
+                                   anPosition.scale(mSystem.getXFactor(),
+                                                    mSystem.getYFactor()),
                                    gt::Randomizer::get(0,gt::Angle::PI*2),
                                    anVelocity,
-                                   gt::Randomizer::get(),
-
-                                 );
+                                   gt::Randomizer::get(-1,1),
+                                   mEmitter.getParticleTOL());
+   return anParticle;
 }
 //------------------------------------------------------------------------------
 //      Class:        Focus
