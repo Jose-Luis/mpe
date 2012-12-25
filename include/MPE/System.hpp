@@ -18,6 +18,7 @@
 
 namespace mpe
 {
+/// @class System
    class System
    {
       public:
