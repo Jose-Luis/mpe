@@ -12,6 +12,7 @@
 
 namespace mpe
 {
+/// @class Particle
 /// @brief Particle 
 class Particle
 {

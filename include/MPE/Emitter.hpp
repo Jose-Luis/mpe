@@ -17,6 +17,7 @@ namespace mpe
 {
 class Focus;
 class System;
+/// @class Emitter
 /// @brief Emitter is a server class for the flyweight client Focus.
 class Emitter
 {
