@@ -39,6 +39,10 @@ class Particle
       /// @param theElapsedTime
       void update(Real theElapsedTime);
       bool isAlive();
+      const sf::Sprite& getSprite() const
+      {
+         return mSprite;
+      }
 
    private:
       bool        mAlive;

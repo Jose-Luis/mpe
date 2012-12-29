@@ -115,4 +115,18 @@ void System::update (Real theElapsedTime)
    updateFocusses(theElapsedTime);
    updateParticles(theElapsedTime);
 }
+//--------------------------------------------------------------------------------------
+//       Class:  System
+//      Method:  draw
+// Description:  
+//--------------------------------------------------------------------------------------
+void System::draw (sf::RenderWindow& theWindow) const
+{
+   std::list<Particle>::const_iterator it;
+   for(it = mParticles.begin();it != mParticles.end();it++)
+   {
+      theWindow.draw(it->getSprite());
+   }
 }
+}
+
