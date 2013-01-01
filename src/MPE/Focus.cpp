@@ -5,6 +5,8 @@
 
 #include <MPE/Focus.hpp>
 #include <MPE/System.hpp>
+#include <MPE/Emitter.hpp>
+#include <MPE/Particle.hpp>
 namespace mpe
 {
 

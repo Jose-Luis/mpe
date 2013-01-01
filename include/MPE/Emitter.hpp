@@ -38,8 +38,6 @@ class Emitter
       /// @brief Emitter 
       /// @param theID
       Emitter(ID theID);
-      /// @brief ~Emitter 
-      ~Emitter();
       /// @brief createFocus 
       /// @return 
       Focus createFocus(System&   theSystem,
@@ -212,7 +210,7 @@ inline void Emitter::setRangeFocusNP(Real theMin,Real theMax)
 {
    mRangeFocusNP(theMin,theMax);
 }
-static Emitter DUMMY = Emitter("DUMMY");
+Emitter Emitter::DUMMY = Emitter("DUMMY");
 }    
 #endif  
 // Copyright (C) 

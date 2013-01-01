@@ -24,12 +24,12 @@ namespace mpe
       ):
          mAlive(true),
          mSprite(theTexture),
+         mPosition(thePosition),
+         mAngle(theAngle),
          mLinearVelocity(theLinearVelocity),
          mAngularVelocity(theAngularVelocity),
          mTOL(theTTL)
       {
-         mSprite.setPosition(thePosition.x,thePosition.y);
-         mSprite.setRotation(theAngle);
          mSprite.setColor(theColor);
       }
    //---------------------------------------------------------------------------
@@ -53,9 +53,10 @@ namespace mpe
       }
       else
       {
-         mSprite.move(mLinearVelocity.x*theElapsedTime,
-                      mLinearVelocity.y*theElapsedTime);
-         mSprite.rotate(mAngularVelocity*theElapsedTime);
+         mPosition += mLinearVelocity * theElapsedTime;
+         mAngle += mAngularVelocity * theElapsedTime;
       }
    }
 }
+
+

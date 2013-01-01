@@ -39,15 +39,21 @@ class Particle
       /// @brief update 
       /// @param theElapsedTime
       void update(Real theElapsedTime);
+      /// @brief isAlive 
+      /// @return 
       bool isAlive();
-      const sf::Sprite& getSprite() const
-      {
-         return mSprite;
-      }
-
+      /// @brief getSprite 
+      /// @return 
+      const sf::Sprite& getSprite() const;
+      /// @brief setSpritePosition 
+      /// @param theXFactor
+      /// @param theYFactor
+      void setSpritePosition(Real theXFactor,Real theYFactor);
    private:
       bool        mAlive;
       sf::Sprite  mSprite;
+      gt::Vec2D   mPosition;
+      Real        mAngle;
       gt::Vec2D   mLinearVelocity;
       Real        mAngularVelocity;
       Real        mTOL;
@@ -56,6 +62,15 @@ class Particle
 inline bool Particle::isAlive()
 {
    return mAlive;
+}
+inline void Particle::setSpritePosition(Real theXFactor,Real theYFactor)
+{
+   mSprite.setPosition(mPosition.x*theXFactor,mPosition.y*theYFactor);
+   mSprite.setRotation(mAngle);
+}
+inline const sf::Sprite& Particle::getSprite() const
+{
+   return mSprite;
 }
 }
 #endif 

@@ -98,6 +98,7 @@ void System::updateParticles(Real theElapsedTime)
       if (it->isAlive())
       {
          it->update(theElapsedTime);
+         it->setSpritePosition(mXFactor,mYFactor);
       }
       else 
       {

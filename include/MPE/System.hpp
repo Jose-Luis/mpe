@@ -25,8 +25,6 @@ namespace mpe
          /// @brief System    
          /// @param theFactor
          System(Real theFactor);
-         /// @brief ~System 
-         ~System();
          /// @brief addEmitter 
          /// @param theEmitter
          void     addEmitter(Emitter& theEmitter);
