@@ -8,12 +8,10 @@
 
 #include <list>
 #include <map>
-#include <boost/shared_ptr.hpp>
 
 #include <SFML/Graphics.hpp>
 
-#include <MPE/Emitter.hpp>
-#include <MPE/Focus.hpp>
+#include <MPE/Config.hpp>
 #include <GT/GT.hpp>
 
 namespace mpe
@@ -32,7 +30,7 @@ namespace mpe
          /// @param theEmitter
          /// @param thePosition
          /// @param theAngle
-         void     addFocus(Emitter::ID theEmitter,
+         void     addFocus(EmitterID theEmitter,
                            gt::Vec2D   thePosition,
                            Real        theAngle);
          /// @brief addParticle 
@@ -47,7 +45,7 @@ namespace mpe
          /// @brief getEmitter 
          /// @param theEmitterID
          /// @return 
-         Emitter& getEmitter(Emitter::ID theEmitterID);
+         Emitter& getEmitter(EmitterID theEmitterID);
          /// @brief getXFactor 
          /// @return 
          Real     getXFactor() const;
@@ -67,7 +65,7 @@ namespace mpe
          Real mYFactor;
          std::list<Focus>              mFocusses;
          std::list<Particle>           mParticles;
-         std::map<Emitter::ID,Emitter> mEmitters;
+         std::map<EmitterID,Emitter>   mEmitters;
          //    METHODS
          ///////////////////////////////////////////////////////////////////////
          void updateParticles(Real theElapsedTime);

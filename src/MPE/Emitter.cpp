@@ -16,7 +16,7 @@ namespace mpe
 //      Method:  constructor
 // Description:  
 //------------------------------------------------------------------------------
-Emitter::Emitter(Emitter::ID theID):
+Emitter::Emitter(EmitterID theID):
    mID(theID),
    mRangeFocusTOL(0,0),
    mRangeFocusPPS(0,0)
@@ -39,7 +39,7 @@ gt::Vec2D Emitter::generateVelocity(const Focus& theFocus,
                                 theFocus.getAngle().getSin());
          break;
       case RADIAL:
-         anVelocity = theFocus.getPosition() - theParticlePosition;
+         anVelocity = theParticlePosition - theFocus.getPosition();
          anVelocity.normalize();
          break;
       case STATIC:
@@ -78,7 +78,7 @@ gt::Vec2D Emitter::generatePosition(const Focus& theFocus) const
 
    anPosition.rotate(theFocus.getAngle());
    anPosition.scale(theFocus.getWidth(),theFocus.getHeight());
-   anPosition += theFocus.getPosition();
+   anPosition = anPosition + theFocus.getPosition();
 
    return anPosition;
 }
@@ -104,6 +104,7 @@ Focus Emitter::createFocus(System&   theSystem,
    return anFocus;
 }
 ////////////////////////////////////////////////////////////////////////////////
+Emitter Emitter::DUMMY = Emitter("DUMMY");
 }
 /* Copyright (C) 
  * 2012 - Jose Luis Lavado

@@ -9,6 +9,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <GT/GT.hpp>
+#include <MPE/Config.hpp>
 
 namespace mpe
 {
@@ -65,8 +66,8 @@ inline bool Particle::isAlive()
 }
 inline void Particle::setSpritePosition(Real theXFactor,Real theYFactor)
 {
-   mSprite.setPosition(mPosition.x*theXFactor,mPosition.y*theYFactor);
    mSprite.setRotation(mAngle);
+   mSprite.setPosition(mPosition.x*theXFactor,mPosition.y*theYFactor);
 }
 inline const sf::Sprite& Particle::getSprite() const
 {

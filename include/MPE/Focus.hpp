@@ -10,14 +10,10 @@
 #include <limits>
 #include <cfloat>
 #include <GT/GT.hpp>
-#include <MPE/Emitter.hpp>
-#include <MPE/Particle.hpp>
+#include <MPE/Config.hpp>
 
 namespace mpe
 {
-class System;
-class Emitter;
-class Particle;
 ////////////////////////////////////////////////////////////////////////////////
 //             CLASS FOCUS
 ////////////////////////////////////////////////////////////////////////////////
@@ -226,10 +222,14 @@ inline Integer Focus::drain(Real theElapsedTime)
    {
       nParticles = (mPPS * mET / 1000) - mEP;
    }
-   if(mEP + nParticles > mTT)
+   if(mEP + nParticles > mTP)
    {
-      nParticles = nParticles - (mEP + nParticles - mTT);
+      nParticles =  mTP - mEP;
       kill();
+   }
+   else
+   {
+      mEP += nParticles;
    }
    return nParticles;
 }

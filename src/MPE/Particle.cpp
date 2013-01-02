@@ -31,6 +31,7 @@ namespace mpe
          mTOL(theTTL)
       {
          mSprite.setColor(theColor);
+         mSprite.setOrigin(theTexture.getSize().x/2,theTexture.getSize().y/2);
       }
    //---------------------------------------------------------------------------
    //      Class:        Particle

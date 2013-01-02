@@ -28,6 +28,7 @@ Focus::Focus(
             ):
    mAlive(true),
    mWidth(theWidth),
+   mHeight(theHeight),
    mAngle(theAngle),
    mPosition(thePosition),
    mTP(theTP),
@@ -73,8 +74,7 @@ Particle Focus::createParticle ()
    gt::Vec2D anPosition = mEmitter.generatePosition(*this);
    gt::Vec2D anVelocity = mEmitter.generateVelocity(*this,anPosition);
    Particle  anParticle = Particle(mEmitter.getTexture(),
-                                   anPosition.scale(mSystem.getXFactor(),
-                                                    mSystem.getYFactor()),
+                                   anPosition,
                                    gt::Randomizer::get(0,gt::Angle::PI*2),
                                    anVelocity,
                                    gt::Randomizer::get(-1,1),

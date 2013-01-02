@@ -12,11 +12,10 @@
 
 #include <SFML/Graphics.hpp>
 #include <GT/GT.hpp>
+#include <MPE/Config.hpp>
 
 namespace mpe
 {
-class Focus;
-class System;
 /// @class Emitter
 /// @brief Emitter is a server class for the flyweight client Focus.
 class Emitter
@@ -25,8 +24,6 @@ class Emitter
       static Emitter DUMMY;
       //                      INNER TYPES                                                                    
       //////////////////////////////////////////////////////////////////////////
-      /// @brief a typedef for a std::string
-      typedef std::string ID;
       /// @enum Shape
       /// @brief The Shape of the emitter. 
       enum Shape{RECTANGLE,CIRCLE};
@@ -37,7 +34,7 @@ class Emitter
       //////////////////////////////////////////////////////////////////////////
       /// @brief Emitter 
       /// @param theID
-      Emitter(ID theID);
+      Emitter(EmitterID theID);
       /// @brief createFocus 
       /// @return 
       Focus createFocus(System&   theSystem,
@@ -59,7 +56,7 @@ class Emitter
       //////////////////////////////////////////////////////////////////////////
       /// @brief getID 
       /// @return 
-      ID getID() const;
+      EmitterID getID() const;
       /// @brief getTexture 
       /// @return 
       const sf::Texture& getTexture() const;
@@ -117,7 +114,7 @@ class Emitter
    private:
       //                      VARIABLES
       //////////////////////////////////////////////////////////////////////////
-      ID          mID;               ///< Unique ID for the emitter.
+      EmitterID          mID;               ///< Unique EmitterID for the emitter.
       sf::Texture mTexture;          ///< The texture to make an Sprite.
       Shape       mShape;            ///< The emitter's shape.
       Dispersion  mDispersion;       ///< Type of paricles' dispersion.
@@ -134,7 +131,7 @@ class Emitter
 ////////////////////////////////////////////////////////////////////////////////
 //                INLINE METHODS
 ////////////////////////////////////////////////////////////////////////////////
-inline Emitter::ID Emitter::getID() const
+inline EmitterID Emitter::getID() const
 {
    return mID;
 }
@@ -210,7 +207,6 @@ inline void Emitter::setRangeFocusNP(Real theMin,Real theMax)
 {
    mRangeFocusNP(theMin,theMax);
 }
-Emitter Emitter::DUMMY = Emitter("DUMMY");
 }    
 #endif  
 // Copyright (C) 

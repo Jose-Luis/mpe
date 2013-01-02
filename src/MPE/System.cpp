@@ -4,6 +4,9 @@
 /// @date 2012-12-18
 
 #include <MPE/System.hpp>
+#include <MPE/Particle.hpp>
+#include <MPE/Emitter.hpp>
+#include <MPE/Focus.hpp>
 
 namespace mpe
 {
@@ -24,11 +27,11 @@ System::System ( Real theFactor ):
 //--------------------------------------------------------------------------------------
 void System::addEmitter(Emitter& theEmitter)
 {
-   Emitter::ID anEmitterID = theEmitter.getID();
+   EmitterID anEmitterID = theEmitter.getID();
    auto it = mEmitters.find(anEmitterID);
-   if (it != mEmitters.end() )
+   if (it == mEmitters.end() )
    {
-      mEmitters.insert(std::pair<Emitter::ID,Emitter>(anEmitterID,theEmitter));
+      mEmitters.insert(std::pair<EmitterID,Emitter>(anEmitterID,theEmitter));
    }
 }
 //--------------------------------------------------------------------------------------
@@ -36,12 +39,14 @@ void System::addEmitter(Emitter& theEmitter)
 //      Method:  addFocus
 // Description:  
 //--------------------------------------------------------------------------------------
-void System::addFocus(Emitter::ID theEmitterID,
+void System::addFocus(EmitterID theEmitterID,
                        gt::Vec2D  thePosition,
                        Real       theAngle)
 {
    Emitter& anEmitter = getEmitter(theEmitterID);
-   anEmitter.createFocus((*this),thePosition,theAngle);
+   Focus anFocus = anEmitter.createFocus((*this),thePosition,theAngle);
+   mFocusses.push_back(anFocus);
+   
 }
 //--------------------------------------------------------------------------------------
 //       Class:  System
@@ -57,7 +62,7 @@ void System::addParticle (Particle& theParticle)
 //      Method:  getEmitter
 // Description:  
 //------------------------------------------------------------------------------
-Emitter& System::getEmitter ( Emitter::ID theEmitterID )
+Emitter& System::getEmitter ( EmitterID theEmitterID )
 {
 
    auto it = mEmitters.find(theEmitterID);
@@ -82,7 +87,8 @@ void System::updateFocusses(Real theElapsedTime)
       }
       else 
       {
-         mFocusses.erase(it);
+         it = mFocusses.erase(it);
+         it--;
       }
    }
 }
@@ -102,7 +108,8 @@ void System::updateParticles(Real theElapsedTime)
       }
       else 
       {
-         mParticles.erase(it);
+         it = mParticles.erase(it);
+         it--;
       }
    }
 }

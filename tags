@@ -194,12 +194,14 @@ COMPILER_VERSION_TWEAK	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	
 COMPILER_VERSION_TWEAK	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	149;"	d	file:
 COMPILER_VERSION_TWEAK	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	25;"	d	file:
 CONFIG_INC	ext_libs/include/GT/Config.hpp	3;"	d
+CONFIG_MPE_INC	include/MPE/Config.hpp	3;"	d
 DEC	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	328;"	d	file:
 DEC	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	315;"	d	file:
 DUMMY	include/MPE/Emitter.hpp	/^      static Emitter DUMMY;$/;"	m	class:mpe::Emitter
-DUMMY	include/MPE/Emitter.hpp	/^static Emitter DUMMY = Emitter("DUMMY");$/;"	m	namespace:mpe
+DUMMY	src/MPE/Emitter.cpp	/^Emitter Emitter::DUMMY = Emitter("DUMMY");$/;"	m	class:mpe::Emitter	file:
 Dispersion	include/MPE/Emitter.hpp	/^      enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};$/;"	g	class:mpe::Emitter
 EMITTER_INC	include/MPE/Emitter.hpp	9;"	d
+EmitterID	include/MPE/Config.hpp	/^typedef std::string EmitterID;$/;"	t	namespace:mpe
 Emitter	include/MPE/Emitter.hpp	/^class Emitter$/;"	c	namespace:mpe
 Emitter	src/MPE/Emitter.cpp	/^Emitter::Emitter(Emitter::ID theID):$/;"	f	class:mpe::Emitter
 FOCUS_INC	include/MPE/Focus.hpp	7;"	d
@@ -216,9 +218,10 @@ MAX_INTEGER	include/MPE/Focus.hpp	/^      const static Integer MAX_INTEGER;$/;"	
 MAX_INTEGER	include/MPE/Focus.hpp	/^const static Integer MAX_INTEGER = std::numeric_limits<Integer>::max();$/;"	m	namespace:mpe
 MAX_REAL	include/MPE/Focus.hpp	/^      const static Real MAX_REAL;$/;"	m	class:mpe::Focus
 MAX_REAL	include/MPE/Focus.hpp	/^const static Real MAX_REAL = std::numeric_limits<Real>::max();$/;"	m	namespace:mpe
+MPE_INC	include/MPE/MPE.hpp	7;"	d
 PARTICLE_INC	include/MPE/Particle.hpp	8;"	d
 PI	ext_libs/include/GT/Angle.hpp	/^         const static Real PI;$/;"	m	class:gt::Angle
-PI	ext_libs/include/GT/Angle.hpp	/^   const static Real PI = 3.14159265f;$/;"	m	namespace:gt
+PI	ext_libs/include/GT/Angle.hpp	/^   const Real Angle::PI = 3.14159265f;$/;"	m	class:gt::Angle
 PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	213;"	d	file:
 PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	216;"	d	file:
 PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	219;"	d	file:
@@ -288,10 +291,10 @@ System	src/MPE/System.cpp	/^System::System ( Real theFactor ):$/;"	f	class:mpe::
 VEC2D_INC	ext_libs/include/GT/Vec2D.hpp	7;"	d
 Vec2D	ext_libs/include/GT/Vec2D.hpp	/^class Vec2D$/;"	c	namespace:gt
 addEmitter	src/MPE/System.cpp	/^void System::addEmitter(Emitter& theEmitter)$/;"	f	class:mpe::System
-addFocus	src/MPE/System.cpp	/^void System::addFocus(Emitter::ID theEmitterID,$/;"	f	class:mpe::System
+addFocus	src/MPE/System.cpp	/^void System::addFocus(EmitterID theEmitterID,$/;"	f	class:mpe::System
 addParticle	src/MPE/System.cpp	/^void System::addParticle (Particle& theParticle)$/;"	f	class:mpe::System
 age	include/MPE/Focus.hpp	/^inline void Focus::age(Real theElapsedTime)$/;"	f	class:mpe::Focus
-anEmitterID	src/MPE/System.cpp	/^   Emitter::ID anEmitterID = theEmitter.getID();$/;"	l
+anEmitterID	src/MPE/System.cpp	/^   EmitterID anEmitterID = theEmitter.getID();$/;"	l
 anEmitter	src/MPE/System.cpp	/^   Emitter& anEmitter = getEmitter(theEmitterID);$/;"	l
 anParticle	src/MPE/Focus.cpp	/^      Particle anParticle = createParticle();$/;"	l
 anParticle	src/MPE/Focus.cpp	/^   Particle  anParticle = Particle(mEmitter.getTexture(),$/;"	l
@@ -308,7 +311,7 @@ generatePosition	src/MPE/Emitter.cpp	/^gt::Vec2D Emitter::generatePosition(const
 generateVelocity	src/MPE/Emitter.cpp	/^gt::Vec2D Emitter::generateVelocity(const Focus& theFocus, $/;"	f	class:mpe::Emitter
 getAngle	include/MPE/Focus.hpp	/^inline gt::Angle Focus::getAngle() const $/;"	f	class:mpe::Focus
 getCos	ext_libs/include/GT/Angle.hpp	/^         inline Real getCos ( ) const {return mCos;};$/;"	f	class:gt::Angle
-getEmitter	src/MPE/System.cpp	/^Emitter& System::getEmitter ( Emitter::ID theEmitterID )$/;"	f	class:mpe::System
+getEmitter	src/MPE/System.cpp	/^Emitter& System::getEmitter ( EmitterID theEmitterID )$/;"	f	class:mpe::System
 getFocusHeight	include/MPE/Emitter.hpp	/^inline Real Emitter::getFocusHeight() const $/;"	f	class:mpe::Emitter
 getFocusNP	include/MPE/Emitter.hpp	/^inline Integer Emitter::getFocusNP() const $/;"	f	class:mpe::Emitter
 getFocusPPS	include/MPE/Emitter.hpp	/^inline Real Emitter::getFocusPPS() const $/;"	f	class:mpe::Emitter
@@ -320,7 +323,7 @@ getParticlePOW	include/MPE/Emitter.hpp	/^inline Real Emitter::getParticlePOW() c
 getParticleTOL	include/MPE/Emitter.hpp	/^inline Real Emitter::getParticleTOL() const $/;"	f	class:mpe::Emitter
 getPosition	include/MPE/Focus.hpp	/^inline gt::Vec2D Focus::getPosition() const $/;"	f	class:mpe::Focus
 getSin	ext_libs/include/GT/Angle.hpp	/^         inline Real getSin ( ) const {return mSin;};$/;"	f	class:gt::Angle
-getSprite	include/MPE/Particle.hpp	/^inline const sf::Sprite& getSprite() const$/;"	f	namespace:mpe
+getSprite	include/MPE/Particle.hpp	/^inline const sf::Sprite& Particle::getSprite() const$/;"	f	class:mpe::Particle
 getTexture	include/MPE/Emitter.hpp	/^inline const sf::Texture& Emitter::getTexture() const$/;"	f	class:mpe::Emitter
 getValue	ext_libs/include/GT/Angle.hpp	/^         inline Real getValue ( ) const {return mValue;};$/;"	f	class:gt::Angle
 getWidth	include/MPE/Focus.hpp	/^inline Real Focus::getWidth() const $/;"	f	class:mpe::Focus
@@ -389,6 +392,7 @@ mYFactor	include/MPE/System.hpp	/^         Real mYFactor;$/;"	m	class:mpe::Syste
 main	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	/^int main(int argc, char* argv[])$/;"	f
 main	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	/^void main() {}$/;"	f
 main	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^int main(int argc, char* argv[])$/;"	f
+mpe	include/MPE/Config.hpp	/^namespace mpe$/;"	n
 mpe	include/MPE/Emitter.hpp	/^namespace mpe$/;"	n
 mpe	include/MPE/Focus.hpp	/^namespace mpe$/;"	n
 mpe	include/MPE/Particle.hpp	/^namespace mpe$/;"	n
@@ -413,7 +417,7 @@ setRangeFocusWidth	include/MPE/Emitter.hpp	/^inline void Emitter::setRangeFocusW
 setRangeParticlePOW	include/MPE/Emitter.hpp	/^inline void Emitter::setRangeParticlePOW(Real theMin, Real theMax)$/;"	f	class:mpe::Emitter
 setRangeParticleTOL	include/MPE/Emitter.hpp	/^inline void Emitter::setRangeParticleTOL(Real theMin, Real theMax)$/;"	f	class:mpe::Emitter
 setShape	include/MPE/Emitter.hpp	/^inline void Emitter::setShape(Shape theShape)$/;"	f	class:mpe::Emitter
-setSpritePosition	include/MPE/Particle.hpp	/^inline void setSpritePosition(Real theXFactor,Real theYFactor)$/;"	f	namespace:mpe
+setSpritePosition	include/MPE/Particle.hpp	/^inline void Particle::setSpritePosition(Real theXFactor,Real theYFactor)$/;"	f	class:mpe::Particle
 setTexture	include/MPE/Emitter.hpp	/^inline void Emitter::setTexture(std::string theFilename)$/;"	f	class:mpe::Emitter
 setWidth	include/MPE/Focus.hpp	/^inline void Focus::setWidth(Real theWidth)$/;"	f	class:mpe::Focus
 setXFactor	include/MPE/System.hpp	/^inline void System::setXFactor(Real theXFactor)$/;"	f	class:mpe::System

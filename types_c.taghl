@@ -5,8 +5,8 @@ syn keyword CTagsEnumeratorName Dispersion Shape
 syn keyword CTagsEnumerationValue LINEAR RANDOM REFLECT STATIC RADIAL CIRCLE RECTANGLE
 syn keyword CTagsFunction setTexture set getTexture setAngle getFocusPPS System getID getWidth setRangeFocusPPS setXFactor kill updateFocusses toRadians setDispersion setRangeFocusNP setWidth addFocus getParticleTOL setRangeFocusTOL getFocusHeight getParticlePOW getFocusTOL getSin getHeight setRangeParticlePOW getSprite init getEmitter setYFactor generateVelocity addParticle main toDegrees Emitter draw setSpritePosition isAlive setRangeParticleTOL Particle get createParticle getYFactor addEmitter
 syn keyword CTagsFunction getFocusWidth createFocus getFocusNP setRangeFocusHeight setPosition getPosition setHeight drain getAngle getXFactor age Focus getValue updateParticles getCos setRangeFocusWidth generatePosition update emit setShape
-syn keyword CTagsType Real Integer ID
-syn keyword CTagsDefinedName VEC2D_INC ANGLE_INC FOCUS_INC EMITTER_INC COMPILER_VERSION_TWEAK COMPILER_VERSION_MAJOR PARTICLE_INC HEX GT_INC COMPILER_VERSION_PATCH PLATFORM_ID ARCHITECTURE_ID CONFIG_INC SYSTEM_INC ID_VOID_MAIN COMPILER_ID DEC RANDOMIZER_INC COMPILER_VERSION_MINOR
+syn keyword CTagsType EmitterID Integer Real ID
+syn keyword CTagsDefinedName VEC2D_INC ANGLE_INC FOCUS_INC SYSTEM_INC EMITTER_INC COMPILER_VERSION_TWEAK COMPILER_VERSION_MAJOR PARTICLE_INC HEX GT_INC COMPILER_VERSION_PATCH PLATFORM_ID MPE_INC ARCHITECTURE_ID CONFIG_INC CONFIG_MPE_INC ID_VOID_MAIN COMPILER_ID DEC RANDOMIZER_INC COMPILER_VERSION_MINOR
 syn keyword CTagsClass Angle Particle Randomizer System Focus Vec2D Emitter
 syn keyword CTagsNamespace mpe gt
 
