@@ -7,7 +7,7 @@
 #include <MPE/Particle.hpp>
 #include <MPE/Emitter.hpp>
 #include <MPE/Focus.hpp>
-
+#include <sstream>
 namespace mpe
 {
 //------------------------------------------------------------------------------
@@ -135,6 +135,15 @@ void System::draw (sf::RenderWindow& theWindow) const
    {
       theWindow.draw(it->getSprite());
    }
+
+   #ifndef  NDEBUG
+      std::stringstream s;
+      std::string line = "Number: ";
+      int l = mParticles.size();
+      s << line << l;
+      std::string result = s.str();;
+      theWindow.draw(sf::Text(result));
+   #endif 
 }
 }
 
