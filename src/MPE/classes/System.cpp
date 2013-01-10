@@ -3,10 +3,10 @@
 /// @version 0.1
 /// @date 2012-12-18
 
-#include <MPE/System.hpp>
-#include <MPE/Particle.hpp>
-#include <MPE/Emitter.hpp>
-#include <MPE/Focus.hpp>
+#include <MPE/classes/System.hpp>
+#include <MPE/classes/Particle.hpp>
+#include <MPE/classes/Emitter.hpp>
+#include <MPE/classes/Focus.hpp>
 #include <sstream>
 namespace mpe
 {

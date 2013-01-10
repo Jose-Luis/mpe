@@ -6,9 +6,9 @@
 #ifndef  MPE_INC
 #define  MPE_INC
 
-#include <MPE/System.hpp>
-#include <MPE/Emitter.hpp>
-#include <MPE/Particle.hpp>
-#include <MPE/Focus.hpp>
+#include <MPE/classes/System.hpp>
+#include <MPE/classes/Emitter.hpp>
+#include <MPE/classes/Particle.hpp>
+#include <MPE/classes/Focus.hpp>
 
 #endif   // ----- #ifndef MPE_INC  -----

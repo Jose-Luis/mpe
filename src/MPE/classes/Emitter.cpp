@@ -5,8 +5,8 @@
  * @date 2012-12-18
  */
 
-#include <MPE/Emitter.hpp>
-#include <MPE/Focus.hpp>
+#include <MPE/classes/Emitter.hpp>
+#include <MPE/classes/Focus.hpp>
 #include <cstdlib>
 
 namespace mpe

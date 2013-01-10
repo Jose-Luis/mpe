@@ -3,10 +3,11 @@
 /// @version 0.1
 /// @date 2012-12-22
 
-#include <MPE/Focus.hpp>
-#include <MPE/System.hpp>
-#include <MPE/Emitter.hpp>
-#include <MPE/Particle.hpp>
+#include <MPE/classes/Focus.hpp>
+#include <MPE/classes/System.hpp>
+#include <MPE/classes/Emitter.hpp>
+#include <MPE/classes/Particle.hpp>
+
 namespace mpe
 {
 
@@ -21,20 +22,18 @@ Focus::Focus(
             gt::Angle theAngle,
             gt::Vec2D thePosition,
             Integer theTP,
-            Real theTT,
+            Real theLifetime,
             Real thePPS,
             System& theSystem,
             Emitter& theEmitter
             ):
-   mAlive(true),
+   Mortal(theLifetime),
    mWidth(theWidth),
    mHeight(theHeight),
    mAngle(theAngle),
    mPosition(thePosition),
    mTP(theTP),
    mEP(0),
-   mTT(theTT),
-   mET(0),
    mPPS(thePPS),
    mEmitter(theEmitter),
    mSystem(theSystem)
@@ -48,8 +47,11 @@ Focus::Focus(
 void Focus::update(Real theElapsedTime)
 {
    age(theElapsedTime);
-   Integer nParticles = drain(theElapsedTime);
-   emit(nParticles);
+   if (isAlive() )
+   {
+      Integer nParticles = drain(theElapsedTime);
+      emit(nParticles);
+   }
 }
 //------------------------------------------------------------------------------
 //       Class:  Focus
@@ -81,37 +83,6 @@ Particle Focus::createParticle ()
                                    mEmitter.getParticleTOL());
    return anParticle;
 }
-//------------------------------------------------------------------------------
-//      Class:        Focus
-//      Method:       age
-//      Description:  
-//------------------------------------------------------------------------------
-//void Focus::age(Real theElapsedTime)
-//{
-   //if( mET+theElapsedTime >= mTT )
-      //kill();
-   //else
-      //mET += theElapsedTime;
-//}
-//------------------------------------------------------------------------------
-//      Class:        Focus
-//      Method:       drain
-//      Description:  
-//------------------------------------------------------------------------------
-//Integer Focus::drain(Real theElapsedTime)
-//{
-   //Integer nParticles = 0;
-   //if(isAlive())
-   //{
-      //nParticles = (mPPS * mET / 1000) - mEP;
-   //}
-   //if(mEP + nParticles > mTT)
-   //{
-      //nParticles = nParticles - (mEP + nParticles - mTT);
-      //kill();
-   //}
-   //return nParticles;
-//}
 ////////////////////////////////////////////////////////////////////////////////
 // END NAMESPACE mpe
 ////////////////////////////////////////////////////////////////////////////////

@@ -3,7 +3,7 @@
 /// @version 0.1
 /// @date 2012-12-22
 
-#include <MPE/Particle.hpp>
+#include <MPE/classes/Particle.hpp>
 
 namespace mpe
 {
@@ -22,13 +22,12 @@ namespace mpe
        Real               theTTL,
        sf::Color          theColor 
       ):
-         mAlive(true),
+         Mortal(theTTL),
          mSprite(theTexture),
          mPosition(thePosition),
          mAngle(theAngle),
          mLinearVelocity(theLinearVelocity),
-         mAngularVelocity(theAngularVelocity),
-         mTOL(theTTL)
+         mAngularVelocity(theAngularVelocity)
       {
          mSprite.setColor(theColor);
          mSprite.setOrigin(theTexture.getSize().x/2,theTexture.getSize().y/2);
@@ -46,13 +45,8 @@ namespace mpe
    //---------------------------------------------------------------------------
    void Particle::update(Real theElapsedTime)
    {
-      mTOL -= theElapsedTime;
-
-      if( 0 > mTOL )
-      {
-         mAlive = false;
-      }
-      else
+      age(theElapsedTime);
+      if( isAlive() )
       {
          mPosition += mLinearVelocity * theElapsedTime;
          mAngle += mAngularVelocity * theElapsedTime;

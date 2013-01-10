@@ -10,12 +10,13 @@
 #include <SFML/Graphics.hpp>
 #include <GT/GT.hpp>
 #include <MPE/Config.hpp>
+#include <MPE/components/Mortal.hpp>
 
 namespace mpe
 {
 /// @class Particle
 /// @brief Particle 
-class Particle
+class Particle: public Mortal
 {
    public:
       /// @brief  Constructor
@@ -32,7 +33,7 @@ class Particle
           Real               theAngle, 
           gt::Vec2D          theLinearVelocity, 
           Real               theAngularVelocity, 
-          Real               theTOL,
+          Real               theTLL,
           sf::Color          theColor=sf::Color(255,255,255) 
           );
       /// @brief ~Particle 
@@ -40,9 +41,6 @@ class Particle
       /// @brief update 
       /// @param theElapsedTime
       void update(Real theElapsedTime);
-      /// @brief isAlive 
-      /// @return 
-      bool isAlive();
       /// @brief getSprite 
       /// @return 
       const sf::Sprite& getSprite() const;
@@ -51,19 +49,13 @@ class Particle
       /// @param theYFactor
       void setSpritePosition(Real theXFactor,Real theYFactor);
    private:
-      bool        mAlive;
       sf::Sprite  mSprite;
       gt::Vec2D   mPosition;
       Real        mAngle;
       gt::Vec2D   mLinearVelocity;
       Real        mAngularVelocity;
-      Real        mTOL;
       //sf::Color mColorVelocity;
 };
-inline bool Particle::isAlive()
-{
-   return mAlive;
-}
 inline void Particle::setSpritePosition(Real theXFactor,Real theYFactor)
 {
    mSprite.setRotation(mAngle);

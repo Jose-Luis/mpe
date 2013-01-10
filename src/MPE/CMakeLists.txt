@@ -1,2 +1,6 @@
-add_library(particles Emitter.cpp Focus.cpp Particle.cpp System.cpp)
+add_library(particles 
+               classes/Emitter.cpp 
+               classes/Focus.cpp 
+               classes/Particle.cpp 
+               classes/System.cpp)
 

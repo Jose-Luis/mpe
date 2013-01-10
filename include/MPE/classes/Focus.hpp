@@ -7,10 +7,10 @@
 #define  FOCUS_INC
 
 #include <list>
-#include <limits>
 #include <cfloat>
 #include <GT/GT.hpp>
 #include <MPE/Config.hpp>
+#include <MPE/components/Mortal.hpp>
 
 namespace mpe
 {
@@ -18,11 +18,9 @@ namespace mpe
 //             CLASS FOCUS
 ////////////////////////////////////////////////////////////////////////////////
 /// @class Focus
-class Focus
+class Focus: public Mortal
 {
    public:
-      const static Real MAX_REAL;
-      const static Integer MAX_INTEGER;
 
       Focus(
             Real      theWidth,
@@ -30,7 +28,7 @@ class Focus
             gt::Angle theAngle,
             gt::Vec2D thePosition,
             Integer   theTP,
-            Real      theTT,
+            Real      theLifetime,
             Real      thePPS,
             System&   theSystem,
             Emitter&  theEmitter
@@ -44,12 +42,6 @@ class Focus
    /////////////////////////////////////////////////////////////////////////////
    //     ACCESSORS AND MUTATORS
    /////////////////////////////////////////////////////////////////////////////
-      /// @brief isAlive 
-      /// @return 
-      bool isAlive() const;
-      /// @brief setAlive 
-      /// @param theAlive
-      void kill();
       /// @brief getWidth 
       /// @return 
       Real getWidth() const;
@@ -80,15 +72,12 @@ class Focus
    /////////////////////////////////////////////////////////////////////////////
    //     VARIABLES
    /////////////////////////////////////////////////////////////////////////////
-      bool      mAlive;   ///< Life state.
       Real      mWidth;   ///< Width.
       Real      mHeight;  ///< Height.
       gt::Angle mAngle;   ///< Angle.
       gt::Vec2D mPosition;///< Position.
       Integer   mTP;      ///< Total number of Particles. -1 = no number limits
       Integer   mEP;      ///< Particles already emitted by the focus.
-      Real      mTT;      ///< Time the focus will live. -1 = no time limits
-      Real      mET;      ///< Elapsed time.
       Real      mPPS;
       Emitter&  mEmitter;///< The emitter server for the focus.
       System&   mSystem;
@@ -96,36 +85,15 @@ class Focus
    //     METHODS
    /////////////////////////////////////////////////////////////////////////////
       void emit(Integer theNParticles);
-      void age(Real theElapseTime);
       Integer drain(Real theElapsedTime);
       Particle createParticle();
 };
 //////////////////////////////////////////////////////////////////////////////// 
 //        END OF CLASS FOCUS
 //////////////////////////////////////////////////////////////////////////////// 
-const static Integer MAX_INTEGER = std::numeric_limits<Integer>::max();
-const static Real MAX_REAL = std::numeric_limits<Real>::max();
 //////////////////////////////////////////////////////////////////////////////// 
 //        INLINE METHODS 
 //////////////////////////////////////////////////////////////////////////////// 
-//------------------------------------------------------------------------------
-//      Class:        Focus
-//      Method:       isAlive
-//      Description:  
-//------------------------------------------------------------------------------
-inline bool Focus::isAlive() const 
-{
-   return mAlive;
-}
-//------------------------------------------------------------------------------
-//      Class:        Focus
-//      Method:       kill
-//      Description:  
-//------------------------------------------------------------------------------
-inline void Focus::kill()
-{
-   mAlive=false;
-}
 //------------------------------------------------------------------------------
 //      Class:        Focus
 //      Method:       getWidth
@@ -182,47 +150,14 @@ inline void Focus::setAngle(gt::Angle theAngle)
 }
 //------------------------------------------------------------------------------
 //      Class:        Focus
-//      Method:       getPosition
-//      Description:  
-//------------------------------------------------------------------------------
-inline gt::Vec2D Focus::getPosition() const 
-{
-   return mPosition;
-}
-//------------------------------------------------------------------------------
-//      Class:        Focus
-//      Method:       setPosition
-//      Description:  
-//------------------------------------------------------------------------------
-inline void Focus::setPosition(gt::Vec2D thePosition)
-{
-   mPosition=thePosition;
-}
-//------------------------------------------------------------------------------
-//      Class:        Focus
-//      Method:       age
-//      Description:  
-//------------------------------------------------------------------------------
-inline void Focus::age(Real theElapsedTime)
-{
-   if( mET+theElapsedTime >= mTT )
-      kill();
-   else
-      mET += theElapsedTime;
-}
-//------------------------------------------------------------------------------
-//      Class:        Focus
 //      Method:       drain
 //      Description:  
 //------------------------------------------------------------------------------
 inline Integer Focus::drain(Real theElapsedTime)
 {
-   Integer nParticles = 0;
-   if(isAlive())
-   {
-      nParticles = (mPPS * mET / 1000) - mEP;
-   }
-   if(mEP + nParticles > mTP)
+   Integer nParticles = (mPPS * getAge() / 1000) - mEP;
+
+   if( mEP + nParticles > mTP)
    {
       nParticles =  mTP - mEP;
       kill();
@@ -231,6 +166,7 @@ inline Integer Focus::drain(Real theElapsedTime)
    {
       mEP += nParticles;
    }
+
    return nParticles;
 }
 ////////////////////////////////////////////////////////////////////////////////
