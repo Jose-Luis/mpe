@@ -51,7 +51,7 @@ inline void Position::setPosition(gt::Vec2D thePosition)
 //--------------------------------------------------------------------------------------
 inline void Position::move(gt::Vec2D theOffset)
 {
-   mPosition.x += theOffset;
+   mPosition += theOffset;
 }
 //------------------------------------------------------------------------------
 //      Class:        Position

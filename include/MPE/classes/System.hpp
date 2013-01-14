@@ -30,7 +30,7 @@ namespace mpe
          /// @param theEmitter
          /// @param thePosition
          /// @param theAngle
-         void     addFocus(EmitterID theEmitter,
+         Focus&   addFocus(EmitterID theEmitter,
                            gt::Vec2D   thePosition,
                            Real        theAngle);
          /// @brief addParticle 

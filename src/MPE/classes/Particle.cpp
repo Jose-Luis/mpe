@@ -23,8 +23,8 @@ namespace mpe
        sf::Color          theColor 
       ):
          Mortal(theTTL),
+         Position(thePosition),
          mSprite(theTexture),
-         mPosition(thePosition),
          mAngle(theAngle),
          mLinearVelocity(theLinearVelocity),
          mAngularVelocity(theAngularVelocity)
@@ -48,7 +48,7 @@ namespace mpe
       age(theElapsedTime);
       if( isAlive() )
       {
-         mPosition += mLinearVelocity * theElapsedTime;
+         move( mLinearVelocity * theElapsedTime );
          mAngle += mAngularVelocity * theElapsedTime;
       }
    }

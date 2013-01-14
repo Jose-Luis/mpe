@@ -11,6 +11,7 @@
 #include <GT/GT.hpp>
 #include <MPE/Config.hpp>
 #include <MPE/components/Mortal.hpp>
+#include <MPE/components/Position.hpp>
 
 namespace mpe
 {
@@ -18,7 +19,7 @@ namespace mpe
 //             CLASS FOCUS
 ////////////////////////////////////////////////////////////////////////////////
 /// @class Focus
-class Focus: public Mortal
+class Focus: public Mortal, public Position
 {
    public:
 
@@ -60,14 +61,7 @@ class Focus: public Mortal
       /// @brief setAngle 
       /// @param theAngle
       void setAngle(gt::Angle theAngle);
-      /// @brief getPosition 
-      /// @return 
-      gt::Vec2D getPosition() const;
-      /// @brief setPosition 
-      /// @param thePosition
-      void setPosition(gt::Vec2D thePosition);
-      /// @brief getTP 
-      /// @return 
+
    private:
    /////////////////////////////////////////////////////////////////////////////
    //     VARIABLES
@@ -75,7 +69,6 @@ class Focus: public Mortal
       Real      mWidth;   ///< Width.
       Real      mHeight;  ///< Height.
       gt::Angle mAngle;   ///< Angle.
-      gt::Vec2D mPosition;///< Position.
       Integer   mTP;      ///< Total number of Particles. -1 = no number limits
       Integer   mEP;      ///< Particles already emitted by the focus.
       Real      mPPS;

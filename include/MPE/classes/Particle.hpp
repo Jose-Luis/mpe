@@ -11,12 +11,13 @@
 #include <GT/GT.hpp>
 #include <MPE/Config.hpp>
 #include <MPE/components/Mortal.hpp>
+#include <MPE/components/Position.hpp>
 
 namespace mpe
 {
 /// @class Particle
 /// @brief Particle 
-class Particle: public Mortal
+class Particle: public Mortal, public Position
 {
    public:
       /// @brief  Constructor
@@ -48,9 +49,14 @@ class Particle: public Mortal
       /// @param theXFactor
       /// @param theYFactor
       void setSpritePosition(Real theXFactor,Real theYFactor);
+      /// @brief setLinearVelocity 
+      /// @param theLinearVelocity
+      void setLinearVelocity(gt::Vec2D theLinearVelocity);
+      /// @brief getLinearVelocity 
+      /// @return 
+      gt::Vec2D getLinearVelocity() const;
    private:
       sf::Sprite  mSprite;
-      gt::Vec2D   mPosition;
       Real        mAngle;
       gt::Vec2D   mLinearVelocity;
       Real        mAngularVelocity;
@@ -60,6 +66,18 @@ inline void Particle::setSpritePosition(Real theXFactor,Real theYFactor)
 {
    mSprite.setRotation(mAngle);
    mSprite.setPosition(mPosition.x*theXFactor,mPosition.y*theYFactor);
+}
+/// @brief The accessor to LinearVelocity
+/// @return gt::Vec2D
+inline gt::Vec2D Particle::getLinearVelocity() const 
+{
+   return mLinearVelocity;
+}
+/// @brief The mutator for LinearVelocity
+/// @param theLinearVelocity
+inline void Particle::setLinearVelocity(gt::Vec2D theLinearVelocity)
+{
+   mLinearVelocity=theLinearVelocity;
 }
 inline const sf::Sprite& Particle::getSprite() const
 {

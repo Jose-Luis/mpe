@@ -28,10 +28,10 @@ Focus::Focus(
             Emitter& theEmitter
             ):
    Mortal(theLifetime),
+   Position(thePosition),
    mWidth(theWidth),
    mHeight(theHeight),
    mAngle(theAngle),
-   mPosition(thePosition),
    mTP(theTP),
    mEP(0),
    mPPS(thePPS),

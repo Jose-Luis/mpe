@@ -39,14 +39,15 @@ void System::addEmitter(Emitter& theEmitter)
 //      Method:  addFocus
 // Description:  
 //--------------------------------------------------------------------------------------
-void System::addFocus(EmitterID theEmitterID,
+Focus& System::addFocus(EmitterID theEmitterID,
                        gt::Vec2D  thePosition,
                        Real       theAngle)
 {
    Emitter& anEmitter = getEmitter(theEmitterID);
    Focus anFocus = anEmitter.createFocus((*this),thePosition,theAngle);
    mFocusses.push_back(anFocus);
-   
+
+   return mFocusses.back();
 }
 //--------------------------------------------------------------------------------------
 //       Class:  System
