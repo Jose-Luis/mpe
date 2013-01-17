@@ -39,15 +39,15 @@ void System::addEmitter(Emitter& theEmitter)
 //      Method:  addFocus
 // Description:  
 //--------------------------------------------------------------------------------------
-Focus& System::addFocus(EmitterID theEmitterID,
+FocusPtr System::addFocus(EmitterID theEmitterID,
                        gt::Vec2D  thePosition,
                        Real       theAngle)
 {
    Emitter& anEmitter = getEmitter(theEmitterID);
-   Focus anFocus = anEmitter.createFocus((*this),thePosition,theAngle);
+   FocusPtr anFocus = anEmitter.createFocus((*this),thePosition,theAngle);
    mFocusses.push_back(anFocus);
 
-   return mFocusses.back();
+   return anFocus;
 }
 //--------------------------------------------------------------------------------------
 //       Class:  System
@@ -82,9 +82,9 @@ void System::updateFocusses(Real theElapsedTime)
 {
    for (auto it = mFocusses.begin(); it != mFocusses.end(); it++)
    {
-      if (it->isAlive())
+      if ((*it)->isAlive())
       {
-         it->update(theElapsedTime);
+         (*it)->update(theElapsedTime);
       }
       else 
       {

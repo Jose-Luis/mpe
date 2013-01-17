@@ -20,7 +20,6 @@ namespace mpe
 /// @brief Emitter is a server class for the flyweight client Focus.
 class Emitter
 {
-   public:
       static Emitter DUMMY;
       //                      INNER TYPES                                                                    
       //////////////////////////////////////////////////////////////////////////
@@ -34,12 +33,11 @@ class Emitter
       //////////////////////////////////////////////////////////////////////////
       /// @brief Emitter 
       /// @param theID
-      Emitter(EmitterID theID);
+      Emitter(EmitterID theID,System& theSystem);
       /// @brief createFocus 
       /// @return 
-      Focus createFocus(System&   theSystem,
-                        gt::Vec2D thePosition,
-                        Real      theAngle);
+      FocusPtr createFocus(gt::Vec2D thePosition,
+                           Real      theAngle) const;
       /// @brief Generate a random position inside the Shape of the emitter.
       /// The position is transformed by the system factor member to scale it 
       /// to the world coordinates.
@@ -114,10 +112,11 @@ class Emitter
    private:
       //                      VARIABLES
       //////////////////////////////////////////////////////////////////////////
-      EmitterID          mID;               ///< Unique EmitterID for the emitter.
-      sf::Texture mTexture;          ///< The texture to make an Sprite.
-      Shape       mShape;            ///< The emitter's shape.
-      Dispersion  mDispersion;       ///< Type of paricles' dispersion.
+      EmitterID       mID;               ///< Unique EmitterID for the emitter.
+      System&         mSystem;
+      sf::Texture     mTexture;          ///< The texture to make an Sprite.
+      Shape           mShape;            ///< The emitter's shape.
+      Dispersion      mDispersion;       ///< Type of paricles' dispersion.
       gt::Randomizer  mRangeParticlePOW; ///< Range of paricles impulsion.
       gt::Randomizer  mRangeParticleTOL; ///< Range of particles lifetime.
       gt::Randomizer  mRangeFocusWidth;  ///< Range of focus width.

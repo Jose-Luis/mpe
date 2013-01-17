@@ -23,6 +23,7 @@ ARCHITECTURE_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	3
 ARCHITECTURE_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	311;"	d	file:
 AccelarationAffector	include/MPE/classes/Affector.hpp	/^class AccelarationAffector: public IAffector$/;"	c	namespace:mpe
 AccelarationAffector	src/MPE/classes/Affector.cpp	/^   AccelarationAffector::AccelarationAffector(Real      theLifetime,$/;"	f	class:mpe::AccelarationAffector
+AffectorPtr	include/MPE/Config.hpp	/^typedef boost::shared_ptr<IAffector> AffectorPtr;$/;"	t	namespace:mpe
 Angle	ext_libs/include/GT/Angle.hpp	/^   class Angle$/;"	c	namespace:gt
 CIRCLE	include/MPE/classes/Emitter.hpp	/^      enum Shape{RECTANGLE,CIRCLE};$/;"	e	enum:mpe::Emitter::Shape
 COMPILER_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	107;"	d	file:
@@ -207,6 +208,7 @@ EmitterID	include/MPE/Config.hpp	/^typedef std::string EmitterID;$/;"	t	namespac
 Emitter	include/MPE/classes/Emitter.hpp	/^class Emitter$/;"	c	namespace:mpe
 Emitter	src/MPE/classes/Emitter.cpp	/^Emitter::Emitter(EmitterID theID):$/;"	f	class:mpe::Emitter
 FOCUS_INC	include/MPE/classes/Focus.hpp	7;"	d
+FocusPtr	include/MPE/Config.hpp	/^typedef boost::shared_ptr<Focus> FocusPtr;$/;"	t	namespace:mpe
 Focus	include/MPE/classes/Focus.hpp	/^class Focus: public Mortal, public Position$/;"	c	namespace:mpe
 Focus	src/MPE/classes/Focus.cpp	/^Focus::Focus($/;"	f	class:mpe::Focus
 GT_INC	ext_libs/include/GT/GT.hpp	7;"	d
@@ -296,13 +298,14 @@ System	src/MPE/classes/System.cpp	/^System::System ( Real theFactor ):$/;"	f	cla
 VEC2D_INC	ext_libs/include/GT/Vec2D.hpp	7;"	d
 Vec2D	ext_libs/include/GT/Vec2D.hpp	/^class Vec2D$/;"	c	namespace:gt
 addEmitter	src/MPE/classes/System.cpp	/^void System::addEmitter(Emitter& theEmitter)$/;"	f	class:mpe::System
-addFocus	src/MPE/classes/System.cpp	/^void System::addFocus(EmitterID theEmitterID,$/;"	f	class:mpe::System
+addFocus	src/MPE/classes/System.cpp	/^FocusPtr System::addFocus(EmitterID theEmitterID,$/;"	f	class:mpe::System
 addParticle	src/MPE/classes/System.cpp	/^void System::addParticle (Particle& theParticle)$/;"	f	class:mpe::System
 affect	src/MPE/classes/Affector.cpp	/^   void AccelarationAffector::affect(Particle& theParticle)$/;"	f	class:mpe::AccelarationAffector
 age	include/MPE/components/Mortal.hpp	/^   inline void Mortal::age(Real theElapsedTime)$/;"	f	class:mpe::Mortal
 anEmitterID	src/MPE/classes/System.cpp	/^   EmitterID anEmitterID = theEmitter.getID();$/;"	l
 anEmitter	src/MPE/classes/System.cpp	/^   Emitter& anEmitter = getEmitter(theEmitterID);$/;"	l
-anFocus	src/MPE/classes/System.cpp	/^   Focus anFocus = anEmitter.createFocus((*this),thePosition,theAngle);$/;"	l
+anFocus	src/MPE/classes/Emitter.cpp	/^   FocusPtr anFocus = boost::make_shared<Focus> (getFocusWidth(),$/;"	l
+anFocus	src/MPE/classes/System.cpp	/^   FocusPtr anFocus = anEmitter.createFocus((*this),thePosition,theAngle);$/;"	l
 anParticle	src/MPE/classes/Focus.cpp	/^      Particle anParticle = createParticle();$/;"	l
 anParticle	src/MPE/classes/Focus.cpp	/^   Particle  anParticle = Particle(mEmitter.getTexture(),$/;"	l
 anPosition	src/MPE/classes/Emitter.cpp	/^   gt::Vec2D anPosition;$/;"	l
@@ -310,7 +313,7 @@ anPosition	src/MPE/classes/Focus.cpp	/^   gt::Vec2D anPosition = mEmitter.genera
 anVelocity	src/MPE/classes/Emitter.cpp	/^   gt::Vec2D anVelocity;$/;"	l
 anVelocity	src/MPE/classes/Focus.cpp	/^   gt::Vec2D anVelocity = mEmitter.generateVelocity(*this,anPosition);$/;"	l
 canAffect	src/MPE/classes/Affector.cpp	/^   bool IAffector::canAffect(const gt::Vec2D& thePoint) const $/;"	f	class:mpe::IAffector
-createFocus	src/MPE/classes/Emitter.cpp	/^Focus Emitter::createFocus(System&   theSystem,$/;"	f	class:mpe::Emitter
+createFocus	src/MPE/classes/Emitter.cpp	/^FocusPtr Emitter::createFocus(System&   theSystem,$/;"	f	class:mpe::Emitter
 createParticle	src/MPE/classes/Focus.cpp	/^Particle Focus::createParticle ()$/;"	f	class:mpe::Focus
 die	include/MPE/components/Mortal.hpp	/^   inline void Mortal::die()$/;"	f	class:mpe::Mortal
 drain	include/MPE/classes/Focus.hpp	/^inline Integer Focus::drain(Real theElapsedTime)$/;"	f	class:mpe::Focus
@@ -363,6 +366,7 @@ line	src/MPE/classes/System.cpp	/^      std::string line = "Number: ";$/;"	l
 l	src/MPE/classes/System.cpp	/^      int l = mParticles.size();$/;"	l
 l	src/MPE/classes/System.cpp	/^      s << line << l;$/;"	l
 mAcceleration	include/MPE/classes/Affector.hpp	/^         gt::Vec2D mAcceleration;$/;"	m	class:mpe::AccelarationAffector
+mAffectors	include/MPE/classes/System.hpp	/^         std::list<AffectorPtr>        mAffectors;$/;"	m	class:mpe::System
 mAge	include/MPE/components/Mortal.hpp	/^         Real mAge;$/;"	m	class:mpe::Mortal
 mAlive	include/MPE/components/Mortal.hpp	/^         bool mAlive;$/;"	m	class:mpe::Mortal
 mAngle	include/MPE/classes/Focus.hpp	/^      gt::Angle mAngle;   \/\/\/< Angle.$/;"	m	class:mpe::Focus
@@ -373,7 +377,7 @@ mDispersion	include/MPE/classes/Emitter.hpp	/^      Dispersion  mDispersion;    
 mEP	include/MPE/classes/Focus.hpp	/^      Integer   mEP;      \/\/\/< Particles already emitted by the focus.$/;"	m	class:mpe::Focus
 mEmitter	include/MPE/classes/Focus.hpp	/^      Emitter&  mEmitter;\/\/\/< The emitter server for the focus.$/;"	m	class:mpe::Focus
 mEmitters	include/MPE/classes/System.hpp	/^         std::map<EmitterID,Emitter>   mEmitters;$/;"	m	class:mpe::System
-mFocusses	include/MPE/classes/System.hpp	/^         std::list<Focus>              mFocusses;$/;"	m	class:mpe::System
+mFocusses	include/MPE/classes/System.hpp	/^         std::list<FocusPtr>           mFocusses;$/;"	m	class:mpe::System
 mHeight	include/MPE/classes/Focus.hpp	/^      Real      mHeight;  \/\/\/< Height.$/;"	m	class:mpe::Focus
 mID	include/MPE/classes/Emitter.hpp	/^      EmitterID          mID;               \/\/\/< Unique EmitterID for the emitter.$/;"	m	class:mpe::Emitter
 mLifetime	include/MPE/components/Mortal.hpp	/^         Real mLifetime;$/;"	m	class:mpe::Mortal
@@ -444,8 +448,6 @@ setXFactor	include/MPE/classes/System.hpp	/^inline void System::setXFactor(Real 
 setYFactor	include/MPE/classes/System.hpp	/^inline void System::setYFactor(Real theYFactor)$/;"	f	class:mpe::System
 set	ext_libs/include/GT/Angle.hpp	/^         inline void set(Real theValue)$/;"	f	class:gt::Angle
 s	src/MPE/classes/System.cpp	/^      std::stringstream s;$/;"	l
-thePosition	src/MPE/classes/Emitter.cpp	/^                 thePosition,$/;"	l
-theSystem	src/MPE/classes/Emitter.cpp	/^                 theSystem,$/;"	l
 toDegrees	ext_libs/include/GT/Angle.hpp	/^         static inline Real toDegrees(float theRadians)$/;"	f	class:gt::Angle
 toRadians	ext_libs/include/GT/Angle.hpp	/^         static inline Real toRadians(float theDegrees)$/;"	f	class:gt::Angle
 updateFocusses	src/MPE/classes/System.cpp	/^void System::updateFocusses(Real theElapsedTime)$/;"	f	class:mpe::System

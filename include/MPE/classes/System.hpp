@@ -30,7 +30,7 @@ namespace mpe
          /// @param theEmitter
          /// @param thePosition
          /// @param theAngle
-         Focus&   addFocus(EmitterID theEmitter,
+         FocusPtr   addFocus(EmitterID theEmitter,
                            gt::Vec2D   thePosition,
                            Real        theAngle);
          /// @brief addParticle 
@@ -63,7 +63,8 @@ namespace mpe
          ///////////////////////////////////////////////////////////////////////
          Real mXFactor;
          Real mYFactor;
-         std::list<Focus>              mFocusses;
+         std::list<FocusPtr>           mFocusses;
+         std::list<AffectorPtr>        mAffectors;
          std::list<Particle>           mParticles;
          std::map<EmitterID,Emitter>   mEmitters;
          //    METHODS

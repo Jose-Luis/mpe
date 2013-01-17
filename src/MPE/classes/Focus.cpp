@@ -10,7 +10,6 @@
 
 namespace mpe
 {
-
 //------------------------------------------------------------------------------
 //      Class:        Focus
 //      Method:       Focus
@@ -38,6 +37,31 @@ Focus::Focus(
    mEmitter(theEmitter),
    mSystem(theSystem)
 {
+}
+//--------------------------------------------------------------------------------------
+//      Class:        Focus
+//      Method:       create
+//      Description:  
+//--------------------------------------------------------------------------------------
+FocusPtr Focus::create(Real      theWidth,
+                       Real      theHeight,
+                       gt::Angle theAngle,
+                       gt::Vec2D thePosition,
+                       Integer   theTP,
+                       Real      theLifetime,
+                       Real      thePPS,
+                       System&   theSystem,
+                       Emitter&  theEmitter)
+{
+   return boost::make_shared<Focus>(theWidth,
+                                    theHeight,
+                                    theAngle,
+                                    thePosition,
+                                    theTP,
+                                    theLifetime,
+                                    thePPS,
+                                    theSystem,
+                                    theEmitter);
 }
 //------------------------------------------------------------------------------
 //       Class:  Focus

@@ -8,6 +8,7 @@
 #include <MPE/classes/Emitter.hpp>
 #include <MPE/classes/Focus.hpp>
 #include <cstdlib>
+#include <boost/make_shared.hpp>
 
 namespace mpe
 {     
@@ -71,7 +72,7 @@ gt::Vec2D Emitter::generatePosition(const Focus& theFocus) const
    gt::Vec2D anPosition;
    do
    {
-      anPosition.x = gt::Randomizer::get(-1,1);
+      anPosition.x = gt::Randomizer:get(-1,1);
       anPosition.y = gt::Randomizer::get(-1,1);
    }
    while(mShape == CIRCLE && anPosition.squaremodule() > 1);
@@ -87,19 +88,17 @@ gt::Vec2D Emitter::generatePosition(const Focus& theFocus) const
 //      Method:  createFocus
 // Description:  
 //------------------------------------------------------------------------------
-Focus Emitter::createFocus(System&   theSystem,
-                           gt::Vec2D thePosition,
-                           Real      theAngle)
+FocusPtr Emitter::createFocus(gt::Vec2D thePosition,
+                              Real      theAngle)
 {
-   Focus anFocus(getFocusWidth(),
-                 getFocusHeight(),
-                 gt::Angle(theAngle),
-                 thePosition,
-                 getFocusNP(),
-                 getFocusTOL(),
-                 getFocusPPS(),
-                 theSystem,
-                 (*this));
+   FocusPtr anFocus = Focus::create(getFocusWidth(),
+                                    getFocusHeight(),
+                                    gt::Angle(theAngle),
+                                    thePosition,
+                                    getFocusNP(),
+                                    getFocusTOL(),
+                                    getFocusPPS(),
+                                    (*this));
 
    return anFocus;
 }

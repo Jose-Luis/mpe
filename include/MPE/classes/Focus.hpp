@@ -8,6 +8,7 @@
 
 #include <list>
 #include <cfloat>
+#include <boost/make_shared.hpp>
 #include <GT/GT.hpp>
 #include <MPE/Config.hpp>
 #include <MPE/components/Mortal.hpp>
@@ -23,20 +24,29 @@ class Focus: public Mortal, public Position
 {
    public:
 
-      Focus(
-            Real      theWidth,
-            Real      theHeight,
-            gt::Angle theAngle,
-            gt::Vec2D thePosition,
-            Integer   theTP,
-            Real      theLifetime,
-            Real      thePPS,
-            System&   theSystem,
-            Emitter&  theEmitter
-            );
    /////////////////////////////////////////////////////////////////////////////
    //     METHODS
    /////////////////////////////////////////////////////////////////////////////
+      /// @brief create 
+      /// @param theWidth
+      /// @param theHeight
+      /// @param theAngle
+      /// @param thePosition
+      /// @param theTP
+      /// @param theLifetime
+      /// @param thePPS
+      /// @param theSystem
+      /// @param 
+      /// @return 
+      static FocusPtr create(Real      theWidth,
+                             Real      theHeight,
+                             gt::Angle theAngle,
+                             gt::Vec2D thePosition,
+                             Integer   theTP,
+                             Real      theLifetime,
+                             Real      thePPS,
+                             System&   theSystem,
+                             Emitter&  theEmitter);
       /// @brief update 
       /// @param theElapsedTime
       void update(Real theElapsedTime);
@@ -77,6 +87,17 @@ class Focus: public Mortal, public Position
    /////////////////////////////////////////////////////////////////////////////
    //     METHODS
    /////////////////////////////////////////////////////////////////////////////
+      Focus(
+            Real      theWidth,
+            Real      theHeight,
+            gt::Angle theAngle,
+            gt::Vec2D thePosition,
+            Integer   theTP,
+            Real      theLifetime,
+            Real      thePPS,
+            System&   theSystem,
+            Emitter&  theEmitter
+            );
       void emit(Integer theNParticles);
       Integer drain(Real theElapsedTime);
       Particle createParticle();
