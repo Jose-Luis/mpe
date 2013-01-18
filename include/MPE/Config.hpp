@@ -15,6 +15,8 @@ class Focus;
 class IAffector;
 class Emitter;
 class Particle;
+class Mortal;
+class Position;
 
 typedef std::string EmitterID;
 typedef boost::shared_ptr<Focus> FocusPtr;

@@ -4,9 +4,8 @@
 /// @date 2012-12-22
 
 #include <MPE/classes/Focus.hpp>
-#include <MPE/classes/System.hpp>
 #include <MPE/classes/Emitter.hpp>
-#include <MPE/classes/Particle.hpp>
+#include <MPE/classes/System.hpp>
 
 namespace mpe
 {
@@ -23,8 +22,7 @@ Focus::Focus(
             Integer theTP,
             Real theLifetime,
             Real thePPS,
-            System& theSystem,
-            Emitter& theEmitter
+            const Emitter& theEmitter
             ):
    Mortal(theLifetime),
    Position(thePosition),
@@ -34,8 +32,7 @@ Focus::Focus(
    mTP(theTP),
    mEP(0),
    mPPS(thePPS),
-   mEmitter(theEmitter),
-   mSystem(theSystem)
+   mEmitter(theEmitter)
 {
 }
 //--------------------------------------------------------------------------------------
@@ -50,8 +47,7 @@ FocusPtr Focus::create(Real      theWidth,
                        Integer   theTP,
                        Real      theLifetime,
                        Real      thePPS,
-                       System&   theSystem,
-                       Emitter&  theEmitter)
+                       const Emitter&  theEmitter)
 {
    return boost::make_shared<Focus>(theWidth,
                                     theHeight,
@@ -60,7 +56,6 @@ FocusPtr Focus::create(Real      theWidth,
                                     theTP,
                                     theLifetime,
                                     thePPS,
-                                    theSystem,
                                     theEmitter);
 }
 //------------------------------------------------------------------------------
@@ -84,10 +79,11 @@ void Focus::update(Real theElapsedTime)
 //------------------------------------------------------------------------------
 void Focus::emit(Integer theNParticles)
 {
+   System& anSystem = mEmitter.getSystem();
    for(int i = 0; i < theNParticles; i++)
    {
       Particle anParticle = createParticle();
-      mSystem.addParticle(anParticle);
+      anSystem.addParticle(anParticle);
    }
 }
 //------------------------------------------------------------------------------
@@ -106,6 +102,81 @@ Particle Focus::createParticle ()
                                    gt::Randomizer::get(-1,1),
                                    mEmitter.getParticleTOL());
    return anParticle;
+}
+//------------------------------------------------------------------------------
+//      Class:        Focus
+//      Method:       getWidth
+//      Description:  
+//------------------------------------------------------------------------------
+Real Focus::getWidth() const 
+{
+   return mWidth;
+}
+//------------------------------------------------------------------------------
+//      Class:        Focus
+//      Method:       setWidth
+//      Description:  
+//------------------------------------------------------------------------------
+void Focus::setWidth(Real theWidth)
+{
+   mWidth=theWidth;
+}
+//------------------------------------------------------------------------------
+//      Class:        Focus
+//      Method:       getHeight
+//      Description:  
+//------------------------------------------------------------------------------
+Real Focus::getHeight() const 
+{
+   return mHeight;
+}
+//------------------------------------------------------------------------------
+//      Class:        Focus
+//      Method:       setHeight
+//      Description:  
+//------------------------------------------------------------------------------
+void Focus::setHeight(Real theHeight)
+{
+   mHeight=theHeight;
+}
+//------------------------------------------------------------------------------
+//      Class:        Focus
+//      Method:       getAngle
+//      Description:  
+//------------------------------------------------------------------------------
+gt::Angle Focus::getAngle() const 
+{
+   return mAngle;
+}
+//------------------------------------------------------------------------------
+//      Class:        Focus
+//      Method:       setAngle
+//      Description:  
+//------------------------------------------------------------------------------
+void Focus::setAngle(gt::Angle theAngle)
+{
+   mAngle=theAngle;
+}
+//------------------------------------------------------------------------------
+//      Class:        Focus
+//      Method:       drain
+//      Description:  
+//------------------------------------------------------------------------------
+Integer Focus::drain(Real theElapsedTime)
+{
+   Integer nParticles = (mPPS * getAge() / 1000) - mEP;
+
+   if( mEP + nParticles > mTP)
+   {
+      nParticles =  mTP - mEP;
+      kill();
+   }
+   else
+   {
+      mEP += nParticles;
+   }
+
+   return nParticles;
 }
 ////////////////////////////////////////////////////////////////////////////////
 // END NAMESPACE mpe

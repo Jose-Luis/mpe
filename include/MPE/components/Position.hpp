@@ -8,7 +8,8 @@
 
 #include <MPE/Config.hpp>
 #include <GT/GT.hpp>
-
+namespace mpe
+{
 class Position
 {
 
@@ -73,5 +74,6 @@ inline void Position::move(Real theXOffset,Real theYOffset)
 {
    mPosition.x += theXOffset;
    mPosition.y += theYOffset;
+}
 }
 #endif   // ----- #ifndef POSITION_INC  -----

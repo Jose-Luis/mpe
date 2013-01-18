@@ -60,6 +60,5 @@ namespace mpe
    {
       return mAge;
    }
-
 }
 #endif   // ----- #ifndef MORTAL_INC  -----

@@ -8,11 +8,11 @@
 #ifndef  EMITTER_INC
 #define  EMITTER_INC
 
-#include <list>
-
 #include <SFML/Graphics.hpp>
 #include <GT/GT.hpp>
 #include <MPE/Config.hpp>
+#include <MPE/classes/Focus.hpp>
+#include <MPE/classes/System.hpp>
 
 namespace mpe
 {
@@ -20,6 +20,7 @@ namespace mpe
 /// @brief Emitter is a server class for the flyweight client Focus.
 class Emitter
 {
+   public:
       static Emitter DUMMY;
       //                      INNER TYPES                                                                    
       //////////////////////////////////////////////////////////////////////////
@@ -48,8 +49,8 @@ class Emitter
       /// @param theFocus
       /// @param theParticlePosition
       /// @returns The particle velocity.
-      gt::Vec2D generateVelocity(const Focus& theFocus,
-                                     const gt::Vec2D& theParticlePosition) const;
+      gt::Vec2D generateVelocity(const Focus&     theFocus,
+                                 const gt::Vec2D& theParticlePosition) const;
       //    ACCESSORS AND MUTATORS
       //////////////////////////////////////////////////////////////////////////
       /// @brief getID 
@@ -58,6 +59,9 @@ class Emitter
       /// @brief getTexture 
       /// @return 
       const sf::Texture& getTexture() const;
+      /// @brief getSystem
+      /// @return 
+      System& getSystem() const;
       /// @brief getParticlePOW 
       /// @return 
       Real getParticlePOW() const;
@@ -128,84 +132,6 @@ class Emitter
 };
 //                END OF THE EMITTER CLASS
 ////////////////////////////////////////////////////////////////////////////////
-//                INLINE METHODS
-////////////////////////////////////////////////////////////////////////////////
-inline EmitterID Emitter::getID() const
-{
-   return mID;
-}
-inline const sf::Texture& Emitter::getTexture() const
-{
-   return mTexture;
-}
-inline Real Emitter::getParticlePOW() const 
-{
-   return mRangeParticlePOW.get();
-}
-inline Real Emitter::getParticleTOL() const 
-{
-   return mRangeParticleTOL.get();
-}
-inline Real Emitter::getFocusTOL() const 
-{
-   return mRangeFocusTOL.get();
-}
-inline Real Emitter::getFocusWidth() const 
-{
-   return mRangeFocusWidth.get();
-}
-inline Real Emitter::getFocusHeight() const 
-{
-   return mRangeFocusHeight.get();
-}
-inline Real Emitter::getFocusPPS() const 
-{
-   return mRangeFocusPPS.get();
-}
-inline Integer Emitter::getFocusNP() const 
-{
-   return static_cast<Integer>(mRangeFocusNP.get());
-}
-inline void Emitter::setTexture(std::string theFilename)
-{
-   mTexture.loadFromFile(theFilename);
-}
-inline void Emitter::setShape(Shape theShape)
-{
-   mShape = theShape;
-}
-inline void Emitter::setDispersion(Dispersion theDispersion) 
-{
-   mDispersion = theDispersion;
-}
-inline void Emitter::setRangeParticlePOW(Real theMin, Real theMax)
-{
-   mRangeParticlePOW(theMin,theMax);
-}
-inline void Emitter::setRangeParticleTOL(Real theMin, Real theMax)
-{
-   mRangeParticleTOL(theMin,theMax);
-}
-inline void Emitter::setRangeFocusWidth(Real theMin, Real theMax)
-{
-   mRangeFocusWidth(theMin,theMax);
-}
-inline void Emitter::setRangeFocusHeight(Real theMin, Real theMax)
-{
-   mRangeFocusHeight(theMin,theMax);
-}
-inline void Emitter::setRangeFocusTOL(Real theMin, Real theMax)
-{
-   mRangeFocusTOL(theMin,theMax);
-}
-inline void Emitter::setRangeFocusPPS(Real theMin, Real theMax)
-{
-   mRangeFocusPPS(theMin,theMax);
-}
-inline void Emitter::setRangeFocusNP(Real theMin,Real theMax)
-{
-   mRangeFocusNP(theMin,theMax);
-}
 }    
 #endif  
 // Copyright (C) 

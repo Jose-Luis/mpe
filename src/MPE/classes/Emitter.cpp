@@ -6,9 +6,6 @@
  */
 
 #include <MPE/classes/Emitter.hpp>
-#include <MPE/classes/Focus.hpp>
-#include <cstdlib>
-#include <boost/make_shared.hpp>
 
 namespace mpe
 {     
@@ -17,8 +14,9 @@ namespace mpe
 //      Method:  constructor
 // Description:  
 //------------------------------------------------------------------------------
-Emitter::Emitter(EmitterID theID):
+Emitter::Emitter(EmitterID theID, System& theSystem):
    mID(theID),
+   mSystem(theSystem),
    mRangeFocusTOL(0,0),
    mRangeFocusPPS(0,0)
 {
@@ -72,7 +70,7 @@ gt::Vec2D Emitter::generatePosition(const Focus& theFocus) const
    gt::Vec2D anPosition;
    do
    {
-      anPosition.x = gt::Randomizer:get(-1,1);
+      anPosition.x = gt::Randomizer::get(-1,1);
       anPosition.y = gt::Randomizer::get(-1,1);
    }
    while(mShape == CIRCLE && anPosition.squaremodule() > 1);
@@ -89,7 +87,7 @@ gt::Vec2D Emitter::generatePosition(const Focus& theFocus) const
 // Description:  
 //------------------------------------------------------------------------------
 FocusPtr Emitter::createFocus(gt::Vec2D thePosition,
-                              Real      theAngle)
+                              Real      theAngle) const
 {
    FocusPtr anFocus = Focus::create(getFocusWidth(),
                                     getFocusHeight(),
@@ -102,8 +100,90 @@ FocusPtr Emitter::createFocus(gt::Vec2D thePosition,
 
    return anFocus;
 }
+//        ACCESORS
 ////////////////////////////////////////////////////////////////////////////////
-Emitter Emitter::DUMMY = Emitter("DUMMY");
+EmitterID Emitter::getID() const
+{
+   return mID;
+}
+const sf::Texture& Emitter::getTexture() const
+{
+   return mTexture;
+}
+System& Emitter::getSystem() const 
+{
+   return mSystem;
+}
+Real Emitter::getParticlePOW() const 
+{
+   return mRangeParticlePOW.get();
+}
+Real Emitter::getParticleTOL() const 
+{
+   return mRangeParticleTOL.get();
+}
+Real Emitter::getFocusTOL() const 
+{
+   return mRangeFocusTOL.get();
+}
+Real Emitter::getFocusWidth() const 
+{
+   return mRangeFocusWidth.get();
+}
+Real Emitter::getFocusHeight() const 
+{
+   return mRangeFocusHeight.get();
+}
+Real Emitter::getFocusPPS() const 
+{
+   return mRangeFocusPPS.get();
+}
+Integer Emitter::getFocusNP() const 
+{
+   return static_cast<Integer>(mRangeFocusNP.get());
+}
+void Emitter::setTexture(std::string theFilename)
+{
+   mTexture.loadFromFile(theFilename);
+}
+void Emitter::setShape(Shape theShape)
+{
+   mShape = theShape;
+}
+void Emitter::setDispersion(Dispersion theDispersion) 
+{
+   mDispersion = theDispersion;
+}
+void Emitter::setRangeParticlePOW(Real theMin, Real theMax)
+{
+   mRangeParticlePOW(theMin,theMax);
+}
+void Emitter::setRangeParticleTOL(Real theMin, Real theMax)
+{
+   mRangeParticleTOL(theMin,theMax);
+}
+void Emitter::setRangeFocusWidth(Real theMin, Real theMax)
+{
+   mRangeFocusWidth(theMin,theMax);
+}
+void Emitter::setRangeFocusHeight(Real theMin, Real theMax)
+{
+   mRangeFocusHeight(theMin,theMax);
+}
+void Emitter::setRangeFocusTOL(Real theMin, Real theMax)
+{
+   mRangeFocusTOL(theMin,theMax);
+}
+void Emitter::setRangeFocusPPS(Real theMin, Real theMax)
+{
+   mRangeFocusPPS(theMin,theMax);
+}
+void Emitter::setRangeFocusNP(Real theMin,Real theMax)
+{
+   mRangeFocusNP(theMin,theMax);
+}
+////////////////////////////////////////////////////////////////////////////////
+Emitter Emitter::DUMMY = Emitter("DUMMY",System::DUMMY);
 }
 /* Copyright (C) 
  * 2012 - Jose Luis Lavado
@@ -122,40 +202,3 @@ Emitter Emitter::DUMMY = Emitter("DUMMY");
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  * 
  */
-
-////--------------------------------------------------------------------------------------
-////       Class:  Emitter
-////      Method:  update
-//// Description:  
-////--------------------------------------------------------------------------------------
-//void Emitter::update(Real theElapsedTime)
-//{
-   //for (auto it = mFocusses.begin(); it != mFocusses.end(); it++)
-   //{
-      //it->lifetime += theElapsedTime;
-      //updateFocusState(*it);
-      //if ( it->alive)
-      //{
-         //Integer nParticles = (mPPS * it->lifetime / 1000) - it->emittedParticles;
-         //it->emittedParticles += nParticles;
-         //emit(nParticles);
-      //}
-      //else 
-      //{
-         //mFocusses.erase(it);
-      //}
-   //}
-//}
-////--------------------------------------------------------------------------------------
-////       Class:  Emitter
-////      Method:  emit
-//// Description:  
-////--------------------------------------------------------------------------------------
-//void Emitter::emit(Integer theNumberOfParticles, Focus& theFocus)
-//{
-   //for (Integer i = 0; i < theNumberOfParticles; i++)
-   //{
-      ////Particle anParticle = Particle(...);
-      //mSystem.addParticle(anParticle);
-   //}
-//}

@@ -62,27 +62,6 @@ class Particle: public Mortal, public Position
       Real        mAngularVelocity;
       //sf::Color mColorVelocity;
 };
-inline void Particle::setSpritePosition(Real theXFactor,Real theYFactor)
-{
-   mSprite.setRotation(mAngle);
-   mSprite.setPosition(mPosition.x*theXFactor,mPosition.y*theYFactor);
-}
-/// @brief The accessor to LinearVelocity
-/// @return gt::Vec2D
-inline gt::Vec2D Particle::getLinearVelocity() const 
-{
-   return mLinearVelocity;
-}
-/// @brief The mutator for LinearVelocity
-/// @param theLinearVelocity
-inline void Particle::setLinearVelocity(gt::Vec2D theLinearVelocity)
-{
-   mLinearVelocity=theLinearVelocity;
-}
-inline const sf::Sprite& Particle::getSprite() const
-{
-   return mSprite;
-}
 }
 #endif 
 // Copyright (C) 

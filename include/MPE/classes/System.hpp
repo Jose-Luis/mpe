@@ -8,11 +8,13 @@
 
 #include <list>
 #include <map>
-
+#include <sstream>
 #include <SFML/Graphics.hpp>
-
-#include <MPE/Config.hpp>
 #include <GT/GT.hpp>
+#include <MPE/Config.hpp>
+#include <MPE/classes/Particle.hpp>
+#include <MPE/classes/Emitter.hpp>
+#include <MPE/classes/Focus.hpp>
 
 namespace mpe
 {
@@ -20,6 +22,7 @@ namespace mpe
    class System
    {
       public:
+         static System DUMMY;
          /// @brief System    
          /// @param theFactor
          System(Real theFactor);
@@ -31,8 +34,8 @@ namespace mpe
          /// @param thePosition
          /// @param theAngle
          FocusPtr   addFocus(EmitterID theEmitter,
-                           gt::Vec2D   thePosition,
-                           Real        theAngle);
+                             gt::Vec2D thePosition,
+                             Real      theAngle);
          /// @brief addParticle 
          /// @param theParticle
          void     addParticle(Particle& theParticle);
@@ -72,31 +75,5 @@ namespace mpe
          void updateParticles(Real theElapsedTime);
          void updateFocusses (Real theElapsedTime);
    };
-////////////////////////////////////////////////////////////////////////////////
-/// @brief The accessor to XFactor
-/// @return Real
-inline Real System::getXFactor() const 
-{
-   return mXFactor;
 }
-/// @brief The mutator for XFactor
-/// @param theXFactor
-inline void System::setXFactor(Real theXFactor)
-{
-   mXFactor=theXFactor;
-}
-/// @brief The accessor to YFactor
-/// @return Real
-inline Real System::getYFactor() const 
-{
-   return mYFactor;
-}
-/// @brief The mutator for YFactor
-/// @param theYFactor
-inline void System::setYFactor(Real theYFactor)
-{
-   mYFactor=theYFactor;
-}
-}
-
 #endif 

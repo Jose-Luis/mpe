@@ -6,13 +6,12 @@
 #ifndef  FOCUS_INC
 #define  FOCUS_INC
 
-#include <list>
-#include <cfloat>
 #include <boost/make_shared.hpp>
 #include <GT/GT.hpp>
 #include <MPE/Config.hpp>
 #include <MPE/components/Mortal.hpp>
 #include <MPE/components/Position.hpp>
+#include <MPE/classes/Particle.hpp>
 
 namespace mpe
 {
@@ -24,9 +23,9 @@ class Focus: public Mortal, public Position
 {
    public:
 
-   /////////////////////////////////////////////////////////////////////////////
-   //     METHODS
-   /////////////////////////////////////////////////////////////////////////////
+      //////////////////////////////////////////////////////////////////////////
+      //     METHODS
+      //////////////////////////////////////////////////////////////////////////
       /// @brief create 
       /// @param theWidth
       /// @param theHeight
@@ -38,21 +37,30 @@ class Focus: public Mortal, public Position
       /// @param theSystem
       /// @param 
       /// @return 
+      Focus(
+            Real      theWidth,
+            Real      theHeight,
+            gt::Angle theAngle,
+            gt::Vec2D thePosition,
+            Integer   theTP,
+            Real      theLifetime,
+            Real      thePPS,
+            const Emitter&  theEmitter
+           );
       static FocusPtr create(Real      theWidth,
-                             Real      theHeight,
-                             gt::Angle theAngle,
-                             gt::Vec2D thePosition,
-                             Integer   theTP,
-                             Real      theLifetime,
-                             Real      thePPS,
-                             System&   theSystem,
-                             Emitter&  theEmitter);
+            Real      theHeight,
+            gt::Angle theAngle,
+            gt::Vec2D thePosition,
+            Integer   theTP,
+            Real      theLifetime,
+            Real      thePPS,
+            const Emitter&  theEmitter);
       /// @brief update 
       /// @param theElapsedTime
       void update(Real theElapsedTime);
-   /////////////////////////////////////////////////////////////////////////////
-   //     ACCESSORS AND MUTATORS
-   /////////////////////////////////////////////////////////////////////////////
+      //////////////////////////////////////////////////////////////////////////
+      //     ACCESSORS AND MUTATORS
+      //////////////////////////////////////////////////////////////////////////
       /// @brief getWidth 
       /// @return 
       Real getWidth() const;
@@ -73,118 +81,22 @@ class Focus: public Mortal, public Position
       void setAngle(gt::Angle theAngle);
 
    private:
-   /////////////////////////////////////////////////////////////////////////////
-   //     VARIABLES
-   /////////////////////////////////////////////////////////////////////////////
+      //////////////////////////////////////////////////////////////////////////
+      //     VARIABLES
+      //////////////////////////////////////////////////////////////////////////
       Real      mWidth;   ///< Width.
       Real      mHeight;  ///< Height.
       gt::Angle mAngle;   ///< Angle.
       Integer   mTP;      ///< Total number of Particles. -1 = no number limits
       Integer   mEP;      ///< Particles already emitted by the focus.
       Real      mPPS;
-      Emitter&  mEmitter;///< The emitter server for the focus.
-      System&   mSystem;
-   /////////////////////////////////////////////////////////////////////////////
-   //     METHODS
-   /////////////////////////////////////////////////////////////////////////////
-      Focus(
-            Real      theWidth,
-            Real      theHeight,
-            gt::Angle theAngle,
-            gt::Vec2D thePosition,
-            Integer   theTP,
-            Real      theLifetime,
-            Real      thePPS,
-            System&   theSystem,
-            Emitter&  theEmitter
-            );
+      const Emitter&  mEmitter;///< The emitter server for the focus.
+      //////////////////////////////////////////////////////////////////////////
+      //     METHODS
+      //////////////////////////////////////////////////////////////////////////
       void emit(Integer theNParticles);
       Integer drain(Real theElapsedTime);
       Particle createParticle();
 };
-//////////////////////////////////////////////////////////////////////////////// 
-//        END OF CLASS FOCUS
-//////////////////////////////////////////////////////////////////////////////// 
-//////////////////////////////////////////////////////////////////////////////// 
-//        INLINE METHODS 
-//////////////////////////////////////////////////////////////////////////////// 
-//------------------------------------------------------------------------------
-//      Class:        Focus
-//      Method:       getWidth
-//      Description:  
-//------------------------------------------------------------------------------
-inline Real Focus::getWidth() const 
-{
-   return mWidth;
-}
-//------------------------------------------------------------------------------
-//      Class:        Focus
-//      Method:       setWidth
-//      Description:  
-//------------------------------------------------------------------------------
-inline void Focus::setWidth(Real theWidth)
-{
-   mWidth=theWidth;
-}
-//------------------------------------------------------------------------------
-//      Class:        Focus
-//      Method:       getHeight
-//      Description:  
-//------------------------------------------------------------------------------
-inline Real Focus::getHeight() const 
-{
-   return mHeight;
-}
-//------------------------------------------------------------------------------
-//      Class:        Focus
-//      Method:       setHeight
-//      Description:  
-//------------------------------------------------------------------------------
-inline void Focus::setHeight(Real theHeight)
-{
-   mHeight=theHeight;
-}
-//------------------------------------------------------------------------------
-//      Class:        Focus
-//      Method:       getAngle
-//      Description:  
-//------------------------------------------------------------------------------
-inline gt::Angle Focus::getAngle() const 
-{
-   return mAngle;
-}
-//------------------------------------------------------------------------------
-//      Class:        Focus
-//      Method:       setAngle
-//      Description:  
-//------------------------------------------------------------------------------
-inline void Focus::setAngle(gt::Angle theAngle)
-{
-   mAngle=theAngle;
-}
-//------------------------------------------------------------------------------
-//      Class:        Focus
-//      Method:       drain
-//      Description:  
-//------------------------------------------------------------------------------
-inline Integer Focus::drain(Real theElapsedTime)
-{
-   Integer nParticles = (mPPS * getAge() / 1000) - mEP;
-
-   if( mEP + nParticles > mTP)
-   {
-      nParticles =  mTP - mEP;
-      kill();
-   }
-   else
-   {
-      mEP += nParticles;
-   }
-
-   return nParticles;
-}
-////////////////////////////////////////////////////////////////////////////////
-// END NAMESPACE mpe
-////////////////////////////////////////////////////////////////////////////////
 }
 #endif   

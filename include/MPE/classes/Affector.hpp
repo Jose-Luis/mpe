@@ -3,6 +3,9 @@
 /// @version 0.1
 /// @date 2013-01-08
 
+#ifndef  AFFECTOR_INC
+#define  AFFECTOR_INC
+
 #include <MPE/classes/Particle.hpp>
 #include <MPE/components/Mortal.hpp>
 #include <MPE/components/Position.hpp>
@@ -44,3 +47,4 @@ class AccelarationAffector: public IAffector
 };
 
 }
+#endif   // ----- #ifndef AFFECTOR_INC  -----

@@ -4,12 +4,45 @@
 /// @date 2012-12-18
 
 #include <MPE/classes/System.hpp>
-#include <MPE/classes/Particle.hpp>
-#include <MPE/classes/Emitter.hpp>
-#include <MPE/classes/Focus.hpp>
-#include <sstream>
+
 namespace mpe
 {
+//------------------------------------------------------------------------------
+//      Class:        System
+//      Method:       getXFactor
+//      Description:  
+//------------------------------------------------------------------------------
+Real System::getXFactor() const 
+{
+   return mXFactor;
+}
+void System::setXFactor(Real theXFactor)
+//------------------------------------------------------------------------------
+//      Class:        System
+//      Method:       setXFactor
+//      Description:  
+//------------------------------------------------------------------------------
+{
+   mXFactor=theXFactor;
+}
+//------------------------------------------------------------------------------
+//      Class:        System
+//      Method:       getYFactor
+//      Description:  
+//------------------------------------------------------------------------------
+Real System::getYFactor() const 
+{
+   return mYFactor;
+}
+//------------------------------------------------------------------------------
+//      Class:        System
+//      Method:       setYFactor
+//      Description:  
+//------------------------------------------------------------------------------
+void System::setYFactor(Real theYFactor)
+{
+   mYFactor=theYFactor;
+}
 //------------------------------------------------------------------------------
 //       Class:  System
 //      Method:  System
@@ -20,11 +53,11 @@ System::System ( Real theFactor ):
    mYFactor(theFactor)
 {
 }
-//--------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 //       Class:  Emitter
 //      Method:  addEmitter
 // Description:  
-//--------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 void System::addEmitter(Emitter& theEmitter)
 {
    EmitterID anEmitterID = theEmitter.getID();
@@ -34,26 +67,26 @@ void System::addEmitter(Emitter& theEmitter)
       mEmitters.insert(std::pair<EmitterID,Emitter>(anEmitterID,theEmitter));
    }
 }
-//--------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 //       Class:  Emitter
 //      Method:  addFocus
 // Description:  
-//--------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 FocusPtr System::addFocus(EmitterID theEmitterID,
                        gt::Vec2D  thePosition,
                        Real       theAngle)
 {
    Emitter& anEmitter = getEmitter(theEmitterID);
-   FocusPtr anFocus = anEmitter.createFocus((*this),thePosition,theAngle);
+   FocusPtr anFocus = anEmitter.createFocus(thePosition,theAngle);
    mFocusses.push_back(anFocus);
 
    return anFocus;
 }
-//--------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 //       Class:  System
 //      Method:  addParticle
 // Description:  
-//--------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 void System::addParticle (Particle& theParticle)
 {
    mParticles.push_back(theParticle);
@@ -124,11 +157,11 @@ void System::update (Real theElapsedTime)
    updateFocusses(theElapsedTime);
    updateParticles(theElapsedTime);
 }
-//--------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 //       Class:  System
 //      Method:  draw
 // Description:  
-//--------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 void System::draw (sf::RenderWindow& theWindow) const
 {
    std::list<Particle>::const_iterator it;
@@ -146,5 +179,6 @@ void System::draw (sf::RenderWindow& theWindow) const
       theWindow.draw(sf::Text(result));
    #endif 
 }
+System System::DUMMY = System(0);
 }
 
