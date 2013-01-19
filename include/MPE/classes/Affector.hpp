@@ -13,38 +13,22 @@
 namespace mpe
 {
 
-class IAffector: public Mortal, public Position
+class Affector: public Mortal, public Position
 {
    public:
       /// @brief IAffector 
       /// @param theRadius
-      IAffector(Real      theLifetime,
-                Real      theRadius, 
-                gt::Vec2D thePosition = gt::Vec2D(0,0));
+      Affector(Real      theLifetime,
+               Real      theRadius, 
+               gt::Vec2D thePosition = gt::Vec2D(0,0));
       /// @brief affect    
       /// @param theParticle
       virtual void affect(Particle& theParticle,Real theElapsedTime) = 0;
       bool canAffect(const gt::Vec2D& thePoint) const;
 
    private:
+
       Real mSquareRadius;
-
 };
-
-class AccelarationAffector: public IAffector
-{
-   public:
-      AccelarationAffector(Real      theLifetime,
-                           Real      theRadius,
-                           gt::Vec2D thePosition,
-                           gt::Vec2D theAcceleration);
-      
-      void affect(Particle& theParticle, Real theElapsedTime);
-
-   private:
-
-         gt::Vec2D mAcceleration;
-};
-
 }
 #endif   // ----- #ifndef AFFECTOR_INC  -----

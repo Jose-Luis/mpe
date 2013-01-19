@@ -33,32 +33,5 @@ namespace mpe
          void die();
    };
 
-   Mortal::Mortal(Real theLifetime):
-      mAlive(true),
-      mLifetime(theLifetime),
-      mAge(0)
-   {}
-   inline bool Mortal::isAlive()
-   {
-      return mAlive;
-   }
-   inline void Mortal::age(Real theElapsedTime)
-   {
-      mAge += theElapsedTime;
-      if (mAge > mLifetime)
-         die();
-   }
-   inline void Mortal::die()
-   {
-      mAlive=false;
-   }
-   inline void Mortal::kill()
-   {
-      mAlive=false;
-   }
-   inline Real Mortal::getAge() const
-   {
-      return mAge;
-   }
 }
 #endif   // ----- #ifndef MORTAL_INC  -----

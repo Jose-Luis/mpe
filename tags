@@ -226,7 +226,7 @@ MAX_INTEGER	include/MPE/Config.hpp	/^const Integer MAX_INTEGER = std::numeric_li
 MORTAL_INC	include/MPE/components/Mortal.hpp	8;"	d
 MPE_INC	include/MPE/MPE.hpp	7;"	d
 Mortal	include/MPE/components/Mortal.hpp	/^   class Mortal$/;"	c	namespace:mpe
-Mortal	include/MPE/components/Mortal.hpp	/^   Mortal::Mortal(Real theLifetime):$/;"	f	class:mpe::Mortal
+Mortal	src/MPE/components/Mortal.cpp	/^Mortal::Mortal(Real theLifetime):$/;"	f	class:mpe::Mortal
 PARTICLE_INC	include/MPE/classes/Particle.hpp	8;"	d
 PI	ext_libs/include/GT/Angle.hpp	/^         const static Real PI;$/;"	m	class:gt::Angle
 PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	213;"	d	file:
@@ -284,7 +284,8 @@ PLATFORM_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	278;"
 POSITION_INC	include/MPE/components/Position.hpp	7;"	d
 Particle	include/MPE/classes/Particle.hpp	/^class Particle: public Mortal, public Position$/;"	c	namespace:mpe
 Particle	src/MPE/classes/Particle.cpp	/^Particle::Particle$/;"	f	class:mpe::Particle
-Position	include/MPE/components/Position.hpp	/^class Position$/;"	c
+Position	include/MPE/components/Position.hpp	/^class Position$/;"	c	namespace:mpe
+Position	src/MPE/components/Position.cpp	/^Position::Position(gt::Vec2D thePosition):$/;"	f	class:mpe::Position
 RADIAL	include/MPE/classes/Emitter.hpp	/^      enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};$/;"	e	enum:mpe::Emitter::Dispersion
 RANDOMIZER_INC	ext_libs/include/GT/Randomizer.hpp	7;"	d
 RANDOM	include/MPE/classes/Emitter.hpp	/^      enum Dispersion{LINEAR,RADIAL,REFLECT,RANDOM,STATIC};$/;"	e	enum:mpe::Emitter::Dispersion
@@ -304,7 +305,7 @@ addEmitter	src/MPE/classes/System.cpp	/^void System::addEmitter(Emitter& theEmit
 addFocus	src/MPE/classes/System.cpp	/^FocusPtr System::addFocus(EmitterID theEmitterID,$/;"	f	class:mpe::System
 addParticle	src/MPE/classes/System.cpp	/^void System::addParticle (Particle& theParticle)$/;"	f	class:mpe::System
 affect	src/MPE/classes/Affector.cpp	/^   void AccelarationAffector::affect(Particle& theParticle)$/;"	f	class:mpe::AccelarationAffector
-age	include/MPE/components/Mortal.hpp	/^   inline void Mortal::age(Real theElapsedTime)$/;"	f	class:mpe::Mortal
+age	src/MPE/components/Mortal.cpp	/^void Mortal::age(Real theElapsedTime)$/;"	f	class:mpe::Mortal
 anEmitterID	src/MPE/classes/System.cpp	/^   EmitterID anEmitterID = theEmitter.getID();$/;"	l
 anEmitter	src/MPE/classes/System.cpp	/^   Emitter& anEmitter = getEmitter(theEmitterID);$/;"	l
 anFocus	src/MPE/classes/Emitter.cpp	/^   FocusPtr anFocus = Focus::create(getFocusWidth(),$/;"	l
@@ -320,13 +321,13 @@ canAffect	src/MPE/classes/Affector.cpp	/^   bool IAffector::canAffect(const gt::
 createFocus	src/MPE/classes/Emitter.cpp	/^FocusPtr Emitter::createFocus(gt::Vec2D thePosition,$/;"	f	class:mpe::Emitter
 createParticle	src/MPE/classes/Focus.cpp	/^Particle Focus::createParticle ()$/;"	f	class:mpe::Focus
 create	src/MPE/classes/Focus.cpp	/^FocusPtr Focus::create(Real      theWidth,$/;"	f	class:mpe::Focus
-die	include/MPE/components/Mortal.hpp	/^   inline void Mortal::die()$/;"	f	class:mpe::Mortal
+die	src/MPE/components/Mortal.cpp	/^void Mortal::die()$/;"	f	class:mpe::Mortal
 drain	src/MPE/classes/Focus.cpp	/^Integer Focus::drain(Real theElapsedTime)$/;"	f	class:mpe::Focus
 draw	src/MPE/classes/System.cpp	/^void System::draw (sf::RenderWindow& theWindow) const$/;"	f	class:mpe::System
 emit	src/MPE/classes/Focus.cpp	/^void Focus::emit(Integer theNParticles)$/;"	f	class:mpe::Focus
 generatePosition	src/MPE/classes/Emitter.cpp	/^gt::Vec2D Emitter::generatePosition(const Focus& theFocus) const$/;"	f	class:mpe::Emitter
 generateVelocity	src/MPE/classes/Emitter.cpp	/^gt::Vec2D Emitter::generateVelocity(const Focus& theFocus, $/;"	f	class:mpe::Emitter
-getAge	include/MPE/components/Mortal.hpp	/^   inline Real Mortal::getAge() const$/;"	f	class:mpe::Mortal
+getAge	src/MPE/components/Mortal.cpp	/^Real Mortal::getAge() const$/;"	f	class:mpe::Mortal
 getAngle	src/MPE/classes/Focus.cpp	/^gt::Angle Focus::getAngle() const $/;"	f	class:mpe::Focus
 getCos	ext_libs/include/GT/Angle.hpp	/^         inline Real getCos ( ) const {return mCos;};$/;"	f	class:gt::Angle
 getEmitter	src/MPE/classes/System.cpp	/^Emitter& System::getEmitter ( EmitterID theEmitterID )$/;"	f	class:mpe::System
@@ -340,7 +341,7 @@ getID	src/MPE/classes/Emitter.cpp	/^EmitterID Emitter::getID() const$/;"	f	class
 getLinearVelocity	src/MPE/classes/Particle.cpp	/^ gt::Vec2D Particle::getLinearVelocity() const $/;"	f	class:mpe::Particle
 getParticlePOW	src/MPE/classes/Emitter.cpp	/^Real Emitter::getParticlePOW() const $/;"	f	class:mpe::Emitter
 getParticleTOL	src/MPE/classes/Emitter.cpp	/^Real Emitter::getParticleTOL() const $/;"	f	class:mpe::Emitter
-getPosition	include/MPE/components/Position.hpp	/^inline gt::Vec2D Position::getPosition() const $/;"	f	class:Position
+getPosition	src/MPE/components/Position.cpp	/^gt::Vec2D Position::getPosition() const $/;"	f	class:mpe::Position
 getSin	ext_libs/include/GT/Angle.hpp	/^         inline Real getSin ( ) const {return mSin;};$/;"	f	class:gt::Angle
 getSprite	src/MPE/classes/Particle.cpp	/^ const sf::Sprite& Particle::getSprite() const$/;"	f	class:mpe::Particle
 getSystem	src/MPE/classes/Emitter.cpp	/^System& Emitter::getSystem() const $/;"	f	class:mpe::Emitter
@@ -363,11 +364,11 @@ info_platform	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^c
 info_version	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	/^char const info_version[] = {$/;"	v
 info_version	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_version[] = {$/;"	v
 init	ext_libs/include/GT/Randomizer.hpp	/^         static void init()$/;"	f	class:gt::Randomizer
-isAlive	include/MPE/components/Mortal.hpp	/^   inline bool Mortal::isAlive()$/;"	f	class:mpe::Mortal
+isAlive	src/MPE/components/Mortal.cpp	/^bool Mortal::isAlive()$/;"	f	class:mpe::Mortal
 it	src/MPE/classes/System.cpp	/^   auto it = mEmitters.find(anEmitterID);$/;"	l
 it	src/MPE/classes/System.cpp	/^   auto it = mEmitters.find(theEmitterID);$/;"	l
 it	src/MPE/classes/System.cpp	/^   std::list<Particle>::const_iterator it;$/;"	l
-kill	include/MPE/components/Mortal.hpp	/^   inline void Mortal::kill()$/;"	f	class:mpe::Mortal
+kill	src/MPE/components/Mortal.cpp	/^void Mortal::kill()$/;"	f	class:mpe::Mortal
 line	src/MPE/classes/System.cpp	/^      std::string line = "Number: ";$/;"	l
 l	src/MPE/classes/System.cpp	/^      int l = mParticles.size();$/;"	l
 l	src/MPE/classes/System.cpp	/^      s << line << l;$/;"	l
@@ -392,7 +393,7 @@ mMax	ext_libs/include/GT/Randomizer.hpp	/^         Real mMax;$/;"	m	class:gt::Ra
 mMin	ext_libs/include/GT/Randomizer.hpp	/^         Real mMin;$/;"	m	class:gt::Randomizer
 mPPS	include/MPE/classes/Focus.hpp	/^      Real      mPPS;$/;"	m	class:mpe::Focus
 mParticles	include/MPE/classes/System.hpp	/^         std::list<Particle>           mParticles;$/;"	m	class:mpe::System
-mPosition	include/MPE/components/Position.hpp	/^      gt::Vec2D mPosition;$/;"	m	class:Position
+mPosition	include/MPE/components/Position.hpp	/^      gt::Vec2D mPosition;$/;"	m	class:mpe::Position
 mRangeFocusHeight	include/MPE/classes/Emitter.hpp	/^      gt::Randomizer  mRangeFocusHeight; \/\/\/< Range of focus height.$/;"	m	class:mpe::Emitter
 mRangeFocusNP	include/MPE/classes/Emitter.hpp	/^      gt::Randomizer  mRangeFocusNP;     \/\/\/< Range of focus number of particles.$/;"	m	class:mpe::Emitter
 mRangeFocusPPS	include/MPE/classes/Emitter.hpp	/^      gt::Randomizer  mRangeFocusPPS;    \/\/\/< Range of focus particles per second.$/;"	m	class:mpe::Emitter
@@ -414,8 +415,8 @@ mYFactor	include/MPE/classes/System.hpp	/^         Real mYFactor;$/;"	m	class:mp
 main	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	/^int main(int argc, char* argv[])$/;"	f
 main	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	/^void main() {}$/;"	f
 main	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^int main(int argc, char* argv[])$/;"	f
-move	include/MPE/components/Position.hpp	/^inline void Position::move(Real theXOffset,Real theYOffset)$/;"	f	class:Position
-move	include/MPE/components/Position.hpp	/^inline void Position::move(gt::Vec2D theOffset)$/;"	f	class:Position
+move	src/MPE/components/Position.cpp	/^void Position::move(Real theXOffset,Real theYOffset)$/;"	f	class:mpe::Position
+move	src/MPE/components/Position.cpp	/^void Position::move(gt::Vec2D theOffset)$/;"	f	class:mpe::Position
 mpe	include/MPE/Config.hpp	/^namespace mpe$/;"	n
 mpe	include/MPE/classes/Affector.hpp	/^namespace mpe$/;"	n
 mpe	include/MPE/classes/Emitter.hpp	/^namespace mpe$/;"	n
@@ -423,11 +424,14 @@ mpe	include/MPE/classes/Focus.hpp	/^namespace mpe$/;"	n
 mpe	include/MPE/classes/Particle.hpp	/^namespace mpe$/;"	n
 mpe	include/MPE/classes/System.hpp	/^namespace mpe$/;"	n
 mpe	include/MPE/components/Mortal.hpp	/^namespace mpe$/;"	n
+mpe	include/MPE/components/Position.hpp	/^namespace mpe$/;"	n
 mpe	src/MPE/classes/Affector.cpp	/^namespace mpe$/;"	n	file:
 mpe	src/MPE/classes/Emitter.cpp	/^namespace mpe$/;"	n	file:
 mpe	src/MPE/classes/Focus.cpp	/^namespace mpe$/;"	n	file:
 mpe	src/MPE/classes/Particle.cpp	/^namespace mpe$/;"	n	file:
 mpe	src/MPE/classes/System.cpp	/^namespace mpe$/;"	n	file:
+mpe	src/MPE/components/Mortal.cpp	/^namespace mpe$/;"	n	file:
+mpe	src/MPE/components/Position.cpp	/^namespace mpe$/;"	n	file:
 nParticles	src/MPE/classes/Focus.cpp	/^      Integer nParticles = drain(theElapsedTime);$/;"	l
 nParticles	src/MPE/classes/Focus.cpp	/^   Integer nParticles = (mPPS * getAge() \/ 1000) - mEP;$/;"	l
 require	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	/^  int require = 0;$/;"	l
@@ -437,8 +441,8 @@ setAngle	src/MPE/classes/Focus.cpp	/^void Focus::setAngle(gt::Angle theAngle)$/;
 setDispersion	src/MPE/classes/Emitter.cpp	/^void Emitter::setDispersion(Dispersion theDispersion) $/;"	f	class:mpe::Emitter
 setHeight	src/MPE/classes/Focus.cpp	/^void Focus::setHeight(Real theHeight)$/;"	f	class:mpe::Focus
 setLinearVelocity	src/MPE/classes/Particle.cpp	/^ void Particle::setLinearVelocity(gt::Vec2D theLinearVelocity)$/;"	f	class:mpe::Particle
-setPosition	include/MPE/components/Position.hpp	/^inline void Position::setPosition(Real theX,Real theY)$/;"	f	class:Position
-setPosition	include/MPE/components/Position.hpp	/^inline void Position::setPosition(gt::Vec2D thePosition)$/;"	f	class:Position
+setPosition	src/MPE/components/Position.cpp	/^void Position::setPosition(Real theX,Real theY)$/;"	f	class:mpe::Position
+setPosition	src/MPE/components/Position.cpp	/^void Position::setPosition(gt::Vec2D thePosition)$/;"	f	class:mpe::Position
 setRangeFocusHeight	src/MPE/classes/Emitter.cpp	/^void Emitter::setRangeFocusHeight(Real theMin, Real theMax)$/;"	f	class:mpe::Emitter
 setRangeFocusNP	src/MPE/classes/Emitter.cpp	/^void Emitter::setRangeFocusNP(Real theMin,Real theMax)$/;"	f	class:mpe::Emitter
 setRangeFocusPPS	src/MPE/classes/Emitter.cpp	/^void Emitter::setRangeFocusPPS(Real theMin, Real theMax)$/;"	f	class:mpe::Emitter
