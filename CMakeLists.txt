@@ -46,6 +46,7 @@ endif()
 
 set(CMAKE_DEBUG_POSTFIX "_debug") 
 set(CMAKE_CXX_FLAGS_OPTIMIZED "-O3")
+set(CMAKE_CXX_FLAGS_PROFILING "-O3 -pg")
 
 # Code to compile
 # ===============

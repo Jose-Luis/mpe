@@ -25,8 +25,7 @@ class Vec2D
       //                       LIFECYCLE   
       //////////////////////////////////////////////////////////////////////////
       Vec2D();                               // constructor
-      Vec2D(Real theX, Real theY);                               // constructor
-      ~Vec2D();                              // destructor
+      explicit Vec2D(Real theX, Real theY);  // constructor
       //////////////////////////////////////////////////////////////////////////
       //                       METHODS   
       //////////////////////////////////////////////////////////////////////////
