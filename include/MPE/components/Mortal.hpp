@@ -11,27 +11,54 @@
 
 namespace mpe
 {
-   class Mortal
-   {
+class Mortal
+{
 
-      public:
+   public:
 
-         bool isAlive();
-         void kill();
-         Real getAge() const;
+      /// @brief isAlive 
+      /// @return 
+      inline bool isAlive()
+      {
+         return mAlive;
+      }
+      /// @brief kill 
+      inline void kill()
+      {
+         mAlive=false;
+      }
+      /// @brief getAge 
+      /// @return 
+      inline Real getAge() const
+      {
+         return mAge;
+      }
 
-      protected:
+   protected:
 
-         Mortal(Real theLifetime);
-         void age(Real theElapsedTime);
+      /// @brief Mortal 
+      /// @param theLifetime
+      Mortal(Real theLifetime);
+      /// @brief age 
+      /// @param theElapsedTime
+      inline void age(Real theElapsedTime)
+      {
+         mAge += theElapsedTime;
+         if (mAge > mLifetime)
+            die();
+      }
 
-      private:
+   private:
 
-         bool mAlive;
-         Real mLifetime;
-         Real mAge;
-         void die();
-   };
+      bool mAlive;
+      Real mLifetime;
+      Real mAge;
+      /// @brief die 
+      inline void die()
+      {
+         mAlive=false;
+      }
+};
 
 }
-#endif   // ----- #ifndef MORTAL_INC  -----
+#endif   

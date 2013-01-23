@@ -24,8 +24,12 @@ class Vec2D
       //////////////////////////////////////////////////////////////////////////
       //                       LIFECYCLE   
       //////////////////////////////////////////////////////////////////////////
-      Vec2D();                               // constructor
-      explicit Vec2D(Real theX, Real theY);  // constructor
+      /// @brief Vec2D 
+      explicit Vec2D(); 
+      /// @brief Vec2D 
+      /// @param theX
+      /// @param theY
+      explicit Vec2D(Real theX, Real theY); 
       //////////////////////////////////////////////////////////////////////////
       //                       METHODS   
       //////////////////////////////////////////////////////////////////////////
@@ -54,17 +58,58 @@ class Vec2D
       //////////////////////////////////////////////////////////////////////////
       //                       OPERATORS   
       //////////////////////////////////////////////////////////////////////////
+      /// @brief += 
+      /// @param theVector
+      /// @return 
       Vec2D& operator +=(const Vec2D& theVector);
+      /// @brief -= 
+      /// @param theVector
+      /// @return 
       Vec2D& operator -=(const Vec2D& theVector);
+      /// @brief = 
+      /// @param theFloat
+      /// @return 
       Vec2D& operator *=(Real theFloat);
+      /// @brief /= 
+      /// @param theFloat
+      /// @return 
       Vec2D& operator /=(Real theFloat);
-      Vec2D operator -(void) const;
-      Vec2D operator +(const Vec2D& theVector) const;
-      Vec2D operator -(const Vec2D& theVector) const;
-      Vec2D operator *(Real theFloat) const;
-      Vec2D operator /(Real theFloat) const;
-      Real operator *(const Vec2D& theVector) const;
+      /// @brief - 
+      /// @return 
+      inline Vec2D operator -(void) const
+         {return (Vec2D(-x, -y));}
+      /// @brief + 
+      /// @param theVector
+      /// @return 
+      inline Vec2D operator +(const Vec2D& theVector) const
+         {return (Vec2D(x + theVector.x, y + theVector.y));}
+      /// @brief - 
+      /// @param theVector
+      /// @return 
+      inline Vec2D operator -(const Vec2D& theVector) const
+         {return (Vec2D(x - theVector.x, y - theVector.y));}
+      /// @brief  
+      /// @param theFloat
+      /// @return 
+      inline Vec2D operator *(Real theFloat) const
+         {return (Vec2D(x * theFloat, y * theFloat));}
+      /// @brief / 
+      /// @param theFloat
+      /// @return 
+      inline Vec2D operator /(Real theFloat) const
+         {return (Vec2D(x / theFloat, y / theFloat));}
+      /// @brief  
+      /// @param theVector
+      /// @return 
+      inline Real operator *(const Vec2D& theVector) const
+         {return (x * theVector.x + y * theVector.y);}
+      /// @brief == 
+      /// @param theVector
+      /// @return 
       bool operator ==(const Vec2D& theVector) const;
+      /// @brief != 
+      /// @param theVector
+      /// @return 
       bool operator !=(const Vec2D& theVector) const;
 }; 
 ////////////////////////////////////////////////////////////////////////////////

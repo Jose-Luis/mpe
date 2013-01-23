@@ -54,17 +54,6 @@ void Particle::update(Real theElapsedTime)
 }
 //------------------------------------------------------------------------------
 //      Class:        Particle
-//      Method:       setSpritePosition
-//      Description:  
-//------------------------------------------------------------------------------
- void Particle::setSpritePosition(Real theXFactor,Real theYFactor)
-{
-   mSprite.setRotation(mAngle);
-   mSprite.setPosition(mPosition.x*theXFactor,mPosition.y*theYFactor);
-}
-
-//------------------------------------------------------------------------------
-//      Class:        Particle
 //      Method:       getLinearVelocity
 //      Description:  
 //------------------------------------------------------------------------------
@@ -91,3 +80,14 @@ void Particle::update(Real theElapsedTime)
    return mSprite;
 }
 }
+////------------------------------------------------------------------------------
+////      Class:        Particle
+////      Method:       setSpritePosition
+////      Description:  
+////------------------------------------------------------------------------------
+ //void Particle::setSpritePosition(Real theXFactor,Real theYFactor)
+//{
+   //mSprite.setRotation(mAngle);
+   //mSprite.setPosition(mPosition.x*theXFactor,mPosition.y*theYFactor);
+//}
+

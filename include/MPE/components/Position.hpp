@@ -16,12 +16,41 @@ class Position
 
    public:
 
-      gt::Vec2D getPosition() const;
-      void setPosition(gt::Vec2D thePosition);
-      void setPosition(Real theX,Real theY);
-      void move(Real theXOffset,Real theYOffset);
-      void move(gt::Vec2D theOffset);
-
+      /// @brief getPosition 
+      /// @return 
+      gt::Vec2D getPosition() const
+      {
+         return mPosition;
+      }
+      /// @brief setPosition 
+      /// @param thePosition
+      void setPosition(gt::Vec2D thePosition)
+      {
+         mPosition=thePosition;
+      }
+      /// @brief setPosition 
+      /// @param theX
+      /// @param theY
+      void setPosition(Real theX,Real theY)
+      {
+         mPosition.x = theX;
+         mPosition.y = theY;
+      }
+      /// @brief move 
+      /// @param theXOffset
+      /// @param theYOffset
+      void move(Real theXOffset,Real theYOffset)
+     {
+         mPosition.x += theXOffset;
+         mPosition.y += theYOffset;
+      }
+      /// @brief move 
+      /// @param theOffset
+      void move(gt::Vec2D theOffset)
+      {
+         mPosition += theOffset;
+      }
+     
    protected:
 
       Position(gt::Vec2D thePosition);

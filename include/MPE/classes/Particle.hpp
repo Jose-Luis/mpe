@@ -48,7 +48,11 @@ class Particle: public Mortal, public Position
       /// @brief setSpritePosition 
       /// @param theXFactor
       /// @param theYFactor
-      void setSpritePosition(Real theXFactor,Real theYFactor);
+      inline void setSpritePosition(Real theXFactor,Real theYFactor)
+      {
+         mSprite.setRotation(mAngle);
+         mSprite.setPosition(mPosition.x*theXFactor,mPosition.y*theYFactor);
+      }
       /// @brief setLinearVelocity 
       /// @param theLinearVelocity
       void setLinearVelocity(gt::Vec2D theLinearVelocity);

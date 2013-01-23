@@ -12,19 +12,8 @@ namespace mpe
 //      Method:       constructor
 //      Description:  
 //------------------------------------------------------------------------------
-Affector::Affector(Real theLifetime, Real theRadius, gt::Vec2D thePosition):
-   Mortal(theLifetime),
-   Position(thePosition)
+Affector::Affector(Real theLifetime):
+   Mortal(theLifetime)
 {
-   mSquareRadius = theRadius * theRadius;
-}
-//------------------------------------------------------------------------------
-//      Class:        Affector
-//      Method:       canAffect
-//      Description:  
-//------------------------------------------------------------------------------
-bool Affector::canAffect(const gt::Vec2D& thePoint) const 
-{
-   return (mPosition - thePoint).squaremodule() < mSquareRadius;
 }
 }
