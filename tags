@@ -22,8 +22,6 @@ ARCHITECTURE_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	3
 ARCHITECTURE_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	304;"	d	file:
 ARCHITECTURE_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	307;"	d	file:
 ARCHITECTURE_ID	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	311;"	d	file:
-AccelerationAffector	include/MPE/classes/affectors/AccelerationAffector.hpp	/^   class AccelerationAffector: public Affector$/;"	c	namespace:mpe
-AccelerationAffector	src/MPE/classes/affectors/AccelerationAffector.cpp	/^   AccelerationAffector::AccelerationAffector(Real theElapsedTime):$/;"	f	class:mpe::AccelerationAffector
 AffectorPtr	include/MPE/Config.hpp	/^typedef boost::shared_ptr<Affector> AffectorPtr;$/;"	t	namespace:mpe
 Affector	include/MPE/classes/Affector.hpp	/^class Affector: public Mortal$/;"	c	namespace:mpe
 Affector	src/MPE/classes/Affector.cpp	/^Affector::Affector(Real theLifetime):$/;"	f	class:mpe::Affector
@@ -305,7 +303,6 @@ addAffector	src/MPE/classes/System.cpp	/^void System::addAffector(AffectorPtr th
 addEmitter	src/MPE/classes/System.cpp	/^void System::addEmitter(Emitter& theEmitter)$/;"	f	class:mpe::System
 addFocus	src/MPE/classes/System.cpp	/^void System::addFocus(FocusPtr theFocus)$/;"	f	class:mpe::System
 addParticle	src/MPE/classes/System.cpp	/^void System::addParticle (Particle& theParticle)$/;"	f	class:mpe::System
-affect	src/MPE/classes/affectors/AccelerationAffector.cpp	/^   void AccelerationAffector::affect(Particle& theParticle,Real theElapsedTime)$/;"	f	class:mpe::AccelerationAffector
 age	include/MPE/components/Mortal.hpp	/^      inline void age(Real theElapsedTime)$/;"	f	class:mpe::Mortal
 anEmitterID	src/MPE/classes/System.cpp	/^   EmitterID anEmitterID = theEmitter.getID();$/;"	l
 anFocus	src/MPE/classes/Emitter.cpp	/^   FocusPtr anFocus = Focus::create(getFocusWidth(),$/;"	l
@@ -371,7 +368,6 @@ kill	include/MPE/components/Mortal.hpp	/^      inline void kill()$/;"	f	class:mp
 line	src/MPE/classes/System.cpp	/^      std::string line = "Number: ";$/;"	l
 l	src/MPE/classes/System.cpp	/^      int l = mParticles.size();$/;"	l
 l	src/MPE/classes/System.cpp	/^      s << line << l;$/;"	l
-mAcceleration	include/MPE/classes/affectors/AccelerationAffector.hpp	/^         Real mAcceleration;$/;"	m	class:mpe::AccelerationAffector
 mAffectors	include/MPE/classes/System.hpp	/^         std::list<AffectorPtr>        mAffectors;$/;"	m	class:mpe::System
 mAge	include/MPE/components/Mortal.hpp	/^      Real mAge;$/;"	m	class:mpe::Mortal
 mAlive	include/MPE/components/Mortal.hpp	/^      bool mAlive;$/;"	m	class:mpe::Mortal
@@ -421,7 +417,6 @@ mpe	include/MPE/classes/Emitter.hpp	/^namespace mpe$/;"	n
 mpe	include/MPE/classes/Focus.hpp	/^namespace mpe$/;"	n
 mpe	include/MPE/classes/Particle.hpp	/^namespace mpe$/;"	n
 mpe	include/MPE/classes/System.hpp	/^namespace mpe$/;"	n
-mpe	include/MPE/classes/affectors/AccelerationAffector.hpp	/^namespace mpe$/;"	n
 mpe	include/MPE/components/Mortal.hpp	/^namespace mpe$/;"	n
 mpe	include/MPE/components/Position.hpp	/^namespace mpe$/;"	n
 mpe	src/MPE/classes/Affector.cpp	/^namespace mpe$/;"	n	file:
@@ -429,7 +424,6 @@ mpe	src/MPE/classes/Emitter.cpp	/^namespace mpe$/;"	n	file:
 mpe	src/MPE/classes/Focus.cpp	/^namespace mpe$/;"	n	file:
 mpe	src/MPE/classes/Particle.cpp	/^namespace mpe$/;"	n	file:
 mpe	src/MPE/classes/System.cpp	/^namespace mpe$/;"	n	file:
-mpe	src/MPE/classes/affectors/AccelerationAffector.cpp	/^namespace mpe$/;"	n	file:
 mpe	src/MPE/components/Mortal.cpp	/^namespace mpe$/;"	n	file:
 mpe	src/MPE/components/Position.cpp	/^namespace mpe$/;"	n	file:
 nParticles	src/MPE/classes/Focus.cpp	/^      Integer nParticles = drain(theElapsedTime);$/;"	l
@@ -464,11 +458,11 @@ setXFactor	src/MPE/classes/System.cpp	/^void System::setXFactor(Real theXFactor)
 setYFactor	src/MPE/classes/System.cpp	/^void System::setYFactor(Real theYFactor)$/;"	f	class:mpe::System
 set	ext_libs/include/GT/Angle.hpp	/^         inline void set(Real theValue)$/;"	f	class:gt::Angle
 s	src/MPE/classes/System.cpp	/^      std::stringstream s;$/;"	l
-theLifetime	include/MPE/classes/Affector.hpp	/^      void create(Real theLifetime) = 0;$/;"	m	class:mpe::Affector
 toDegrees	ext_libs/include/GT/Angle.hpp	/^         static inline Real toDegrees(float theRadians)$/;"	f	class:gt::Angle
 toRadians	ext_libs/include/GT/Angle.hpp	/^         static inline Real toRadians(float theDegrees)$/;"	f	class:gt::Angle
 updateFocusses	src/MPE/classes/System.cpp	/^void System::updateFocusses(Real theElapsedTime)$/;"	f	class:mpe::System
 updateParticles	src/MPE/classes/System.cpp	/^void System::updateParticles(Real theElapsedTime)$/;"	f	class:mpe::System
+update	include/MPE/classes/Affector.hpp	/^      void update(Real theElapsedtime){ age(theElapsedtime); };$/;"	f	class:mpe::Affector
 update	src/MPE/classes/Focus.cpp	/^void Focus::update(Real theElapsedTime)$/;"	f	class:mpe::Focus
 update	src/MPE/classes/Particle.cpp	/^void Particle::update(Real theElapsedTime)$/;"	f	class:mpe::Particle
 update	src/MPE/classes/System.cpp	/^void System::update (Real theElapsedTime)$/;"	f	class:mpe::System
