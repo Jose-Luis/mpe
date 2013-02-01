@@ -12,7 +12,7 @@ namespace mpe
 {
 class System;
 class Focus;
-class IAffector;
+class Affector;
 class Emitter;
 class Particle;
 class Mortal;
@@ -20,7 +20,7 @@ class Position;
 
 typedef std::string EmitterID;
 typedef boost::shared_ptr<Focus> FocusPtr;
-typedef boost::shared_ptr<IAffector> AffectorPtr;
+typedef boost::shared_ptr<Affector> AffectorPtr;
 
 const Integer MAX_INTEGER = std::numeric_limits<Integer>::max();
 const Real REAL_INFINITY = std::numeric_limits<Real>::infinity();

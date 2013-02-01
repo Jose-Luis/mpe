@@ -15,12 +15,21 @@ namespace mpe
 class Affector: public Mortal
 {
    public:
-      /// @brief IAffector 
-      /// @param theRadius
-      Affector(Real      theLifetime);
+      /// @brief create 
+      /// @param theLifetime
+      /// @return 
+      virtual void create(Real theLifetime) = 0;
       /// @brief affect    
       /// @param theParticle
       virtual void affect(Particle& theParticle,Real theElapsedTime) = 0;
+      /// @brief update 
+      /// @param theElapsedtime
+      void update(Real theElapsedtime){ age(theElapsedtime); };
+
+   protected:
+      /// @brief IAffector 
+      /// @param theRadius
+      Affector(Real      theLifetime);
 };
 }
 #endif

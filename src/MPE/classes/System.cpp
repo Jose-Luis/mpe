@@ -72,15 +72,29 @@ void System::addEmitter(Emitter& theEmitter)
 //      Method:  addFocus
 // Description:  
 //------------------------------------------------------------------------------
-FocusPtr System::addFocus(EmitterID theEmitterID,
+void System::addAffector(AffectorPtr theAffector)
+{
+   mAffectors.push_back(theAffector);
+}
+//------------------------------------------------------------------------------
+//       Class:  Emitter
+//      Method:  addFocus
+// Description:  
+//------------------------------------------------------------------------------
+void System::addFocus(FocusPtr theFocus)
+{
+   mFocusses.push_back(theFocus);
+}
+//------------------------------------------------------------------------------
+//       Class:  Emitter
+//      Method:  createFocus
+// Description:  
+//------------------------------------------------------------------------------
+FocusPtr System::createFocus(EmitterID theEmitterID,
                        gt::Vec2D  thePosition,
                        Real       theAngle)
 {
-   Emitter& anEmitter = getEmitter(theEmitterID);
-   FocusPtr anFocus = anEmitter.createFocus(thePosition,theAngle);
-   mFocusses.push_back(anFocus);
-
-   return anFocus;
+   return getEmitter(theEmitterID).createFocus(thePosition,theAngle);
 }
 //------------------------------------------------------------------------------
 //       Class:  System
@@ -133,17 +147,34 @@ void System::updateFocusses(Real theElapsedTime)
 //------------------------------------------------------------------------------
 void System::updateParticles(Real theElapsedTime)
 {
-   for (auto it = mParticles.begin(); it != mParticles.end(); it++)
+   for (auto particle =  mParticles.begin(); 
+             particle != mParticles.end();
+             particle++)
    {
-      if (it->isAlive())
+      if (particle->isAlive())
       {
-         it->update(theElapsedTime);
-         it->setSpritePosition(mXFactor,mYFactor);
-      }
+         for (auto affector =  mAffectors.begin(); 
+                   affector != mAffectors.end();
+                   affector++)
+         {
+            (*affector)->update(theElapsedTime);
+            if( (*affector)->isAlive() )
+            {
+               (*affector)->affect(*particle,theElapsedTime);
+            }
+            else
+            {
+               affector = mAffectors.erase(affector);
+               affector++;
+            }
+         }
+         particle->update(theElapsedTime);
+         particle->setSpritePosition(mXFactor,mYFactor);
+      } 
       else 
       {
-         it = mParticles.erase(it);
-         it--;
+         particle = mParticles.erase(particle);
+         particle--;
       }
    }
 }
