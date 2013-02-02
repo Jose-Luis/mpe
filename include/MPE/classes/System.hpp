@@ -13,6 +13,7 @@
 #include <GT/GT.hpp>
 #include <MPE/Config.hpp>
 #include <MPE/classes/Particle.hpp>
+#include <MPE/classes/Affector.hpp>
 #include <MPE/classes/Emitter.hpp>
 #include <MPE/classes/Focus.hpp>
 
@@ -30,15 +31,21 @@ namespace mpe
          /// @param theEmitter
          void     addEmitter(Emitter& theEmitter);
          /// @brief addFocus 
-         /// @param theEmitter
-         /// @param thePosition
-         /// @param theAngle
-         FocusPtr   addFocus(EmitterID theEmitter,
-                             gt::Vec2D thePosition,
-                             Real      theAngle);
+         /// @param theFocus
+         void     addFocus(FocusPtr theFocus);
+         /// @brief addFocus 
+         /// @param theFocus
+         void     addAffector(AffectorPtr theAffector);
          /// @brief addParticle 
          /// @param theParticle
          void     addParticle(Particle& theParticle);
+         /// @brief addFocus 
+         /// @param theEmitter
+         /// @param thePosition
+         /// @param theAngle
+         FocusPtr   createFocus(EmitterID theEmitter,
+                                gt::Vec2D thePosition,
+                                Real      theAngle);
          /// @brief update 
          /// @param theElapsedTime
          void     update(Real theElapsedTime);

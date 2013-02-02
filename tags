@@ -299,14 +299,13 @@ System	include/MPE/classes/System.hpp	/^   class System$/;"	c	namespace:mpe
 System	src/MPE/classes/System.cpp	/^System::System ( Real theFactor ):$/;"	f	class:mpe::System
 VEC2D_INC	ext_libs/include/GT/Vec2D.hpp	7;"	d
 Vec2D	ext_libs/include/GT/Vec2D.hpp	/^class Vec2D$/;"	c	namespace:gt
+addAffector	src/MPE/classes/System.cpp	/^void System::addAffector(AffectorPtr theAffector)$/;"	f	class:mpe::System
 addEmitter	src/MPE/classes/System.cpp	/^void System::addEmitter(Emitter& theEmitter)$/;"	f	class:mpe::System
-addFocus	src/MPE/classes/System.cpp	/^FocusPtr System::addFocus(EmitterID theEmitterID,$/;"	f	class:mpe::System
+addFocus	src/MPE/classes/System.cpp	/^void System::addFocus(FocusPtr theFocus)$/;"	f	class:mpe::System
 addParticle	src/MPE/classes/System.cpp	/^void System::addParticle (Particle& theParticle)$/;"	f	class:mpe::System
 age	include/MPE/components/Mortal.hpp	/^      inline void age(Real theElapsedTime)$/;"	f	class:mpe::Mortal
 anEmitterID	src/MPE/classes/System.cpp	/^   EmitterID anEmitterID = theEmitter.getID();$/;"	l
-anEmitter	src/MPE/classes/System.cpp	/^   Emitter& anEmitter = getEmitter(theEmitterID);$/;"	l
 anFocus	src/MPE/classes/Emitter.cpp	/^   FocusPtr anFocus = Focus::create(getFocusWidth(),$/;"	l
-anFocus	src/MPE/classes/System.cpp	/^   FocusPtr anFocus = anEmitter.createFocus(thePosition,theAngle);$/;"	l
 anParticle	src/MPE/classes/Focus.cpp	/^      Particle anParticle = createParticle();$/;"	l
 anParticle	src/MPE/classes/Focus.cpp	/^   Particle  anParticle = Particle(mEmitter.getTexture(),$/;"	l
 anPosition	src/MPE/classes/Emitter.cpp	/^   gt::Vec2D anPosition;$/;"	l
@@ -315,6 +314,7 @@ anSystem	src/MPE/classes/Focus.cpp	/^   System& anSystem = mEmitter.getSystem();
 anVelocity	src/MPE/classes/Emitter.cpp	/^   gt::Vec2D anVelocity;$/;"	l
 anVelocity	src/MPE/classes/Focus.cpp	/^   gt::Vec2D anVelocity = mEmitter.generateVelocity(*this,anPosition);$/;"	l
 createFocus	src/MPE/classes/Emitter.cpp	/^FocusPtr Emitter::createFocus(gt::Vec2D thePosition,$/;"	f	class:mpe::Emitter
+createFocus	src/MPE/classes/System.cpp	/^FocusPtr System::createFocus(EmitterID theEmitterID,$/;"	f	class:mpe::System
 createParticle	src/MPE/classes/Focus.cpp	/^Particle Focus::createParticle ()$/;"	f	class:mpe::Focus
 create	src/MPE/classes/Focus.cpp	/^FocusPtr Focus::create(Real      theWidth,$/;"	f	class:mpe::Focus
 die	include/MPE/components/Mortal.hpp	/^      inline void die()$/;"	f	class:mpe::Mortal
@@ -462,6 +462,7 @@ toDegrees	ext_libs/include/GT/Angle.hpp	/^         static inline Real toDegrees(
 toRadians	ext_libs/include/GT/Angle.hpp	/^         static inline Real toRadians(float theDegrees)$/;"	f	class:gt::Angle
 updateFocusses	src/MPE/classes/System.cpp	/^void System::updateFocusses(Real theElapsedTime)$/;"	f	class:mpe::System
 updateParticles	src/MPE/classes/System.cpp	/^void System::updateParticles(Real theElapsedTime)$/;"	f	class:mpe::System
+update	include/MPE/classes/Affector.hpp	/^      void update(Real theElapsedtime){ age(theElapsedtime); };$/;"	f	class:mpe::Affector
 update	src/MPE/classes/Focus.cpp	/^void Focus::update(Real theElapsedTime)$/;"	f	class:mpe::Focus
 update	src/MPE/classes/Particle.cpp	/^void Particle::update(Real theElapsedTime)$/;"	f	class:mpe::Particle
 update	src/MPE/classes/System.cpp	/^void System::update (Real theElapsedTime)$/;"	f	class:mpe::System
