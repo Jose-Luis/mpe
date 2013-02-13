@@ -147,34 +147,34 @@ void System::updateFocusses(Real theElapsedTime)
 //------------------------------------------------------------------------------
 void System::updateParticles(Real theElapsedTime)
 {
-   for (auto particle =  mParticles.begin(); 
-             particle != mParticles.end();
-             particle++)
+   for (auto affector =  mAffectors.begin(); 
+         affector != mAffectors.end();
+         affector++)
    {
-      if (particle->isAlive())
+      if ( (*affector)->isAlive() )
       {
-         for (auto affector =  mAffectors.begin(); 
-                   affector != mAffectors.end();
-                   affector++)
+         (*affector)->update(theElapsedTime);
+         for (auto particle =  mParticles.begin(); 
+               particle != mParticles.end();
+               particle++)
          {
-            (*affector)->update(theElapsedTime);
-            if( (*affector)->isAlive() )
+            if(particle->isAlive())
             {
                (*affector)->affect(*particle,theElapsedTime);
+               particle->update(theElapsedTime);
+               particle->setSpritePosition(mXFactor,mYFactor);
             }
             else
             {
-               affector = mAffectors.erase(affector);
-               affector++;
+               particle = mParticles.erase(particle);
+               particle--;
             }
          }
-         particle->update(theElapsedTime);
-         particle->setSpritePosition(mXFactor,mYFactor);
       } 
       else 
       {
-         particle = mParticles.erase(particle);
-         particle--;
+         affector = mAffectors.erase(affector);
+         affector++;
       }
    }
 }

@@ -304,6 +304,7 @@ addEmitter	src/MPE/classes/System.cpp	/^void System::addEmitter(Emitter& theEmit
 addFocus	src/MPE/classes/System.cpp	/^void System::addFocus(FocusPtr theFocus)$/;"	f	class:mpe::System
 addParticle	src/MPE/classes/System.cpp	/^void System::addParticle (Particle& theParticle)$/;"	f	class:mpe::System
 age	include/MPE/components/Mortal.hpp	/^      inline void age(Real theElapsedTime)$/;"	f	class:mpe::Mortal
+anColor	include/MPE/classes/Particle.hpp	/^         sf::Color anColor = mSprite.getColor();$/;"	l
 anEmitterID	src/MPE/classes/System.cpp	/^   EmitterID anEmitterID = theEmitter.getID();$/;"	l
 anFocus	src/MPE/classes/Emitter.cpp	/^   FocusPtr anFocus = Focus::create(getFocusWidth(),$/;"	l
 anParticle	src/MPE/classes/Focus.cpp	/^      Particle anParticle = createParticle();$/;"	l
@@ -318,6 +319,7 @@ createFocus	src/MPE/classes/System.cpp	/^FocusPtr System::createFocus(EmitterID 
 createParticle	src/MPE/classes/Focus.cpp	/^Particle Focus::createParticle ()$/;"	f	class:mpe::Focus
 create	src/MPE/classes/Focus.cpp	/^FocusPtr Focus::create(Real      theWidth,$/;"	f	class:mpe::Focus
 die	include/MPE/components/Mortal.hpp	/^      inline void die()$/;"	f	class:mpe::Mortal
+disolve	include/MPE/classes/Particle.hpp	/^      inline void disolve(Real theFactor = 1)$/;"	f	class:mpe::Particle
 drain	src/MPE/classes/Focus.cpp	/^Integer Focus::drain(Real theElapsedTime)$/;"	f	class:mpe::Focus
 draw	src/MPE/classes/System.cpp	/^void System::draw (sf::RenderWindow& theWindow) const$/;"	f	class:mpe::System
 emit	src/MPE/classes/Focus.cpp	/^void Focus::emit(Integer theNParticles)$/;"	f	class:mpe::Focus
@@ -339,6 +341,7 @@ getParticlePOW	src/MPE/classes/Emitter.cpp	/^Real Emitter::getParticlePOW() cons
 getParticleTOL	src/MPE/classes/Emitter.cpp	/^Real Emitter::getParticleTOL() const $/;"	f	class:mpe::Emitter
 getPosition	include/MPE/components/Position.hpp	/^      gt::Vec2D getPosition() const$/;"	f	class:mpe::Position
 getSin	ext_libs/include/GT/Angle.hpp	/^         inline Real getSin ( ) const {return mSin;};$/;"	f	class:gt::Angle
+getSpriteColor	include/MPE/classes/Particle.hpp	/^      inline sf::Color getSpriteColor() const$/;"	f	class:mpe::Particle
 getSprite	src/MPE/classes/Particle.cpp	/^ const sf::Sprite& Particle::getSprite() const$/;"	f	class:mpe::Particle
 getSystem	src/MPE/classes/Emitter.cpp	/^System& Emitter::getSystem() const $/;"	f	class:mpe::Emitter
 getTexture	src/MPE/classes/Emitter.cpp	/^const sf::Texture& Emitter::getTexture() const$/;"	f	class:mpe::Emitter
@@ -374,6 +377,7 @@ mAlive	include/MPE/components/Mortal.hpp	/^      bool mAlive;$/;"	m	class:mpe::M
 mAngle	include/MPE/classes/Focus.hpp	/^      gt::Angle mAngle;   \/\/\/< Angle.$/;"	m	class:mpe::Focus
 mAngle	include/MPE/classes/Particle.hpp	/^      Real        mAngle;$/;"	m	class:mpe::Particle
 mAngularVelocity	include/MPE/classes/Particle.hpp	/^      Real        mAngularVelocity;$/;"	m	class:mpe::Particle
+mColor	include/MPE/classes/Particle.hpp	/^      sf::Color   mColor;$/;"	m	class:mpe::Particle
 mCos	ext_libs/include/GT/Angle.hpp	/^         Real mCos;$/;"	m	class:gt::Angle
 mDispersion	include/MPE/classes/Emitter.hpp	/^      Dispersion      mDispersion;       \/\/\/< Type of paricles' dispersion.$/;"	m	class:mpe::Emitter
 mEP	include/MPE/classes/Focus.hpp	/^      Integer   mEP;      \/\/\/< Particles already emitted by the focus.$/;"	m	class:mpe::Focus
@@ -438,6 +442,7 @@ require	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	/^  int require
 require	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^  int require = 0;$/;"	l
 result	src/MPE/classes/System.cpp	/^      std::string result = s.str();;$/;"	l
 setAngle	src/MPE/classes/Focus.cpp	/^void Focus::setAngle(gt::Angle theAngle)$/;"	f	class:mpe::Focus
+setColor	include/MPE/classes/Particle.hpp	/^      inline void setColor(sf::Color theColor)$/;"	f	class:mpe::Particle
 setDispersion	src/MPE/classes/Emitter.cpp	/^void Emitter::setDispersion(Dispersion theDispersion) $/;"	f	class:mpe::Emitter
 setHeight	src/MPE/classes/Focus.cpp	/^void Focus::setHeight(Real theHeight)$/;"	f	class:mpe::Focus
 setLinearVelocity	src/MPE/classes/Particle.cpp	/^ void Particle::setLinearVelocity(gt::Vec2D theLinearVelocity)$/;"	f	class:mpe::Particle
@@ -462,7 +467,7 @@ toDegrees	ext_libs/include/GT/Angle.hpp	/^         static inline Real toDegrees(
 toRadians	ext_libs/include/GT/Angle.hpp	/^         static inline Real toRadians(float theDegrees)$/;"	f	class:gt::Angle
 updateFocusses	src/MPE/classes/System.cpp	/^void System::updateFocusses(Real theElapsedTime)$/;"	f	class:mpe::System
 updateParticles	src/MPE/classes/System.cpp	/^void System::updateParticles(Real theElapsedTime)$/;"	f	class:mpe::System
-update	include/MPE/classes/Affector.hpp	/^      void update(Real theElapsedtime){ age(theElapsedtime); };$/;"	f	class:mpe::Affector
+update	include/MPE/classes/Affector.hpp	/^      virtual void update(Real theElapsedtime){ age(theElapsedtime); };$/;"	f	class:mpe::Affector
 update	src/MPE/classes/Focus.cpp	/^void Focus::update(Real theElapsedTime)$/;"	f	class:mpe::Focus
 update	src/MPE/classes/Particle.cpp	/^void Particle::update(Real theElapsedTime)$/;"	f	class:mpe::Particle
 update	src/MPE/classes/System.cpp	/^void System::update (Real theElapsedTime)$/;"	f	class:mpe::System

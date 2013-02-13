@@ -53,6 +53,24 @@ class Particle: public Mortal, public Position
          mSprite.setRotation(mAngle);
          mSprite.setPosition(mPosition.x*theXFactor,mPosition.y*theYFactor);
       }
+      /// @brief getSpriteColor 
+      /// @return 
+      inline sf::Color getSpriteColor() const
+      {
+         return mSprite.getColor();
+      }
+      /// @brief setColor 
+      /// @param theColor
+      inline void setColor(sf::Color theColor)
+      {
+         mSprite.setColor(theColor);
+      }
+      inline void disolve(Real theFactor = 1)
+      {
+         sf::Color anColor = mSprite.getColor();
+         anColor.a -= theFactor;
+         mSprite.setColor(anColor);
+      }
       /// @brief setLinearVelocity 
       /// @param theLinearVelocity
       void setLinearVelocity(gt::Vec2D theLinearVelocity);
@@ -64,7 +82,7 @@ class Particle: public Mortal, public Position
       Real        mAngle;
       gt::Vec2D   mLinearVelocity;
       Real        mAngularVelocity;
-      //sf::Color mColorVelocity;
+      sf::Color   mColor;
 };
 }
 #endif 

@@ -27,9 +27,9 @@ Particle::Particle
       mSprite(theTexture),
       mAngle(theAngle),
       mLinearVelocity(theLinearVelocity),
-      mAngularVelocity(theAngularVelocity)
+      mAngularVelocity(theAngularVelocity),
+      mColor(theColor)
 {
-   mSprite.setColor(theColor);
    mSprite.setOrigin(theTexture.getSize().x/2,theTexture.getSize().y/2);
 }
 //------------------------------------------------------------------------------
