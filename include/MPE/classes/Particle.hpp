@@ -35,7 +35,7 @@ class Particle: public Mortal, public Position
           gt::Vec2D          theLinearVelocity, 
           Real               theAngularVelocity, 
           Real               theTLL,
-          sf::Color          theColor=sf::Color(0,0,0,255) 
+          sf::Color          theColor=sf::Color(255,255,255,255) 
           );
       /// @brief ~Particle 
       ~Particle();
@@ -61,13 +61,25 @@ class Particle: public Mortal, public Position
       /// @param theG
       /// @param theB
       /// @param theA
-      void modifyColor(char theR,char theG,char theB,char theA)
+      void modifyColor(int theR,int theG,int theB)
       {
          mColor.r += theR;
          mColor.g += theG;
          mColor.b += theB;
-         mColor.a += theA;
          mSprite.setColor(mColor);
+      }
+      /// @brief modifyAlpha 
+      /// @param theAlphaInc
+      void modifyAlpha(int theAlphaInc)
+      {
+         int anAlpha = mColor.a + theAlphaInc;
+         if (anAlpha > 255)
+            anAlpha = 255;
+         else if ( anAlpha < 0)
+            anAlpha = 0;
+         mColor.a = anAlpha;
+         mSprite.setColor(mColor);
+
       }
       /// @brief setLinearVelocity 
       /// @param theLinearVelocity

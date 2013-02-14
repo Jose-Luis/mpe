@@ -304,6 +304,7 @@ addEmitter	src/MPE/classes/System.cpp	/^void System::addEmitter(Emitter& theEmit
 addFocus	src/MPE/classes/System.cpp	/^void System::addFocus(FocusPtr theFocus)$/;"	f	class:mpe::System
 addParticle	src/MPE/classes/System.cpp	/^void System::addParticle (Particle& theParticle)$/;"	f	class:mpe::System
 age	include/MPE/components/Mortal.hpp	/^      inline void age(Real theElapsedTime)$/;"	f	class:mpe::Mortal
+anAlpha	include/MPE/classes/Particle.hpp	/^         int anAlpha = mColor.a + theAlphaInc;$/;"	l
 anEmitterID	src/MPE/classes/System.cpp	/^   EmitterID anEmitterID = theEmitter.getID();$/;"	l
 anFocus	src/MPE/classes/Emitter.cpp	/^   FocusPtr anFocus = Focus::create(getFocusWidth(),$/;"	l
 anParticle	src/MPE/classes/Focus.cpp	/^      Particle anParticle = createParticle();$/;"	l
@@ -410,7 +411,8 @@ mYFactor	include/MPE/classes/System.hpp	/^         Real mYFactor;$/;"	m	class:mp
 main	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	/^int main(int argc, char* argv[])$/;"	f
 main	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	/^void main() {}$/;"	f
 main	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^int main(int argc, char* argv[])$/;"	f
-modifyColor	include/MPE/classes/Particle.hpp	/^      void modifyColor(Int8 theR,Int8 theG,Int8 theB,Int8 theA)$/;"	f	class:mpe::Particle
+modifyAlpha	include/MPE/classes/Particle.hpp	/^      void modifyAlpha(int theAlphaInc)$/;"	f	class:mpe::Particle
+modifyColor	include/MPE/classes/Particle.hpp	/^      void modifyColor(int theR,int theG,int theB)$/;"	f	class:mpe::Particle
 move	include/MPE/components/Position.hpp	/^      void move(Real theXOffset,Real theYOffset)$/;"	f	class:mpe::Position
 move	include/MPE/components/Position.hpp	/^      void move(gt::Vec2D theOffset)$/;"	f	class:mpe::Position
 mpe	include/MPE/Config.hpp	/^namespace mpe$/;"	n
