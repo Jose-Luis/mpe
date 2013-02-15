@@ -79,6 +79,9 @@ class Focus: public Mortal, public Position
       /// @brief setAngle 
       /// @param theAngle
       void setAngle(gt::Angle theAngle);
+      /// @brief setPPS 
+      /// @param thePPS
+      void setPPS(Real thePPS);
 
    private:
       //////////////////////////////////////////////////////////////////////////

@@ -445,6 +445,7 @@ setAngle	src/MPE/classes/Focus.cpp	/^void Focus::setAngle(gt::Angle theAngle)$/;
 setDispersion	src/MPE/classes/Emitter.cpp	/^void Emitter::setDispersion(Dispersion theDispersion) $/;"	f	class:mpe::Emitter
 setHeight	src/MPE/classes/Focus.cpp	/^void Focus::setHeight(Real theHeight)$/;"	f	class:mpe::Focus
 setLinearVelocity	src/MPE/classes/Particle.cpp	/^ void Particle::setLinearVelocity(gt::Vec2D theLinearVelocity)$/;"	f	class:mpe::Particle
+setPPS	include/MPE/classes/Focus.hpp	/^      void setPPS(Real thePPS)$/;"	f	class:mpe::Focus
 setPosition	include/MPE/components/Position.hpp	/^      void setPosition(Real theX,Real theY)$/;"	f	class:mpe::Position
 setPosition	include/MPE/components/Position.hpp	/^      void setPosition(gt::Vec2D thePosition)$/;"	f	class:mpe::Position
 setRangeFocusHeight	src/MPE/classes/Emitter.cpp	/^void Emitter::setRangeFocusHeight(Real theMin, Real theMax)$/;"	f	class:mpe::Emitter
