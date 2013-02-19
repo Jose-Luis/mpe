@@ -38,7 +38,8 @@ class Emitter
       /// @brief createFocus 
       /// @return 
       FocusPtr createFocus(gt::Vec2D thePosition,
-                           Real      theAngle) const;
+                           Real      theAngle,
+                           GroupID   theGroups = mpe::NO_GROUP) const;
       /// @brief Generate a random position inside the Shape of the emitter.
       /// The position is transformed by the system factor member to scale it 
       /// to the world coordinates.
@@ -70,6 +71,15 @@ class Emitter
       Real getParticleTOL() const;
       /// @brief getFocusTOL 
       /// @return 
+      Real getParticleAngle() const;
+      /// @brief getParticleAngle 
+      /// @return 
+      Real getParticleScale() const;
+      /// @brief getParticleAV 
+      /// @return 
+      Real getParticleAV() const;
+      /// @brief getFocusTOL 
+      /// @return 
       Real getFocusTOL() const;
       /// @brief getFocusHeight 
       /// @return 
@@ -98,6 +108,18 @@ class Emitter
       /// @brief setRangeParticleTOL 
       /// @param theRangeParticleTOL
       void setRangeParticleTOL(Real theMin,Real theMax);
+      /// @brief setRangeParticleAngle 
+      /// @param theMin
+      /// @param theMax
+      void setRangeParticleAngle(Real theMin,Real theMax);
+      /// @brief setRangeParticleScale 
+      /// @param theMin
+      /// @param theMax
+      void setRangeParticleScale(Real theMin,Real theMax);
+      /// @brief setRangeParticleAV 
+      /// @param theMin
+      /// @param theMax
+      void setRangeParticleAV(Real theMin,Real theMax);
       /// @brief setRangeFocusTOL 
       /// @param theRangeFocusTOL
       void setRangeFocusTOL(Real theMin,Real theMax);
@@ -123,6 +145,9 @@ class Emitter
       Dispersion      mDispersion;       ///< Type of paricles' dispersion.
       gt::Randomizer  mRangeParticlePOW; ///< Range of paricles impulsion.
       gt::Randomizer  mRangeParticleTOL; ///< Range of particles lifetime.
+      gt::Randomizer  mRangeParticleAngle;///< Range of particles lifetime.
+      gt::Randomizer  mRangeParticleScale;///< Range of particles lifetime.
+      gt::Randomizer  mRangeParticleAV;  ///< Range of particles angular velocity.
       gt::Randomizer  mRangeFocusWidth;  ///< Range of focus width.
       gt::Randomizer  mRangeFocusHeight; ///< Range of focus height.
       gt::Randomizer  mRangeFocusTOL;    ///< Range of focus time of life.

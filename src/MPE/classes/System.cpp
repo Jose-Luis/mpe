@@ -92,9 +92,10 @@ void System::addFocus(FocusPtr theFocus)
 //------------------------------------------------------------------------------
 FocusPtr System::createFocus(EmitterID theEmitterID,
                        gt::Vec2D  thePosition,
-                       Real       theAngle)
+                       Real       theAngle,
+                       GroupID    theGroups)
 {
-   return getEmitter(theEmitterID).createFocus(thePosition,theAngle);
+   return getEmitter(theEmitterID).createFocus(thePosition,theAngle,theGroups);
 }
 //------------------------------------------------------------------------------
 //       Class:  System
@@ -162,7 +163,7 @@ void System::updateParticles(Real theElapsedTime)
             {
                (*affector)->affect(*particle,theElapsedTime);
                particle->update(theElapsedTime);
-               particle->setSpritePosition(mXFactor,mYFactor);
+               particle->setSpriteProperties(mXFactor,mYFactor);
             }
             else
             {

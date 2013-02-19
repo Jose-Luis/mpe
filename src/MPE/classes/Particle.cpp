@@ -17,18 +17,22 @@ Particle::Particle
     const sf::Texture& theTexture,
     gt::Vec2D          thePosition,
     Real               theAngle, 
+    gt::Vec2D          theScale,
     gt::Vec2D          theLinearVelocity,
     Real               theAngularVelocity, 
     Real               theTTL,
-    sf::Color          theColor 
+    sf::Color          theColor,
+    GroupID            theGroups
    ):
       Mortal(theTTL),
       Position(thePosition),
       mSprite(theTexture),
       mAngle(theAngle),
+      mScale(theScale),
       mLinearVelocity(theLinearVelocity),
       mAngularVelocity(theAngularVelocity),
-      mColor(theColor)
+      mColor(theColor),
+      mGroups(theGroups)
 {
    mSprite.setOrigin(theTexture.getSize().x/2,theTexture.getSize().y/2);
 }
@@ -78,6 +82,42 @@ void Particle::update(Real theElapsedTime)
  const sf::Sprite& Particle::getSprite() const
 {
    return mSprite;
+}
+//--------------------------------------------------------------------------------------
+//       Class:  Particle
+//      Method:  modifyColor
+// Description:  
+//--------------------------------------------------------------------------------------
+void Particle::modifyColor(int theR,int theG,int theB)
+{
+   mColor.r += theR;
+   mColor.g += theG;
+   mColor.b += theB;
+   mSprite.setColor(mColor);
+}
+//--------------------------------------------------------------------------------------
+//       Class:  Particle
+//      Method:  modifyAlpha
+// Description:  
+//--------------------------------------------------------------------------------------
+void Particle::modifyAlpha ( int theAlphaInc )
+{
+   int anAlpha = mColor.a + theAlphaInc;
+   if (anAlpha > 255)
+      anAlpha = 255;
+   else if ( anAlpha < 0)
+      anAlpha = 0;
+   mColor.a = anAlpha;
+   mSprite.setColor(mColor);
+}
+//--------------------------------------------------------------------------------------
+//       Class:  Particle
+//      Method:  belongToGroup
+// Description:  
+//--------------------------------------------------------------------------------------
+bool Particle::belongToGroup(GroupID theGroups)
+{
+   return mGroups & theGroups;
 }
 }
 ////------------------------------------------------------------------------------

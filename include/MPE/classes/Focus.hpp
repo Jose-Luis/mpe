@@ -45,6 +45,7 @@ class Focus: public Mortal, public Position
             Integer   theTP,
             Real      theLifetime,
             Real      thePPS,
+            GroupID   theGroups,
             const Emitter&  theEmitter
            );
       static FocusPtr create(Real      theWidth,
@@ -54,6 +55,7 @@ class Focus: public Mortal, public Position
             Integer   theTP,
             Real      theLifetime,
             Real      thePPS,
+            GroupID   theGroups,
             const Emitter&  theEmitter);
       /// @brief update 
       /// @param theElapsedTime
@@ -93,6 +95,7 @@ class Focus: public Mortal, public Position
       Integer   mTP;      ///< Total number of Particles. -1 = no number limits
       Integer   mEP;      ///< Particles already emitted by the focus.
       Real      mPPS;
+      GroupID   mGroups;
       const Emitter&  mEmitter;///< The emitter server for the focus.
       //////////////////////////////////////////////////////////////////////////
       //     METHODS

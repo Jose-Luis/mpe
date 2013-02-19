@@ -15,13 +15,14 @@ namespace mpe
 //      Description:  
 //------------------------------------------------------------------------------
 Focus::Focus(
-            Real theWidth,
-            Real theHeight,
-            gt::Angle theAngle,
-            gt::Vec2D thePosition,
-            Integer theTP,
-            Real theLifetime,
-            Real thePPS,
+            Real           theWidth,
+            Real           theHeight,
+            gt::Angle      theAngle,
+            gt::Vec2D      thePosition,
+            Integer        theTP,
+            Real           theLifetime,
+            Real           thePPS,
+            GroupID        theGroups,
             const Emitter& theEmitter
             ):
    Mortal(theLifetime),
@@ -32,6 +33,7 @@ Focus::Focus(
    mTP(theTP),
    mEP(0),
    mPPS(thePPS),
+   mGroups(theGroups),
    mEmitter(theEmitter)
 {
 }
@@ -47,6 +49,7 @@ FocusPtr Focus::create(Real      theWidth,
                        Integer   theTP,
                        Real      theLifetime,
                        Real      thePPS,
+                       GroupID   theGroups,
                        const Emitter&  theEmitter)
 {
    return boost::make_shared<Focus>(theWidth,
@@ -56,6 +59,7 @@ FocusPtr Focus::create(Real      theWidth,
                                     theTP,
                                     theLifetime,
                                     thePPS,
+                                    theGroups,
                                     theEmitter);
 }
 //------------------------------------------------------------------------------
@@ -95,11 +99,13 @@ Particle Focus::createParticle ()
 {
    gt::Vec2D anPosition = mEmitter.generatePosition(*this);
    gt::Vec2D anVelocity = mEmitter.generateVelocity(*this,anPosition);
+   Real anScale = mEmitter.getParticleScale();
    Particle  anParticle = Particle(mEmitter.getTexture(),
                                    anPosition,
-                                   gt::Randomizer::get(0,gt::Angle::PI*2),
+                                   mEmitter.getParticleAngle(),
+                                   gt::Vec2D(anScale,anScale),
                                    anVelocity,
-                                   gt::Randomizer::get(-1,1),
+                                   mEmitter.getParticleAV(),
                                    mEmitter.getParticleTOL());
    return anParticle;
 }

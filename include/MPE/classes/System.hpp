@@ -45,7 +45,8 @@ namespace mpe
          /// @param theAngle
          FocusPtr   createFocus(EmitterID theEmitter,
                                 gt::Vec2D thePosition,
-                                Real      theAngle);
+                                Real      theAngle,
+                                GroupID   theGroups = mpe::NO_GROUP);
          /// @brief update 
          /// @param theElapsedTime
          void     update(Real theElapsedTime);

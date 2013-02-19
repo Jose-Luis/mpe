@@ -87,7 +87,8 @@ gt::Vec2D Emitter::generatePosition(const Focus& theFocus) const
 // Description:  
 //------------------------------------------------------------------------------
 FocusPtr Emitter::createFocus(gt::Vec2D thePosition,
-                              Real      theAngle) const
+                              Real      theAngle,
+                              GroupID   theGroups) const
 {
    FocusPtr anFocus = Focus::create(getFocusWidth(),
                                     getFocusHeight(),
@@ -96,6 +97,7 @@ FocusPtr Emitter::createFocus(gt::Vec2D thePosition,
                                     getFocusNP(),
                                     getFocusTOL(),
                                     getFocusPPS(),
+                                    theGroups,
                                     (*this));
 
    return anFocus;
@@ -121,6 +123,18 @@ Real Emitter::getParticlePOW() const
 Real Emitter::getParticleTOL() const 
 {
    return mRangeParticleTOL.get();
+}
+Real Emitter::getParticleAngle() const 
+{
+   return mRangeParticleAngle.get();
+}
+Real Emitter::getParticleScale() const 
+{
+   return mRangeParticleScale.get();
+}
+Real Emitter::getParticleAV() const 
+{
+   return mRangeParticleAV.get();
 }
 Real Emitter::getFocusTOL() const 
 {
@@ -161,6 +175,18 @@ void Emitter::setRangeParticlePOW(Real theMin, Real theMax)
 void Emitter::setRangeParticleTOL(Real theMin, Real theMax)
 {
    mRangeParticleTOL(theMin,theMax);
+}
+void Emitter::setRangeParticleAngle(Real theMin, Real theMax)
+{
+   mRangeParticleAngle(theMin,theMax);
+}
+void Emitter::setRangeParticleScale(Real theMin, Real theMax)
+{
+   mRangeParticleAngle(theMin,theMax);
+}
+void Emitter::setRangeParticleAV(Real theMin, Real theMax)
+{
+   mRangeParticleAV(theMin,theMax);
 }
 void Emitter::setRangeFocusWidth(Real theMin, Real theMax)
 {

@@ -8,8 +8,10 @@
 #include <boost/shared_ptr.hpp>
 #include <GT/GT.hpp>
 
+
 namespace mpe
 {
+
 class System;
 class Focus;
 class Affector;
@@ -19,10 +21,21 @@ class Mortal;
 class Position;
 
 typedef std::string EmitterID;
+typedef unsigned char GroupID;
 typedef boost::shared_ptr<Focus> FocusPtr;
 typedef boost::shared_ptr<Affector> AffectorPtr;
 
 const Integer MAX_INTEGER = std::numeric_limits<Integer>::max();
 const Real REAL_INFINITY = std::numeric_limits<Real>::infinity();
+
+const GroupID NO_GROUP = 0x00;
+const GroupID GROUP_A = 0x01;
+const GroupID GROUP_B = 0x02;
+const GroupID GROUP_C = 0x04;
+const GroupID GROUP_D = 0x08;
+const GroupID GROUP_E = 0x10;
+const GroupID GROUP_F = 0x20;
+const GroupID GROUP_G = 0x40;
+const GroupID GROUP_H = 0x80;
 }
 #endif   // ----- #ifndef CONFIG_INC  -----

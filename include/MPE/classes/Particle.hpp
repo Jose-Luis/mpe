@@ -32,10 +32,12 @@ class Particle: public Mortal, public Position
           const sf::Texture& theTexture, 
           gt::Vec2D          thePosition, 
           Real               theAngle, 
+          gt::Vec2D          theScale,
           gt::Vec2D          theLinearVelocity, 
           Real               theAngularVelocity, 
           Real               theTLL,
-          sf::Color          theColor=sf::Color(255,255,255,255) 
+          sf::Color          theColor=sf::Color(255,255,255,255),
+          GroupID            theGroups = mpe::NO_GROUP
           );
       /// @brief ~Particle 
       ~Particle();
@@ -45,13 +47,14 @@ class Particle: public Mortal, public Position
       /// @brief getSprite 
       /// @return 
       const sf::Sprite& getSprite() const;
-      /// @brief setSpritePosition 
+      /// @brief setSpriteProperties
       /// @param theXFactor
       /// @param theYFactor
-      inline void setSpritePosition(Real theXFactor,Real theYFactor)
+      inline void setSpriteProperties(Real theXFactor,Real theYFactor)
       {
          mSprite.setRotation(mAngle);
          mSprite.setPosition(mPosition.x*theXFactor,mPosition.y*theYFactor);
+         mSprite.setScale(mScale.x,mScale.y);
       }
       /// @brief setColor 
       /// @param theColor
@@ -61,38 +64,28 @@ class Particle: public Mortal, public Position
       /// @param theG
       /// @param theB
       /// @param theA
-      void modifyColor(int theR,int theG,int theB)
-      {
-         mColor.r += theR;
-         mColor.g += theG;
-         mColor.b += theB;
-         mSprite.setColor(mColor);
-      }
+      void modifyColor(int theR,int theG,int theB);
       /// @brief modifyAlpha 
       /// @param theAlphaInc
-      void modifyAlpha(int theAlphaInc)
-      {
-         int anAlpha = mColor.a + theAlphaInc;
-         if (anAlpha > 255)
-            anAlpha = 255;
-         else if ( anAlpha < 0)
-            anAlpha = 0;
-         mColor.a = anAlpha;
-         mSprite.setColor(mColor);
-
-      }
+      void modifyAlpha(int theAlphaInc);
       /// @brief setLinearVelocity 
       /// @param theLinearVelocity
       void setLinearVelocity(gt::Vec2D theLinearVelocity);
       /// @brief getLinearVelocity 
       /// @return 
       gt::Vec2D getLinearVelocity() const;
+      /// @brief belongToGroup 
+      /// @param theGroup
+      /// @return 
+      bool belongToGroup(GroupID theGroups);
    private:
       sf::Sprite  mSprite;
       Real        mAngle;
+      gt::Vec2D   mScale;
       gt::Vec2D   mLinearVelocity;
       Real        mAngularVelocity;
       sf::Color   mColor;
+      GroupID     mGroups;
 };
 }
 #endif 
