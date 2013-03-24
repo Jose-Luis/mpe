@@ -83,11 +83,11 @@ void Focus::update(Real theElapsedTime)
 //------------------------------------------------------------------------------
 void Focus::emit(Integer theNParticles)
 {
-   System& anSystem = mEmitter.getSystem();
+   System* anSystem = mEmitter.getSystem();
    for(int i = 0; i < theNParticles; i++)
    {
       Particle anParticle = createParticle();
-      anSystem.addParticle(anParticle);
+      anSystem->addParticle(anParticle);
    }
 }
 //------------------------------------------------------------------------------

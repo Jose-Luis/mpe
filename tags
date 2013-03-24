@@ -209,7 +209,7 @@ Dispersion	include/MPE/classes/Emitter.hpp	/^      enum Dispersion{LINEAR,RADIAL
 EMITTER_INC	include/MPE/classes/Emitter.hpp	9;"	d
 EmitterID	include/MPE/Config.hpp	/^typedef std::string EmitterID;$/;"	t	namespace:mpe
 Emitter	include/MPE/classes/Emitter.hpp	/^class Emitter$/;"	c	namespace:mpe
-Emitter	src/MPE/classes/Emitter.cpp	/^Emitter::Emitter(EmitterID theID, System& theSystem):$/;"	f	class:mpe::Emitter
+Emitter	src/MPE/classes/Emitter.cpp	/^Emitter::Emitter(EmitterID theID):$/;"	f	class:mpe::Emitter
 FOCUS_INC	include/MPE/classes/Focus.hpp	7;"	d
 FocusPtr	include/MPE/Config.hpp	/^typedef boost::shared_ptr<Focus> FocusPtr;$/;"	t	namespace:mpe
 Focus	include/MPE/classes/Focus.hpp	/^class Focus: public Mortal, public Position$/;"	c	namespace:mpe
@@ -392,7 +392,7 @@ mAngle	include/MPE/classes/Particle.hpp	/^      Real        mAngle;$/;"	m	class:
 mAngularVelocity	include/MPE/classes/Particle.hpp	/^      Real        mAngularVelocity;$/;"	m	class:mpe::Particle
 mColor	include/MPE/classes/Particle.hpp	/^      sf::Color   mColor;$/;"	m	class:mpe::Particle
 mCos	ext_libs/include/GT/Angle.hpp	/^         Real mCos;$/;"	m	class:gt::Angle
-mDispersion	include/MPE/classes/Emitter.hpp	/^      Dispersion      mDispersion;       \/\/\/< Type of paricles' dispersion.$/;"	m	class:mpe::Emitter
+mDispersion	include/MPE/classes/Emitter.hpp	/^      Dispersion      mDispersion;       \/\/\/< Type of paricles' dispersion.$/;"	l
 mEP	include/MPE/classes/Focus.hpp	/^      Integer   mEP;      \/\/\/< Particles already emitted by the focus.$/;"	m	class:mpe::Focus
 mEmitter	include/MPE/classes/Focus.hpp	/^      const Emitter&  mEmitter;\/\/\/< The emitter server for the focus.$/;"	m	class:mpe::Focus
 mEmitters	include/MPE/classes/System.hpp	/^         std::map<EmitterID,Emitter>   mEmitters;$/;"	m	class:mpe::System
@@ -400,7 +400,7 @@ mFocusses	include/MPE/classes/System.hpp	/^         std::list<FocusPtr>         
 mGroups	include/MPE/classes/Focus.hpp	/^      GroupID   mGroups;$/;"	m	class:mpe::Focus
 mGroups	include/MPE/classes/Particle.hpp	/^      GroupID     mGroups;$/;"	m	class:mpe::Particle
 mHeight	include/MPE/classes/Focus.hpp	/^      Real      mHeight;  \/\/\/< Height.$/;"	m	class:mpe::Focus
-mID	include/MPE/classes/Emitter.hpp	/^      EmitterID       mID;               \/\/\/< Unique EmitterID for the emitter.$/;"	m	class:mpe::Emitter
+mID	include/MPE/classes/Emitter.hpp	/^      EmitterID       mID;               \/\/\/< Unique EmitterID for the emitter.$/;"	l
 mLifetime	include/MPE/components/Mortal.hpp	/^      Real mLifetime;$/;"	m	class:mpe::Mortal
 mLinearVelocity	include/MPE/classes/Particle.hpp	/^      gt::Vec2D   mLinearVelocity;$/;"	m	class:mpe::Particle
 mMax	ext_libs/include/GT/Randomizer.hpp	/^         Real mMax;$/;"	m	class:gt::Randomizer
@@ -408,23 +408,23 @@ mMin	ext_libs/include/GT/Randomizer.hpp	/^         Real mMin;$/;"	m	class:gt::Ra
 mPPS	include/MPE/classes/Focus.hpp	/^      Real      mPPS;$/;"	m	class:mpe::Focus
 mParticles	include/MPE/classes/System.hpp	/^         std::list<Particle>           mParticles;$/;"	m	class:mpe::System
 mPosition	include/MPE/components/Position.hpp	/^      gt::Vec2D mPosition;$/;"	m	class:mpe::Position
-mRangeFocusHeight	include/MPE/classes/Emitter.hpp	/^      gt::Randomizer  mRangeFocusHeight; \/\/\/< Range of focus height.$/;"	m	class:mpe::Emitter
-mRangeFocusNP	include/MPE/classes/Emitter.hpp	/^      gt::Randomizer  mRangeFocusNP;     \/\/\/< Range of focus number of particles.$/;"	m	class:mpe::Emitter
-mRangeFocusPPS	include/MPE/classes/Emitter.hpp	/^      gt::Randomizer  mRangeFocusPPS;    \/\/\/< Range of focus particles per second.$/;"	m	class:mpe::Emitter
-mRangeFocusTOL	include/MPE/classes/Emitter.hpp	/^      gt::Randomizer  mRangeFocusTOL;    \/\/\/< Range of focus time of life.$/;"	m	class:mpe::Emitter
-mRangeFocusWidth	include/MPE/classes/Emitter.hpp	/^      gt::Randomizer  mRangeFocusWidth;  \/\/\/< Range of focus width.$/;"	m	class:mpe::Emitter
-mRangeParticleAV	include/MPE/classes/Emitter.hpp	/^      gt::Randomizer  mRangeParticleAV;  \/\/\/< Range of particles angular velocity.$/;"	m	class:mpe::Emitter
-mRangeParticleAngle	include/MPE/classes/Emitter.hpp	/^      gt::Randomizer  mRangeParticleAngle;\/\/\/< Range of particles lifetime.$/;"	m	class:mpe::Emitter
-mRangeParticlePOW	include/MPE/classes/Emitter.hpp	/^      gt::Randomizer  mRangeParticlePOW; \/\/\/< Range of paricles impulsion.$/;"	m	class:mpe::Emitter
-mRangeParticleScale	include/MPE/classes/Emitter.hpp	/^      gt::Randomizer  mRangeParticleScale;\/\/\/< Range of particles lifetime.$/;"	m	class:mpe::Emitter
-mRangeParticleTOL	include/MPE/classes/Emitter.hpp	/^      gt::Randomizer  mRangeParticleTOL; \/\/\/< Range of particles lifetime.$/;"	m	class:mpe::Emitter
+mRangeFocusHeight	include/MPE/classes/Emitter.hpp	/^      gt::Randomizer  mRangeFocusHeight; \/\/\/< Range of focus height.$/;"	l
+mRangeFocusNP	include/MPE/classes/Emitter.hpp	/^      gt::Randomizer  mRangeFocusNP;     \/\/\/< Range of focus number of particles.$/;"	l
+mRangeFocusPPS	include/MPE/classes/Emitter.hpp	/^      gt::Randomizer  mRangeFocusPPS;    \/\/\/< Range of focus particles per second.$/;"	l
+mRangeFocusTOL	include/MPE/classes/Emitter.hpp	/^      gt::Randomizer  mRangeFocusTOL;    \/\/\/< Range of focus time of life.$/;"	l
+mRangeFocusWidth	include/MPE/classes/Emitter.hpp	/^      gt::Randomizer  mRangeFocusWidth;  \/\/\/< Range of focus width.$/;"	l
+mRangeParticleAV	include/MPE/classes/Emitter.hpp	/^      gt::Randomizer  mRangeParticleAV;  \/\/\/< Range of particles angular velocity.$/;"	l
+mRangeParticleAngle	include/MPE/classes/Emitter.hpp	/^      gt::Randomizer  mRangeParticleAngle;\/\/\/< Range of particles lifetime.$/;"	l
+mRangeParticlePOW	include/MPE/classes/Emitter.hpp	/^      gt::Randomizer  mRangeParticlePOW; \/\/\/< Range of paricles impulsion.$/;"	l
+mRangeParticleScale	include/MPE/classes/Emitter.hpp	/^      gt::Randomizer  mRangeParticleScale;\/\/\/< Range of particles lifetime.$/;"	l
+mRangeParticleTOL	include/MPE/classes/Emitter.hpp	/^      gt::Randomizer  mRangeParticleTOL; \/\/\/< Range of particles lifetime.$/;"	l
 mScale	include/MPE/classes/Particle.hpp	/^      gt::Vec2D   mScale;$/;"	m	class:mpe::Particle
-mShape	include/MPE/classes/Emitter.hpp	/^      Shape           mShape;            \/\/\/< The emitter's shape.$/;"	m	class:mpe::Emitter
+mShape	include/MPE/classes/Emitter.hpp	/^      Shape           mShape;            \/\/\/< The emitter's shape.$/;"	l
 mSin	ext_libs/include/GT/Angle.hpp	/^         Real mSin;$/;"	m	class:gt::Angle
 mSprite	include/MPE/classes/Particle.hpp	/^      sf::Sprite  mSprite;$/;"	m	class:mpe::Particle
-mSystem	include/MPE/classes/Emitter.hpp	/^      System&         mSystem;$/;"	m	class:mpe::Emitter
+mSystem	include/MPE/classes/Emitter.hpp	/^      System&         mSystem;$/;"	l
 mTP	include/MPE/classes/Focus.hpp	/^      Integer   mTP;      \/\/\/< Total number of Particles. -1 = no number limits$/;"	m	class:mpe::Focus
-mTexture	include/MPE/classes/Emitter.hpp	/^      sf::Texture     mTexture;          \/\/\/< The texture to make an Sprite.$/;"	m	class:mpe::Emitter
+mTexture	include/MPE/classes/Emitter.hpp	/^      sf::Texture     mTexture;          \/\/\/< The texture to make an Sprite.$/;"	l
 mValue	ext_libs/include/GT/Angle.hpp	/^         Real mValue;$/;"	m	class:gt::Angle
 mWidth	include/MPE/classes/Focus.hpp	/^      Real      mWidth;   \/\/\/< Width.$/;"	m	class:mpe::Focus
 mXFactor	include/MPE/classes/System.hpp	/^         Real mXFactor;$/;"	m	class:mpe::System
@@ -481,6 +481,7 @@ setRangeParticleScale	src/MPE/classes/Emitter.cpp	/^void Emitter::setRangePartic
 setRangeParticleTOL	src/MPE/classes/Emitter.cpp	/^void Emitter::setRangeParticleTOL(Real theMin, Real theMax)$/;"	f	class:mpe::Emitter
 setShape	src/MPE/classes/Emitter.cpp	/^void Emitter::setShape(Shape theShape)$/;"	f	class:mpe::Emitter
 setSpriteProperties	include/MPE/classes/Particle.hpp	/^      inline void setSpriteProperties(Real theXFactor,Real theYFactor)$/;"	f	class:mpe::Particle
+setSystem	include/MPE/classes/Emitter.hpp	/^      void setSystem(System& theSystem){mSystem = theSystem};$/;"	f	class:mpe::Emitter
 setTexture	src/MPE/classes/Emitter.cpp	/^void Emitter::setTexture(std::string theFilename)$/;"	f	class:mpe::Emitter
 setWidth	src/MPE/classes/Focus.cpp	/^void Focus::setWidth(Real theWidth)$/;"	f	class:mpe::Focus
 setXFactor	src/MPE/classes/System.cpp	/^void System::setXFactor(Real theXFactor)$/;"	f	class:mpe::System

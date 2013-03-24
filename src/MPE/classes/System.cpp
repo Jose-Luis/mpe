@@ -64,6 +64,7 @@ void System::addEmitter(Emitter& theEmitter)
    auto it = mEmitters.find(anEmitterID);
    if (it == mEmitters.end() )
    {
+      theEmitter.setSystem(this);
       mEmitters.insert(std::pair<EmitterID,Emitter>(anEmitterID,theEmitter));
    }
 }
@@ -159,17 +160,7 @@ void System::updateParticles(Real theElapsedTime)
                particle != mParticles.end();
                particle++)
          {
-            if(particle->isAlive())
-            {
-               (*affector)->affect(*particle,theElapsedTime);
-               particle->update(theElapsedTime);
-               particle->setSpriteProperties(mXFactor,mYFactor);
-            }
-            else
-            {
-               particle = mParticles.erase(particle);
-               particle--;
-            }
+            (*affector)->affect(*particle,theElapsedTime);
          }
       } 
       else 
@@ -178,6 +169,22 @@ void System::updateParticles(Real theElapsedTime)
          affector++;
       }
    }
+   for (auto particle =  mParticles.begin(); 
+         particle != mParticles.end();
+         particle++)
+   {
+      if(particle->isAlive())
+      {
+         particle->update(theElapsedTime);
+         particle->setSpriteProperties(mXFactor,mYFactor);
+      }
+      else
+      {
+         particle = mParticles.erase(particle);
+         particle--;
+      }
+   }
+
 }
 //------------------------------------------------------------------------------
 //       Class:  System

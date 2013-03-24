@@ -14,9 +14,8 @@ namespace mpe
 //      Method:  constructor
 // Description:  
 //------------------------------------------------------------------------------
-Emitter::Emitter(EmitterID theID, System& theSystem):
+Emitter::Emitter(EmitterID theID):
    mID(theID),
-   mSystem(theSystem),
    mRangeFocusTOL(0,0),
    mRangeFocusPPS(0,0)
 {
@@ -112,7 +111,7 @@ const sf::Texture& Emitter::getTexture() const
 {
    return mTexture;
 }
-System& Emitter::getSystem() const 
+System* Emitter::getSystem() const 
 {
    return mSystem;
 }
@@ -209,7 +208,7 @@ void Emitter::setRangeFocusNP(Real theMin,Real theMax)
    mRangeFocusNP(theMin,theMax);
 }
 ////////////////////////////////////////////////////////////////////////////////
-Emitter Emitter::DUMMY = Emitter("DUMMY",System::DUMMY);
+Emitter Emitter::DUMMY = Emitter("DUMMY");
 }
 /* Copyright (C) 
  * 2012 - Jose Luis Lavado

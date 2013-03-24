@@ -34,7 +34,7 @@ class Emitter
       //////////////////////////////////////////////////////////////////////////
       /// @brief Emitter 
       /// @param theID
-      Emitter(EmitterID theID,System& theSystem);
+      Emitter(EmitterID theID);
       /// @brief createFocus 
       /// @return 
       FocusPtr createFocus(gt::Vec2D thePosition,
@@ -62,7 +62,7 @@ class Emitter
       const sf::Texture& getTexture() const;
       /// @brief getSystem
       /// @return 
-      System& getSystem() const;
+      System* getSystem() const;
       /// @brief getParticlePOW 
       /// @return 
       Real getParticlePOW() const;
@@ -135,11 +135,12 @@ class Emitter
       /// @brief setRangeFocusNP 
       /// @param theRangeFocusNP
       void setRangeFocusNP(Real theMin,Real theMax);
+      void setSystem(System* theSystem){mSystem = theSystem;};
    private:
       //                      VARIABLES
       //////////////////////////////////////////////////////////////////////////
       EmitterID       mID;               ///< Unique EmitterID for the emitter.
-      System&         mSystem;
+      System*         mSystem;
       sf::Texture     mTexture;          ///< The texture to make an Sprite.
       Shape           mShape;            ///< The emitter's shape.
       Dispersion      mDispersion;       ///< Type of paricles' dispersion.
