@@ -95,6 +95,7 @@ class Focus: public Mortal, public Position
       Integer   mTP;      ///< Total number of Particles. -1 = no number limits
       Integer   mEP;      ///< Particles already emitted by the focus.
       Real      mPPS;
+      Real      mTimeAcum;
       GroupID   mGroups;
       const Emitter&  mEmitter;///< The emitter server for the focus.
       //////////////////////////////////////////////////////////////////////////

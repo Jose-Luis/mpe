@@ -179,19 +179,24 @@ void Focus::setPPS(Real thePPS)
 //------------------------------------------------------------------------------
 Integer Focus::drain(Real theElapsedTime)
 {
-   Integer nParticles = (mPPS * getAge() / 1000) - mEP;
-
-   if( mEP + nParticles > mTP)
+   mTimeAcum += theElapsedTime/1000;
+   Integer nParticles = mTimeAcum * mPPS;
+   if(nParticles)
    {
-      nParticles =  mTP - mEP;
-      kill();
-   }
-   else
-   {
-      mEP += nParticles;
-   }
+      mTimeAcum = 0;
 
+      if( mEP + nParticles > mTP)
+      {
+         nParticles =  mTP - mEP;
+         kill();
+      }
+      else
+      {
+         mEP += nParticles;
+      }
+   }
    return nParticles;
+   //Integer nParticles = (mPPS * getAge() / 1000) - mEP;
 }
 ////////////////////////////////////////////////////////////////////////////////
 // END NAMESPACE mpe

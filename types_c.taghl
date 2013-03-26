@@ -1,5 +1,6 @@
-syn keyword CTagsLocalVariable mRangeFocusPPS mRangeParticlePOW anScale it mRangeParticleAngle result anParticle mDispersion anAlpha anEmitterID anSystem mRangeFocusHeight mID mRangeFocusWidth mSystem mRangeParticleTOL nParticles mShape mRangeParticleScale line mRangeFocusTOL mRangeFocusNP anPosition anVelocity l s anFocus mTexture mRangeParticleAV require
-syn keyword CTagsMember mSin mMax mXFactor mEmitter mMin GROUP_C GROUP_B GROUP_A GROUP_G GROUP_F GROUP_E GROUP_D GROUP_H mEmitters mPosition mParticles REAL_INFINITY mPPS MAX_INTEGER mScale mHeight PI mAge DUMMY mWidth mGroups mAlive mColor x mAngle mCos mLinearVelocity mAngularVelocity mTP mFocusses mValue mSprite mAffectors mYFactor y NO_GROUP mLifetime mEP
+syn keyword CTagsLocalVariable nParticles anAlpha anEmitterID anPosition anScale anVelocity it s anFocus result anParticle line require anSystem l
+syn keyword CTagsMember mSin mMax mXFactor mEmitter mRangeParticlePOW mRangeParticleScale mMin GROUP_C GROUP_B GROUP_A GROUP_G GROUP_F GROUP_E GROUP_D GROUP_H mEmitters mPosition mDispersion x REAL_INFINITY mPPS MAX_INTEGER mScale mRangeFocusHeight mID mHeight PI mAge mRangeFocusWidth DUMMY mSystem mWidth mGroups mAlive mColor mRangeParticleTOL mShape mRangeFocusPPS mAngle mTexture mCos mRangeFocusTOL mLinearVelocity mParticles mRangeFocusNP mAngularVelocity mTP mFocusses mValue mSprite mTimeAcum
+syn keyword CTagsMember mAffectors mYFactor y NO_GROUP mRangeParticleAngle mRangeParticleAV mLifetime mEP
 syn keyword CTagsConstant info_version info_compiler info_arch info_platform
 syn keyword CTagsEnumeratorName Dispersion Shape
 syn keyword CTagsEnumerationValue LINEAR RANDOM REFLECT STATIC RADIAL CIRCLE RECTANGLE
