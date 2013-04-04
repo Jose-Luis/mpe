@@ -7,14 +7,14 @@
 
 namespace mpe
 {
-//------------------------------------------------------------------------------
-//      Class:        Particle
-//      Method:       Constructor
-//      Description:  
-//------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------
+*      Class:        Particle
+*      Method:       Constructor
+*      Description:  
+*/------------------------------------------------------------------------------
 Particle::Particle
    (
-    const sf::Texture& theTexture,
+    sf::Rect<int>      theTexRect,
     gt::Vec2D          thePosition,
     Real               theAngle, 
     gt::Vec2D          theScale,
@@ -26,7 +26,7 @@ Particle::Particle
    ):
       Mortal(theTTL),
       Position(thePosition),
-      mSprite(theTexture),
+      mTexRect(theTexRect),
       mAngle(theAngle),
       mScale(theScale),
       mLinearVelocity(theLinearVelocity),
@@ -34,13 +34,12 @@ Particle::Particle
       mColor(theColor),
       mGroups(theGroups)
 {
-   mSprite.setOrigin(theTexture.getSize().x/2,theTexture.getSize().y/2);
 }
-//------------------------------------------------------------------------------
-//      Class:        Particle
-//      Method:       Destructor
-//      Description:  
-//------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------
+*      Class:        Particle
+*      Method:       Destructor
+*      Description:  
+*/------------------------------------------------------------------------------
 Particle::~Particle(){}
 //------------------------------------------------------------------------------
 //      Class:        Particle
@@ -74,26 +73,17 @@ void Particle::update(Real theElapsedTime)
 {
    mLinearVelocity=theLinearVelocity;
 }
-//------------------------------------------------------------------------------
-//      Class:        Particle
-//      Method:       getSprite
-//      Description:  
-//------------------------------------------------------------------------------
- const sf::Sprite& Particle::getSprite() const
-{
-   return mSprite;
-}
 //--------------------------------------------------------------------------------------
 //       Class:  Particle
 //      Method:  modifyColor
 // Description:  
 //--------------------------------------------------------------------------------------
-void Particle::modifyColor(int theR,int theG,int theB)
+void Particle::modifyColor(int theR,int theG,int theB,int theA=255)
 {
    mColor.r += theR;
    mColor.g += theG;
    mColor.b += theB;
-   mSprite.setColor(mColor);
+   mColor.a += theA;
 }
 //--------------------------------------------------------------------------------------
 //       Class:  Particle
@@ -108,7 +98,6 @@ void Particle::modifyAlpha ( int theAlphaInc )
    else if ( anAlpha < 0)
       anAlpha = 0;
    mColor.a = anAlpha;
-   mSprite.setColor(mColor);
 }
 //--------------------------------------------------------------------------------------
 //       Class:  Particle
@@ -119,15 +108,3 @@ bool Particle::belongToGroup(GroupID theGroups)
 {
    return mGroups & theGroups;
 }
-}
-////------------------------------------------------------------------------------
-////      Class:        Particle
-////      Method:       setSpritePosition
-////      Description:  
-////------------------------------------------------------------------------------
- //void Particle::setSpritePosition(Real theXFactor,Real theYFactor)
-//{
-   //mSprite.setRotation(mAngle);
-   //mSprite.setPosition(mPosition.x*theXFactor,mPosition.y*theYFactor);
-//}
-

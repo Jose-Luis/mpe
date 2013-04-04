@@ -1,2 +1,2 @@
 IncludeLocals:1
-UserLibraries:/home/joseluis/.vim/highlights/SFML/types_c.taghl,/home/joseluis/.vim/highlights/C++/types_c.taghl
+UserLibraries:/home/momia/.vim/highlights/SFML/types_c.taghl,/home/momia/.vim/highlights/C++/types_c.taghl

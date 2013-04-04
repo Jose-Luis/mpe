@@ -57,12 +57,12 @@ class Emitter
       /// @brief getID 
       /// @return 
       EmitterID getID() const;
-      /// @brief getTexture 
-      /// @return 
-      const sf::Texture& getTexture() const;
       /// @brief getSystem
       /// @return 
       System* getSystem() const;
+      /// @brief getTexRect
+      /// @return
+      sf::Rect<int> getTexRect() const;
       /// @brief getParticlePOW 
       /// @return 
       Real getParticlePOW() const;
@@ -93,15 +93,15 @@ class Emitter
       /// @brief getFocusNP 
       /// @return 
       Integer getFocusNP() const;
-      /// @brief setTexture 
-      /// @param theFilename
-      void setTexture(std::string theFilename);
       /// @brief setShape 
       /// @param theShape
       void setShape(Shape theShape);
       /// @brief getDispersion 
       /// @return 
       void setDispersion(Dispersion theDispersion);
+      /// @brief setTexRect
+      /// @param theTexRect
+      void setTexRect(sf::Rect<int> theTexRect);
       /// @brief setRangeParticlePOW 
       /// @param theRangeParticlePOW
       void setRangeParticlePOW(Real theMin,Real theMax);
@@ -141,7 +141,7 @@ class Emitter
       //////////////////////////////////////////////////////////////////////////
       EmitterID       mID;               ///< Unique EmitterID for the emitter.
       System*         mSystem;
-      sf::Texture     mTexture;          ///< The texture to make an Sprite.
+      sf::Rect<int>   mTexRect;
       Shape           mShape;            ///< The emitter's shape.
       Dispersion      mDispersion;       ///< Type of paricles' dispersion.
       gt::Randomizer  mRangeParticlePOW; ///< Range of paricles impulsion.

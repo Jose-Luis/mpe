@@ -100,7 +100,7 @@ Particle Focus::createParticle ()
    gt::Vec2D anPosition = mEmitter.generatePosition(*this);
    gt::Vec2D anVelocity = mEmitter.generateVelocity(*this,anPosition);
    Real anScale = mEmitter.getParticleScale();
-   Particle  anParticle = Particle(mEmitter.getTexture(),
+   Particle  anParticle = Particle(mEmitter.getTexRect(),
                                    anPosition,
                                    mEmitter.getParticleAngle(),
                                    gt::Vec2D(anScale,anScale),

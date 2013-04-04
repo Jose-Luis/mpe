@@ -107,9 +107,9 @@ EmitterID Emitter::getID() const
 {
    return mID;
 }
-const sf::Texture& Emitter::getTexture() const
+sf::Rect& Emitter::getTexRect() const
 {
-   return mTexture;
+   return mTexRect;
 }
 System* Emitter::getSystem() const 
 {
@@ -155,9 +155,9 @@ Integer Emitter::getFocusNP() const
 {
    return static_cast<Integer>(mRangeFocusNP.get());
 }
-void Emitter::setTexture(std::string theFilename)
+void Emitter::setTexRect(sf::Rect<int> theTexRect);
 {
-   mTexture.loadFromFile(theFilename);
+   mTexRect = theTexRect;
 }
 void Emitter::setShape(Shape theShape)
 {

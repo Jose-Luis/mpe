@@ -21,7 +21,7 @@ class Particle: public Mortal, public Position
 {
    public:
       /// @brief  Constructor
-      /// @param theTexture
+      /// @param theTexRect
       /// @param thePosition
       /// @param theAngle
       /// @param theLinearVelocity
@@ -29,7 +29,7 @@ class Particle: public Mortal, public Position
       /// @param theColor
       Particle
          (
-          const sf::Texture& theTexture, 
+          sf::Rect<int>      theTexRect,
           gt::Vec2D          thePosition, 
           Real               theAngle, 
           gt::Vec2D          theScale,
@@ -44,18 +44,6 @@ class Particle: public Mortal, public Position
       /// @brief update 
       /// @param theElapsedTime
       void update(Real theElapsedTime);
-      /// @brief getSprite 
-      /// @return 
-      const sf::Sprite& getSprite() const;
-      /// @brief setSpriteProperties
-      /// @param theXFactor
-      /// @param theYFactor
-      inline void setSpriteProperties(Real theXFactor,Real theYFactor)
-      {
-         mSprite.setRotation(mAngle);
-         mSprite.setPosition(mPosition.x*theXFactor,mPosition.y*theYFactor);
-         mSprite.setScale(mScale.x,mScale.y);
-      }
       /// @brief setColor 
       /// @param theColor
       void setColor(sf::Color theColor);
@@ -64,7 +52,7 @@ class Particle: public Mortal, public Position
       /// @param theG
       /// @param theB
       /// @param theA
-      void modifyColor(int theR,int theG,int theB);
+      void modifyColor(int theR,int theG,int theB,int theA=255);
       /// @brief modifyAlpha 
       /// @param theAlphaInc
       void modifyAlpha(int theAlphaInc);
@@ -79,13 +67,13 @@ class Particle: public Mortal, public Position
       /// @return 
       bool belongToGroup(GroupID theGroups);
    private:
-      sf::Sprite  mSprite;
-      Real        mAngle;
-      gt::Vec2D   mScale;
-      gt::Vec2D   mLinearVelocity;
-      Real        mAngularVelocity;
-      sf::Color   mColor;
-      GroupID     mGroups;
+      sf::Rect<int>  mTexRect;
+      Real           mAngle;
+      gt::Vec2D      mScale;
+      gt::Vec2D      mLinearVelocity;
+      Real           mAngularVelocity;
+      sf::Color      mColor;
+      GroupID        mGroups;
 };
 }
 #endif 

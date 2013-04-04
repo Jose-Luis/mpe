@@ -206,7 +206,8 @@ void System::draw (sf::RenderWindow& theWindow) const
    std::list<Particle>::const_iterator it;
    for(it = mParticles.begin();it != mParticles.end();it++)
    {
-      theWindow.draw(it->getSprite());
+      /* theWindow.draw(it->getSprite()); */
+      /* TODO: add render alqorithm */
    }
 
    #ifndef  NDEBUG
