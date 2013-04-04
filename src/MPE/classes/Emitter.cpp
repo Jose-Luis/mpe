@@ -107,7 +107,7 @@ EmitterID Emitter::getID() const
 {
    return mID;
 }
-sf::Rect& Emitter::getTexRect() const
+sf::Rect<int> Emitter::getTexRect() const
 {
    return mTexRect;
 }
@@ -155,7 +155,7 @@ Integer Emitter::getFocusNP() const
 {
    return static_cast<Integer>(mRangeFocusNP.get());
 }
-void Emitter::setTexRect(sf::Rect<int> theTexRect);
+void Emitter::setTexRect(sf::Rect<int> theTexRect)
 {
    mTexRect = theTexRect;
 }

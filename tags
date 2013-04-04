@@ -306,7 +306,7 @@ STATIC	include/MPE/classes/Emitter.hpp	/^      enum Dispersion{LINEAR,RADIAL,REF
 SYSTEM_INC	include/MPE/classes/System.hpp	7;"	d
 Shape	include/MPE/classes/Emitter.hpp	/^      enum Shape{RECTANGLE,CIRCLE};$/;"	g	class:mpe::Emitter
 System	include/MPE/classes/System.hpp	/^   class System$/;"	c	namespace:mpe
-System	src/MPE/classes/System.cpp	/^System::System ( Real theFactor ):$/;"	f	class:mpe::System
+System	src/MPE/classes/System.cpp	/^System::System ( Real theFactor , std::string theTextureSet):$/;"	f	class:mpe::System
 VEC2D_INC	ext_libs/include/GT/Vec2D.hpp	7;"	d
 Vec2D	ext_libs/include/GT/Vec2D.hpp	/^class Vec2D$/;"	c	namespace:gt
 addAffector	src/MPE/classes/System.cpp	/^void System::addAffector(AffectorPtr theAffector)$/;"	f	class:mpe::System
@@ -321,8 +321,11 @@ anParticle	src/MPE/classes/Focus.cpp	/^      Particle anParticle = createParticl
 anParticle	src/MPE/classes/Focus.cpp	/^   Particle  anParticle = Particle(mEmitter.getTexRect(),$/;"	l
 anPosition	src/MPE/classes/Emitter.cpp	/^   gt::Vec2D anPosition;$/;"	l
 anPosition	src/MPE/classes/Focus.cpp	/^   gt::Vec2D anPosition = mEmitter.generatePosition(*this);$/;"	l
+anPositions	src/MPE/classes/System.cpp	/^      sf::Vector2f anPositions[4];$/;"	l
 anScale	src/MPE/classes/Focus.cpp	/^   Real anScale = mEmitter.getParticleScale();$/;"	l
 anSystem	src/MPE/classes/Focus.cpp	/^   System* anSystem = mEmitter.getSystem();$/;"	l
+anTexCoords	src/MPE/classes/System.cpp	/^      sf::Vector2f anTexCoords[4];$/;"	l
+anTransform	src/MPE/classes/System.cpp	/^      sf::Transform anTransform;$/;"	l
 anVelocity	src/MPE/classes/Emitter.cpp	/^   gt::Vec2D anVelocity;$/;"	l
 anVelocity	src/MPE/classes/Focus.cpp	/^   gt::Vec2D anVelocity = mEmitter.generateVelocity(*this,anPosition);$/;"	l
 belongToGroup	src/MPE/classes/Particle.cpp	/^bool Particle::belongToGroup(GroupID theGroups)$/;"	f	class:mpe::Particle
@@ -338,6 +341,7 @@ generatePosition	src/MPE/classes/Emitter.cpp	/^gt::Vec2D Emitter::generatePositi
 generateVelocity	src/MPE/classes/Emitter.cpp	/^gt::Vec2D Emitter::generateVelocity(const Focus& theFocus, $/;"	f	class:mpe::Emitter
 getAge	include/MPE/components/Mortal.hpp	/^      inline Real getAge() const$/;"	f	class:mpe::Mortal
 getAngle	src/MPE/classes/Focus.cpp	/^gt::Angle Focus::getAngle() const $/;"	f	class:mpe::Focus
+getAngle	src/MPE/classes/Particle.cpp	/^Real Particle::getAngle() const$/;"	f	class:mpe::Particle
 getCos	ext_libs/include/GT/Angle.hpp	/^         inline Real getCos ( ) const {return mCos;};$/;"	f	class:gt::Angle
 getEmitter	src/MPE/classes/System.cpp	/^Emitter& System::getEmitter ( EmitterID theEmitterID )$/;"	f	class:mpe::System
 getFocusHeight	src/MPE/classes/Emitter.cpp	/^Real Emitter::getFocusHeight() const $/;"	f	class:mpe::Emitter
@@ -354,6 +358,7 @@ getParticlePOW	src/MPE/classes/Emitter.cpp	/^Real Emitter::getParticlePOW() cons
 getParticleScale	src/MPE/classes/Emitter.cpp	/^Real Emitter::getParticleScale() const $/;"	f	class:mpe::Emitter
 getParticleTOL	src/MPE/classes/Emitter.cpp	/^Real Emitter::getParticleTOL() const $/;"	f	class:mpe::Emitter
 getPosition	include/MPE/components/Position.hpp	/^      gt::Vec2D getPosition() const$/;"	f	class:mpe::Position
+getScale	src/MPE/classes/Particle.cpp	/^gt::Vec2D Particle::getScale() const$/;"	f	class:mpe::Particle
 getSin	ext_libs/include/GT/Angle.hpp	/^         inline Real getSin ( ) const {return mSin;};$/;"	f	class:gt::Angle
 getSystem	src/MPE/classes/Emitter.cpp	/^System* Emitter::getSystem() const $/;"	f	class:mpe::Emitter
 getTexRect	src/MPE/classes/Emitter.cpp	/^sf::Rect& Emitter::getTexRect() const$/;"	f	class:mpe::Emitter
@@ -424,8 +429,10 @@ mSystem	include/MPE/classes/Emitter.hpp	/^      System*         mSystem;$/;"	m	c
 mTP	include/MPE/classes/Focus.hpp	/^      Integer   mTP;      \/\/\/< Total number of Particles. -1 = no number limits$/;"	m	class:mpe::Focus
 mTexRect	include/MPE/classes/Emitter.hpp	/^      sf::Rect<int>   mTexRect;$/;"	m	class:mpe::Emitter
 mTexRect	include/MPE/classes/Particle.hpp	/^      sf::Rect<int>  mTexRect;$/;"	m	class:mpe::Particle
+mTexture	include/MPE/classes/System.hpp	/^         sf::Texture mTexture;$/;"	m	class:mpe::System
 mTimeAcum	include/MPE/classes/Focus.hpp	/^      Real      mTimeAcum;$/;"	m	class:mpe::Focus
 mValue	ext_libs/include/GT/Angle.hpp	/^         Real mValue;$/;"	m	class:gt::Angle
+mVertices	include/MPE/classes/System.hpp	/^         sf::VertexArray mVertices;$/;"	m	class:mpe::System
 mWidth	include/MPE/classes/Focus.hpp	/^      Real      mWidth;   \/\/\/< Width.$/;"	m	class:mpe::Focus
 mXFactor	include/MPE/classes/System.hpp	/^         Real mXFactor;$/;"	m	class:mpe::System
 mYFactor	include/MPE/classes/System.hpp	/^         Real mYFactor;$/;"	m	class:mpe::System
@@ -433,7 +440,7 @@ main	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	/^int main(int arg
 main	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	/^void main() {}$/;"	f
 main	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^int main(int argc, char* argv[])$/;"	f
 modifyAlpha	src/MPE/classes/Particle.cpp	/^void Particle::modifyAlpha ( int theAlphaInc )$/;"	f	class:mpe::Particle
-modifyColor	src/MPE/classes/Particle.cpp	/^void Particle::modifyColor(int theR,int theG,int theB,int theA=255)$/;"	f	class:mpe::Particle
+modifyColor	src/MPE/classes/Particle.cpp	/^void Particle::modifyColor(int theR,int theG,int theB,int theA)$/;"	f	class:mpe::Particle
 move	include/MPE/components/Position.hpp	/^      void move(Real theXOffset,Real theYOffset)$/;"	f	class:mpe::Position
 move	include/MPE/components/Position.hpp	/^      void move(gt::Vec2D theOffset)$/;"	f	class:mpe::Position
 mpe	include/MPE/Config.hpp	/^namespace mpe$/;"	n

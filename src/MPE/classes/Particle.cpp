@@ -7,11 +7,13 @@
 
 namespace mpe
 {
-/*------------------------------------------------------------------------------
+/*
+*-------------------------------------------------------------------------------
 *      Class:        Particle
 *      Method:       Constructor
 *      Description:  
-*/------------------------------------------------------------------------------
+*-------------------------------------------------------------------------------
+*/
 Particle::Particle
    (
     sf::Rect<int>      theTexRect,
@@ -35,11 +37,13 @@ Particle::Particle
       mGroups(theGroups)
 {
 }
-/*------------------------------------------------------------------------------
+/*
+* ------------------------------------------------------------------------------
 *      Class:        Particle
 *      Method:       Destructor
 *      Description:  
-*/------------------------------------------------------------------------------
+*------------------------------------------------------------------------------
+*/
 Particle::~Particle(){}
 //------------------------------------------------------------------------------
 //      Class:        Particle
@@ -78,7 +82,7 @@ void Particle::update(Real theElapsedTime)
 //      Method:  modifyColor
 // Description:  
 //--------------------------------------------------------------------------------------
-void Particle::modifyColor(int theR,int theG,int theB,int theA=255)
+void Particle::modifyColor(int theR,int theG,int theB,int theA)
 {
    mColor.r += theR;
    mColor.g += theG;
@@ -107,4 +111,32 @@ void Particle::modifyAlpha ( int theAlphaInc )
 bool Particle::belongToGroup(GroupID theGroups)
 {
    return mGroups & theGroups;
+}
+//--------------------------------------------------------------------------------------
+//       Class:  Particle
+//      Method:  belongToGroup
+// Description:  
+//--------------------------------------------------------------------------------------
+Real Particle::getAngle() const
+{
+   return mAngle;
+}
+//--------------------------------------------------------------------------------------
+//       Class:  Particle
+//      Method:  belongToGroup
+// Description:  
+//--------------------------------------------------------------------------------------
+gt::Vec2D Particle::getScale() const
+{
+   return mScale;
+}
+//--------------------------------------------------------------------------------------
+//       Class:  Particle
+//      Method:  belongToGroup
+// Description:  
+//--------------------------------------------------------------------------------------
+sf::Rect<int> Particle::getTexRect() const
+{
+   return mTexRect;
+}
 }

@@ -23,10 +23,9 @@ namespace mpe
    class System
    {
       public:
-         static System DUMMY;
          /// @brief System    
          /// @param theFactor
-         System(Real theFactor);
+         System(Real theFactor, std::string theTextureSet);
          /// @brief addEmitter 
          /// @param theEmitter
          void     addEmitter(Emitter& theEmitter);
@@ -52,7 +51,7 @@ namespace mpe
          void     update(Real theElapsedTime);
          /// @brief draw 
          /// @param theWindow
-         void     draw(sf::RenderWindow& theWindow) const;
+         void     draw(sf::RenderWindow& theWindow);
          /// @brief getEmitter 
          /// @param theEmitterID
          /// @return 
@@ -74,6 +73,9 @@ namespace mpe
          ///////////////////////////////////////////////////////////////////////
          Real mXFactor;
          Real mYFactor;
+         sf::Texture mTexture;
+         sf::VertexArray mVertices;
+         sf::RenderStates mStates;
          std::list<FocusPtr>           mFocusses;
          std::list<AffectorPtr>        mAffectors;
          std::list<Particle>           mParticles;

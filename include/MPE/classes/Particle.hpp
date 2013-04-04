@@ -62,6 +62,15 @@ class Particle: public Mortal, public Position
       /// @brief getLinearVelocity 
       /// @return 
       gt::Vec2D getLinearVelocity() const;
+      /// @brief getAngle 
+      /// @return 
+      Real getAngle() const;
+      /// @brief getScale 
+      /// @return 
+      gt::Vec2D getScale() const;
+      /// @brief getTexRect 
+      /// @return 
+      sf::Rect<int> getTexRect() const;
       /// @brief belongToGroup 
       /// @param theGroup
       /// @return 
