@@ -214,8 +214,8 @@ void System::draw (sf::RenderWindow& theWindow)
       sf::Transform anTransform;
 
       anTransform.translate(it->getPosition().x,it->getPosition().y);
-      anTransform.rotate(it->getAngle());
-      anTransform.scale(it->getScale().x,it->getScale().y);
+      //anTransform.rotate(it->getAngle());
+      //anTransform.scale(it->getScale().x,it->getScale().y);
       sf::Rect<int> anTexRect = it->getTexRect();
 
       sf::Vector2f anPositions[4];
@@ -238,12 +238,12 @@ void System::draw (sf::RenderWindow& theWindow)
    }
 
  /*  #ifndef  NDEBUG*/
-      //std::stringstream s;
-      //std::string line = "Number: ";
-      //int l = mParticles.size();
-      //s << line << l;
-      //std::string result = s.str();;
-      //theWindow.draw(sf::Text(result));
+      std::stringstream s;
+      std::string line = "Number: ";
+      int l = mParticles.size();
+      s << line << l;
+      std::string result = s.str();;
+      theWindow.draw(sf::Text(result));
    /*#endif */
 }
 }
