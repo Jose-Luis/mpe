@@ -206,16 +206,17 @@ void System::update (Real theElapsedTime)
 //------------------------------------------------------------------------------
 void System::draw (sf::RenderWindow& theWindow)
 {
-   std::list<Particle>::const_iterator it;
    mVertices.clear();
+
+   std::list<Particle>::const_iterator it;
    for(it = mParticles.begin();it != mParticles.end();it++)
    {
 
       sf::Transform anTransform;
 
       anTransform.translate(it->getPosition().x,it->getPosition().y);
-      //anTransform.rotate(it->getAngle());
-      //anTransform.scale(it->getScale().x,it->getScale().y);
+      anTransform.rotate(it->getAngle());
+      anTransform.scale(it->getScale().x,it->getScale().y);
       sf::Rect<int> anTexRect = it->getTexRect();
 
       sf::Vector2f anPositions[4];
@@ -226,25 +227,25 @@ void System::draw (sf::RenderWindow& theWindow)
 
       sf::Vector2f anTexCoords[4];
       anTexCoords[0] = sf::Vector2f(anTexRect.left,                  anTexRect.top);
-      anTexCoords[1] = sf::Vector2f(anTexRect.left + anTexRect.width, anTexRect.top);
-      anTexCoords[2] = sf::Vector2f(anTexRect.left + anTexRect.width, anTexRect.top + anTexRect.height);
+      anTexCoords[1] = sf::Vector2f(anTexRect.left + anTexRect.width,anTexRect.top);
+      anTexCoords[2] = sf::Vector2f(anTexRect.left + anTexRect.width,anTexRect.top + anTexRect.height);
       anTexCoords[3] = sf::Vector2f(anTexRect.left,                  anTexRect.top + anTexRect.height);
 
       for (int i = 0; i < 4;i++)
       {
          mVertices.append(sf::Vertex(anPositions[i], sf::Color(255, 255, 255, 255),anTexCoords[i]));
       }
-      theWindow.draw(mVertices,mStates);
    }
+   theWindow.draw(mVertices,mStates);
 
- /*  #ifndef  NDEBUG*/
-      std::stringstream s;
-      std::string line = "Number: ";
-      int l = mParticles.size();
-      s << line << l;
-      std::string result = s.str();;
-      theWindow.draw(sf::Text(result));
-   /*#endif */
+#ifndef  NDEBUG
+   std::stringstream s;
+   std::string line = "Number: ";
+   int l = mParticles.size();
+   s << line << l;
+   std::string result = s.str();;
+   theWindow.draw(sf::Text(result));
+#endif
 }
 }
 
