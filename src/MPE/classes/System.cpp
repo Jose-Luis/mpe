@@ -207,6 +207,10 @@ void System::update (Real theElapsedTime)
 void System::draw (sf::RenderWindow& theWindow)
 {
    mVertices.clear();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2be5a09b2bfbe5690be147e846c900ae59c07466
    std::list<Particle>::const_iterator it;
    for(it = mParticles.begin();it != mParticles.end();it++)
    {
@@ -225,8 +229,8 @@ void System::draw (sf::RenderWindow& theWindow)
 
       sf::Vector2f anTexCoords[4];
       anTexCoords[0] = sf::Vector2f(anTexRect.left,                  anTexRect.top);
-      anTexCoords[1] = sf::Vector2f(anTexRect.left + anTexRect.width, anTexRect.top);
-      anTexCoords[2] = sf::Vector2f(anTexRect.left + anTexRect.width, anTexRect.top + anTexRect.height);
+      anTexCoords[1] = sf::Vector2f(anTexRect.left + anTexRect.width,anTexRect.top);
+      anTexCoords[2] = sf::Vector2f(anTexRect.left + anTexRect.width,anTexRect.top + anTexRect.height);
       anTexCoords[3] = sf::Vector2f(anTexRect.left,                  anTexRect.top + anTexRect.height);
 
       for (int i = 0; i < 4;i++)
@@ -234,7 +238,9 @@ void System::draw (sf::RenderWindow& theWindow)
          mVertices.append(sf::Vertex(anPositions[i], sf::Color(255, 255, 255, 255),anTexCoords[i]));
       }
    }
+   theWindow.draw(mVertices,mStates);
 
+<<<<<<< HEAD
    theWindow.draw(mVertices,mStates);
   #ifndef  NDEBUG
       std::stringstream s;
@@ -244,6 +250,16 @@ void System::draw (sf::RenderWindow& theWindow)
       std::string result = s.str();;
       theWindow.draw(sf::Text(result));
    #endif 
+=======
+#ifndef  NDEBUG
+   std::stringstream s;
+   std::string line = "Number: ";
+   int l = mParticles.size();
+   s << line << l;
+   std::string result = s.str();;
+   theWindow.draw(sf::Text(result));
+#endif
+>>>>>>> 2be5a09b2bfbe5690be147e846c900ae59c07466
 }
 }
 

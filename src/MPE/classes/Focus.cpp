@@ -33,6 +33,7 @@ Focus::Focus(
    mTP(theTP),
    mEP(0),
    mPPS(thePPS),
+   mTimeAcum(0),
    mGroups(theGroups),
    mEmitter(theEmitter)
 {
@@ -181,10 +182,8 @@ Integer Focus::drain(Real theElapsedTime)
 {
    mTimeAcum += theElapsedTime/1000;
    Integer nParticles = mTimeAcum * mPPS;
-   if(nParticles)
+   if(0 < nParticles)
    {
-      mTimeAcum = 0;
-
       if( mEP + nParticles > mTP)
       {
          nParticles =  mTP - mEP;
@@ -194,6 +193,7 @@ Integer Focus::drain(Real theElapsedTime)
       {
          mEP += nParticles;
       }
+      mTimeAcum = 0;
    }
    return nParticles;
    //Integer nParticles = (mPPS * getAge() / 1000) - mEP;
