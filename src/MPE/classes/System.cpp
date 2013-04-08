@@ -207,10 +207,7 @@ void System::update (Real theElapsedTime)
 void System::draw (sf::RenderWindow& theWindow)
 {
    mVertices.clear();
-<<<<<<< HEAD
-=======
 
->>>>>>> 2be5a09b2bfbe5690be147e846c900ae59c07466
    std::list<Particle>::const_iterator it;
    for(it = mParticles.begin();it != mParticles.end();it++)
    {
@@ -219,7 +216,9 @@ void System::draw (sf::RenderWindow& theWindow)
       anTransform.translate(it->getPosition().x,it->getPosition().y);
       anTransform.rotate(it->getAngle());
       anTransform.scale(it->getScale().x,it->getScale().y);
+
       sf::Rect<int> anTexRect = it->getTexRect();
+      sf::Color anColor = it->getColor();
 
       sf::Vector2f anPositions[4];
       anPositions[0] = anTransform.transformPoint(sf::Vector2f(-(anTexRect.width / 2),-(anTexRect.height /2)));
@@ -235,22 +234,10 @@ void System::draw (sf::RenderWindow& theWindow)
 
       for (int i = 0; i < 4;i++)
       {
-         mVertices.append(sf::Vertex(anPositions[i], sf::Color(255, 255, 255, 255),anTexCoords[i]));
+         mVertices.append(sf::Vertex(anPositions[i], anColor ,anTexCoords[i]));
       }
    }
    theWindow.draw(mVertices,mStates);
-
-<<<<<<< HEAD
-   theWindow.draw(mVertices,mStates);
-  #ifndef  NDEBUG
-      std::stringstream s;
-      std::string line = "Number: ";
-      int l = mParticles.size();
-      s << line << l;
-      std::string result = s.str();;
-      theWindow.draw(sf::Text(result));
-   #endif 
-=======
 #ifndef  NDEBUG
    std::stringstream s;
    std::string line = "Number: ";
@@ -258,8 +245,8 @@ void System::draw (sf::RenderWindow& theWindow)
    s << line << l;
    std::string result = s.str();;
    theWindow.draw(sf::Text(result));
-#endif
->>>>>>> 2be5a09b2bfbe5690be147e846c900ae59c07466
+#endif 
 }
-}
+
+}/* end namespace */
 

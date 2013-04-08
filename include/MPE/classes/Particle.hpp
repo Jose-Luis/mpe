@@ -53,6 +53,11 @@ class Particle: public Mortal, public Position
       /// @param theB
       /// @param theA
       void modifyColor(int theR,int theG,int theB,int theA=255);
+      /**
+       * @brief getColor 
+       * @return 
+       */
+      sf::Color getColor() const;
       /// @brief modifyAlpha 
       /// @param theAlphaInc
       void modifyAlpha(int theAlphaInc);

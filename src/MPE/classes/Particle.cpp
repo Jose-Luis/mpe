@@ -132,11 +132,20 @@ gt::Vec2D Particle::getScale() const
 }
 //--------------------------------------------------------------------------------------
 //       Class:  Particle
-//      Method:  belongToGroup
-// Description:  
+//       Method:  belongToGroup
+//       Description:  
 //--------------------------------------------------------------------------------------
 sf::Rect<int> Particle::getTexRect() const
 {
    return mTexRect;
 }
+/*******************************************************************************
+**     Class:  Particle
+**     Method: getColor
+**     Description:
+*******************************************************************************/
+sf::Color Particle::getColor() const
+{
+   return mColor;
 }
+} /* end namespace */
