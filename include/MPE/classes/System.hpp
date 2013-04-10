@@ -25,7 +25,7 @@ namespace mpe
       public:
          /// @brief System    
          /// @param theFactor
-         System(Real theFactor, std::string theTextureSet);
+         System();
          /// @brief addEmitter 
          /// @param theEmitter
          void     addEmitter(Emitter& theEmitter);
@@ -68,6 +68,9 @@ namespace mpe
          /// @brief setYFactor 
          /// @param theYFactor
          void     setYFactor(Real theYFactor);
+         /// @brief setTexture 
+         /// @param theTexture
+         void     setTexture(sf::Texture* theTexture);
       private:
          //   MEMBERS
          ///////////////////////////////////////////////////////////////////////

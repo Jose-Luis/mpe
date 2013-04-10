@@ -74,8 +74,8 @@ gt::Vec2D Emitter::generatePosition(const Focus& theFocus) const
    }
    while(mShape == CIRCLE && anPosition.squaremodule() > 1);
 
-   anPosition.rotate(theFocus.getAngle());
    anPosition.scale(theFocus.getWidth(),theFocus.getHeight());
+   anPosition.rotate(theFocus.getAngle());
    anPosition = anPosition + theFocus.getPosition();
 
    return anPosition;
@@ -181,7 +181,7 @@ void Emitter::setRangeParticleAngle(Real theMin, Real theMax)
 }
 void Emitter::setRangeParticleScale(Real theMin, Real theMax)
 {
-   mRangeParticleAngle(theMin,theMax);
+   mRangeParticleScale(theMin,theMax);
 }
 void Emitter::setRangeParticleAV(Real theMin, Real theMax)
 {

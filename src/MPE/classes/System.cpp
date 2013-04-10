@@ -48,14 +48,16 @@ void System::setYFactor(Real theYFactor)
 //      Method:  System
 // Description:  
 //------------------------------------------------------------------------------
-System::System ( Real theFactor , std::string theTextureSet):
-   mXFactor(theFactor),
-   mYFactor(theFactor)
+System::System ():
+   mXFactor(1),
+   mYFactor(1)
 {
-
-   mTexture.loadFromFile(theTextureSet);
-   mStates.texture = &mTexture;
    mVertices.setPrimitiveType(sf::Quads);
+}
+
+void System::setTexture(sf::Texture* theTexture)
+{
+   mStates.texture = theTexture; 
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
@@ -212,13 +214,13 @@ void System::draw (sf::RenderWindow& theWindow)
    for(it = mParticles.begin();it != mParticles.end();it++)
    {
       sf::Transform anTransform;
-
-      anTransform.translate(it->getPosition().x,it->getPosition().y);
-      anTransform.rotate(it->getAngle());
-      anTransform.scale(it->getScale().x,it->getScale().y);
-
+      gt::Vec2D anPosition = it->getPosition().scale(mXFactor,mYFactor);
       sf::Rect<int> anTexRect = it->getTexRect();
       sf::Color anColor = it->getColor();
+
+      anTransform.translate(anPosition.x,anPosition.y);
+      anTransform.rotate(it->getAngle());
+      anTransform.scale(it->getScale().x,it->getScale().y);
 
       sf::Vector2f anPositions[4];
       anPositions[0] = anTransform.transformPoint(sf::Vector2f(-(anTexRect.width / 2),-(anTexRect.height /2)));
@@ -227,10 +229,10 @@ void System::draw (sf::RenderWindow& theWindow)
       anPositions[3] = anTransform.transformPoint(sf::Vector2f(-(anTexRect.width / 2), (anTexRect.height /2)));
 
       sf::Vector2f anTexCoords[4];
-      anTexCoords[0] = sf::Vector2f(anTexRect.left,                  anTexRect.top);
-      anTexCoords[1] = sf::Vector2f(anTexRect.left + anTexRect.width,anTexRect.top);
-      anTexCoords[2] = sf::Vector2f(anTexRect.left + anTexRect.width,anTexRect.top + anTexRect.height);
-      anTexCoords[3] = sf::Vector2f(anTexRect.left,                  anTexRect.top + anTexRect.height);
+      anTexCoords[0] = sf::Vector2f(anTexRect.left,                    anTexRect.top);
+      anTexCoords[1] = sf::Vector2f(anTexRect.left + anTexRect.width-1,anTexRect.top);
+      anTexCoords[2] = sf::Vector2f(anTexRect.left + anTexRect.width-1,anTexRect.top + anTexRect.height-1);
+      anTexCoords[3] = sf::Vector2f(anTexRect.left,                    anTexRect.top + anTexRect.height-1);
 
       for (int i = 0; i < 4;i++)
       {
