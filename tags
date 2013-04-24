@@ -304,7 +304,7 @@ STATIC	include/MPE/classes/Emitter.hpp	/^      enum Dispersion{LINEAR,RADIAL,REF
 SYSTEM_INC	include/MPE/classes/System.hpp	7;"	d
 Shape	include/MPE/classes/Emitter.hpp	/^      enum Shape{RECTANGLE,CIRCLE};$/;"	g	class:mpe::Emitter
 System	include/MPE/classes/System.hpp	/^   class System$/;"	c	namespace:mpe
-System	src/MPE/classes/System.cpp	/^System::System ( Real theFactor , std::string theTextureSet):$/;"	f	class:mpe::System
+System	src/MPE/classes/System.cpp	/^System::System ():$/;"	f	class:mpe::System
 VEC2D_INC	ext_libs/include/GT/Vec2D.hpp	7;"	d
 Vec2D	ext_libs/include/GT/Vec2D.hpp	/^class Vec2D$/;"	c	namespace:gt
 addAffector	src/MPE/classes/System.cpp	/^void System::addAffector(AffectorPtr theAffector)$/;"	f	class:mpe::System
@@ -316,10 +316,12 @@ anAlpha	src/MPE/classes/Particle.cpp	/^   int anAlpha = mColor.a + theAlphaInc;$
 anColor	src/MPE/classes/System.cpp	/^      sf::Color anColor = it->getColor();$/;"	l
 anEmitterID	src/MPE/classes/System.cpp	/^   EmitterID anEmitterID = theEmitter.getID();$/;"	l
 anFocus	src/MPE/classes/Emitter.cpp	/^   FocusPtr anFocus = Focus::create(getFocusWidth(),$/;"	l
+anFont	src/MPE/classes/System.cpp	/^   sf::Font anFont;$/;"	l
 anParticle	src/MPE/classes/Focus.cpp	/^      Particle anParticle = createParticle();$/;"	l
 anParticle	src/MPE/classes/Focus.cpp	/^   Particle  anParticle = Particle(mEmitter.getTexRect(),$/;"	l
 anPosition	src/MPE/classes/Emitter.cpp	/^   gt::Vec2D anPosition;$/;"	l
 anPosition	src/MPE/classes/Focus.cpp	/^   gt::Vec2D anPosition = mEmitter.generatePosition(*this);$/;"	l
+anPosition	src/MPE/classes/System.cpp	/^      gt::Vec2D anPosition = it->getPosition().scale(mXFactor,mYFactor);$/;"	l
 anPositions	src/MPE/classes/System.cpp	/^      sf::Vector2f anPositions[4];$/;"	l
 anScale	src/MPE/classes/Focus.cpp	/^   Real anScale = mEmitter.getParticleScale();$/;"	l
 anSystem	src/MPE/classes/Focus.cpp	/^   System* anSystem = mEmitter.getSystem();$/;"	l
@@ -342,7 +344,7 @@ generateVelocity	src/MPE/classes/Emitter.cpp	/^gt::Vec2D Emitter::generateVeloci
 getAge	include/MPE/components/Mortal.hpp	/^      inline Real getAge() const$/;"	f	class:mpe::Mortal
 getAngle	src/MPE/classes/Focus.cpp	/^gt::Angle Focus::getAngle() const $/;"	f	class:mpe::Focus
 getAngle	src/MPE/classes/Particle.cpp	/^Real Particle::getAngle() const$/;"	f	class:mpe::Particle
-getColor	src/MPE/classes/Particle.cpp	/^sf::Color Particle::getColor()$/;"	f	class:mpe::Particle
+getColor	src/MPE/classes/Particle.cpp	/^sf::Color Particle::getColor() const$/;"	f	class:mpe::Particle
 getCos	ext_libs/include/GT/Angle.hpp	/^         inline Real getCos ( ) const {return mCos;};$/;"	f	class:gt::Angle
 getEmitter	src/MPE/classes/System.cpp	/^Emitter& System::getEmitter ( EmitterID theEmitterID )$/;"	f	class:mpe::System
 getFocusHeight	src/MPE/classes/Emitter.cpp	/^Real Emitter::getFocusHeight() const $/;"	f	class:mpe::Emitter
@@ -387,6 +389,9 @@ it	src/MPE/classes/System.cpp	/^   auto it = mEmitters.find(anEmitterID);$/;"	l
 it	src/MPE/classes/System.cpp	/^   auto it = mEmitters.find(theEmitterID);$/;"	l
 it	src/MPE/classes/System.cpp	/^   std::list<Particle>::const_iterator it;$/;"	l
 kill	include/MPE/components/Mortal.hpp	/^      inline void kill()$/;"	f	class:mpe::Mortal
+line	src/MPE/classes/System.cpp	/^   std::string line = "Number: ";$/;"	l
+l	src/MPE/classes/System.cpp	/^   int l = mParticles.size();$/;"	l
+l	src/MPE/classes/System.cpp	/^   s << line << l;$/;"	l
 mAffectors	include/MPE/classes/System.hpp	/^         std::list<AffectorPtr>        mAffectors;$/;"	m	class:mpe::System
 mAge	include/MPE/components/Mortal.hpp	/^      Real mAge;$/;"	m	class:mpe::Mortal
 mAlive	include/MPE/components/Mortal.hpp	/^      bool mAlive;$/;"	m	class:mpe::Mortal
@@ -468,6 +473,7 @@ operator -	ext_libs/include/GT/Vec2D.hpp	/^      inline Vec2D operator -(void) c
 operator /	ext_libs/include/GT/Vec2D.hpp	/^      inline Vec2D operator \/(Real theFloat) const$/;"	f	class:gt::Vec2D
 require	build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c	/^  int require = 0;$/;"	l
 require	build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^  int require = 0;$/;"	l
+result	src/MPE/classes/System.cpp	/^   std::string result = s.str();;$/;"	l
 setAngle	src/MPE/classes/Focus.cpp	/^void Focus::setAngle(gt::Angle theAngle)$/;"	f	class:mpe::Focus
 setDispersion	src/MPE/classes/Emitter.cpp	/^void Emitter::setDispersion(Dispersion theDispersion) $/;"	f	class:mpe::Emitter
 setHeight	src/MPE/classes/Focus.cpp	/^void Focus::setHeight(Real theHeight)$/;"	f	class:mpe::Focus
@@ -488,10 +494,12 @@ setRangeParticleTOL	src/MPE/classes/Emitter.cpp	/^void Emitter::setRangeParticle
 setShape	src/MPE/classes/Emitter.cpp	/^void Emitter::setShape(Shape theShape)$/;"	f	class:mpe::Emitter
 setSystem	include/MPE/classes/Emitter.hpp	/^      void setSystem(System* theSystem){mSystem = theSystem;};$/;"	f	class:mpe::Emitter
 setTexRect	src/MPE/classes/Emitter.cpp	/^void Emitter::setTexRect(sf::Rect<int> theTexRect)$/;"	f	class:mpe::Emitter
+setTexture	src/MPE/classes/System.cpp	/^void System::setTexture(sf::Texture* theTexture)$/;"	f	class:mpe::System
 setWidth	src/MPE/classes/Focus.cpp	/^void Focus::setWidth(Real theWidth)$/;"	f	class:mpe::Focus
 setXFactor	src/MPE/classes/System.cpp	/^void System::setXFactor(Real theXFactor)$/;"	f	class:mpe::System
 setYFactor	src/MPE/classes/System.cpp	/^void System::setYFactor(Real theYFactor)$/;"	f	class:mpe::System
 set	ext_libs/include/GT/Angle.hpp	/^         inline void set(Real theValue)$/;"	f	class:gt::Angle
+s	src/MPE/classes/System.cpp	/^   std::stringstream s;$/;"	l
 toDegrees	ext_libs/include/GT/Angle.hpp	/^         static inline Real toDegrees(float theRadians)$/;"	f	class:gt::Angle
 toRadians	ext_libs/include/GT/Angle.hpp	/^         static inline Real toRadians(float theDegrees)$/;"	f	class:gt::Angle
 updateFocusses	src/MPE/classes/System.cpp	/^void System::updateFocusses(Real theElapsedTime)$/;"	f	class:mpe::System

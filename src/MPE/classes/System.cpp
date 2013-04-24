@@ -246,7 +246,9 @@ void System::draw (sf::RenderWindow& theWindow)
    int l = mParticles.size();
    s << line << l;
    std::string result = s.str();;
-   theWindow.draw(sf::Text(result));
+   sf::Font anFont;
+   anFont.loadFromFile("monofur.ttf");
+   theWindow.draw(sf::Text(result,anFont));
 #endif 
 }
 

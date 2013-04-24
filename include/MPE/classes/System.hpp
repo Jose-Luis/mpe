@@ -71,7 +71,7 @@ namespace mpe
          /// @brief setTexture 
          /// @param theTexture
          void     setTexture(sf::Texture* theTexture);
-      private:
+      protected:
          //   MEMBERS
          ///////////////////////////////////////////////////////////////////////
          Real mXFactor;
