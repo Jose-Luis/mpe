@@ -107,7 +107,9 @@ Particle Focus::createParticle ()
                                    gt::Vec2D(anScale,anScale),
                                    anVelocity,
                                    mEmitter.getParticleAV(),
-                                   mEmitter.getParticleTOL());
+                                   mEmitter.getParticleTOL(),
+                                   sf::Color(255,255,255),
+                                   mGroups);
    return anParticle;
 }
 //------------------------------------------------------------------------------
@@ -197,6 +199,15 @@ Integer Focus::drain(Real theElapsedTime)
    }
    return nParticles;
    //Integer nParticles = (mPPS * getAge() / 1000) - mEP;
+}
+//------------------------------------------------------------------------------
+//       Class:  Focus
+//      Method:  
+// Description:  A stupid method 
+//------------------------------------------------------------------------------
+Real Focus::getPPS ()
+{
+   return mPPS;
 }
 ////////////////////////////////////////////////////////////////////////////////
 // END NAMESPACE mpe

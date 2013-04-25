@@ -108,7 +108,7 @@ void Particle::modifyAlpha ( int theAlphaInc )
 //      Method:  belongToGroup
 // Description:  
 //--------------------------------------------------------------------------------------
-bool Particle::belongToGroup(GroupID theGroups)
+bool Particle::belongToGroup(const GroupID theGroups) const
 {
    return mGroups & theGroups;
 }

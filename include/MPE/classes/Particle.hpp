@@ -79,7 +79,7 @@ class Particle: public Mortal, public Position
       /// @brief belongToGroup 
       /// @param theGroup
       /// @return 
-      bool belongToGroup(GroupID theGroups);
+      bool belongToGroup(const GroupID theGroups) const;
    private:
       sf::Rect<int>  mTexRect;
       Real           mAngle;

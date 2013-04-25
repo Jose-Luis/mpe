@@ -355,6 +355,7 @@ getFocusWidth	src/MPE/classes/Emitter.cpp	/^Real Emitter::getFocusWidth() const 
 getHeight	src/MPE/classes/Focus.cpp	/^Real Focus::getHeight() const $/;"	f	class:mpe::Focus
 getID	src/MPE/classes/Emitter.cpp	/^EmitterID Emitter::getID() const$/;"	f	class:mpe::Emitter
 getLinearVelocity	src/MPE/classes/Particle.cpp	/^ gt::Vec2D Particle::getLinearVelocity() const $/;"	f	class:mpe::Particle
+getPPS	src/MPE/classes/Focus.cpp	/^Real Focus::getPPS ()$/;"	f	class:mpe::Focus
 getParticleAV	src/MPE/classes/Emitter.cpp	/^Real Emitter::getParticleAV() const $/;"	f	class:mpe::Emitter
 getParticleAngle	src/MPE/classes/Emitter.cpp	/^Real Emitter::getParticleAngle() const $/;"	f	class:mpe::Emitter
 getParticlePOW	src/MPE/classes/Emitter.cpp	/^Real Emitter::getParticlePOW() const $/;"	f	class:mpe::Emitter

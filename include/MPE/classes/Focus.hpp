@@ -84,6 +84,11 @@ class Focus: public Mortal, public Position
       /// @brief setPPS 
       /// @param thePPS
       void setPPS(Real thePPS);
+      /**
+       * @brief getPPS 
+       * @return 
+       */
+      Real getPPS();
 
    private:
       //////////////////////////////////////////////////////////////////////////
