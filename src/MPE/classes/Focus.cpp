@@ -53,7 +53,7 @@ FocusPtr Focus::create(Real      theWidth,
                        GroupID   theGroups,
                        const Emitter&  theEmitter)
 {
-   return boost::make_shared<Focus>(theWidth,
+   return std::make_shared<Focus>(theWidth,
                                     theHeight,
                                     theAngle,
                                     thePosition,

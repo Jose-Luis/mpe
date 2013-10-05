@@ -1,3 +1,8 @@
+/// @file Config.hpp
+/// @brief
+/// @author Jose Luis Lavado
+/// @version 0.1
+/// @date 2013-10-05
 
 #ifndef  CONFIG_MPE_INC
 #define  CONFIG_MPE_INC
@@ -5,13 +10,10 @@
 #include <string>
 #include <limits>
 #include <cmath>
-#include <boost/shared_ptr.hpp>
-#include <GT/GT.hpp>
-
+#include <memory>
 
 namespace mpe
 {
-
 class System;
 class Focus;
 class Affector;
@@ -20,10 +22,12 @@ class Particle;
 class Mortal;
 class Position;
 
+typedef int Integer;
+typedef float Real;
 typedef std::string EmitterID;
 typedef unsigned char GroupID;
-typedef boost::shared_ptr<Focus> FocusPtr;
-typedef boost::shared_ptr<Affector> AffectorPtr;
+typedef std::shared_ptr<Focus> FocusPtr;
+typedef std::shared_ptr<Affector> AffectorPtr;
 
 const Integer MAX_INTEGER = std::numeric_limits<Integer>::max();
 const Real REAL_INFINITY = std::numeric_limits<Real>::infinity();
@@ -37,5 +41,11 @@ const GroupID GROUP_E = 0x10;
 const GroupID GROUP_F = 0x20;
 const GroupID GROUP_G = 0x40;
 const GroupID GROUP_H = 0x80;
+
+struct Color
+{
+   char r, g, b, a;
+};
+
 }
 #endif   // ----- #ifndef CONFIG_INC  -----

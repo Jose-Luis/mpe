@@ -6,8 +6,7 @@
 #ifndef  FOCUS_INC
 #define  FOCUS_INC
 
-#include <boost/make_shared.hpp>
-#include <GT/GT.hpp>
+#include <memory>
 #include <MPE/Config.hpp>
 #include <MPE/components/Mortal.hpp>
 #include <MPE/components/Position.hpp>
