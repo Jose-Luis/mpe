@@ -1,3 +1,9 @@
+/// @file Config.hpp
+/// @brief
+/// @author Jose Luis Lavado
+/// @version 0.1
+/// @date 2013-10-05
+
 #ifndef  CONFIG_MPE_INC
 #define  CONFIG_MPE_INC
 
@@ -8,7 +14,6 @@
 
 namespace mpe
 {
-
 class System;
 class Focus;
 class Affector;
@@ -17,6 +22,8 @@ class Particle;
 class Mortal;
 class Position;
 
+typedef int Integer;
+typedef float Real;
 typedef std::string EmitterID;
 typedef unsigned char GroupID;
 typedef std::shared_ptr<Focus> FocusPtr;
@@ -39,5 +46,6 @@ struct Color
 {
    int r,g,b,a;
 };
+
 }
 #endif   // ----- #ifndef CONFIG_INC  -----

@@ -6,6 +6,7 @@
 #ifndef  FOCUS_INC
 #define  FOCUS_INC
 
+#include <memory>
 #include <MPE/Config.hpp>
 #include <MPE/classes/Particle.hpp>
 
