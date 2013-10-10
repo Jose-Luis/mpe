@@ -47,6 +47,13 @@ class Mortal
          if (mAge > mLifetime)
             die();
       }
+      /// @brief resetLife 
+      /// @param theLifetime
+      inline void resetLife(Real theLifetime)
+      {
+         mAge = 0;
+         mLifetime = theLifetime;
+      }
 
    private:
 

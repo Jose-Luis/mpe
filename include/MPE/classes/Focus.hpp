@@ -6,11 +6,7 @@
 #ifndef  FOCUS_INC
 #define  FOCUS_INC
 
-#include <boost/make_shared.hpp>
-#include <GT/GT.hpp>
 #include <MPE/Config.hpp>
-#include <MPE/components/Mortal.hpp>
-#include <MPE/components/Position.hpp>
 #include <MPE/classes/Particle.hpp>
 
 namespace mpe
@@ -19,44 +15,35 @@ namespace mpe
 //             CLASS FOCUS
 ////////////////////////////////////////////////////////////////////////////////
 /// @class Focus
-class Focus: public Mortal, public Position
+class Focus: public Mortal
 {
    public:
-
+      //////////////////////////////////////////////////////////////////////////
+      // STATIC  METHODS
+      //////////////////////////////////////////////////////////////////////////
+      /// @brief create 
+      /// @param theLifetime
+      /// @param theWidth
+      /// @param theHeight
+      /// @param thePosition
+      /// @param theAngle
+      /// @param theTP
+      /// @param thePPS
+      /// @param theGroups
+      /// @param theEmitter
+      /// @return 
+      static FocusPtr create(Real    theLifetime,
+                             Real    theWidth,
+                             Real    theHeight,
+                             Vec2    thePosition,
+                             Real    theAngle,
+                             Integer theTP,
+                             Real    thePPS,
+                             GroupID theGroups,
+                             const Emitter&  theEmitter);
       //////////////////////////////////////////////////////////////////////////
       //     METHODS
       //////////////////////////////////////////////////////////////////////////
-      /// @brief create 
-      /// @param theWidth
-      /// @param theHeight
-      /// @param theAngle
-      /// @param thePosition
-      /// @param theTP
-      /// @param theLifetime
-      /// @param thePPS
-      /// @param theSystem
-      /// @param 
-      /// @return 
-      Focus(
-            Real      theWidth,
-            Real      theHeight,
-            gt::Angle theAngle,
-            gt::Vec2D thePosition,
-            Integer   theTP,
-            Real      theLifetime,
-            Real      thePPS,
-            GroupID   theGroups,
-            const Emitter&  theEmitter
-           );
-      static FocusPtr create(Real      theWidth,
-            Real      theHeight,
-            gt::Angle theAngle,
-            gt::Vec2D thePosition,
-            Integer   theTP,
-            Real      theLifetime,
-            Real      thePPS,
-            GroupID   theGroups,
-            const Emitter&  theEmitter);
       /// @brief update 
       /// @param theElapsedTime
       void update(Real theElapsedTime);
@@ -77,17 +64,15 @@ class Focus: public Mortal, public Position
       void setHeight(Real theHeight);
       /// @brief getAngle 
       /// @return 
-      gt::Angle getAngle() const;
+      Real getAngle() const;
       /// @brief setAngle 
       /// @param theAngle
-      void setAngle(gt::Angle theAngle);
+      void setAngle(Real theAngle);
       /// @brief setPPS 
       /// @param thePPS
       void setPPS(Real thePPS);
-      /**
-       * @brief getPPS 
-       * @return 
-       */
+      /// @brief getPPS 
+      /// @return 
       Real getPPS();
 
    private:
@@ -96,7 +81,8 @@ class Focus: public Mortal, public Position
       //////////////////////////////////////////////////////////////////////////
       Real      mWidth;   ///< Width.
       Real      mHeight;  ///< Height.
-      gt::Angle mAngle;   ///< Angle.
+      Vec2      mPosition;
+      Real      mAngle;   ///< Angle.
       Integer   mTP;      ///< Total number of Particles. -1 = no number limits
       Integer   mEP;      ///< Particles already emitted by the focus.
       Real      mPPS;
@@ -106,8 +92,20 @@ class Focus: public Mortal, public Position
       //////////////////////////////////////////////////////////////////////////
       //     METHODS
       //////////////////////////////////////////////////////////////////////////
+      Focus(Real    theLifetime,
+            Real    theWidth,
+            Real    theHeight,
+            Vec2    thePosition,
+            Real    theAngle,
+            Integer theTP,
+            Real    thePPS,
+            GroupID theGroups,
+            const Emitter&  theEmitter);
+
       void emit(Integer theNParticles);
+
       Integer drain(Real theElapsedTime);
+
       Particle createParticle();
 };
 }

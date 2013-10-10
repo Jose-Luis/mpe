@@ -104,14 +104,15 @@ Particle Focus::createParticle ()
    Real anWidth = mEmitter.getParticleWidth();
    Real anHeight = mEmitter.getParticleHeight();
    Particle  anParticle = Particle( mEmitter.getParticleTOL(),
-                                    anWidth,
-                                    anHeight,
-                                    anPosition,
-                                    mEmitter.getParticleAngle(),
-                                    anVelocity,
-                                    mEmitter.getParticleAV(),
-                                    Color(255, 255, 255),
-                                    mGroups);
+         anWidth,
+         anHeight,
+                                   anPosition,
+                                   mEmitter.getParticleAngle(),
+                                   gt::Vec2D(anScale, anScale),
+                                   anVelocity,
+                                   mEmitter.getParticleAV(),
+                                   sf::Color(255, 255, 255),
+                                   mGroups);
    return anParticle;
 }
 //------------------------------------------------------------------------------
@@ -155,7 +156,7 @@ void Focus::setHeight(Real theHeight)
 //      Method:       getAngle
 //      Description:
 //------------------------------------------------------------------------------
-Real Focus::getAngle() const
+gt::Angle Focus::getAngle() const
 {
    return mAngle;
 }
@@ -164,7 +165,7 @@ Real Focus::getAngle() const
 //      Method:       setAngle
 //      Description:
 //------------------------------------------------------------------------------
-void Focus::setAngle(Real theAngle)
+void Focus::setAngle(gt::Angle theAngle)
 {
    mAngle = theAngle;
 }

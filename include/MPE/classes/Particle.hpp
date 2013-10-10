@@ -7,87 +7,86 @@
 #ifndef  PARTICLE_INC
 #define  PARTICLE_INC
 
-#include <SFML/Graphics.hpp>
-#include <GT/GT.hpp>
 #include <MPE/Config.hpp>
-#include <MPE/components/Mortal.hpp>
-#include <MPE/components/Position.hpp>
+#include <MPE/classes/Mortal.hpp>
+#include <MPE/classes/Vec2.hpp>
 
 namespace mpe
 {
 /// @class Particle
 /// @brief Particle 
-class Particle: public Mortal, public Position
+class Particle: public Mortal
 {
    public:
-      /// @brief  Constructor
-      /// @param theTexRect
+      /// @brief Particle 
+      Particle();
+      /// @brief  
+      /// @param theTLL
+      /// @param theWidth
+      /// @param theHeight
       /// @param thePosition
       /// @param theAngle
       /// @param theLinearVelocity
       /// @param theAngularVelocity
       /// @param theColor
-      Particle
-         (
-          sf::Rect<int>      theTexRect,
-          gt::Vec2D          thePosition, 
-          Real               theAngle, 
-          gt::Vec2D          theScale,
-          gt::Vec2D          theLinearVelocity, 
-          Real               theAngularVelocity, 
-          Real               theTLL,
-          sf::Color          theColor=sf::Color(255,255,255,255),
-          GroupID            theGroups = mpe::NO_GROUP
-          );
+      /// @param theGroups
+      /// @return 
+      Particle(Real    theTLL,
+               Real    theWidth,
+               Real    theHeight,
+               Vec2    thePosition, 
+               Real    theAngle,
+               Vec2    theLinearVelocity, 
+               Real    theAngularVelocity, 
+               Color   theColor=Color(255,255,255,255),
+               GroupID theGroups = mpe::NO_GROUP);
       /// @brief ~Particle 
       ~Particle();
       /// @brief update 
       /// @param theElapsedTime
+      void init(Real    theTLL,
+                Real    theWidth,
+                Real    theHeight,
+                Vec2    thePosition, 
+                Real    theAngle,
+                Vec2    theLinearVelocity, 
+                Real    theAngularVelocity, 
+                Color   theColor=Color(255,255,255,255),
+                GroupID theGroups = mpe::NO_GROUP);
+
       void update(Real theElapsedTime);
-      /// @brief setColor 
-      /// @param theColor
-      void setColor(sf::Color theColor);
-      /// @brief modifyColor 
-      /// @param theR
-      /// @param theG
-      /// @param theB
-      /// @param theA
-      void modifyColor(int theR,int theG,int theB,int theA=255);
-      /**
-       * @brief getColor 
-       * @return 
-       */
-      sf::Color getColor() const;
-      /// @brief modifyAlpha 
-      /// @param theAlphaInc
-      void modifyAlpha(int theAlphaInc);
-      /// @brief setLinearVelocity 
-      /// @param theLinearVelocity
-      void setLinearVelocity(gt::Vec2D theLinearVelocity);
-      /// @brief getLinearVelocity 
-      /// @return 
-      gt::Vec2D getLinearVelocity() const;
-      /// @brief getAngle 
-      /// @return 
+
+      Real getWidth() const;
+      void setWidth(Real theWidth);
+      
+      Real getHeight() const;
+      void setHeight(Real theHeight);
+
+      Vec2 getPosition() const;
+
       Real getAngle() const;
-      /// @brief getScale 
-      /// @return 
-      gt::Vec2D getScale() const;
-      /// @brief getTexRect 
-      /// @return 
-      sf::Rect<int> getTexRect() const;
-      /// @brief belongToGroup 
-      /// @param theGroup
-      /// @return 
+
+      Vec2 getLinearVelocity() const;
+      void setLinearVelocity(Vec2 theLinearVelocity);
+
+      Real getAngularVelocity();
+      void setAngularVelocity(Real theAngularVelocity);
+      
+      Color getColor() const;
+      void  setColor(Color theColor);
+
       bool belongToGroup(const GroupID theGroups) const;
+
    private:
-      sf::Rect<int>  mTexRect;
-      Real           mAngle;
-      gt::Vec2D      mScale;
-      gt::Vec2D      mLinearVelocity;
-      Real           mAngularVelocity;
-      sf::Color      mColor;
-      GroupID        mGroups;
+
+      Real      mWidth;
+      Real      mHeight;
+      Vec2      mPosition;
+      Real      mAngle;
+      Vec2      mLinearVelocity;
+      Real      mAngularVelocity;
+      Color     mColor;
+      GroupID   mGroups;
 };
 }
 #endif 

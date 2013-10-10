@@ -8,11 +8,12 @@
 #ifndef  EMITTER_INC
 #define  EMITTER_INC
 
-#include <SFML/Graphics.hpp>
-#include <GT/GT.hpp>
+#include <cmath>
+#include <random>
 #include <MPE/Config.hpp>
 #include <MPE/classes/Focus.hpp>
 #include <MPE/classes/System.hpp>
+#include <MPE/classes/Randomizer.hpp>
 
 namespace mpe
 {
@@ -37,21 +38,21 @@ class Emitter
       Emitter(EmitterID theID);
       /// @brief createFocus 
       /// @return 
-      FocusPtr createFocus(gt::Vec2D thePosition,
-                           Real      theAngle,
+      FocusPtr createFocus(Vec2 thePosition,
+                           Real theAngle,
                            GroupID   theGroups = mpe::NO_GROUP) const;
       /// @brief Generate a random position inside the Shape of the emitter.
       /// The position is transformed by the system factor member to scale it 
       /// to the world coordinates.
       /// @param theFocus
       /// @returns The initial position of the particle.   
-      gt::Vec2D generatePosition(const Focus& theFocus) const;
+      Vec2 generatePosition(const Focus& theFocus) const;
       /// @brief Generate a velocity depending of the emitter dispertion.
       /// @param theFocus
       /// @param theParticlePosition
       /// @returns The particle velocity.
-      gt::Vec2D generateVelocity(const Focus&     theFocus,
-                                 const gt::Vec2D& theParticlePosition) const;
+      Vec2 generateVelocity(const Focus& theFocus,
+                            const Vec2&  theParticlePosition) const;
       //    ACCESSORS AND MUTATORS
       //////////////////////////////////////////////////////////////////////////
       /// @brief getID 
@@ -60,9 +61,6 @@ class Emitter
       /// @brief getSystem
       /// @return 
       System* getSystem() const;
-      /// @brief getTexRect
-      /// @return
-      sf::Rect<int> getTexRect() const;
       /// @brief getParticlePOW 
       /// @return 
       Real getParticlePOW() const;
@@ -72,9 +70,6 @@ class Emitter
       /// @brief getFocusTOL 
       /// @return 
       Real getParticleAngle() const;
-      /// @brief getParticleAngle 
-      /// @return 
-      Real getParticleScale() const;
       /// @brief getParticleAV 
       /// @return 
       Real getParticleAV() const;
@@ -99,9 +94,6 @@ class Emitter
       /// @brief getDispersion 
       /// @return 
       void setDispersion(Dispersion theDispersion);
-      /// @brief setTexRect
-      /// @param theTexRect
-      void setTexRect(sf::Rect<int> theTexRect);
       /// @brief setRangeParticlePOW 
       /// @param theRangeParticlePOW
       void setRangeParticlePOW(Real theMin,Real theMax);
@@ -135,25 +127,29 @@ class Emitter
       /// @brief setRangeFocusNP 
       /// @param theRangeFocusNP
       void setRangeFocusNP(Real theMin,Real theMax);
+      /// @brief setSystem 
+      /// @param theSystem
       void setSystem(System* theSystem){mSystem = theSystem;};
    private:
       //                      VARIABLES
       //////////////////////////////////////////////////////////////////////////
-      EmitterID       mID;               ///< Unique EmitterID for the emitter.
-      System*         mSystem;
-      sf::Rect<int>   mTexRect;
-      Shape           mShape;            ///< The emitter's shape.
-      Dispersion      mDispersion;       ///< Type of paricles' dispersion.
-      gt::Randomizer  mRangeParticlePOW; ///< Range of paricles impulsion.
-      gt::Randomizer  mRangeParticleTOL; ///< Range of particles lifetime.
-      gt::Randomizer  mRangeParticleAngle;///< Range of particles lifetime.
-      gt::Randomizer  mRangeParticleScale;///< Range of particles lifetime.
-      gt::Randomizer  mRangeParticleAV;  ///< Range of particles angular velocity.
-      gt::Randomizer  mRangeFocusWidth;  ///< Range of focus width.
-      gt::Randomizer  mRangeFocusHeight; ///< Range of focus height.
-      gt::Randomizer  mRangeFocusTOL;    ///< Range of focus time of life.
-      gt::Randomizer  mRangeFocusPPS;    ///< Range of focus particles per second.
-      gt::Randomizer  mRangeFocusNP;     ///< Range of focus number of particles.
+      EmitterID   mID;            ///< Unique EmitterID for the emitter.
+      System*     mSystem;
+      Shape       mShape;         ///< The emitter's shape.
+      Dispersion  mDispersion;    ///< Type of paricles' dispersion.
+      Randomizer<Real> mRP_TOL;   ///< Range of particles lifetime.
+      Randomizer<Real> mRP_Width; ///< Range of paricles width.
+      Randomizer<Real> mRP_Height;///< Range of paricles height.
+      Randomizer<Real> mRP_Angle; ///< Range of particles angle.
+      Randomizer<Real> mRP_LV;    ///< Range of paricles impulsion.
+      Randomizer<Real> mRP_AV;    ///< Range of particles angular velocity.
+      Randomizer<Real> mRF_Width; ///< Range of focus width.
+      Randomizer<Real> mRF_Height;///< Range of focus height.
+      Randomizer<Real> mRF_TOL;   ///< Range of focus time of life.
+      Randomizer<Real> mRF_PPS;   ///< Range of focus particles per second.
+      Randomizer<Integer> mRF_NP; ///< Range of focus number of particles.
+
+      static Randomizer<Real> sRealRandom;
 
 };
 //                END OF THE EMITTER CLASS

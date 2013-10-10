@@ -16,8 +16,8 @@ namespace mpe
 //------------------------------------------------------------------------------
 Emitter::Emitter(EmitterID theID):
    mID(theID),
-   mRangeFocusTOL(0,0),
-   mRangeFocusPPS(0,0)
+   mRF_TOL(0,0),
+   mRF_PPS(0,0)
 {
 }
 //------------------------------------------------------------------------------
@@ -25,37 +25,37 @@ Emitter::Emitter(EmitterID theID):
 //      Method:  generateVelocity
 // Description:  
 //------------------------------------------------------------------------------
-gt::Vec2D Emitter::generateVelocity(const Focus& theFocus, 
-                                    const gt::Vec2D& theParticlePosition) const
-{
-   gt::Vec2D anVelocity;
+Vec2 Emitter::generateVelocity(const Focus& theFocus, 
+                               const Vec2& theParticlePosition) const
+
+   Vec2 anVelocity;
 
    switch (mDispersion)
    {
       case LINEAR:
-         anVelocity = gt::Vec2D(theFocus.getAngle().getCos(),
-                                theFocus.getAngle().getSin());
+         anVelocity = Vec2(std::cos(theFocus.getAngle()),
+                           std::sin(theFocus.getAngle()));
          break;
       case RADIAL:
          anVelocity = theParticlePosition - theFocus.getPosition();
          anVelocity.normalize();
          break;
       case STATIC:
-         anVelocity = gt::Vec2D();
+         anVelocity = Vec2();
          break;
       case RANDOM:
-         anVelocity = gt::Vec2D(gt::Randomizer::get(-1,1),
-                                gt::Randomizer::get(-1,1));
+         anVelocity = Vec2(oneToOne(sRenerator),
+                           gt::Randomizer::get(-1,1));
          anVelocity.normalize();
          break;
      case REFLECT:
-         anVelocity = gt::Vec2D();
+         anVelocity = Vec2();
          break;
      default:
-         anVelocity = gt::Vec2D();
+         anVelocity = Vec2();
          break;
    }
-   anVelocity *= mRangeParticlePOW.get();
+   anVelocity *= mRP_POW.get();
 
    return anVelocity;
 }
@@ -208,7 +208,8 @@ void Emitter::setRangeFocusNP(Real theMin,Real theMax)
    mRangeFocusNP(theMin,theMax);
 }
 ////////////////////////////////////////////////////////////////////////////////
-Emitter Emitter::DUMMY = Emitter("DUMMY");
+Emitter::DUMMY = Emitter("DUMMY");
+Emitter::sRealRandom{};
 }
 /* Copyright (C) 
  * 2012 - Jose Luis Lavado
