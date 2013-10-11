@@ -44,8 +44,7 @@ Vec2 Emitter::generateVelocity(const Focus& theFocus,
          anVelocity = Vec2();
          break;
       case RANDOM:
-         anVelocity = Vec2(oneToOne(sRenerator),
-                           gt::Randomizer::get(-1,1));
+         anVelocity = Vec2(sRealRandom(),sRealRandom());
          anVelocity.normalize();
          break;
      case REFLECT:
@@ -69,8 +68,8 @@ gt::Vec2D Emitter::generatePosition(const Focus& theFocus) const
    gt::Vec2D anPosition;
    do
    {
-      anPosition.x = gt::Randomizer::get(-1,1);
-      anPosition.y = gt::Randomizer::get(-1,1);
+      anPosition.x = sRealRandom();
+      anPosition.y = sRealRandom();
    }
    while(mShape == CIRCLE && anPosition.squaremodule() > 1);
 
@@ -85,13 +84,13 @@ gt::Vec2D Emitter::generatePosition(const Focus& theFocus) const
 //      Method:  createFocus
 // Description:  
 //------------------------------------------------------------------------------
-FocusPtr Emitter::createFocus(gt::Vec2D thePosition,
-                              Real      theAngle,
-                              GroupID   theGroups) const
+FocusPtr Emitter::createFocus(Vec2D   thePosition,
+                              Real    theAngle,
+                              GroupID theGroups) const
 {
    FocusPtr anFocus = Focus::create(getFocusWidth(),
                                     getFocusHeight(),
-                                    gt::Angle(theAngle),
+                                    getParticleAngle(),
                                     thePosition,
                                     getFocusNP(),
                                     getFocusTOL(),
@@ -107,57 +106,45 @@ EmitterID Emitter::getID() const
 {
    return mID;
 }
-sf::Rect<int> Emitter::getTexRect() const
-{
-   return mTexRect;
-}
 System* Emitter::getSystem() const 
 {
    return mSystem;
 }
-Real Emitter::getParticlePOW() const 
+Real Emitter::getParticleLV() const 
 {
-   return mRangeParticlePOW.get();
+   return mRP_LV.get();
 }
 Real Emitter::getParticleTOL() const 
 {
-   return mRangeParticleTOL.get();
+   return mRP_TOL();
 }
 Real Emitter::getParticleAngle() const 
 {
-   return mRangeParticleAngle.get();
-}
-Real Emitter::getParticleScale() const 
-{
-   return mRangeParticleScale.get();
+   return mRP_Angle();
 }
 Real Emitter::getParticleAV() const 
 {
-   return mRangeParticleAV.get();
+   return mRP_AV();
 }
 Real Emitter::getFocusTOL() const 
 {
-   return mRangeFocusTOL.get();
+   return mRF_TOL();
 }
 Real Emitter::getFocusWidth() const 
 {
-   return mRangeFocusWidth.get();
+   return mRF_Width();
 }
 Real Emitter::getFocusHeight() const 
 {
-   return mRangeFocusHeight.get();
+   return mRF_Height();
 }
 Real Emitter::getFocusPPS() const 
 {
-   return mRangeFocusPPS.get();
+   return mRF_PPS();
 }
 Integer Emitter::getFocusNP() const 
 {
-   return static_cast<Integer>(mRangeFocusNP.get());
-}
-void Emitter::setTexRect(sf::Rect<int> theTexRect)
-{
-   mTexRect = theTexRect;
+   return mRF_NP();
 }
 void Emitter::setShape(Shape theShape)
 {
@@ -167,45 +154,49 @@ void Emitter::setDispersion(Dispersion theDispersion)
 {
    mDispersion = theDispersion;
 }
-void Emitter::setRangeParticlePOW(Real theMin, Real theMax)
+void Emitter::setRangeParticleWidth(Real theMin, Real theMax)
 {
-   mRangeParticlePOW(theMin,theMax);
+   mRP_Width = Randomizer<Real>{theMin,theMax};
+}
+void Emitter::setRangeParticleHeight(Real theMin, Real theMax)
+{
+   mRP_Height = Randomizer<Real>{theMin,theMax};
+}
+void Emitter::setRangeParticleLV(Real theMin, Real theMax)
+{
+   mRP_LV = Randomizer<Real>{theMin,theMax};
 }
 void Emitter::setRangeParticleTOL(Real theMin, Real theMax)
 {
-   mRangeParticleTOL(theMin,theMax);
+   mRP_TOL = Randomizer<Real>{theMin,theMax};
 }
 void Emitter::setRangeParticleAngle(Real theMin, Real theMax)
 {
-   mRangeParticleAngle(theMin,theMax);
-}
-void Emitter::setRangeParticleScale(Real theMin, Real theMax)
-{
-   mRangeParticleScale(theMin,theMax);
+   mRP_Angle = Randomizer<Real>{theMin,theMax};
 }
 void Emitter::setRangeParticleAV(Real theMin, Real theMax)
 {
-   mRangeParticleAV(theMin,theMax);
+   mRP_AV = Randomizer<Real>{theMin,theMax};
 }
 void Emitter::setRangeFocusWidth(Real theMin, Real theMax)
 {
-   mRangeFocusWidth(theMin,theMax);
+   mRF_Width = Randomizer<Real>{theMin,theMax};
 }
 void Emitter::setRangeFocusHeight(Real theMin, Real theMax)
 {
-   mRangeFocusHeight(theMin,theMax);
+   mRF_Height = Randomizer<Real>{theMin,theMax};
 }
 void Emitter::setRangeFocusTOL(Real theMin, Real theMax)
 {
-   mRangeFocusTOL(theMin,theMax);
+   mRF_TOL = Randomizer<Real>{theMin,theMax};
 }
 void Emitter::setRangeFocusPPS(Real theMin, Real theMax)
 {
-   mRangeFocusPPS(theMin,theMax);
+   mRF_PPS = Randomizer<Real>{theMin,theMax};
 }
-void Emitter::setRangeFocusNP(Real theMin,Real theMax)
+void Emitter::setRangeFocusNP(Integer theMin,Integer theMax)
 {
-   mRangeFocusNP(theMin,theMax);
+   mRF_NP = Randomizer<Integer>{theMin,theMax};
 }
 ////////////////////////////////////////////////////////////////////////////////
 Emitter::DUMMY = Emitter("DUMMY");

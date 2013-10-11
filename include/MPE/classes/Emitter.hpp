@@ -61,9 +61,15 @@ class Emitter
       /// @brief getSystem
       /// @return 
       System* getSystem() const;
-      /// @brief getParticlePOW 
+      /// @brief getParticleWidth 
       /// @return 
-      Real getParticlePOW() const;
+      Real getParticleWidth() const;
+      /// @brief getParticleHeight 
+      /// @return 
+      Real getParticleHeight() const;
+      /// @brief getParticleLV 
+      /// @return 
+      Real getParticleLV() const;
       /// @brief getParticleTOL 
       /// @return 
       Real getParticleTOL() const;
@@ -94,9 +100,15 @@ class Emitter
       /// @brief getDispersion 
       /// @return 
       void setDispersion(Dispersion theDispersion);
+      /// @brief setRangeParticleWidth 
+      /// @param theRangeParticleWidth
+      void setRangeParticleWidth(Real theMin,Real theMax);
+      /// @brief setRangeParticleHeight 
+      /// @param theRangeParticleHeight
+      void setRangeParticleHeight(Real theMin,Real theMax);
       /// @brief setRangeParticlePOW 
       /// @param theRangeParticlePOW
-      void setRangeParticlePOW(Real theMin,Real theMax);
+      void setRangeParticleLV(Real theMin,Real theMax);
       /// @brief setRangeParticleTOL 
       /// @param theRangeParticleTOL
       void setRangeParticleTOL(Real theMin,Real theMax);
@@ -104,10 +116,6 @@ class Emitter
       /// @param theMin
       /// @param theMax
       void setRangeParticleAngle(Real theMin,Real theMax);
-      /// @brief setRangeParticleScale 
-      /// @param theMin
-      /// @param theMax
-      void setRangeParticleScale(Real theMin,Real theMax);
       /// @brief setRangeParticleAV 
       /// @param theMin
       /// @param theMax
