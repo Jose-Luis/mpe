@@ -1,4 +1,4 @@
-/// @file Affector.cpp
+// @file Affector.cpp
 /// @author Jose Luis Lavado
 /// @version 0.1
 /// @date 2013-01-10
@@ -10,7 +10,7 @@ namespace mpe
 //------------------------------------------------------------------------------
 //      Class:        Affector
 //      Method:       constructor
-//      Description:  
+//      Description:
 //------------------------------------------------------------------------------
 Affector::Affector(Real theLifetime):
    Mortal(theLifetime)

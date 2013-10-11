@@ -10,74 +10,69 @@ namespace mpe
 //------------------------------------------------------------------------------
 //      Class:        System
 //      Method:       getXFactor
-//      Description:  
+//      Description:
 //------------------------------------------------------------------------------
-Real System::getXFactor() const 
+Real System::getXFactor() const
 {
    return mXFactor;
 }
-void System::setXFactor(Real theXFactor)
 //------------------------------------------------------------------------------
 //      Class:        System
 //      Method:       setXFactor
-//      Description:  
+//      Description:
 //------------------------------------------------------------------------------
+void System::setXFactor(Real theXFactor)
 {
-   mXFactor=theXFactor;
+   mXFactor = theXFactor;
 }
 //------------------------------------------------------------------------------
 //      Class:        System
 //      Method:       getYFactor
-//      Description:  
+//      Description:
 //------------------------------------------------------------------------------
-Real System::getYFactor() const 
+Real System::getYFactor() const
 {
    return mYFactor;
 }
 //------------------------------------------------------------------------------
 //      Class:        System
 //      Method:       setYFactor
-//      Description:  
+//      Description:
 //------------------------------------------------------------------------------
 void System::setYFactor(Real theYFactor)
 {
-   mYFactor=theYFactor;
+   mYFactor = theYFactor;
 }
 //------------------------------------------------------------------------------
 //       Class:  System
 //      Method:  System
-// Description:  
+// Description:
 //------------------------------------------------------------------------------
 System::System ():
    mXFactor(1),
    mYFactor(1)
 {
-   mVertices.setPrimitiveType(sf::Quads);
-}
-
-void System::setTexture(sf::Texture* theTexture)
-{
-   mStates.texture = theTexture; 
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
 //      Method:  addEmitter
-// Description:  
+// Description:
 //------------------------------------------------------------------------------
 void System::addEmitter(Emitter& theEmitter)
 {
    EmitterID anEmitterID = theEmitter.getID();
    auto it = mEmitters.find(anEmitterID);
+
    if (it == mEmitters.end() )
    {
       theEmitter.setSystem(this);
-      mEmitters.insert(std::pair<EmitterID,Emitter>(anEmitterID,theEmitter));
+      mEmitters.insert(std::pair<EmitterID, Emitter>(anEmitterID, theEmitter));
    }
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
 //      Method:  addFocus
-// Description:  
+// Description:
 //------------------------------------------------------------------------------
 void System::addAffector(AffectorPtr theAffector)
 {
@@ -86,7 +81,7 @@ void System::addAffector(AffectorPtr theAffector)
 //------------------------------------------------------------------------------
 //       Class:  Emitter
 //      Method:  addFocus
-// Description:  
+// Description:
 //------------------------------------------------------------------------------
 void System::addFocus(FocusPtr theFocus)
 {
@@ -95,19 +90,19 @@ void System::addFocus(FocusPtr theFocus)
 //------------------------------------------------------------------------------
 //       Class:  Emitter
 //      Method:  createFocus
-// Description:  
+// Description:
 //------------------------------------------------------------------------------
 FocusPtr System::createFocus(EmitterID theEmitterID,
-                       gt::Vec2D  thePosition,
-                       Real       theAngle,
-                       GroupID    theGroups)
+                             Vec2  thePosition,
+                             Real       theAngle,
+                             GroupID    theGroups)
 {
-   return getEmitter(theEmitterID).createFocus(thePosition,theAngle,theGroups);
+   return getEmitter(theEmitterID).createFocus(thePosition, theAngle, theGroups);
 }
 //------------------------------------------------------------------------------
 //       Class:  System
 //      Method:  addParticle
-// Description:  
+// Description:
 //------------------------------------------------------------------------------
 void System::addParticle (Particle& theParticle)
 {
@@ -116,22 +111,24 @@ void System::addParticle (Particle& theParticle)
 //------------------------------------------------------------------------------
 //       Class:  System
 //      Method:  getEmitter
-// Description:  
+// Description:
 //------------------------------------------------------------------------------
 Emitter& System::getEmitter ( EmitterID theEmitterID )
 {
 
    auto it = mEmitters.find(theEmitterID);
+
    if (it != mEmitters.end() )
    {
       return it->second;
    }
+
    return Emitter::DUMMY;
 }
 //------------------------------------------------------------------------------
 //       Class:  System
 //      Method:  update
-// Description:  
+// Description:
 //------------------------------------------------------------------------------
 void System::updateFocusses(Real theElapsedTime)
 {
@@ -141,7 +138,7 @@ void System::updateFocusses(Real theElapsedTime)
       {
          (*it)->update(theElapsedTime);
       }
-      else 
+      else
       {
          it = mFocusses.erase(it);
          it--;
@@ -151,31 +148,33 @@ void System::updateFocusses(Real theElapsedTime)
 //------------------------------------------------------------------------------
 //       Class:  System
 //      Method:  update
-// Description:  
+// Description:
 //------------------------------------------------------------------------------
 void System::updateParticles(Real theElapsedTime)
 {
-   for (auto affector =  mAffectors.begin(); 
+   for (auto affector =  mAffectors.begin();
          affector != mAffectors.end();
          affector++)
    {
       if ( (*affector)->isAlive() )
       {
          (*affector)->update(theElapsedTime);
-         for (auto particle =  mParticles.begin(); 
+
+         for (auto particle =  mParticles.begin();
                particle != mParticles.end();
                particle++)
          {
-            (*affector)->affect(*particle,theElapsedTime);
+            (*affector)->affect(*particle, theElapsedTime);
          }
-      } 
-      else 
+      }
+      else
       {
          affector = mAffectors.erase(affector);
          affector++;
       }
    }
-   for (auto particle =  mParticles.begin(); 
+
+   for (auto particle =  mParticles.begin();
          particle != mParticles.end();
          particle++)
    {
@@ -194,63 +193,13 @@ void System::updateParticles(Real theElapsedTime)
 //------------------------------------------------------------------------------
 //       Class:  System
 //      Method:  update
-// Description:  
+// Description:
 //------------------------------------------------------------------------------
 void System::update (Real theElapsedTime)
 {
    updateFocusses(theElapsedTime);
    updateParticles(theElapsedTime);
 }
-//------------------------------------------------------------------------------
-//       Class:  System
-//      Method:  draw
-// Description:  
-//------------------------------------------------------------------------------
-void System::draw (sf::RenderWindow& theWindow)
-{
-   mVertices.clear();
-
-   std::list<Particle>::const_iterator it;
-   for(it = mParticles.begin();it != mParticles.end();it++)
-   {
-      sf::Transform anTransform;
-      gt::Vec2D anPosition = it->getPosition().scale(mXFactor,mYFactor);
-      sf::Rect<int> anTexRect = it->getTexRect();
-      sf::Color anColor = it->getColor();
-
-      anTransform.translate(anPosition.x,anPosition.y);
-      anTransform.rotate(it->getAngle());
-      anTransform.scale(it->getScale().x,it->getScale().y);
-
-      sf::Vector2f anPositions[4];
-      anPositions[0] = anTransform.transformPoint(sf::Vector2f(-(anTexRect.width / 2),-(anTexRect.height /2)));
-      anPositions[1] = anTransform.transformPoint(sf::Vector2f( (anTexRect.width / 2),-(anTexRect.height /2)));
-      anPositions[2] = anTransform.transformPoint(sf::Vector2f( (anTexRect.width / 2), (anTexRect.height /2)));
-      anPositions[3] = anTransform.transformPoint(sf::Vector2f(-(anTexRect.width / 2), (anTexRect.height /2)));
-
-      sf::Vector2f anTexCoords[4];
-      anTexCoords[0] = sf::Vector2f(anTexRect.left,                    anTexRect.top);
-      anTexCoords[1] = sf::Vector2f(anTexRect.left + anTexRect.width-1,anTexRect.top);
-      anTexCoords[2] = sf::Vector2f(anTexRect.left + anTexRect.width-1,anTexRect.top + anTexRect.height-1);
-      anTexCoords[3] = sf::Vector2f(anTexRect.left,                    anTexRect.top + anTexRect.height-1);
-
-      for (int i = 0; i < 4;i++)
-      {
-         mVertices.append(sf::Vertex(anPositions[i], anColor ,anTexCoords[i]));
-      }
-   }
-   theWindow.draw(mVertices,mStates);
-#ifndef  NDEBUG
-   std::stringstream s;
-   std::string line = "Number: ";
-   int l = mParticles.size();
-   s << line << l;
-   std::string result = s.str();;
-   sf::Font anFont;
-   anFont.loadFromFile("monofur.ttf");
-   theWindow.draw(sf::Text(result,anFont));
-#endif 
+////////////////////////////////////// END NAMESPACE  mpe //////////////////////
 }
-
-}/* end namespace */
 

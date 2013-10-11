@@ -44,7 +44,10 @@ const GroupID GROUP_H = 0x80;
 
 struct Color
 {
-   int r,g,b,a;
+   int r;
+   int g;
+   int b;
+   int a;
 };
 
 }

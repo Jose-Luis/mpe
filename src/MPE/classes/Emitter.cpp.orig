@@ -31,54 +31,55 @@ Vec2 Emitter::generateVelocity(const Focus& theFocus,
 {
    Vec2 anVelocity;
 
-   switch (mDispersion)
-   {
-   case LINEAR:
-      anVelocity = Vec2(std::cos(theFocus.getAngle()),
-                        std::sin(theFocus.getAngle()));
-      break;
+switch (mDispersion)
+{
+case LINEAR:
+   anVelocity = Vec2(std::cos(theFocus.getAngle()),
+                     std::sin(theFocus.getAngle()));
+   break;
 
-   case RADIAL:
-      anVelocity = theParticlePosition - theFocus.getPosition();
-      anVelocity.normalize();
-      break;
+case RADIAL:
+   anVelocity = theParticlePosition - theFocus.getPosition();
+   anVelocity.normalize();
+   break;
 
-   case STATIC:
-      anVelocity = Vec2();
-      break;
+case STATIC:
+   anVelocity = Vec2();
+   break;
 
-   case RANDOM:
-      anVelocity = Vec2(sRealRandom(), sRealRandom());
-      anVelocity.normalize();
-      break;
+case RANDOM:
+   anVelocity = Vec2(sRealRandom(), sRealRandom());
+   anVelocity.normalize();
+   break;
 
-   case REFLECT:
-      anVelocity = Vec2();
-      break;
+case REFLECT:
+   anVelocity = Vec2();
+   break;
 
-   default:
-      anVelocity = Vec2();
-      break;
-   }
+default:
+   anVelocity = Vec2();
+   break;
+}
 
-   anVelocity *= mRP_LV();
+anVelocity *= mRP_POW.get();
 
-   return anVelocity;
+return anVelocity;
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
 //      Method:  generatePosition
 // Description:
 //------------------------------------------------------------------------------
-Vec2 Emitter::generatePosition(const Focus& theFocus) const
+gt::Vec2D Emitter::generatePosition(const Focus& theFocus) const
 {
-   Vec2 anPosition;
+   gt::Vec2D anPosition;
 
    do
    {
-      anPosition.init(sRealRandom(),sRealRandom());
+      anPosition.x = sRealRandom();
+      anPosition.y = sRealRandom();
    }
-   while(mShape == CIRCLE && anPosition.squareLength() > 1);
+   while(mShape == CIRCLE && anPosition.squaremodule() > 1);
 
    anPosition.scale(theFocus.getWidth(), theFocus.getHeight());
    anPosition.rotate(theFocus.getAngle());
@@ -91,7 +92,7 @@ Vec2 Emitter::generatePosition(const Focus& theFocus) const
 //      Method:  createFocus
 // Description:
 //------------------------------------------------------------------------------
-FocusPtr Emitter::createFocus(Vec2   thePosition,
+FocusPtr Emitter::createFocus(Vec2D   thePosition,
                               Real    theAngle,
                               GroupID theGroups) const
 {
@@ -346,13 +347,13 @@ void Emitter::setRangeFocusNP(Integer theMin, Integer theMax)
 //      Method:  setSystem
 // Description:
 //------------------------------------------------------------------------------
-void Emitter::setSystem(System* theSystem)
+void setSystem(System* theSystem)
 {
    mSystem = theSystem;
-}
+};
 ////////////////////////////////////////////////////////////////////////////////
-Emitter Emitter::DUMMY = Emitter("DUMMY");
-Randomizer<Real> Emitter::sRealRandom {};
+Emitter::DUMMY = Emitter("DUMMY");
+Emitter::sRealRandom {};
 }
 /* Copyright (C)
  * 2012 - Jose Luis Lavado

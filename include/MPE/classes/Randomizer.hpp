@@ -5,21 +5,20 @@
 #include <functional>
 #include <MPE/Config.hpp>
 
-namespace mpe 
+namespace mpe
 {
-   
+
 template<typename T>
 class Randomizer
 {
 
 public:
    Randomizer();
-   Randomizer(T min,T max);
-   virtual ~Randomizer();
-   Integer operator()();
+   Randomizer(T min, T max);
+   T operator()() const;
 
 private:
-   function<T()> mRandom;
+   std::function<T()> mRandom;
 
 };
 

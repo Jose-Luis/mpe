@@ -1,58 +1,58 @@
 #include <MPE/classes/Randomizer.hpp>
 
-namespace mpe 
+namespace mpe
 {
 ////------------------------------------------------------------------------------
 //       Class:  Randomizer
 //      Method:  methodName
-// Description:  A stupid method 
+// Description:  A stupid method
 //------------------------------------------------------------------------------
 template<>
-Randomizer::Randomizer<Integer>():
-mRandom{std::bind(std::uniform_int_distribution{0,1},
-                  std::default_random_engine{})}
+Randomizer<Integer>::Randomizer():
+   mRandom {std::bind(std::uniform_int_distribution<Integer>{0, 1},
+                      std::default_random_engine{})}
 {
 }
 //------------------------------------------------------------------------------
 //       Class:  Randomizer
 //      Method:  Randomizer
-// Description:  A stupid method 
+// Description:  A stupid method
 //------------------------------------------------------------------------------
 template<>
-Randomizer::Randomizer<Integer>(Integer theMax,Integer theMax):
-mRandom{std::bind(std::uniform_int_distribution{theMin,theMax},
-                  std::default_random_engine{})}
+Randomizer<Integer>::Randomizer(Integer theMin, Integer theMax):
+   mRandom {std::bind(std::uniform_int_distribution<Integer>{theMin, theMax},
+                      std::default_random_engine{})}
 {
 }
 ////------------------------------------------------------------------------------
 //       Class:  Randomizer
 //      Method:  methodName
-// Description:  A stupid method 
+// Description:  A stupid method
 //------------------------------------------------------------------------------
 template<>
-Randomizer::Randomizer<Real>():
-mRandom{std::bind(std::uniform_real_distribution{-1,1},
-                  std::default_random_engine{})}
+Randomizer<Real>::Randomizer():
+   mRandom {std::bind(std::uniform_real_distribution<Real>{ -1, 1},
+                      std::default_random_engine{})}
 {
 }
 //------------------------------------------------------------------------------
 //       Class:  Randomizer
 //      Method:  Randomizer
-// Description:  A stupid method 
+// Description:  A stupid method
 //------------------------------------------------------------------------------
 template<>
-Randomizer::Randomizer<Real>(Real theMax,Real theMax):
-mRandom{std::bind(std::uniform_real_distribution{theMin,theMax},
-                  std::default_random_engine{})}
+Randomizer<Real>::Randomizer(Real theMin, Real theMax):
+   mRandom {std::bind(std::uniform_real_distribution<Real>{theMin, theMax},
+                      std::default_random_engine{})}
 {
 }
 //------------------------------------------------------------------------------
 //       Class:  Randomizer
 //      Method:  operator()
-// Description:  A stupid method 
+// Description:  A stupid method
 //------------------------------------------------------------------------------
 template<typename T>
-T Randomizer::operator()()
+T Randomizer<T>::operator()() const
 {
    return mRandom();
 }

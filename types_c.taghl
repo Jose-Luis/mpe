@@ -1,16 +1,14 @@
-syn keyword CTagsLocalVariable anHeight it anFocus result anParticle anTexRect anWidth anEmitterID anSystem s anColor anPositions nParticles line anPosition anVelocity anFont l anTexCoords anTransform
+syn keyword CTagsLocalVariable anEmitterID anPosition anSystem it nParticles anFocus anParticle anVelocity anLength
 syn keyword CTagsStructure Color
-syn keyword CTagsMember mLinearVelocity a y mTexture
-syn keyword CTagsMember mMax mXFactor mRF_TOL mMin mEP mVertices mDispersion mHeight mRF_Height mSystem mAlive mStates mAngularVelocity mRP_Width mTimeAcum NO_GROUP mLifetime mRP_LV mEmitter mRF_PPS mSin mRP_Angle mEmitters mParticles PI mAge mShape x mCos g mTP mAffectors mRP_Height mColor mRandom sRealRandom REAL_INFINITY MAX_INTEGER mID mRP_AV DUMMY mGroups mAngle mRF_NP mRF_Width b mFocusses mRP_TOL r mYFactor mPosition GROUP_C GROUP_B GROUP_A GROUP_G GROUP_F GROUP_E GROUP_D GROUP_H mPPS mValue mWidth
+syn keyword CTagsMember mXFactor mRF_TOL mEP mDispersion mAngle mHeight mRF_Height mSystem mAlive mAngularVelocity mRP_Width mTimeAcum NO_GROUP mLifetime mRP_LV mEmitter mRF_PPS mRP_Angle mEmitters mParticles mAge mShape x g mTP mAffectors mLinearVelocity mRandom sRealRandom REAL_INFINITY MAX_INTEGER mID mRP_AV mRP_Height DUMMY mGroups mRF_NP mRF_Width b mFocusses mRP_TOL r mYFactor mPosition GROUP_C GROUP_B GROUP_A GROUP_G GROUP_F GROUP_E GROUP_D GROUP_H mWidth mColor a mPPS y
 syn keyword CTagsEnumeratorName Dispersion Shape
 syn keyword CTagsEnumerationValue LINEAR RANDOM REFLECT STATIC RADIAL CIRCLE RECTANGLE
-syn keyword CTagsFunction getFocusWidth createFocus setAngle getPPS getScale drain getParticleHeight age setShape
-syn keyword CTagsFunction setRangeParticleTOL getFocusHeight getFocusNP getAge getParticleAngle updateParticles length getCos belongToGroup setRangeParticleLV getWidth set toRadians squareLength setWidth toDegrees create setPPS squaremodule setHeight setAngularVelocity isAlive generatePosition getParticleWidth getPosition getValue time emit getSystem setSystem getID getX getY setXFactor addFocus normalize update setRangeFocusTOL getHeight getSin setYFactor generateVelocity setLinearVelocity draw addEmitter
-syn keyword CTagsFunction setRangeFocusHeight createParticle setDispersion kill getParticleAV setRangeFocusPPS addAffector getParticleTOL getFocusTOL updateFocusses init getEmitter setRangeParticleAngle addParticle get getColor getYFactor affect rotate getAngle getXFactor die setRangeParticleAV getTexRect setRangeFocusWidth setColor getFocusPPS module setRangeParticleWidth scale setRangeParticleHeight setTexture getAngularVelocity resetLife getParticleLV getLinearVelocity setRangeFocusNP
+syn keyword CTagsFunction setColor getParticleAngle length update belongToGroup setRangeParticleLV getWidth squareLength setWidth create setPPS setHeight setAngularVelocity isAlive getFocusPPS generatePosition getParticleWidth getPosition emit getSystem setSystem setAngle getID getX getY setXFactor addFocus normalize setRangeFocusTOL getHeight addParticle setYFactor generateVelocity setLinearVelocity addEmitter getFocusWidth createFocus getPPS getScale drain getParticleHeight age setShape
+syn keyword CTagsFunction createParticle setDispersion kill getParticleAV setRangeFocusPPS addAffector getParticleTOL getFocusHeight getFocusTOL updateFocusses init getEmitter setRangeParticleAngle getColor getYFactor setRangeFocusHeight affect getAngle getXFactor die setRangeParticleAV getTexRect setRangeFocusWidth setRangeParticleWidth updateParticles scale setRangeParticleHeight getAngularVelocity resetLife getParticleLV getLinearVelocity setRangeFocusNP setRangeParticleTOL getFocusNP setPosition getAge
 syn keyword CTagsType Real Integer EmitterID AffectorPtr GroupID FocusPtr
-syn keyword CTagsDefinedName VEC2D_INC ANGLE_INC FOCUS_INC EMITTER_INC CONFIG_INC RANDOMIZER_INC PARTICLE_INC SYSTEM_INC MPE_INC GT_INC RANDOMIZER_TL9DCTRC MORTAL_INC POSITION_INC AFFECTOR_INC CONFIG_MPE_INC
-syn keyword CTagsClass Angle Particle Randomizer Affector Focus System Vec2D Vec2 Mortal Emitter
-syn keyword CTagsNamespace mpe gt
+syn keyword CTagsDefinedName FOCUS_INC EMITTER_INC PARTICLE_INC SYSTEM_INC MPE_INC RANDOMIZER_TL9DCTRC MORTAL_INC VEC2_GSAIH2DS AFFECTOR_INC CONFIG_MPE_INC
+syn keyword CTagsClass Particle Randomizer Affector Focus System Vec2 Mortal Emitter
+syn keyword CTagsNamespace mpe
 
 " Matches for file src/MPE/classes/Affector.cpp:
 if (has_key(b:TagHighlightPrivate, "NormalisedPath") && b:TagHighlightPrivate["NormalisedPath"] == "src/MPE/classes/Affector.cpp") || TagHighlight#Option#GetOption("IgnoreFileScope")
@@ -19,8 +17,8 @@ if (has_key(b:TagHighlightPrivate, "NormalisedPath") && b:TagHighlightPrivate["N
 endif
 " Matches for file src/MPE/classes/Emitter.cpp:
 if (has_key(b:TagHighlightPrivate, "NormalisedPath") && b:TagHighlightPrivate["NormalisedPath"] == "src/MPE/classes/Emitter.cpp") || TagHighlight#Option#GetOption("IgnoreFileScope")
-	syn keyword CTagsMember DUMMY anVelocity
-	syn keyword CTagsFunction normalize rotate scale
+	syn keyword CTagsMember DUMMY
+	syn keyword CTagsFunction normalize sRealRandom rotate scale
 	syn keyword CTagsNamespace mpe
 	
 endif
@@ -31,7 +29,7 @@ if (has_key(b:TagHighlightPrivate, "NormalisedPath") && b:TagHighlightPrivate["N
 endif
 " Matches for file src/MPE/classes/System.cpp:
 if (has_key(b:TagHighlightPrivate, "NormalisedPath") && b:TagHighlightPrivate["NormalisedPath"] == "src/MPE/classes/System.cpp") || TagHighlight#Option#GetOption("IgnoreFileScope")
-	syn keyword CTagsFunction push_back pair draw Text clear Vertex setSystem update setPrimitiveType translate
+	syn keyword CTagsFunction setSystem update push_back pair
 	syn keyword CTagsNamespace mpe
 	
 endif

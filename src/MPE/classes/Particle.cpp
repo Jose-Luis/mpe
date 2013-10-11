@@ -11,7 +11,7 @@ namespace mpe
 *-------------------------------------------------------------------------------
 *      Class:        Particle
 *      Method:       Constructor
-*      Description:  
+*      Description:
 *-------------------------------------------------------------------------------
 */
 Particle::Particle():
@@ -21,49 +21,49 @@ Particle::Particle():
 *-------------------------------------------------------------------------------
 *      Class:        Particle
 *      Method:       Constructor
-*      Description:  
+*      Description:
 *-------------------------------------------------------------------------------
 */
 Particle::Particle(Real    theTTL,
                    Real    theWidth,
                    Real    theHeight,
                    Vec2    thePosition,
-                   Real    theAngle, 
+                   Real    theAngle,
                    Vec2    theLinearVelocity,
-                   Real    theAngularVelocity, 
+                   Real    theAngularVelocity,
                    Color   theColor,
                    GroupID theGroups):
-      Mortal(theTTL),
-      mWidth(theWidth),
-      mHeight(theHeight),
-      mPosition(thePosition),
-      mAngle(theAngle),
-      mLinearVelocity(theLinearVelocity),
-      mAngularVelocity(theAngularVelocity),
-      mColor(theColor),
-      mGroups(theGroups)
+   Mortal(theTTL),
+   mWidth(theWidth),
+   mHeight(theHeight),
+   mPosition(thePosition),
+   mAngle(theAngle),
+   mLinearVelocity(theLinearVelocity),
+   mAngularVelocity(theAngularVelocity),
+   mColor(theColor),
+   mGroups(theGroups)
 {
 }
 /*
 * ------------------------------------------------------------------------------
 *      Class:        Particle
 *      Method:       Destructor
-*      Description:  
+*      Description:
 *------------------------------------------------------------------------------
 */
-Particle::~Particle(){}
+Particle::~Particle() {}
 //------------------------------------------------------------------------------
 //       Class:  Particle
 //      Method:  init
-// Description:  A stupid method 
+// Description:  A stupid method
 //------------------------------------------------------------------------------
 void Particle::init(Real    theTTL,
                     Real    theWidth,
                     Real    theHeight,
                     Vec2    thePosition,
-                    Real    theAngle, 
+                    Real    theAngle,
                     Vec2    theLinearVelocity,
-                    Real    theAngularVelocity, 
+                    Real    theAngularVelocity,
                     Color   theColor,
                     GroupID theGroups)
 {
@@ -80,11 +80,12 @@ void Particle::init(Real    theTTL,
 //------------------------------------------------------------------------------
 //      Class:        Particle
 //      Method:       update
-//      Description:  
+//      Description:
 //------------------------------------------------------------------------------
 void Particle::update(Real theElapsedTime)
 {
    age(theElapsedTime);
+
    if( isAlive() )
    {
       mPosition += mLinearVelocity * theElapsedTime;
@@ -94,7 +95,7 @@ void Particle::update(Real theElapsedTime)
 //------------------------------------------------------------------------------
 //       Class:  Particle
 //      Method:  getWidth
-// Description:  Width getter 
+// Description:  Width getter
 //------------------------------------------------------------------------------
 Real Particle::getWidth() const
 {
@@ -103,7 +104,7 @@ Real Particle::getWidth() const
 //------------------------------------------------------------------------------
 //       Class:  Particle
 //      Method:  setWidth
-// Description:  A stupid method 
+// Description:  A stupid method
 //------------------------------------------------------------------------------
 void Particle::setWidth(Real theWidth)
 {
@@ -112,7 +113,7 @@ void Particle::setWidth(Real theWidth)
 //------------------------------------------------------------------------------
 //       Class:  Particle
 //      Method:  getHeight
-// Description:  Height getter 
+// Description:  Height getter
 //------------------------------------------------------------------------------
 Real Particle::getHeight() const
 {
@@ -121,7 +122,7 @@ Real Particle::getHeight() const
 //------------------------------------------------------------------------------
 //       Class:  Particle
 //      Method:  setHeight
-// Description:  A stupid method 
+// Description:  A stupid method
 //------------------------------------------------------------------------------
 void Particle::setHeight(Real theHeight)
 {
@@ -130,7 +131,7 @@ void Particle::setHeight(Real theHeight)
 //------------------------------------------------------------------------------
 //       Class:  Particle
 //      Method:  getPosition
-// Description:  Position getter 
+// Description:  Position getter
 //------------------------------------------------------------------------------
 Vec2 Particle::getPosition() const
 {
@@ -139,7 +140,7 @@ Vec2 Particle::getPosition() const
 //------------------------------------------------------------------------------
 //       Class:  Particle
 //      Method:  getAngle
-// Description:  Angle getter 
+// Description:  Angle getter
 //------------------------------------------------------------------------------
 Real Particle::getAngle() const
 {
@@ -148,16 +149,16 @@ Real Particle::getAngle() const
 //------------------------------------------------------------------------------
 //      Class:        Particle
 //      Method:       getLinearVelocity
-//      Description:  
+//      Description:
 //------------------------------------------------------------------------------
-Vec2 Particle::getLinearVelocity() const 
+Vec2 Particle::getLinearVelocity() const
 {
    return mLinearVelocity;
 }
 //------------------------------------------------------------------------------
 //       Class:  Particle
 //      Method:  setLinearVelocity
-// Description:  setter 
+// Description:  setter
 //------------------------------------------------------------------------------
 void Particle::setLinearVelocity(Vec2 theLinearVelocity)
 {
@@ -166,25 +167,25 @@ void Particle::setLinearVelocity(Vec2 theLinearVelocity)
 //------------------------------------------------------------------------------
 //      Class:        Particle
 //      Method:       getAngularVelocity
-//      Description:  
+//      Description:
 //------------------------------------------------------------------------------
-Real Particle::getAngularVelocity() const 
+Real Particle::getAngularVelocity() const
 {
    return mAngularVelocity;
 }
 //------------------------------------------------------------------------------
 //      Class:        Particle
 //      Method:       setLinearVelocity
-//      Description:  
+//      Description:
 //------------------------------------------------------------------------------
 void Particle::setAngularVelocity(Real theAngularVelocity)
 {
-   mAngularVelocity=theAngularVelocity;
+   mAngularVelocity = theAngularVelocity;
 }
 //------------------------------------------------------------------------------
 //       Class:  Particle
 //      Method:  getColor
-// Description:  A stupid method 
+// Description:  A stupid method
 //------------------------------------------------------------------------------
 Color Particle::getColor() const
 {
@@ -193,7 +194,7 @@ Color Particle::getColor() const
 //------------------------------------------------------------------------------
 //       Class:  Particle
 //      Method:  setColor
-// Description:  setter 
+// Description:  setter
 //------------------------------------------------------------------------------
 void Particle::setColor(Color theColor)
 {
@@ -202,46 +203,10 @@ void Particle::setColor(Color theColor)
 //--------------------------------------------------------------------------------------
 //       Class:  Particle
 //      Method:  belongToGroup
-// Description:  
+// Description:
 //--------------------------------------------------------------------------------------
 bool Particle::belongToGroup(const GroupID theGroups) const
 {
    return mGroups & theGroups;
-}
-//--------------------------------------------------------------------------------------
-//       Class:  Particle
-//      Method:  belongToGroup
-// Description:  
-//--------------------------------------------------------------------------------------
-Real Particle::getAngle() const
-{
-   return mAngle;
-}
-//--------------------------------------------------------------------------------------
-//       Class:  Particle
-//      Method:  belongToGroup
-// Description:  
-//--------------------------------------------------------------------------------------
-gt::Vec2D Particle::getScale() const
-{
-   return mScale;
-}
-//--------------------------------------------------------------------------------------
-//       Class:  Particle
-//       Method:  belongToGroup
-//       Description:  
-//--------------------------------------------------------------------------------------
-sf::Rect<int> Particle::getTexRect() const
-{
-   return mTexRect;
-}
-/*******************************************************************************
-**     Class:  Particle
-**     Method: getColor
-**     Description:
-*******************************************************************************/
-sf::Color Particle::getColor() const
-{
-   return mColor;
 }
 } /* end namespace */

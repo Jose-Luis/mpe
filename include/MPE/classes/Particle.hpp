@@ -1,5 +1,5 @@
 /// @file Particle.hpp
-/// @brief  
+/// @brief
 /// @author Jose Luis Lavado
 /// @version 0.1
 /// @date 2012-12-18
@@ -14,94 +14,94 @@
 namespace mpe
 {
 /// @class Particle
-/// @brief Particle 
+/// @brief Particle
 class Particle: public Mortal
 {
-   public:
-      /// @brief Particle 
-      Particle();
-      /// @brief  
-      /// @param theTLL
-      /// @param theWidth
-      /// @param theHeight
-      /// @param thePosition
-      /// @param theAngle
-      /// @param theLinearVelocity
-      /// @param theAngularVelocity
-      /// @param theColor
-      /// @param theGroups
-      /// @return 
-      Particle(Real    theTLL,
-               Real    theWidth,
-               Real    theHeight,
-               Vec2    thePosition, 
-               Real    theAngle,
-               Vec2    theLinearVelocity, 
-               Real    theAngularVelocity, 
-               Color   theColor=Color(255,255,255,255),
-               GroupID theGroups = mpe::NO_GROUP);
-      /// @brief ~Particle 
-      ~Particle();
-      /// @brief update 
-      /// @param theElapsedTime
-      void init(Real    theTLL,
-                Real    theWidth,
-                Real    theHeight,
-                Vec2    thePosition, 
-                Real    theAngle,
-                Vec2    theLinearVelocity, 
-                Real    theAngularVelocity, 
-                Color   theColor=Color(255,255,255,255),
-                GroupID theGroups = mpe::NO_GROUP);
+public:
+   /// @brief Particle
+   Particle();
+   /// @brief
+   /// @param theTLL
+   /// @param theWidth
+   /// @param theHeight
+   /// @param thePosition
+   /// @param theAngle
+   /// @param theLinearVelocity
+   /// @param theAngularVelocity
+   /// @param theColor
+   /// @param theGroups
+   /// @return
+   Particle(Real    theTLL,
+            Real    theWidth,
+            Real    theHeight,
+            Vec2    thePosition,
+            Real    theAngle,
+            Vec2    theLinearVelocity,
+            Real    theAngularVelocity,
+            Color   theColor = Color{255, 255, 255, 255},
+            GroupID theGroups = mpe::NO_GROUP);
+   /// @brief ~Particle
+   ~Particle();
+   /// @brief update
+   /// @param theElapsedTime
+   void init(Real    theTLL,
+             Real    theWidth,
+             Real    theHeight,
+             Vec2    thePosition,
+             Real    theAngle,
+             Vec2    theLinearVelocity,
+             Real    theAngularVelocity,
+             Color   theColor = Color{255, 255, 255, 255},
+             GroupID theGroups = mpe::NO_GROUP);
 
-      void update(Real theElapsedTime);
+   void update(Real theElapsedTime);
 
-      Real getWidth() const;
-      void setWidth(Real theWidth);
-      
-      Real getHeight() const;
-      void setHeight(Real theHeight);
+   Real getWidth() const;
+   void setWidth(Real theWidth);
 
-      Vec2 getPosition() const;
+   Real getHeight() const;
+   void setHeight(Real theHeight);
 
-      Real getAngle() const;
+   Vec2 getPosition() const;
 
-      Vec2 getLinearVelocity() const;
-      void setLinearVelocity(Vec2 theLinearVelocity);
+   Real getAngle() const;
 
-      Real getAngularVelocity();
-      void setAngularVelocity(Real theAngularVelocity);
-      
-      Color getColor() const;
-      void  setColor(Color theColor);
+   Vec2 getLinearVelocity() const;
+   void setLinearVelocity(Vec2 theLinearVelocity);
 
-      bool belongToGroup(const GroupID theGroups) const;
+   Real getAngularVelocity() const;
+   void setAngularVelocity(Real theAngularVelocity);
 
-   private:
+   Color getColor() const;
+   void  setColor(Color theColor);
 
-      Real      mWidth;
-      Real      mHeight;
-      Vec2      mPosition;
-      Real      mAngle;
-      Vec2      mLinearVelocity;
-      Real      mAngularVelocity;
-      Color     mColor;
-      GroupID   mGroups;
+   bool belongToGroup(const GroupID theGroups) const;
+
+private:
+
+   Real      mWidth;
+   Real      mHeight;
+   Vec2      mPosition;
+   Real      mAngle;
+   Vec2      mLinearVelocity;
+   Real      mAngularVelocity;
+   Color     mColor;
+   GroupID   mGroups;
 };
 }
-#endif 
-// Copyright (C) 
-// 
+#endif
+// Copyright (C)
+//
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU General Public License
 // as published by the Free Software Foundation; either version 2
 // of the License, or (at your option) any later version.
-// 
+//
 // This program is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
-// 
+//
 // You should have received a copy of the GNU General Public License
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.

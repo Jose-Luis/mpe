@@ -1,41 +1,14 @@
-project(Particles)
+#===============================================================================
+#                         MINI PARTICLE ENGINE 
+#===============================================================================
 
+project(MPE)
 cmake_minimum_required (VERSION 2.8)
 
-# Project headers
-# ===============
-include_directories(${PROJECT_SOURCE_DIR}/include)
+#===============================================================================
+#                     Compilation options             
+#===============================================================================
 
-# External Libraries management
-# =============================
-set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/Modules)
-set(EXT_LIBS ${PROJECT_SOURCE_DIR}/ext_libs)
-
-if(CMAKE_SIZEOF_VOID_P EQUAL 8)
-   set(BITS 64) 
-else()
-   set(BITS 32) 
-endif()
-
-if (${UNIX})
-   set(EXT_LIBS_DIR ${EXT_LIBS}/libraries/linux${BITS})
-else()
-   if(${WIN32})
-      set(EXT_LIBS_DIR ${EXT_LIBS}/libraries/win${BITS})
-   endif()
-endif()
-   
-   #GT
-   #==
-   find_package(GT REQUIRED)
-   include_directories(${GT_INCLUDE_DIR})
-   #SFML
-   #====
-   find_package(SFML REQUIRED audio graphics window system)
-   include_directories(${SFML_INCLUDE_DIR})
-
-# Compilation options
-# ===================
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 if(MSVC)
@@ -48,12 +21,47 @@ set(CMAKE_DEBUG_POSTFIX "_debug")
 set(CMAKE_CXX_FLAGS_OPTIMIZED "-O3")
 set(CMAKE_CXX_FLAGS_PROFILING "-O3 -pg")
 
-# Code to compile
-# ===============
-add_subdirectory(src)
+#===============================================================================
+#                             Code 
+#===============================================================================
 
-# Summary
-# =======
+include_directories(${PROJECT_SOURCE_DIR}/include)
+
+#     Directories
+
+set(HEADERS_DIR ${PROJECT_SOURCE_DIR}/include/MPE)
+set(SOURCES_DIR ${PROJECT_SOURCE_DIR}/src/MPE)
+
+#     Files
+
+set(HEADERS_FILES 
+   ${HEADERS_DIR}/MPE.hpp
+   ${HEADERS_DIR}/Config.hpp
+   ${HEADERS_DIR}/classes/Affector.hpp
+   ${HEADERS_DIR}/classes/Emitter.hpp
+   ${HEADERS_DIR}/classes/Focus.hpp
+   ${HEADERS_DIR}/classes/Particle.hpp
+   ${HEADERS_DIR}/classes/System.hpp
+   ${HEADERS_DIR}/classes/Vec2.hpp
+   ${HEADERS_DIR}/classes/Randomizer.hpp
+   ${HEADERS_DIR}/classes/Mortal.hpp)
+
+set(SOURCES_FILES 
+   ${SOURCES_DIR}/classes/Affector.cpp
+   ${SOURCES_DIR}/classes/Emitter.cpp
+   ${SOURCES_DIR}/classes/Focus.cpp
+   ${SOURCES_DIR}/classes/Particle.cpp
+   ${SOURCES_DIR}/classes/System.cpp
+   ${SOURCES_DIR}/classes/Randomizer.cpp
+   ${SOURCES_DIR}/classes/Mortal.cpp)
+
+#     Library
+
+add_library(particles ${HEADERS_FILES} ${SOURCES_FILES})
+
+#===============================================================================
+#                            Summary
+#===============================================================================
 
 message( "" )
 message( "Summary:" )
@@ -67,6 +75,6 @@ message( "  CMAKE_BUILD_TYPE = ${CMAKE_BUILD_TYPE}" )
 message( "  CMAKE_INSTALL_PREFIX = ${CMAKE_INSTALL_PREFIX}" )
 message( "  CMAKE_MODULE_PATH = ${CMAKE_MODULE_PATH}" )
 message( "  CMAKE_GENERATOR = ${CMAKE_GENERATOR}" )
-message( "  SFML_LIBRARIES = ${SFML_LIBRARIES}" )
-message( "  GT_LIBRARY = ${GT_LIBRARY}" )
 message( "" )
+
+#================================================================================

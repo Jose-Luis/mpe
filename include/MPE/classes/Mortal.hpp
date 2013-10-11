@@ -14,58 +14,61 @@ namespace mpe
 class Mortal
 {
 
-   public:
+public:
 
-      /// @brief isAlive 
-      /// @return 
-      inline bool isAlive()
-      {
-         return mAlive;
-      }
-      /// @brief kill 
-      inline void kill()
-      {
-         mAlive=false;
-      }
-      /// @brief getAge 
-      /// @return 
-      inline Real getAge() const
-      {
-         return mAge;
-      }
+   /// @brief isAlive
+   /// @return
+   inline bool isAlive()
+   {
+      return mAlive;
+   }
+   /// @brief kill
+   inline void kill()
+   {
+      mAlive = false;
+   }
+   /// @brief getAge
+   /// @return
+   inline Real getAge() const
+   {
+      return mAge;
+   }
 
-   protected:
+protected:
 
-      /// @brief Mortal 
-      /// @param theLifetime
-      Mortal(Real theLifetime);
-      /// @brief age 
-      /// @param theElapsedTime
-      inline void age(Real theElapsedTime)
-      {
-         mAge += theElapsedTime;
-         if (mAge > mLifetime)
-            die();
-      }
-      /// @brief resetLife 
-      /// @param theLifetime
-      inline void resetLife(Real theLifetime)
-      {
-         mAge = 0;
-         mLifetime = theLifetime;
-      }
+   /// @brief Mortal
+   /// @param theLifetime
+   Mortal(Real theLifetime);
+   /// @brief age
+   /// @param theElapsedTime
+   inline void age(Real theElapsedTime)
+   {
+      mAge += theElapsedTime;
 
-   private:
-
-      bool mAlive;
-      Real mLifetime;
-      Real mAge;
-      /// @brief die 
-      inline void die()
+      if (mAge > mLifetime)
       {
-         mAlive=false;
+         die();
       }
+   }
+   /// @brief resetLife
+   /// @param theLifetime
+   inline void resetLife(Real theLifetime)
+   {
+      mAge = 0;
+      mLifetime = theLifetime;
+   }
+
+private:
+
+   bool mAlive;
+   Real mLifetime;
+   Real mAge;
+   /// @brief die
+   inline void die()
+   {
+      mAlive = false;
+   }
 };
 
 }
-#endif   
+#endif

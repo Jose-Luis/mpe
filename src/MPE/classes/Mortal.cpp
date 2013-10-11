@@ -1,11 +1,11 @@
-#include <MPE/components/Mortal.hpp>
+#include <MPE/classes/Mortal.hpp>
 
 namespace mpe
 {
 //------------------------------------------------------------------------------
 //      Class:        Mortal
 //      Method:       constructor
-//      Description:  
+//      Description:
 //------------------------------------------------------------------------------
 Mortal::Mortal(Real theLifetime):
    mAlive(true),

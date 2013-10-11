@@ -50,17 +50,17 @@ FocusPtr Focus::create(Real    theLifetime,
                        Integer theTP,
                        Real    thePPS,
                        GroupID theGroups,
-                       const Emitter&  theEmitter):
+                       const Emitter&  theEmitter)
 {
-   return std::make_shared<Focus>(theLifetime,
-                                  theWidth,
-                                  theHeight,
-                                  thePosition,
-                                  theAngle,
-                                  theTP,
-                                  thePPS,
-                                  theGroups,
-                                  theEmitter);
+   return FocusPtr{new Focus{theLifetime,
+                             theWidth,
+                             theHeight,
+                             thePosition,
+                             theAngle,
+                             theTP,
+                             thePPS,
+                             theGroups,
+                             theEmitter}};
 }
 //------------------------------------------------------------------------------
 //       Class:  Focus
@@ -100,19 +100,34 @@ void Focus::emit(Integer theNParticles)
 Particle Focus::createParticle ()
 {
    Vec2 anPosition = mEmitter.generatePosition(*this);
-   Vec2 anVelocity = mEmitter.generateVelocity(*this, anPosition);
-   Real anWidth = mEmitter.getParticleWidth();
-   Real anHeight = mEmitter.getParticleHeight();
    Particle  anParticle = Particle( mEmitter.getParticleTOL(),
-                                    anWidth,
-                                    anHeight,
+                                    mEmitter.getParticleWidth(),
+                                    mEmitter.getParticleHeight(),
                                     anPosition,
                                     mEmitter.getParticleAngle(),
-                                    anVelocity,
+                                    mEmitter.generateVelocity(*this, anPosition),
                                     mEmitter.getParticleAV(),
-                                    Color(255, 255, 255),
+                                    Color{255, 255, 255, 255},
                                     mGroups);
    return anParticle;
+}
+//------------------------------------------------------------------------------
+//      Class:        Focus
+//      Method:       getPosition
+//      Description:
+//------------------------------------------------------------------------------
+Vec2 Focus::getPosition() const
+{
+   return mPosition;
+}
+//------------------------------------------------------------------------------
+//      Class:        Focus
+//      Method:       setPosition
+//      Description:
+//------------------------------------------------------------------------------
+void Focus::setPosition(Vec2 thePosition)
+{
+   mPosition = thePosition;
 }
 //------------------------------------------------------------------------------
 //      Class:        Focus
