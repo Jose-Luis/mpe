@@ -24,24 +24,26 @@ Particle::Particle():
 *      Description:
 *-------------------------------------------------------------------------------
 */
-Particle::Particle(Real    theTTL,
-                   Real    theWidth,
-                   Real    theHeight,
-                   Vec2    thePosition,
-                   Real    theAngle,
-                   Vec2    theLinearVelocity,
-                   Real    theAngularVelocity,
-                   Color   theColor,
-                   GroupID theGroups):
-   Mortal(theTTL),
-   mWidth(theWidth),
-   mHeight(theHeight),
-   mPosition(thePosition),
-   mAngle(theAngle),
-   mLinearVelocity(theLinearVelocity),
-   mAngularVelocity(theAngularVelocity),
+Particle::Particle(Real     theTTL,
+                   Real     theWidth,
+                   Real     theHeight,
+                   Vec2     thePosition,
+                   Real     theAngle,
+                   Vec2     theLinearVelocity,
+                   Real     theAngularVelocity,
+                   TextRect theTextRect,
+                   Color    theColor,
+                   GroupID  theGroups):
+   Mortal{theTTL},
+   mWidth{theWidth},
+   mHeight{theHeight},
+   mPosition{thePosition},
+   mAngle{theAngle},
+   mLinearVelocity{theLinearVelocity},
+   mAngularVelocity{theAngularVelocity},
+   mTextRect(theTextRect),
    mColor(theColor),
-   mGroups(theGroups)
+   mGroups{theGroups}
 {
 }
 /*
@@ -64,6 +66,7 @@ void Particle::init(Real    theTTL,
                     Real    theAngle,
                     Vec2    theLinearVelocity,
                     Real    theAngularVelocity,
+                    TextRect theTextRect,
                     Color   theColor,
                     GroupID theGroups)
 {
@@ -74,6 +77,7 @@ void Particle::init(Real    theTTL,
    mAngle = theAngle;
    mLinearVelocity = theLinearVelocity;
    mAngularVelocity = theAngularVelocity;
+   mTextRect = theTextRect;
    mColor = theColor;
    mGroups = theGroups;
 }
@@ -181,6 +185,24 @@ Real Particle::getAngularVelocity() const
 void Particle::setAngularVelocity(Real theAngularVelocity)
 {
    mAngularVelocity = theAngularVelocity;
+}
+//------------------------------------------------------------------------------
+//      Class:        Particle
+//      Method:       getTextRect
+//      Description:
+//------------------------------------------------------------------------------
+TextRect Particle::getTextRect() const
+{
+   return mTextRect;
+}
+//------------------------------------------------------------------------------
+//      Class:        Particle
+//      Method:       setLinearVelocity
+//      Description:
+//------------------------------------------------------------------------------
+void Particle::setTextRect(TextRect theTextRect)
+{
+   mTextRect = theTextRect;
 }
 //------------------------------------------------------------------------------
 //       Class:  Particle
