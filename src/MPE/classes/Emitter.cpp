@@ -235,12 +235,30 @@ void Emitter::setShape(Shape theShape)
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
+//      Method:  getID
+// Description:
+//------------------------------------------------------------------------------
+TextRect Emitter::getTextRect() const
+{
+   return mRect;
+}
+//------------------------------------------------------------------------------
+//       Class:  Emitter
 //      Method:  setDispersion
 // Description:
 //------------------------------------------------------------------------------
 void Emitter::setDispersion(Dispersion theDispersion)
 {
    mDispersion = theDispersion;
+}
+//------------------------------------------------------------------------------
+//       Class:  Emitter
+//      Method:  setTextRect
+// Description:
+//------------------------------------------------------------------------------
+void Emitter::setTextRect(TextRect theTextRect)
+{
+   mRect = theTextRect;
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter

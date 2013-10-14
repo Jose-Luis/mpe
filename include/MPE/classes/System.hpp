@@ -62,6 +62,9 @@ public:
    /// @brief setYFactor
    /// @param theYFactor
    void     setYFactor(Real theYFactor);
+   /// @brief initFromFile 
+   /// @param theFilename
+   initFromFile(std::string theFilename);
 protected:
    //   MEMBERS
    ///////////////////////////////////////////////////////////////////////

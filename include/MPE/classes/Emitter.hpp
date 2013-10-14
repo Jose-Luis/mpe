@@ -61,6 +61,9 @@ public:
    /// @brief getSystem
    /// @return
    System* getSystem() const;
+   /// @brief getTextRect 
+   /// @return 
+   TextRect getTextRect() const;
    /// @brief getParticleWidth
    /// @return
    Real getParticleWidth() const;
@@ -138,6 +141,9 @@ public:
    /// @brief setSystem
    /// @param theSystem
    void setSystem(System* theSystem);
+   /// @brief setTextRect 
+   /// @param theTextRect
+   void setTextRect(TextRect theTextRect);
 private:
    //                      VARIABLES
    //////////////////////////////////////////////////////////////////////////
@@ -145,6 +151,7 @@ private:
    System*     mSystem;
    Shape       mShape;         ///< The emitter's shape.
    Dispersion  mDispersion;    ///< Type of paricles' dispersion.
+   TextRect    mRect;
    Randomizer<Real> mRP_TOL;   ///< Range of particles lifetime.
    Randomizer<Real> mRP_Width; ///< Range of paricles width.
    Randomizer<Real> mRP_Height;///< Range of paricles height.

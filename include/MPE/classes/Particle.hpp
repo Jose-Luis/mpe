@@ -38,6 +38,7 @@ public:
             Real    theAngle,
             Vec2    theLinearVelocity,
             Real    theAngularVelocity,
+            TextRect theTextRect,
             Color   theColor = Color{255, 255, 255, 255},
             GroupID theGroups = mpe::NO_GROUP);
    /// @brief ~Particle
@@ -51,6 +52,7 @@ public:
              Real    theAngle,
              Vec2    theLinearVelocity,
              Real    theAngularVelocity,
+             TextRect theTextRect,
              Color   theColor = Color{255, 255, 255, 255},
              GroupID theGroups = mpe::NO_GROUP);
 
@@ -72,6 +74,9 @@ public:
    Real getAngularVelocity() const;
    void setAngularVelocity(Real theAngularVelocity);
 
+   TextRect getTextRect() const;
+   void setTextRect(TextRect theTextRect);
+
    Color getColor() const;
    void  setColor(Color theColor);
 
@@ -85,6 +90,7 @@ private:
    Real      mAngle;
    Vec2      mLinearVelocity;
    Real      mAngularVelocity;
+   TextRect  mTextRect;
    Color     mColor;
    GroupID   mGroups;
 };

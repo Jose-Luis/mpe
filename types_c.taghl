@@ -1,10 +1,12 @@
-syn keyword CTagsLocalVariable it anFocus anParticle anEmitterID anSystem aCosine nx ny nParticles anLength anPosition aSine anVelocity
+syn keyword CTagsLocalVariable it anFocus anParticle anEmitterID anSystem aCosine nx ny require nParticles anLength anPosition aSine anVelocity
 syn keyword CTagsStructure Color TextRect
-syn keyword CTagsMember mXFactor mRF_TOL mEP mDispersion mAngle mHeight mRF_Height mSystem mAlive mAngularVelocity mRP_Width mTimeAcum NO_GROUP mLifetime mRP_LV mEmitter mRF_PPS mRP_Angle mEmitters mParticles mAge mShape x g mTP mAffectors mLinearVelocity mRandom height sRealRandom REAL_INFINITY width MAX_INTEGER mID mRP_AV mRP_Height DUMMY mGroups mRF_NP mRF_Width b mFocusses mRP_TOL r mYFactor mPosition GROUP_C GROUP_B GROUP_A GROUP_G GROUP_F GROUP_E GROUP_D GROUP_H mWidth mColor a mPPS y
+syn keyword CTagsMember mXFactor mRF_TOL mEP mDispersion mAngle mHeight mRF_Height mSystem mAlive mAngularVelocity mRP_Width mTimeAcum mRect NO_GROUP mLifetime mRP_LV mEmitter mRF_PPS mRP_Angle mEmitters mParticles mAge mShape x g mTP mAffectors mColor mRandom height sRealRandom REAL_INFINITY mTextRect width MAX_INTEGER mID mRP_AV mRP_Height DUMMY mGroups mRF_NP mRF_Width b mFocusses mRP_TOL r mYFactor mPosition GROUP_C GROUP_B GROUP_A GROUP_G GROUP_F GROUP_E GROUP_D GROUP_H mWidth mLinearVelocity a mPPS y
+syn keyword CTagsConstant info_version info_compiler info_arch info_platform
 syn keyword CTagsEnumeratorName Dispersion Shape
 syn keyword CTagsEnumerationValue LINEAR RANDOM REFLECT STATIC RADIAL CIRCLE RECTANGLE
-syn keyword CTagsFunction setColor getParticleAngle length update belongToGroup setRangeParticleLV getWidth squareLength setWidth create setPPS setHeight setAngularVelocity isAlive getFocusPPS generatePosition getParticleWidth getPosition emit getSystem setSystem setAngle getID getX getY setXFactor addFocus normalize setRangeFocusTOL getHeight addParticle setYFactor generateVelocity setLinearVelocity addEmitter getFocusWidth createFocus getPPS drain getParticleHeight age setShape
-syn keyword CTagsFunction createParticle setDispersion kill getParticleAV setRangeFocusPPS addAffector getParticleTOL getFocusHeight getFocusTOL updateFocusses init getEmitter setRangeParticleAngle getColor getYFactor setRangeFocusHeight affect rotate getAngle getXFactor die setRangeParticleAV setRangeFocusWidth setRangeParticleWidth updateParticles scale setRangeParticleHeight getAngularVelocity resetLife getParticleLV getLinearVelocity setRangeFocusNP setRangeParticleTOL getFocusNP setPosition getAge
+syn keyword CTagsFunction setShape
+syn keyword CTagsFunction setPosition getAge setColor getParticleAngle length update belongToGroup setRangeParticleLV getWidth squareLength setWidth create setPPS getEmitter setHeight setAngularVelocity isAlive getFocusPPS generatePosition getParticleWidth getPosition emit getSystem setSystem setAngle getID getX getY setXFactor addFocus normalize setRangeFocusTOL getHeight addParticle setYFactor generateVelocity setLinearVelocity addEmitter getFocusWidth createFocus getPPS drain getParticleHeight age
+syn keyword CTagsFunction createParticle setDispersion kill getParticleAV setRangeFocusPPS addAffector getParticleTOL getFocusHeight getFocusTOL updateFocusses init getTextRect setRangeParticleAngle main getColor getYFactor setRangeFocusHeight affect rotate getAngle getXFactor die setRangeParticleAV setRangeFocusWidth setTextRect setRangeParticleWidth updateParticles scale setRangeParticleHeight getAngularVelocity resetLife getParticleLV getLinearVelocity setRangeFocusNP setRangeParticleTOL getFocusNP
 syn keyword CTagsType Real Integer EmitterID AffectorPtr GroupID FocusPtr
 syn keyword CTagsDefinedName FOCUS_INC EMITTER_INC PARTICLE_INC SYSTEM_INC MPE_INC RANDOMIZER_TL9DCTRC MORTAL_INC VEC2_GSAIH2DS AFFECTOR_INC CONFIG_MPE_INC
 syn keyword CTagsClass Particle Randomizer Affector Focus System Vec2 Mortal Emitter
@@ -15,11 +17,21 @@ if (has_key(b:TagHighlightPrivate, "NormalisedPath") && b:TagHighlightPrivate["N
 	syn keyword CTagsNamespace mpe
 	
 endif
+" Matches for file build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp:
+if (has_key(b:TagHighlightPrivate, "NormalisedPath") && b:TagHighlightPrivate["NormalisedPath"] == "build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp") || TagHighlight#Option#GetOption("IgnoreFileScope")
+	syn keyword CTagsDefinedName COMPILER_VERSION_TWEAK COMPILER_VERSION_MAJOR HEX COMPILER_VERSION_PATCH PLATFORM_ID ARCHITECTURE_ID COMPILER_ID DEC COMPILER_VERSION_MINOR
+	
+endif
 " Matches for file src/MPE/classes/Emitter.cpp:
 if (has_key(b:TagHighlightPrivate, "NormalisedPath") && b:TagHighlightPrivate["NormalisedPath"] == "src/MPE/classes/Emitter.cpp") || TagHighlight#Option#GetOption("IgnoreFileScope")
 	syn keyword CTagsMember DUMMY
 	syn keyword CTagsFunction normalize sRealRandom rotate scale
 	syn keyword CTagsNamespace mpe
+	
+endif
+" Matches for file build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c:
+if (has_key(b:TagHighlightPrivate, "NormalisedPath") && b:TagHighlightPrivate["NormalisedPath"] == "build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c") || TagHighlight#Option#GetOption("IgnoreFileScope")
+	syn keyword CTagsDefinedName ID_VOID_MAIN COMPILER_VERSION_TWEAK COMPILER_VERSION_MAJOR HEX COMPILER_VERSION_PATCH PLATFORM_ID ARCHITECTURE_ID COMPILER_ID DEC COMPILER_VERSION_MINOR
 	
 endif
 " Matches for file src/MPE/classes/Randomizer.cpp:

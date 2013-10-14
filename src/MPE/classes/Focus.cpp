@@ -107,6 +107,7 @@ Particle Focus::createParticle ()
                                     mEmitter.getParticleAngle(),
                                     mEmitter.generateVelocity(*this, anPosition),
                                     mEmitter.getParticleAV(),
+                                    mEmitter.getTextRect(),
                                     Color{255, 255, 255, 255},
                                     mGroups);
    return anParticle;

@@ -4,22 +4,39 @@
 
 project(MPE)
 cmake_minimum_required (VERSION 2.8)
+set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/Modules)
+
+if(CMAKE_SIZEOF_VOID_P EQUAL 8)
+   set(BITS 64) 
+else()
+   set(BITS 32) 
+endif()
 
 #===============================================================================
 #                     Compilation options             
 #===============================================================================
-
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+set(EXT_LIBS ${PROJECT_SOURCE_DIR}/ext_libs)
 
 if(MSVC)
-   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W4")
+   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W3")
+   set(EXT_LIBS_DIR ${EXT_LIBS}/libraries/win${BITS})
 elseif(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
-   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall  -pedantic")
+   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall  -pedantic")
+   set(EXT_LIBS_DIR ${EXT_LIBS}/libraries/linux${BITS})
 endif()
 
 set(CMAKE_DEBUG_POSTFIX "_debug") 
 set(CMAKE_CXX_FLAGS_OPTIMIZED "-O3")
 set(CMAKE_CXX_FLAGS_PROFILING "-O3 -pg")
+
+#===============================================================================
+#                             Dependencies 
+#===============================================================================
+
+# TinyXML2
+
+find_package(TinyXML2 REQUIRED)
+include_directories(${TINYXML2_INCLUDE_DIR})
 
 #===============================================================================
 #                             Code 

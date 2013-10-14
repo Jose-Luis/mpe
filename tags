@@ -5,13 +5,203 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
 AFFECTOR_INC	include/MPE/classes/Affector.hpp	7;"	kind:d
+ARCHITECTURE_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	298;"	kind:d	file:
+ARCHITECTURE_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	301;"	kind:d	file:
+ARCHITECTURE_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	304;"	kind:d	file:
+ARCHITECTURE_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	307;"	kind:d	file:
+ARCHITECTURE_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	310;"	kind:d	file:
+ARCHITECTURE_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	313;"	kind:d	file:
+ARCHITECTURE_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	316;"	kind:d	file:
+ARCHITECTURE_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	320;"	kind:d	file:
+ARCHITECTURE_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	291;"	kind:d	file:
+ARCHITECTURE_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	294;"	kind:d	file:
+ARCHITECTURE_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	297;"	kind:d	file:
+ARCHITECTURE_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	300;"	kind:d	file:
+ARCHITECTURE_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	303;"	kind:d	file:
+ARCHITECTURE_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	306;"	kind:d	file:
+ARCHITECTURE_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	309;"	kind:d	file:
+ARCHITECTURE_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	313;"	kind:d	file:
 Affector	include/MPE/classes/Affector.hpp	/^   Affector(Real      theLifetime);$/;"	kind:p	class:mpe::Affector	access:protected	signature:(Real theLifetime)
 Affector	include/MPE/classes/Affector.hpp	/^class Affector: public Mortal$/;"	kind:c	namespace:mpe	inherits:Mortal
 Affector	src/MPE/classes/Affector.cpp	/^Affector::Affector(Real theLifetime):$/;"	kind:f	class:mpe::Affector	signature:(Real theLifetime)
 AffectorPtr	include/MPE/Config.hpp	/^typedef std::shared_ptr<Affector> AffectorPtr;$/;"	kind:t	namespace:mpe
 CIRCLE	include/MPE/classes/Emitter.hpp	/^   enum Shape {RECTANGLE, CIRCLE};$/;"	kind:e	enum:mpe::Emitter::Shape
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	107;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	112;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	119;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	122;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	125;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	133;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	13;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	152;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	160;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	165;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	170;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	177;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	194;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	197;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	200;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	24;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	32;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	38;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	44;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	50;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	56;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	70;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	77;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	85;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	88;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	90;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	99;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	104;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	112;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	117;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	124;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	127;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	12;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	135;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	154;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	162;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	167;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	170;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	187;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	18;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	190;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	193;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	29;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	37;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	43;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	49;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	55;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	61;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	75;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	82;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	90;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	93;"	kind:d	file:
+COMPILER_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	95;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	100;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	108;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	114;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	126;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	135;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	154;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	15;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	172;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	180;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	185;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	25;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	33;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	39;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	46;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	52;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	59;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	64;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	72;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	79;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	93;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	105;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	113;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	119;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	128;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	137;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	14;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	156;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	173;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	178;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	20;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	30;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	38;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	44;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	51;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	57;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	64;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	69;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	77;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	84;"	kind:d	file:
+COMPILER_VERSION_MAJOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	98;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	101;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	109;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	115;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	127;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	136;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	155;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	16;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	173;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	181;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	186;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	26;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	34;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	40;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	47;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	53;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	60;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	65;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	73;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	80;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	94;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	106;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	114;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	120;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	129;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	138;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	157;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	15;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	174;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	179;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	21;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	31;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	39;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	45;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	52;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	58;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	65;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	70;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	78;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	85;"	kind:d	file:
+COMPILER_VERSION_MINOR	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	99;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	103;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	116;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	129;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	140;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	143;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	156;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	174;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	17;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	182;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	187;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	28;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	35;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	41;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	61;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	66;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	74;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	81;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	95;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	100;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	108;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	121;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	131;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	142;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	145;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	158;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	175;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	180;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	22;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	33;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	40;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	46;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	66;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	71;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	79;"	kind:d	file:
+COMPILER_VERSION_PATCH	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	86;"	kind:d	file:
+COMPILER_VERSION_TWEAK	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	147;"	kind:d	file:
+COMPILER_VERSION_TWEAK	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	20;"	kind:d	file:
+COMPILER_VERSION_TWEAK	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	149;"	kind:d	file:
+COMPILER_VERSION_TWEAK	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	25;"	kind:d	file:
 CONFIG_MPE_INC	include/MPE/Config.hpp	8;"	kind:d
 Color	include/MPE/Config.hpp	/^struct Color$/;"	kind:s	namespace:mpe
+DEC	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	324;"	kind:d	file:
+DEC	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	317;"	kind:d	file:
 DUMMY	include/MPE/classes/Emitter.hpp	/^   static Emitter DUMMY;$/;"	kind:m	class:mpe::Emitter	access:public
 DUMMY	src/MPE/classes/Emitter.cpp	/^Emitter Emitter::DUMMY = Emitter("DUMMY");$/;"	kind:m	class:mpe::Emitter	file:
 Dispersion	include/MPE/classes/Emitter.hpp	/^   enum Dispersion {LINEAR, RADIAL, REFLECT, RANDOM, STATIC};$/;"	kind:g	class:mpe::Emitter	access:public
@@ -34,6 +224,9 @@ GROUP_F	include/MPE/Config.hpp	/^const GroupID GROUP_F = 0x20;$/;"	kind:m	namesp
 GROUP_G	include/MPE/Config.hpp	/^const GroupID GROUP_G = 0x40;$/;"	kind:m	namespace:mpe
 GROUP_H	include/MPE/Config.hpp	/^const GroupID GROUP_H = 0x80;$/;"	kind:m	namespace:mpe
 GroupID	include/MPE/Config.hpp	/^typedef unsigned char GroupID;$/;"	kind:t	namespace:mpe
+HEX	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	335;"	kind:d	file:
+HEX	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	328;"	kind:d	file:
+ID_VOID_MAIN	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	9;"	kind:d	file:
 Integer	include/MPE/Config.hpp	/^typedef int Integer;$/;"	kind:t	namespace:mpe
 LINEAR	include/MPE/classes/Emitter.hpp	/^   enum Dispersion {LINEAR, RADIAL, REFLECT, RANDOM, STATIC};$/;"	kind:e	enum:mpe::Emitter::Dispersion
 MAX_INTEGER	include/MPE/Config.hpp	/^const Integer MAX_INTEGER = std::numeric_limits<Integer>::max();$/;"	kind:m	namespace:mpe
@@ -44,11 +237,63 @@ Mortal	include/MPE/classes/Mortal.hpp	/^class Mortal$/;"	kind:c	namespace:mpe
 Mortal	src/MPE/classes/Mortal.cpp	/^Mortal::Mortal(Real theLifetime):$/;"	kind:f	class:mpe::Mortal	signature:(Real theLifetime)
 NO_GROUP	include/MPE/Config.hpp	/^const GroupID NO_GROUP = 0x00;$/;"	kind:m	namespace:mpe
 PARTICLE_INC	include/MPE/classes/Particle.hpp	8;"	kind:d
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	212;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	215;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	218;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	221;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	224;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	227;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	230;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	233;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	236;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	239;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	242;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	245;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	248;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	251;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	254;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	257;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	260;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	263;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	266;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	269;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	272;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	275;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	278;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	281;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	284;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	287;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	205;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	208;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	211;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	214;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	217;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	220;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	223;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	226;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	229;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	232;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	235;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	238;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	241;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	244;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	247;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	250;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	253;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	256;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	259;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	262;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	265;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	268;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	271;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	274;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	277;"	kind:d	file:
+PLATFORM_ID	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	280;"	kind:d	file:
 Particle	include/MPE/classes/Particle.hpp	/^   Particle();$/;"	kind:p	class:mpe::Particle	access:public	signature:()
-Particle	include/MPE/classes/Particle.hpp	/^   Particle(Real    theTLL,$/;"	kind:p	class:mpe::Particle	access:public	signature:(Real theTLL, Real theWidth, Real theHeight, Vec2 thePosition, Real theAngle, Vec2 theLinearVelocity, Real theAngularVelocity, Color theColor = Color{255, 255, 255, 255}, GroupID theGroups = mpe::NO_GROUP)
+Particle	include/MPE/classes/Particle.hpp	/^   Particle(Real    theTLL,$/;"	kind:p	class:mpe::Particle	access:public	signature:(Real theTLL, Real theWidth, Real theHeight, Vec2 thePosition, Real theAngle, Vec2 theLinearVelocity, Real theAngularVelocity, TextRect theTextRect, Color theColor = Color{255, 255, 255, 255}, GroupID theGroups = mpe::NO_GROUP)
 Particle	include/MPE/classes/Particle.hpp	/^class Particle: public Mortal$/;"	kind:c	namespace:mpe	inherits:Mortal
 Particle	src/MPE/classes/Particle.cpp	/^Particle::Particle():$/;"	kind:f	class:mpe::Particle	signature:()
-Particle	src/MPE/classes/Particle.cpp	/^Particle::Particle(Real    theTTL,$/;"	kind:f	class:mpe::Particle	signature:(Real theTTL, Real theWidth, Real theHeight, Vec2 thePosition, Real theAngle, Vec2 theLinearVelocity, Real theAngularVelocity, Color theColor, GroupID theGroups)
+Particle	src/MPE/classes/Particle.cpp	/^Particle::Particle(Real     theTTL,$/;"	kind:f	class:mpe::Particle	signature:(Real theTTL, Real theWidth, Real theHeight, Vec2 thePosition, Real theAngle, Vec2 theLinearVelocity, Real theAngularVelocity, TextRect theTextRect, Color theColor, GroupID theGroups)
 RADIAL	include/MPE/classes/Emitter.hpp	/^   enum Dispersion {LINEAR, RADIAL, REFLECT, RANDOM, STATIC};$/;"	kind:e	enum:mpe::Emitter::Dispersion
 RANDOM	include/MPE/classes/Emitter.hpp	/^   enum Dispersion {LINEAR, RADIAL, REFLECT, RANDOM, STATIC};$/;"	kind:e	enum:mpe::Emitter::Dispersion
 RANDOMIZER_TL9DCTRC	include/MPE/classes/Randomizer.hpp	2;"	kind:d
@@ -74,7 +319,7 @@ VEC2_GSAIH2DS	include/MPE/classes/Vec2.hpp	7;"	kind:d
 Vec2	include/MPE/classes/Vec2.hpp	/^   Vec2(): x(0), y(0) {}$/;"	kind:f	class:mpe::Vec2	access:public	signature:()
 Vec2	include/MPE/classes/Vec2.hpp	/^   Vec2(Real theX, Real theY):$/;"	kind:f	class:mpe::Vec2	access:public	signature:(Real theX, Real theY)
 Vec2	include/MPE/classes/Vec2.hpp	/^class Vec2$/;"	kind:c	namespace:mpe
-a	include/MPE/Config.hpp	/^   int r,b,g,a;$/;"	kind:m	struct:mpe::Color	access:public
+a	include/MPE/Config.hpp	/^   Integer r,g,b,a;$/;"	kind:m	struct:mpe::Color	access:public
 aCosine	include/MPE/classes/Vec2.hpp	/^   Real aCosine = std::cos(theAngle);$/;"	kind:l
 aSine	include/MPE/classes/Vec2.hpp	/^   Real aSine = std::sin(theAngle);$/;"	kind:l
 addAffector	include/MPE/classes/System.hpp	/^   void     addAffector(AffectorPtr theAffector);$/;"	kind:p	class:mpe::System	access:public	signature:(AffectorPtr theAffector)
@@ -97,7 +342,7 @@ anPosition	src/MPE/classes/Emitter.cpp	/^   Vec2 anPosition;$/;"	kind:l
 anPosition	src/MPE/classes/Focus.cpp	/^   Vec2 anPosition = mEmitter.generatePosition(*this);$/;"	kind:l
 anSystem	src/MPE/classes/Focus.cpp	/^   System* anSystem = mEmitter.getSystem();$/;"	kind:l
 anVelocity	src/MPE/classes/Emitter.cpp	/^   Vec2 anVelocity;$/;"	kind:l
-b	include/MPE/Config.hpp	/^   int r,b,g,a;$/;"	kind:m	struct:mpe::Color	access:public
+b	include/MPE/Config.hpp	/^   Integer r,g,b,a;$/;"	kind:m	struct:mpe::Color	access:public
 belongToGroup	include/MPE/classes/Particle.hpp	/^   bool belongToGroup(const GroupID theGroups) const;$/;"	kind:p	class:mpe::Particle	access:public	signature:(const GroupID theGroups) const
 belongToGroup	src/MPE/classes/Particle.cpp	/^bool Particle::belongToGroup(const GroupID theGroups) const$/;"	kind:f	class:mpe::Particle	signature:(const GroupID theGroups) const
 create	include/MPE/classes/Focus.hpp	/^   static FocusPtr create(Real    theLifetime,$/;"	kind:p	class:mpe::Focus	access:public	signature:(Real theLifetime, Real theWidth, Real theHeight, Vec2 thePosition, Real theAngle, Integer theTP, Real thePPS, GroupID theGroups, const Emitter& theEmitter)
@@ -113,7 +358,7 @@ drain	include/MPE/classes/Focus.hpp	/^   Integer drain(Real theElapsedTime);$/;"
 drain	src/MPE/classes/Focus.cpp	/^Integer Focus::drain(Real theElapsedTime)$/;"	kind:f	class:mpe::Focus	signature:(Real theElapsedTime)
 emit	include/MPE/classes/Focus.hpp	/^   void emit(Integer theNParticles);$/;"	kind:p	class:mpe::Focus	access:private	signature:(Integer theNParticles)
 emit	src/MPE/classes/Focus.cpp	/^void Focus::emit(Integer theNParticles)$/;"	kind:f	class:mpe::Focus	signature:(Integer theNParticles)
-g	include/MPE/Config.hpp	/^   int r,b,g,a;$/;"	kind:m	struct:mpe::Color	access:public
+g	include/MPE/Config.hpp	/^   Integer r,g,b,a;$/;"	kind:m	struct:mpe::Color	access:public
 generatePosition	include/MPE/classes/Emitter.hpp	/^   Vec2 generatePosition(const Focus& theFocus) const;$/;"	kind:p	class:mpe::Emitter	access:public	signature:(const Focus& theFocus) const
 generatePosition	src/MPE/classes/Emitter.cpp	/^Vec2 Emitter::generatePosition(const Focus& theFocus) const$/;"	kind:f	class:mpe::Emitter	signature:(const Focus& theFocus) const
 generateVelocity	include/MPE/classes/Emitter.hpp	/^   Vec2 generateVelocity(const Focus& theFocus,$/;"	kind:p	class:mpe::Emitter	access:public	signature:(const Focus& theFocus, const Vec2& theParticlePosition) const
@@ -167,6 +412,10 @@ getPosition	src/MPE/classes/Focus.cpp	/^Vec2 Focus::getPosition() const$/;"	kind
 getPosition	src/MPE/classes/Particle.cpp	/^Vec2 Particle::getPosition() const$/;"	kind:f	class:mpe::Particle	signature:() const
 getSystem	include/MPE/classes/Emitter.hpp	/^   System* getSystem() const;$/;"	kind:p	class:mpe::Emitter	access:public	signature:() const
 getSystem	src/MPE/classes/Emitter.cpp	/^System* Emitter::getSystem() const$/;"	kind:f	class:mpe::Emitter	signature:() const
+getTextRect	include/MPE/classes/Emitter.hpp	/^   TextRect getTextRect() const;$/;"	kind:p	class:mpe::Emitter	access:public	signature:() const
+getTextRect	include/MPE/classes/Particle.hpp	/^   TextRect getTextRect() const;$/;"	kind:p	class:mpe::Particle	access:public	signature:() const
+getTextRect	src/MPE/classes/Emitter.cpp	/^TextRect Emitter::getTextRect() const$/;"	kind:f	class:mpe::Emitter	signature:() const
+getTextRect	src/MPE/classes/Particle.cpp	/^TextRect Particle::getTextRect() const$/;"	kind:f	class:mpe::Particle	signature:() const
 getWidth	include/MPE/classes/Focus.hpp	/^   Real getWidth() const;$/;"	kind:p	class:mpe::Focus	access:public	signature:() const
 getWidth	include/MPE/classes/Particle.hpp	/^   Real getWidth() const;$/;"	kind:p	class:mpe::Particle	access:public	signature:() const
 getWidth	src/MPE/classes/Focus.cpp	/^Real Focus::getWidth() const$/;"	kind:f	class:mpe::Focus	signature:() const
@@ -177,10 +426,18 @@ getXFactor	src/MPE/classes/System.cpp	/^Real System::getXFactor() const$/;"	kind
 getY	include/MPE/classes/Vec2.hpp	/^   Real getY()$/;"	kind:f	class:mpe::Vec2	access:public	signature:()
 getYFactor	include/MPE/classes/System.hpp	/^   Real     getYFactor() const;$/;"	kind:p	class:mpe::System	access:public	signature:() const
 getYFactor	src/MPE/classes/System.cpp	/^Real System::getYFactor() const$/;"	kind:f	class:mpe::System	signature:() const
-height	include/MPE/Config.hpp	/^   int x,y,width,height;$/;"	kind:m	struct:mpe::TextRect	access:public
-init	include/MPE/classes/Particle.hpp	/^   void init(Real    theTLL,$/;"	kind:p	class:mpe::Particle	access:public	signature:(Real theTLL, Real theWidth, Real theHeight, Vec2 thePosition, Real theAngle, Vec2 theLinearVelocity, Real theAngularVelocity, Color theColor = Color{255, 255, 255, 255}, GroupID theGroups = mpe::NO_GROUP)
+height	include/MPE/Config.hpp	/^   Integer x,y,width,height;$/;"	kind:m	struct:mpe::TextRect	access:public
+info_arch	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	kind:v
+info_arch	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	kind:v
+info_compiler	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	/^char const* info_compiler = "INFO" ":" "compiler[" COMPILER_ID "]";$/;"	kind:v
+info_compiler	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_compiler = "INFO" ":" "compiler[" COMPILER_ID "]";$/;"	kind:v
+info_platform	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	/^char const* info_platform = "INFO" ":" "platform[" PLATFORM_ID "]";$/;"	kind:v
+info_platform	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_platform = "INFO" ":" "platform[" PLATFORM_ID "]";$/;"	kind:v
+info_version	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	/^char const info_version[] = {$/;"	kind:v
+info_version	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_version[] = {$/;"	kind:v
+init	include/MPE/classes/Particle.hpp	/^   void init(Real    theTLL,$/;"	kind:p	class:mpe::Particle	access:public	signature:(Real theTLL, Real theWidth, Real theHeight, Vec2 thePosition, Real theAngle, Vec2 theLinearVelocity, Real theAngularVelocity, TextRect theTextRect, Color theColor = Color{255, 255, 255, 255}, GroupID theGroups = mpe::NO_GROUP)
 init	include/MPE/classes/Vec2.hpp	/^   void init(Real theX, Real theY)$/;"	kind:f	class:mpe::Vec2	access:public	signature:(Real theX, Real theY)
-init	src/MPE/classes/Particle.cpp	/^void Particle::init(Real    theTTL,$/;"	kind:f	class:mpe::Particle	signature:(Real theTTL, Real theWidth, Real theHeight, Vec2 thePosition, Real theAngle, Vec2 theLinearVelocity, Real theAngularVelocity, Color theColor, GroupID theGroups)
+init	src/MPE/classes/Particle.cpp	/^void Particle::init(Real    theTTL,$/;"	kind:f	class:mpe::Particle	signature:(Real theTTL, Real theWidth, Real theHeight, Vec2 thePosition, Real theAngle, Vec2 theLinearVelocity, Real theAngularVelocity, TextRect theTextRect, Color theColor, GroupID theGroups)
 isAlive	include/MPE/classes/Mortal.hpp	/^   inline bool isAlive()$/;"	kind:f	class:mpe::Mortal	access:public	signature:()
 it	src/MPE/classes/System.cpp	/^   auto it = mEmitters.find(anEmitterID);$/;"	kind:l
 it	src/MPE/classes/System.cpp	/^   auto it = mEmitters.find(theEmitterID);$/;"	kind:l
@@ -221,14 +478,19 @@ mRP_LV	include/MPE/classes/Emitter.hpp	/^   Randomizer<Real> mRP_LV;    \/\/\/< 
 mRP_TOL	include/MPE/classes/Emitter.hpp	/^   Randomizer<Real> mRP_TOL;   \/\/\/< Range of particles lifetime.$/;"	kind:m	class:mpe::Emitter	access:private
 mRP_Width	include/MPE/classes/Emitter.hpp	/^   Randomizer<Real> mRP_Width; \/\/\/< Range of paricles width.$/;"	kind:m	class:mpe::Emitter	access:private
 mRandom	include/MPE/classes/Randomizer.hpp	/^   std::function<T()> mRandom;$/;"	kind:m	class:mpe::Randomizer	access:private
+mRect	include/MPE/classes/Emitter.hpp	/^   TextRect    mRect;$/;"	kind:m	class:mpe::Emitter	access:private
 mShape	include/MPE/classes/Emitter.hpp	/^   Shape       mShape;         \/\/\/< The emitter's shape.$/;"	kind:m	class:mpe::Emitter	access:private
 mSystem	include/MPE/classes/Emitter.hpp	/^   System*     mSystem;$/;"	kind:m	class:mpe::Emitter	access:private
 mTP	include/MPE/classes/Focus.hpp	/^   Integer   mTP;      \/\/\/< Total number of Particles. -1 = no number limits$/;"	kind:m	class:mpe::Focus	access:private
+mTextRect	include/MPE/classes/Particle.hpp	/^   TextRect  mTextRect;$/;"	kind:m	class:mpe::Particle	access:private
 mTimeAcum	include/MPE/classes/Focus.hpp	/^   Real      mTimeAcum;$/;"	kind:m	class:mpe::Focus	access:private
 mWidth	include/MPE/classes/Focus.hpp	/^   Real      mWidth;   \/\/\/< Width.$/;"	kind:m	class:mpe::Focus	access:private
 mWidth	include/MPE/classes/Particle.hpp	/^   Real      mWidth;$/;"	kind:m	class:mpe::Particle	access:private
 mXFactor	include/MPE/classes/System.hpp	/^   Real mXFactor;$/;"	kind:m	class:mpe::System	access:protected
 mYFactor	include/MPE/classes/System.hpp	/^   Real mYFactor;$/;"	kind:m	class:mpe::System	access:protected
+main	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	/^int main(int argc, char* argv[])$/;"	kind:f	signature:(int argc, char* argv[])
+main	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	/^void main() {}$/;"	kind:f
+main	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^int main(int argc, char* argv[])$/;"	kind:f	signature:(int argc, char* argv[])
 mpe	include/MPE/Config.hpp	/^namespace mpe$/;"	kind:n
 mpe	include/MPE/classes/Affector.hpp	/^namespace mpe$/;"	kind:n
 mpe	include/MPE/classes/Emitter.hpp	/^namespace mpe$/;"	kind:n
@@ -252,10 +514,10 @@ mpe::Affector::affect	include/MPE/classes/Affector.hpp	/^   virtual void affect(
 mpe::Affector::update	include/MPE/classes/Affector.hpp	/^   virtual void update(Real theElapsedtime)$/;"	kind:f	class:mpe::Affector	access:public	signature:(Real theElapsedtime)
 mpe::AffectorPtr	include/MPE/Config.hpp	/^typedef std::shared_ptr<Affector> AffectorPtr;$/;"	kind:t	namespace:mpe
 mpe::Color	include/MPE/Config.hpp	/^struct Color$/;"	kind:s	namespace:mpe
-mpe::Color::a	include/MPE/Config.hpp	/^   int r,b,g,a;$/;"	kind:m	struct:mpe::Color	access:public
-mpe::Color::b	include/MPE/Config.hpp	/^   int r,b,g,a;$/;"	kind:m	struct:mpe::Color	access:public
-mpe::Color::g	include/MPE/Config.hpp	/^   int r,b,g,a;$/;"	kind:m	struct:mpe::Color	access:public
-mpe::Color::r	include/MPE/Config.hpp	/^   int r,b,g,a;$/;"	kind:m	struct:mpe::Color	access:public
+mpe::Color::a	include/MPE/Config.hpp	/^   Integer r,g,b,a;$/;"	kind:m	struct:mpe::Color	access:public
+mpe::Color::b	include/MPE/Config.hpp	/^   Integer r,g,b,a;$/;"	kind:m	struct:mpe::Color	access:public
+mpe::Color::g	include/MPE/Config.hpp	/^   Integer r,g,b,a;$/;"	kind:m	struct:mpe::Color	access:public
+mpe::Color::r	include/MPE/Config.hpp	/^   Integer r,g,b,a;$/;"	kind:m	struct:mpe::Color	access:public
 mpe::Emitter	include/MPE/classes/Emitter.hpp	/^class Emitter$/;"	kind:c	namespace:mpe
 mpe::Emitter::CIRCLE	include/MPE/classes/Emitter.hpp	/^   enum Shape {RECTANGLE, CIRCLE};$/;"	kind:e	enum:mpe::Emitter::Shape
 mpe::Emitter::DUMMY	include/MPE/classes/Emitter.hpp	/^   static Emitter DUMMY;$/;"	kind:m	class:mpe::Emitter	access:public
@@ -302,6 +564,8 @@ mpe::Emitter::getParticleWidth	include/MPE/classes/Emitter.hpp	/^   Real getPart
 mpe::Emitter::getParticleWidth	src/MPE/classes/Emitter.cpp	/^Real Emitter::getParticleWidth() const$/;"	kind:f	class:mpe::Emitter	signature:() const
 mpe::Emitter::getSystem	include/MPE/classes/Emitter.hpp	/^   System* getSystem() const;$/;"	kind:p	class:mpe::Emitter	access:public	signature:() const
 mpe::Emitter::getSystem	src/MPE/classes/Emitter.cpp	/^System* Emitter::getSystem() const$/;"	kind:f	class:mpe::Emitter	signature:() const
+mpe::Emitter::getTextRect	include/MPE/classes/Emitter.hpp	/^   TextRect getTextRect() const;$/;"	kind:p	class:mpe::Emitter	access:public	signature:() const
+mpe::Emitter::getTextRect	src/MPE/classes/Emitter.cpp	/^TextRect Emitter::getTextRect() const$/;"	kind:f	class:mpe::Emitter	signature:() const
 mpe::Emitter::mDispersion	include/MPE/classes/Emitter.hpp	/^   Dispersion  mDispersion;    \/\/\/< Type of paricles' dispersion.$/;"	kind:m	class:mpe::Emitter	access:private
 mpe::Emitter::mID	include/MPE/classes/Emitter.hpp	/^   EmitterID   mID;            \/\/\/< Unique EmitterID for the emitter.$/;"	kind:m	class:mpe::Emitter	access:private
 mpe::Emitter::mRF_Height	include/MPE/classes/Emitter.hpp	/^   Randomizer<Real> mRF_Height;\/\/\/< Range of focus height.$/;"	kind:m	class:mpe::Emitter	access:private
@@ -315,6 +579,7 @@ mpe::Emitter::mRP_Height	include/MPE/classes/Emitter.hpp	/^   Randomizer<Real> m
 mpe::Emitter::mRP_LV	include/MPE/classes/Emitter.hpp	/^   Randomizer<Real> mRP_LV;    \/\/\/< Range of paricles impulsion.$/;"	kind:m	class:mpe::Emitter	access:private
 mpe::Emitter::mRP_TOL	include/MPE/classes/Emitter.hpp	/^   Randomizer<Real> mRP_TOL;   \/\/\/< Range of particles lifetime.$/;"	kind:m	class:mpe::Emitter	access:private
 mpe::Emitter::mRP_Width	include/MPE/classes/Emitter.hpp	/^   Randomizer<Real> mRP_Width; \/\/\/< Range of paricles width.$/;"	kind:m	class:mpe::Emitter	access:private
+mpe::Emitter::mRect	include/MPE/classes/Emitter.hpp	/^   TextRect    mRect;$/;"	kind:m	class:mpe::Emitter	access:private
 mpe::Emitter::mShape	include/MPE/classes/Emitter.hpp	/^   Shape       mShape;         \/\/\/< The emitter's shape.$/;"	kind:m	class:mpe::Emitter	access:private
 mpe::Emitter::mSystem	include/MPE/classes/Emitter.hpp	/^   System*     mSystem;$/;"	kind:m	class:mpe::Emitter	access:private
 mpe::Emitter::sRealRandom	include/MPE/classes/Emitter.hpp	/^   static Randomizer<Real> sRealRandom;$/;"	kind:m	class:mpe::Emitter	access:private
@@ -346,6 +611,8 @@ mpe::Emitter::setShape	include/MPE/classes/Emitter.hpp	/^   void setShape(Shape 
 mpe::Emitter::setShape	src/MPE/classes/Emitter.cpp	/^void Emitter::setShape(Shape theShape)$/;"	kind:f	class:mpe::Emitter	signature:(Shape theShape)
 mpe::Emitter::setSystem	include/MPE/classes/Emitter.hpp	/^   void setSystem(System* theSystem);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(System* theSystem)
 mpe::Emitter::setSystem	src/MPE/classes/Emitter.cpp	/^void Emitter::setSystem(System* theSystem)$/;"	kind:f	class:mpe::Emitter	signature:(System* theSystem)
+mpe::Emitter::setTextRect	include/MPE/classes/Emitter.hpp	/^   void setTextRect(TextRect theTextRect);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(TextRect theTextRect)
+mpe::Emitter::setTextRect	src/MPE/classes/Emitter.cpp	/^void Emitter::setTextRect(TextRect theTextRect)$/;"	kind:f	class:mpe::Emitter	signature:(TextRect theTextRect)
 mpe::EmitterID	include/MPE/Config.hpp	/^typedef std::string EmitterID;$/;"	kind:t	namespace:mpe
 mpe::Focus	include/MPE/classes/Focus.hpp	/^class Focus: public Mortal$/;"	kind:c	namespace:mpe	inherits:Mortal
 mpe::Focus::Focus	include/MPE/classes/Focus.hpp	/^   Focus(Real    theLifetime,$/;"	kind:p	class:mpe::Focus	access:private	signature:(Real theLifetime, Real theWidth, Real theHeight, Vec2 thePosition, Real theAngle, Integer theTP, Real thePPS, GroupID theGroups, const Emitter& theEmitter)
@@ -417,9 +684,9 @@ mpe::Mortal::resetLife	include/MPE/classes/Mortal.hpp	/^   inline void resetLife
 mpe::NO_GROUP	include/MPE/Config.hpp	/^const GroupID NO_GROUP = 0x00;$/;"	kind:m	namespace:mpe
 mpe::Particle	include/MPE/classes/Particle.hpp	/^class Particle: public Mortal$/;"	kind:c	namespace:mpe	inherits:Mortal
 mpe::Particle::Particle	include/MPE/classes/Particle.hpp	/^   Particle();$/;"	kind:p	class:mpe::Particle	access:public	signature:()
-mpe::Particle::Particle	include/MPE/classes/Particle.hpp	/^   Particle(Real    theTLL,$/;"	kind:p	class:mpe::Particle	access:public	signature:(Real theTLL, Real theWidth, Real theHeight, Vec2 thePosition, Real theAngle, Vec2 theLinearVelocity, Real theAngularVelocity, Color theColor = Color{255, 255, 255, 255}, GroupID theGroups = mpe::NO_GROUP)
+mpe::Particle::Particle	include/MPE/classes/Particle.hpp	/^   Particle(Real    theTLL,$/;"	kind:p	class:mpe::Particle	access:public	signature:(Real theTLL, Real theWidth, Real theHeight, Vec2 thePosition, Real theAngle, Vec2 theLinearVelocity, Real theAngularVelocity, TextRect theTextRect, Color theColor = Color{255, 255, 255, 255}, GroupID theGroups = mpe::NO_GROUP)
 mpe::Particle::Particle	src/MPE/classes/Particle.cpp	/^Particle::Particle():$/;"	kind:f	class:mpe::Particle	signature:()
-mpe::Particle::Particle	src/MPE/classes/Particle.cpp	/^Particle::Particle(Real    theTTL,$/;"	kind:f	class:mpe::Particle	signature:(Real theTTL, Real theWidth, Real theHeight, Vec2 thePosition, Real theAngle, Vec2 theLinearVelocity, Real theAngularVelocity, Color theColor, GroupID theGroups)
+mpe::Particle::Particle	src/MPE/classes/Particle.cpp	/^Particle::Particle(Real     theTTL,$/;"	kind:f	class:mpe::Particle	signature:(Real theTTL, Real theWidth, Real theHeight, Vec2 thePosition, Real theAngle, Vec2 theLinearVelocity, Real theAngularVelocity, TextRect theTextRect, Color theColor, GroupID theGroups)
 mpe::Particle::belongToGroup	include/MPE/classes/Particle.hpp	/^   bool belongToGroup(const GroupID theGroups) const;$/;"	kind:p	class:mpe::Particle	access:public	signature:(const GroupID theGroups) const
 mpe::Particle::belongToGroup	src/MPE/classes/Particle.cpp	/^bool Particle::belongToGroup(const GroupID theGroups) const$/;"	kind:f	class:mpe::Particle	signature:(const GroupID theGroups) const
 mpe::Particle::getAngle	include/MPE/classes/Particle.hpp	/^   Real getAngle() const;$/;"	kind:p	class:mpe::Particle	access:public	signature:() const
@@ -434,10 +701,12 @@ mpe::Particle::getLinearVelocity	include/MPE/classes/Particle.hpp	/^   Vec2 getL
 mpe::Particle::getLinearVelocity	src/MPE/classes/Particle.cpp	/^Vec2 Particle::getLinearVelocity() const$/;"	kind:f	class:mpe::Particle	signature:() const
 mpe::Particle::getPosition	include/MPE/classes/Particle.hpp	/^   Vec2 getPosition() const;$/;"	kind:p	class:mpe::Particle	access:public	signature:() const
 mpe::Particle::getPosition	src/MPE/classes/Particle.cpp	/^Vec2 Particle::getPosition() const$/;"	kind:f	class:mpe::Particle	signature:() const
+mpe::Particle::getTextRect	include/MPE/classes/Particle.hpp	/^   TextRect getTextRect() const;$/;"	kind:p	class:mpe::Particle	access:public	signature:() const
+mpe::Particle::getTextRect	src/MPE/classes/Particle.cpp	/^TextRect Particle::getTextRect() const$/;"	kind:f	class:mpe::Particle	signature:() const
 mpe::Particle::getWidth	include/MPE/classes/Particle.hpp	/^   Real getWidth() const;$/;"	kind:p	class:mpe::Particle	access:public	signature:() const
 mpe::Particle::getWidth	src/MPE/classes/Particle.cpp	/^Real Particle::getWidth() const$/;"	kind:f	class:mpe::Particle	signature:() const
-mpe::Particle::init	include/MPE/classes/Particle.hpp	/^   void init(Real    theTLL,$/;"	kind:p	class:mpe::Particle	access:public	signature:(Real theTLL, Real theWidth, Real theHeight, Vec2 thePosition, Real theAngle, Vec2 theLinearVelocity, Real theAngularVelocity, Color theColor = Color{255, 255, 255, 255}, GroupID theGroups = mpe::NO_GROUP)
-mpe::Particle::init	src/MPE/classes/Particle.cpp	/^void Particle::init(Real    theTTL,$/;"	kind:f	class:mpe::Particle	signature:(Real theTTL, Real theWidth, Real theHeight, Vec2 thePosition, Real theAngle, Vec2 theLinearVelocity, Real theAngularVelocity, Color theColor, GroupID theGroups)
+mpe::Particle::init	include/MPE/classes/Particle.hpp	/^   void init(Real    theTLL,$/;"	kind:p	class:mpe::Particle	access:public	signature:(Real theTLL, Real theWidth, Real theHeight, Vec2 thePosition, Real theAngle, Vec2 theLinearVelocity, Real theAngularVelocity, TextRect theTextRect, Color theColor = Color{255, 255, 255, 255}, GroupID theGroups = mpe::NO_GROUP)
+mpe::Particle::init	src/MPE/classes/Particle.cpp	/^void Particle::init(Real    theTTL,$/;"	kind:f	class:mpe::Particle	signature:(Real theTTL, Real theWidth, Real theHeight, Vec2 thePosition, Real theAngle, Vec2 theLinearVelocity, Real theAngularVelocity, TextRect theTextRect, Color theColor, GroupID theGroups)
 mpe::Particle::mAngle	include/MPE/classes/Particle.hpp	/^   Real      mAngle;$/;"	kind:m	class:mpe::Particle	access:private
 mpe::Particle::mAngularVelocity	include/MPE/classes/Particle.hpp	/^   Real      mAngularVelocity;$/;"	kind:m	class:mpe::Particle	access:private
 mpe::Particle::mColor	include/MPE/classes/Particle.hpp	/^   Color     mColor;$/;"	kind:m	class:mpe::Particle	access:private
@@ -445,6 +714,7 @@ mpe::Particle::mGroups	include/MPE/classes/Particle.hpp	/^   GroupID   mGroups;$
 mpe::Particle::mHeight	include/MPE/classes/Particle.hpp	/^   Real      mHeight;$/;"	kind:m	class:mpe::Particle	access:private
 mpe::Particle::mLinearVelocity	include/MPE/classes/Particle.hpp	/^   Vec2      mLinearVelocity;$/;"	kind:m	class:mpe::Particle	access:private
 mpe::Particle::mPosition	include/MPE/classes/Particle.hpp	/^   Vec2      mPosition;$/;"	kind:m	class:mpe::Particle	access:private
+mpe::Particle::mTextRect	include/MPE/classes/Particle.hpp	/^   TextRect  mTextRect;$/;"	kind:m	class:mpe::Particle	access:private
 mpe::Particle::mWidth	include/MPE/classes/Particle.hpp	/^   Real      mWidth;$/;"	kind:m	class:mpe::Particle	access:private
 mpe::Particle::setAngularVelocity	include/MPE/classes/Particle.hpp	/^   void setAngularVelocity(Real theAngularVelocity);$/;"	kind:p	class:mpe::Particle	access:public	signature:(Real theAngularVelocity)
 mpe::Particle::setAngularVelocity	src/MPE/classes/Particle.cpp	/^void Particle::setAngularVelocity(Real theAngularVelocity)$/;"	kind:f	class:mpe::Particle	signature:(Real theAngularVelocity)
@@ -454,6 +724,8 @@ mpe::Particle::setHeight	include/MPE/classes/Particle.hpp	/^   void setHeight(Re
 mpe::Particle::setHeight	src/MPE/classes/Particle.cpp	/^void Particle::setHeight(Real theHeight)$/;"	kind:f	class:mpe::Particle	signature:(Real theHeight)
 mpe::Particle::setLinearVelocity	include/MPE/classes/Particle.hpp	/^   void setLinearVelocity(Vec2 theLinearVelocity);$/;"	kind:p	class:mpe::Particle	access:public	signature:(Vec2 theLinearVelocity)
 mpe::Particle::setLinearVelocity	src/MPE/classes/Particle.cpp	/^void Particle::setLinearVelocity(Vec2 theLinearVelocity)$/;"	kind:f	class:mpe::Particle	signature:(Vec2 theLinearVelocity)
+mpe::Particle::setTextRect	include/MPE/classes/Particle.hpp	/^   void setTextRect(TextRect theTextRect);$/;"	kind:p	class:mpe::Particle	access:public	signature:(TextRect theTextRect)
+mpe::Particle::setTextRect	src/MPE/classes/Particle.cpp	/^void Particle::setTextRect(TextRect theTextRect)$/;"	kind:f	class:mpe::Particle	signature:(TextRect theTextRect)
 mpe::Particle::setWidth	include/MPE/classes/Particle.hpp	/^   void setWidth(Real theWidth);$/;"	kind:p	class:mpe::Particle	access:public	signature:(Real theWidth)
 mpe::Particle::setWidth	src/MPE/classes/Particle.cpp	/^void Particle::setWidth(Real theWidth)$/;"	kind:f	class:mpe::Particle	signature:(Real theWidth)
 mpe::Particle::update	include/MPE/classes/Particle.hpp	/^   void update(Real theElapsedTime);$/;"	kind:p	class:mpe::Particle	access:public	signature:(Real theElapsedTime)
@@ -508,10 +780,10 @@ mpe::System::updateFocusses	src/MPE/classes/System.cpp	/^void System::updateFocu
 mpe::System::updateParticles	include/MPE/classes/System.hpp	/^   void updateParticles(Real theElapsedTime);$/;"	kind:p	class:mpe::System	access:protected	signature:(Real theElapsedTime)
 mpe::System::updateParticles	src/MPE/classes/System.cpp	/^void System::updateParticles(Real theElapsedTime)$/;"	kind:f	class:mpe::System	signature:(Real theElapsedTime)
 mpe::TextRect	include/MPE/Config.hpp	/^struct TextRect$/;"	kind:s	namespace:mpe
-mpe::TextRect::height	include/MPE/Config.hpp	/^   int x,y,width,height;$/;"	kind:m	struct:mpe::TextRect	access:public
-mpe::TextRect::width	include/MPE/Config.hpp	/^   int x,y,width,height;$/;"	kind:m	struct:mpe::TextRect	access:public
-mpe::TextRect::x	include/MPE/Config.hpp	/^   int x,y,width,height;$/;"	kind:m	struct:mpe::TextRect	access:public
-mpe::TextRect::y	include/MPE/Config.hpp	/^   int x,y,width,height;$/;"	kind:m	struct:mpe::TextRect	access:public
+mpe::TextRect::height	include/MPE/Config.hpp	/^   Integer x,y,width,height;$/;"	kind:m	struct:mpe::TextRect	access:public
+mpe::TextRect::width	include/MPE/Config.hpp	/^   Integer x,y,width,height;$/;"	kind:m	struct:mpe::TextRect	access:public
+mpe::TextRect::x	include/MPE/Config.hpp	/^   Integer x,y,width,height;$/;"	kind:m	struct:mpe::TextRect	access:public
+mpe::TextRect::y	include/MPE/Config.hpp	/^   Integer x,y,width,height;$/;"	kind:m	struct:mpe::TextRect	access:public
 mpe::Vec2	include/MPE/classes/Vec2.hpp	/^class Vec2$/;"	kind:c	namespace:mpe
 mpe::Vec2::Vec2	include/MPE/classes/Vec2.hpp	/^   Vec2(): x(0), y(0) {}$/;"	kind:f	class:mpe::Vec2	access:public	signature:()
 mpe::Vec2::Vec2	include/MPE/classes/Vec2.hpp	/^   Vec2(Real theX, Real theY):$/;"	kind:f	class:mpe::Vec2	access:public	signature:(Real theX, Real theY)
@@ -579,7 +851,9 @@ pair	src/MPE/classes/System.cpp	/^      mEmitters.insert(std::pair<EmitterID, Em
 push_back	src/MPE/classes/System.cpp	/^   mAffectors.push_back(theAffector);$/;"	kind:p	file:	signature:(theAffector)
 push_back	src/MPE/classes/System.cpp	/^   mFocusses.push_back(theFocus);$/;"	kind:p	file:	signature:(theFocus)
 push_back	src/MPE/classes/System.cpp	/^   mParticles.push_back(theParticle);$/;"	kind:p	file:	signature:(theParticle)
-r	include/MPE/Config.hpp	/^   int r,b,g,a;$/;"	kind:m	struct:mpe::Color	access:public
+r	include/MPE/Config.hpp	/^   Integer r,g,b,a;$/;"	kind:m	struct:mpe::Color	access:public
+require	build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c	/^  int require = 0;$/;"	kind:l
+require	build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^  int require = 0;$/;"	kind:l
 resetLife	include/MPE/classes/Mortal.hpp	/^   inline void resetLife(Real theLifetime)$/;"	kind:f	class:mpe::Mortal	access:protected	signature:(Real theLifetime)
 rotate	include/MPE/classes/Vec2.hpp	/^Vec2& rotate ( Real theAngle )$/;"	kind:f	class:mpe::Vec2	access:public	signature:( Real theAngle )
 rotate	src/MPE/classes/Emitter.cpp	/^   anPosition.rotate(theFocus.getAngle());$/;"	kind:p	file:	signature:(theFocus.getAngle())
@@ -632,6 +906,10 @@ setShape	src/MPE/classes/Emitter.cpp	/^void Emitter::setShape(Shape theShape)$/;
 setSystem	include/MPE/classes/Emitter.hpp	/^   void setSystem(System* theSystem);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(System* theSystem)
 setSystem	src/MPE/classes/Emitter.cpp	/^void Emitter::setSystem(System* theSystem)$/;"	kind:f	class:mpe::Emitter	signature:(System* theSystem)
 setSystem	src/MPE/classes/System.cpp	/^      theEmitter.setSystem(this);$/;"	kind:p	file:	signature:(this)
+setTextRect	include/MPE/classes/Emitter.hpp	/^   void setTextRect(TextRect theTextRect);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(TextRect theTextRect)
+setTextRect	include/MPE/classes/Particle.hpp	/^   void setTextRect(TextRect theTextRect);$/;"	kind:p	class:mpe::Particle	access:public	signature:(TextRect theTextRect)
+setTextRect	src/MPE/classes/Emitter.cpp	/^void Emitter::setTextRect(TextRect theTextRect)$/;"	kind:f	class:mpe::Emitter	signature:(TextRect theTextRect)
+setTextRect	src/MPE/classes/Particle.cpp	/^void Particle::setTextRect(TextRect theTextRect)$/;"	kind:f	class:mpe::Particle	signature:(TextRect theTextRect)
 setWidth	include/MPE/classes/Focus.hpp	/^   void setWidth(Real theWidth);$/;"	kind:p	class:mpe::Focus	access:public	signature:(Real theWidth)
 setWidth	include/MPE/classes/Particle.hpp	/^   void setWidth(Real theWidth);$/;"	kind:p	class:mpe::Particle	access:public	signature:(Real theWidth)
 setWidth	src/MPE/classes/Focus.cpp	/^void Focus::setWidth(Real theWidth)$/;"	kind:f	class:mpe::Focus	signature:(Real theWidth)
@@ -655,10 +933,10 @@ updateFocusses	include/MPE/classes/System.hpp	/^   void updateFocusses (Real the
 updateFocusses	src/MPE/classes/System.cpp	/^void System::updateFocusses(Real theElapsedTime)$/;"	kind:f	class:mpe::System	signature:(Real theElapsedTime)
 updateParticles	include/MPE/classes/System.hpp	/^   void updateParticles(Real theElapsedTime);$/;"	kind:p	class:mpe::System	access:protected	signature:(Real theElapsedTime)
 updateParticles	src/MPE/classes/System.cpp	/^void System::updateParticles(Real theElapsedTime)$/;"	kind:f	class:mpe::System	signature:(Real theElapsedTime)
-width	include/MPE/Config.hpp	/^   int x,y,width,height;$/;"	kind:m	struct:mpe::TextRect	access:public
-x	include/MPE/Config.hpp	/^   int x,y,width,height;$/;"	kind:m	struct:mpe::TextRect	access:public
+width	include/MPE/Config.hpp	/^   Integer x,y,width,height;$/;"	kind:m	struct:mpe::TextRect	access:public
+x	include/MPE/Config.hpp	/^   Integer x,y,width,height;$/;"	kind:m	struct:mpe::TextRect	access:public
 x	include/MPE/classes/Vec2.hpp	/^   Real x, y;$/;"	kind:m	class:mpe::Vec2	access:private
-y	include/MPE/Config.hpp	/^   int x,y,width,height;$/;"	kind:m	struct:mpe::TextRect	access:public
+y	include/MPE/Config.hpp	/^   Integer x,y,width,height;$/;"	kind:m	struct:mpe::TextRect	access:public
 y	include/MPE/classes/Vec2.hpp	/^   Real x, y;$/;"	kind:m	class:mpe::Vec2	access:private
 ~Particle	include/MPE/classes/Particle.hpp	/^   ~Particle();$/;"	kind:p	class:mpe::Particle	access:public	signature:()
 ~Particle	src/MPE/classes/Particle.cpp	/^Particle::~Particle() {}$/;"	kind:f	class:mpe::Particle	signature:()

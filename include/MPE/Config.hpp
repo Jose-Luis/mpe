@@ -44,12 +44,13 @@ const GroupID GROUP_H = 0x80;
 
 struct Color
 {
-   int r,b,g,a;
+   Integer r,g,b,a;
 };
 
 struct TextRect
 {
-   int x,y,width,height;
+   Integer x,y,width,height;
 };
 }
 #endif   // ----- #ifndef CONFIG_INC  -----
+
