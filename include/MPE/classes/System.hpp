@@ -13,6 +13,7 @@
 #include <MPE/classes/Affector.hpp>
 #include <MPE/classes/Emitter.hpp>
 #include <MPE/classes/Focus.hpp>
+#include <tinyxml2.h>
 
 namespace mpe
 {
@@ -62,9 +63,9 @@ public:
    /// @brief setYFactor
    /// @param theYFactor
    void     setYFactor(Real theYFactor);
-   /// @brief initFromFile 
+   /// @brief initFromFile
    /// @param theFilename
-   initFromFile(std::string theFilename);
+   bool initFromFile(std::string theFilename);
 protected:
    //   MEMBERS
    ///////////////////////////////////////////////////////////////////////

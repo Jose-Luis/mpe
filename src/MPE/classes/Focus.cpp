@@ -52,15 +52,17 @@ FocusPtr Focus::create(Real    theLifetime,
                        GroupID theGroups,
                        const Emitter&  theEmitter)
 {
-   return FocusPtr{new Focus{theLifetime,
-                             theWidth,
-                             theHeight,
-                             thePosition,
-                             theAngle,
-                             theTP,
-                             thePPS,
-                             theGroups,
-                             theEmitter}};
+   return FocusPtr {new Focus{theLifetime,
+                                 theWidth,
+                                 theHeight,
+                                 thePosition,
+                                 theAngle,
+                                 theTP,
+                                 thePPS,
+                                 theGroups,
+                                 theEmitter
+                                }
+   };
 }
 //------------------------------------------------------------------------------
 //       Class:  Focus
@@ -108,7 +110,7 @@ Particle Focus::createParticle ()
                                     mEmitter.generateVelocity(*this, anPosition),
                                     mEmitter.getParticleAV(),
                                     mEmitter.getTextRect(),
-                                    Color{255, 255, 255, 255},
+                                    Color {255, 255, 255, 255},
                                     mGroups);
    return anParticle;
 }

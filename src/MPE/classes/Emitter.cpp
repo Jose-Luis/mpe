@@ -76,7 +76,7 @@ Vec2 Emitter::generatePosition(const Focus& theFocus) const
 
    do
    {
-      anPosition.init(sRealRandom(),sRealRandom());
+      anPosition.init(sRealRandom(), sRealRandom());
    }
    while(mShape == CIRCLE && anPosition.squareLength() > 1);
 
@@ -267,7 +267,7 @@ void Emitter::setTextRect(TextRect theTextRect)
 //------------------------------------------------------------------------------
 void Emitter::setRangeParticleWidth(Real theMin, Real theMax)
 {
-   mRP_Width = Randomizer<Real> {theMin, theMax};
+   mRP_Width = Generator<Real> {theMin, theMax};
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
@@ -276,7 +276,7 @@ void Emitter::setRangeParticleWidth(Real theMin, Real theMax)
 //------------------------------------------------------------------------------
 void Emitter::setRangeParticleHeight(Real theMin, Real theMax)
 {
-   mRP_Height = Randomizer<Real> {theMin, theMax};
+   mRP_Height = Generator<Real> {theMin, theMax};
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
@@ -285,7 +285,7 @@ void Emitter::setRangeParticleHeight(Real theMin, Real theMax)
 //------------------------------------------------------------------------------
 void Emitter::setRangeParticleAngle(Real theMin, Real theMax)
 {
-   mRP_Angle = Randomizer<Real> {theMin, theMax};
+   mRP_Angle = Generator<Real> {theMin, theMax};
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
@@ -294,7 +294,7 @@ void Emitter::setRangeParticleAngle(Real theMin, Real theMax)
 //------------------------------------------------------------------------------
 void Emitter::setRangeParticleLV(Real theMin, Real theMax)
 {
-   mRP_LV = Randomizer<Real> {theMin, theMax};
+   mRP_LV = Generator<Real> {theMin, theMax};
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
@@ -303,7 +303,7 @@ void Emitter::setRangeParticleLV(Real theMin, Real theMax)
 //------------------------------------------------------------------------------
 void Emitter::setRangeParticleAV(Real theMin, Real theMax)
 {
-   mRP_AV = Randomizer<Real> {theMin, theMax};
+   mRP_AV = Generator<Real> {theMin, theMax};
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
@@ -312,7 +312,7 @@ void Emitter::setRangeParticleAV(Real theMin, Real theMax)
 //------------------------------------------------------------------------------
 void Emitter::setRangeParticleTOL(Real theMin, Real theMax)
 {
-   mRP_TOL = Randomizer<Real> {theMin, theMax};
+   mRP_TOL = Generator<Real> {theMin, theMax};
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
@@ -321,7 +321,7 @@ void Emitter::setRangeParticleTOL(Real theMin, Real theMax)
 //------------------------------------------------------------------------------
 void Emitter::setRangeFocusWidth(Real theMin, Real theMax)
 {
-   mRF_Width = Randomizer<Real> {theMin, theMax};
+   mRF_Width = Generator<Real> {theMin, theMax};
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
@@ -330,7 +330,7 @@ void Emitter::setRangeFocusWidth(Real theMin, Real theMax)
 //------------------------------------------------------------------------------
 void Emitter::setRangeFocusHeight(Real theMin, Real theMax)
 {
-   mRF_Height = Randomizer<Real> {theMin, theMax};
+   mRF_Height = Generator<Real> {theMin, theMax};
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
@@ -339,7 +339,7 @@ void Emitter::setRangeFocusHeight(Real theMin, Real theMax)
 //------------------------------------------------------------------------------
 void Emitter::setRangeFocusTOL(Real theMin, Real theMax)
 {
-   mRF_TOL = Randomizer<Real> {theMin, theMax};
+   mRF_TOL = Generator<Real> {theMin, theMax};
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
@@ -348,7 +348,7 @@ void Emitter::setRangeFocusTOL(Real theMin, Real theMax)
 //------------------------------------------------------------------------------
 void Emitter::setRangeFocusPPS(Real theMin, Real theMax)
 {
-   mRF_PPS = Randomizer<Real> {theMin, theMax};
+   mRF_PPS = Generator<Real> {theMin, theMax};
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
@@ -357,7 +357,7 @@ void Emitter::setRangeFocusPPS(Real theMin, Real theMax)
 //------------------------------------------------------------------------------
 void Emitter::setRangeFocusNP(Integer theMin, Integer theMax)
 {
-   mRF_NP = Randomizer<Integer> {theMin, theMax};
+   mRF_NP = Generator<Integer> {theMin, theMax};
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
@@ -370,7 +370,7 @@ void Emitter::setSystem(System* theSystem)
 }
 ////////////////////////////////////////////////////////////////////////////////
 Emitter Emitter::DUMMY = Emitter("DUMMY");
-Randomizer<Real> Emitter::sRealRandom {};
+Generator<Real> Emitter::sRealRandom {};
 }
 /* Copyright (C)
  * 2012 - Jose Luis Lavado

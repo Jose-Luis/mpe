@@ -34,16 +34,16 @@ Particle::Particle(Real     theTTL,
                    TextRect theTextRect,
                    Color    theColor,
                    GroupID  theGroups):
-   Mortal{theTTL},
-   mWidth{theWidth},
-   mHeight{theHeight},
-   mPosition{thePosition},
-   mAngle{theAngle},
-   mLinearVelocity{theLinearVelocity},
-   mAngularVelocity{theAngularVelocity},
-   mTextRect(theTextRect),
-   mColor(theColor),
-   mGroups{theGroups}
+   Mortal {theTTL},
+       mWidth {theWidth},
+       mHeight {theHeight},
+       mPosition {thePosition},
+       mAngle {theAngle},
+       mLinearVelocity {theLinearVelocity},
+       mAngularVelocity {theAngularVelocity},
+       mTextRect(theTextRect),
+       mColor(theColor),
+mGroups {theGroups}
 {
 }
 /*

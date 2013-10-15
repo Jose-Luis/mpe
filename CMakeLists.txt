@@ -60,7 +60,7 @@ set(HEADERS_FILES
    ${HEADERS_DIR}/classes/Particle.hpp
    ${HEADERS_DIR}/classes/System.hpp
    ${HEADERS_DIR}/classes/Vec2.hpp
-   ${HEADERS_DIR}/classes/Randomizer.hpp
+   ${HEADERS_DIR}/classes/Generator.hpp
    ${HEADERS_DIR}/classes/Mortal.hpp)
 
 set(SOURCES_FILES 
@@ -69,12 +69,23 @@ set(SOURCES_FILES
    ${SOURCES_DIR}/classes/Focus.cpp
    ${SOURCES_DIR}/classes/Particle.cpp
    ${SOURCES_DIR}/classes/System.cpp
-   ${SOURCES_DIR}/classes/Randomizer.cpp
+   ${SOURCES_DIR}/classes/Generator.cpp
    ${SOURCES_DIR}/classes/Mortal.cpp)
 
 #     Library
 
 add_library(particles ${HEADERS_FILES} ${SOURCES_FILES})
+target_link_libraries(particles ${TINYXML2_LIBRARIES})
+
+#===============================================================================
+#                            Tests
+#===============================================================================
+#set(BUILD_TESTS false)
+
+if(${BUILD_TESTS})
+   add_executable(tests ${PROJECT_SOURCE_DIR}/tests/tests.cpp )
+   target_link_libraries(tests particles)
+endif()
 
 #===============================================================================
 #                            Summary
@@ -92,6 +103,8 @@ message( "  CMAKE_BUILD_TYPE = ${CMAKE_BUILD_TYPE}" )
 message( "  CMAKE_INSTALL_PREFIX = ${CMAKE_INSTALL_PREFIX}" )
 message( "  CMAKE_MODULE_PATH = ${CMAKE_MODULE_PATH}" )
 message( "  CMAKE_GENERATOR = ${CMAKE_GENERATOR}" )
+message( "  TINYXML2_LIBRARY = ${TINYXML2_LIBRARIES}" )
+message( "  BUILD_TESTS = ${BUILD_TESTS}" )
 message( "" )
 
 #================================================================================

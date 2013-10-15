@@ -1,25 +1,32 @@
-syn keyword CTagsLocalVariable it anFocus anParticle anEmitterID anSystem aCosine nx ny require nParticles anLength anPosition aSine anVelocity
-syn keyword CTagsStructure Color TextRect
-syn keyword CTagsMember mXFactor mRF_TOL mEP mDispersion mAngle mHeight mRF_Height mSystem mAlive mAngularVelocity mRP_Width mTimeAcum mRect NO_GROUP mLifetime mRP_LV mEmitter mRF_PPS mRP_Angle mEmitters mParticles mAge mShape x g mTP mAffectors mColor mRandom height sRealRandom REAL_INFINITY mTextRect width MAX_INTEGER mID mRP_AV mRP_Height DUMMY mGroups mRF_NP mRF_Width b mFocusses mRP_TOL r mYFactor mPosition GROUP_C GROUP_B GROUP_A GROUP_G GROUP_F GROUP_E GROUP_D GROUP_H mWidth mLinearVelocity a mPPS y
-syn keyword CTagsConstant info_version info_compiler info_arch info_platform
-syn keyword CTagsEnumeratorName Dispersion Shape
-syn keyword CTagsEnumerationValue LINEAR RANDOM REFLECT STATIC RADIAL CIRCLE RECTANGLE
-syn keyword CTagsFunction setShape
-syn keyword CTagsFunction setPosition getAge setColor getParticleAngle length update belongToGroup setRangeParticleLV getWidth squareLength setWidth create setPPS getEmitter setHeight setAngularVelocity isAlive getFocusPPS generatePosition getParticleWidth getPosition emit getSystem setSystem setAngle getID getX getY setXFactor addFocus normalize setRangeFocusTOL getHeight addParticle setYFactor generateVelocity setLinearVelocity addEmitter getFocusWidth createFocus getPPS drain getParticleHeight age
-syn keyword CTagsFunction createParticle setDispersion kill getParticleAV setRangeFocusPPS addAffector getParticleTOL getFocusHeight getFocusTOL updateFocusses init getTextRect setRangeParticleAngle main getColor getYFactor setRangeFocusHeight affect rotate getAngle getXFactor die setRangeParticleAV setRangeFocusWidth setTextRect setRangeParticleWidth updateParticles scale setRangeParticleHeight getAngularVelocity resetLife getParticleLV getLinearVelocity setRangeFocusNP setRangeParticleTOL getFocusNP
+syn keyword CTagsLocalVariable va aCosine it aBoolean anFocus result anParticle n aParticleSystem anEmitterID anSystem ret nx ny newMem nParticles newAllocated aFile anLength d anPosition f i aSine aEmitter anVelocity block
+syn keyword CTagsStructure Color TextRect Block
+syn keyword CTagsMember mLinearVelocity x a _value _writeBOM _pool y
+syn keyword CTagsMember _depth _fp _compactMode _elementJustOpened _textDepth _next _size _start sRealRandom REAL_INFINITY mTextRect width MAX_INTEGER mID next _node mRP_AV _flags _stack mRP_Height _attributePool mGroups _closingType _accumulator mAngle _prev mRF_NP mRF_Width b mFocusses mRP_TOL r mYFactor _commentPool mRect mPosition mGenerator DUMMY _nUntracked _textPool GROUP_C GROUP_B GROUP_A GROUP_G GROUP_F GROUP_E GROUP_D GROUP_H mPPS _root _currentAllocs _nAllocs _end mWidth _document
+syn keyword CTagsMember mXFactor _maxAllocs mRF_TOL _firstElement mEP _restrictedEntityFlag mDispersion _buffer _name _elementPool mHeight _parent sEngine mRF_Height mSystem _errorStr2 _blockPtrs mAlive _errorStr1 _rootAttribute height mAngularVelocity mRP_Width mTimeAcum _charBuffer _whitespace _allocated _mem NO_GROUP mLifetime mRP_LV mEmitter mRF_PPS chunk mRP_Angle mEmitters mParticles _errorID _processEntities _lastChild mAge _isCData mem mShape g _firstChild mTP _memPool _entityFlag mAffectors mColor
+syn keyword CTagsUnion Chunk
+syn keyword CTagsConstant TIXML2_MINOR_VERSION TIXML2_PATCH_VERSION TIXML2_MAJOR_VERSION
+syn keyword CTagsEnumeratorName Whitespace XMLError Dispersion Shape
+syn keyword CTagsEnumerationValue XML_ERROR_PARSING_DECLARATION OPEN NEEDS_NEWLINE_NORMALIZATION XML_NO_TEXT_NODE XML_ERROR_PARSING_COMMENT CLOSING TEXT_ELEMENT_LEAVE_ENTITIES XML_ERROR_EMPTY_DOCUMENT XML_ERROR_PARSING_TEXT STATIC NEEDS_FLUSH XML_ERROR_FILE_READ_ERROR LINEAR ENTITY_RANGE XML_ERROR_FILE_NOT_FOUND PRESERVE_WHITESPACE ATTRIBUTE_VALUE RECTANGLE TEXT_ELEMENT XML_ERROR_IDENTIFYING_TAG
+syn keyword CTagsEnumerationValue XML_NO_ATTRIBUTE COMMENT XML_ERROR_ELEMENT_MISMATCH XML_ERROR_PARSING_ATTRIBUTE RANDOM XML_ERROR_PARSING_UNKNOWN XML_ERROR_PARSING_CDATA RADIAL CIRCLE XML_SUCCESS COLLAPSE_WHITESPACE XML_ERROR_FILE_COULD_NOT_BE_OPENED XML_ERROR_PARSING REFLECT NEEDS_ENTITY_PROCESSING XML_ERROR_PARSING_ELEMENT NEEDS_DELETE COUNT ATTRIBUTE_NAME XML_WRONG_ATTRIBUTE_TYPE XML_ERROR_MISMATCHED_ELEMENT XML_CAN_NOT_CONVERT_TEXT ATTRIBUTE_VALUE_LEAVE_ENTITIES CLOSED BUF_SIZE XML_NO_ERROR
+syn keyword CTagsFunction NewComment setWidth Empty setPPS setRangeParticleTOL Error PushDeclaration QueryDoubleAttribute ParseText Attribute LastChildElement emit setAngle setRangeFocusNP QueryIntText addFocus Trace getHeight SetBOM RootElement getFocusWidth getPPS QueryUnsignedAttribute QueryFloatText age Accept SetError FirstChildElement
+syn keyword CTagsFunction initFromFile ReadBOM setHeight drain test1 QueryFloatValue QueryUnsignedText kill getParticleAV EnsureCapacity GetStr getEmitter Reset PushComment rotate UnsignedAttribute ParseAttributes ToDocument QueryDoubleValue SetValue getAngle getXFactor setRangeParticleAV Identify LinkEndChild ShallowClone IsNameStartChar updateParticles scale FindAttribute Mem ProcessEntities FindOrCreateAttribute getAngularVelocity update getFocusNP getParticleAngle LastChild ParseName Capacity
+syn keyword CTagsFunction createParticle Value ToNode QueryUnsignedValue ToUnsigned PushUnknown setTextRect SetCData getFocusPPS InsertEndChild CData setRangeParticleWidth FirstAttribute PushText DeleteChild InsertFirstChild BoolAttribute QueryDoubleText SetStr HasBOM setRangeParticleLV create QueryIntAttribute WhitespaceMode BoolValue DoubleAttribute getID VisitExit PrintSpace Size getX getY FloatAttribute SealElement IsUTF8Continuation ToFloat setYFactor IsNameChar Clear ToDeclaration QueryAttribute
+syn keyword CTagsFunction ToInt CollapseWhitespace PopArr setDispersion CStr UnsignedValue InsertAfterChild QueryFloatAttribute GetText NewElement isAlive DoubleValue ParseDeep Set ToStr getParticleWidth getTextRect ToDouble ItemSize ToComment GetCharacterRef addParticle generateVelocity Name PreviousSibling Pop PreviousSiblingElement StringEqual NewDeclaration setShape FirstChild QueryBoolText NewText addAffector getFocusHeight GetDocument getFocusTOL OpenElement Free GetErrorStr1 GetErrorStr2
+syn keyword CTagsFunction PrintError setXFactor normalize DeleteChildren getColor CurrentAllocs IsWhiteSpace Alloc addEmitter setRangeFocusTOL createFocus DeleteNode getParticleHeight CloseElement ToText CStrSize NextSibling SetAttribute QueryIntValue VisitEnter ToBool main DeleteAttribute getYFactor setRangeFocusHeight setLinearVelocity Parse setRangeFocusWidth PrintString Next Print SetTracked getLinearVelocity setRangeParticleHeight SaveFile LoadFile setPosition SkipWhiteSpace length ConvertUTF32ToUTF8
+syn keyword CTagsFunction ToElement setRangeFocusPPS getParticleTOL Parent init setRangeParticleAngle Unlink ErrorID NoChildren affect PushHeader die FloatValue PushAttribute IntValue ShallowEqual getParticleLV NewUnknown setAngularVelocity IntAttribute getAge setColor QueryBoolAttribute SetInternedStr Untracked belongToGroup Visit getWidth updateFocusses squareLength resetLife ClosingType PushArr generatePosition ToUnknown Push getPosition NextSiblingElement SetName QueryBoolValue getSystem setSystem
 syn keyword CTagsType Real Integer EmitterID AffectorPtr GroupID FocusPtr
-syn keyword CTagsDefinedName FOCUS_INC EMITTER_INC PARTICLE_INC SYSTEM_INC MPE_INC RANDOMIZER_TL9DCTRC MORTAL_INC VEC2_GSAIH2DS AFFECTOR_INC CONFIG_MPE_INC
-syn keyword CTagsClass Particle Randomizer Affector Focus System Vec2 Mortal Emitter
-syn keyword CTagsNamespace mpe
+syn keyword CTagsDefinedName TIXMLASSERT PARTICLE_INC FOCUS_INC TIXML_SSCANF EMITTER_INC GENERATOR_TL9DCTRC SYSTEM_INC MPE_INC TIXML_SNPRINTF DEBUG MORTAL_INC VEC2_GSAIH2DS AFFECTOR_INC CONFIG_MPE_INC TINYXML2_INCLUDED
+syn keyword CTagsClass Generator XMLDocument System MemPool XMLUnknown DynArray StrPair XMLText XMLPrinter Emitter MemPoolT Particle XMLDeclaration Affector XMLVisitor XMLComment Mortal XMLHandle XMLAttribute XMLConstHandle Focus XMLUtil XMLElement Vec2 XMLNode
+syn keyword CTagsNamespace tinyxml2 mpe
 
 " Matches for file src/MPE/classes/Affector.cpp:
 if (has_key(b:TagHighlightPrivate, "NormalisedPath") && b:TagHighlightPrivate["NormalisedPath"] == "src/MPE/classes/Affector.cpp") || TagHighlight#Option#GetOption("IgnoreFileScope")
 	syn keyword CTagsNamespace mpe
 	
 endif
-" Matches for file build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp:
-if (has_key(b:TagHighlightPrivate, "NormalisedPath") && b:TagHighlightPrivate["NormalisedPath"] == "build/debug/CMakeFiles/2.8.12/CompilerIdCXX/CMakeCXXCompilerId.cpp") || TagHighlight#Option#GetOption("IgnoreFileScope")
-	syn keyword CTagsDefinedName COMPILER_VERSION_TWEAK COMPILER_VERSION_MAJOR HEX COMPILER_VERSION_PATCH PLATFORM_ID ARCHITECTURE_ID COMPILER_ID DEC COMPILER_VERSION_MINOR
+" Matches for file src/MPE/classes/Generator.cpp:
+if (has_key(b:TagHighlightPrivate, "NormalisedPath") && b:TagHighlightPrivate["NormalisedPath"] == "src/MPE/classes/Generator.cpp") || TagHighlight#Option#GetOption("IgnoreFileScope")
+	syn keyword CTagsNamespace mpe
 	
 endif
 " Matches for file src/MPE/classes/Emitter.cpp:
@@ -29,24 +36,21 @@ if (has_key(b:TagHighlightPrivate, "NormalisedPath") && b:TagHighlightPrivate["N
 	syn keyword CTagsNamespace mpe
 	
 endif
-" Matches for file build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c:
-if (has_key(b:TagHighlightPrivate, "NormalisedPath") && b:TagHighlightPrivate["NormalisedPath"] == "build/debug/CMakeFiles/2.8.12/CompilerIdC/CMakeCCompilerId.c") || TagHighlight#Option#GetOption("IgnoreFileScope")
-	syn keyword CTagsDefinedName ID_VOID_MAIN COMPILER_VERSION_TWEAK COMPILER_VERSION_MAJOR HEX COMPILER_VERSION_PATCH PLATFORM_ID ARCHITECTURE_ID COMPILER_ID DEC COMPILER_VERSION_MINOR
-	
-endif
-" Matches for file src/MPE/classes/Randomizer.cpp:
-if (has_key(b:TagHighlightPrivate, "NormalisedPath") && b:TagHighlightPrivate["NormalisedPath"] == "src/MPE/classes/Randomizer.cpp") || TagHighlight#Option#GetOption("IgnoreFileScope")
-	syn keyword CTagsNamespace mpe
+" Matches for file tests/tests.cpp:
+if (has_key(b:TagHighlightPrivate, "NormalisedPath") && b:TagHighlightPrivate["NormalisedPath"] == "tests/tests.cpp") || TagHighlight#Option#GetOption("IgnoreFileScope")
+	syn keyword CTagsMember cout
+	syn keyword CTagsFunction getParticleAngle
 	
 endif
 " Matches for file src/MPE/classes/System.cpp:
 if (has_key(b:TagHighlightPrivate, "NormalisedPath") && b:TagHighlightPrivate["NormalisedPath"] == "src/MPE/classes/System.cpp") || TagHighlight#Option#GetOption("IgnoreFileScope")
-	syn keyword CTagsFunction setSystem update push_back pair
+	syn keyword CTagsFunction setSystem update push_back setDispersion pair setShape
 	syn keyword CTagsNamespace mpe
 	
 endif
 " Matches for file src/MPE/classes/Particle.cpp:
 if (has_key(b:TagHighlightPrivate, "NormalisedPath") && b:TagHighlightPrivate["NormalisedPath"] == "src/MPE/classes/Particle.cpp") || TagHighlight#Option#GetOption("IgnoreFileScope")
+	syn keyword CTagsFunction mTextRect mColor
 	syn keyword CTagsNamespace mpe
 	
 endif

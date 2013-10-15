@@ -39,7 +39,7 @@ public:
             Vec2    theLinearVelocity,
             Real    theAngularVelocity,
             TextRect theTextRect,
-            Color   theColor = Color{255, 255, 255, 255},
+            Color   theColor = Color {255, 255, 255, 255},
             GroupID theGroups = mpe::NO_GROUP);
    /// @brief ~Particle
    ~Particle();
@@ -53,7 +53,7 @@ public:
              Vec2    theLinearVelocity,
              Real    theAngularVelocity,
              TextRect theTextRect,
-             Color   theColor = Color{255, 255, 255, 255},
+             Color   theColor = Color {255, 255, 255, 255},
              GroupID theGroups = mpe::NO_GROUP);
 
    void update(Real theElapsedTime);

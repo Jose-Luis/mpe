@@ -13,7 +13,7 @@
 #include <MPE/Config.hpp>
 #include <MPE/classes/Focus.hpp>
 #include <MPE/classes/System.hpp>
-#include <MPE/classes/Randomizer.hpp>
+#include <MPE/classes/Generator.hpp>
 
 namespace mpe
 {
@@ -61,8 +61,8 @@ public:
    /// @brief getSystem
    /// @return
    System* getSystem() const;
-   /// @brief getTextRect 
-   /// @return 
+   /// @brief getTextRect
+   /// @return
    TextRect getTextRect() const;
    /// @brief getParticleWidth
    /// @return
@@ -141,7 +141,7 @@ public:
    /// @brief setSystem
    /// @param theSystem
    void setSystem(System* theSystem);
-   /// @brief setTextRect 
+   /// @brief setTextRect
    /// @param theTextRect
    void setTextRect(TextRect theTextRect);
 private:
@@ -152,19 +152,19 @@ private:
    Shape       mShape;         ///< The emitter's shape.
    Dispersion  mDispersion;    ///< Type of paricles' dispersion.
    TextRect    mRect;
-   Randomizer<Real> mRP_TOL;   ///< Range of particles lifetime.
-   Randomizer<Real> mRP_Width; ///< Range of paricles width.
-   Randomizer<Real> mRP_Height;///< Range of paricles height.
-   Randomizer<Real> mRP_Angle; ///< Range of particles angle.
-   Randomizer<Real> mRP_LV;    ///< Range of paricles impulsion.
-   Randomizer<Real> mRP_AV;    ///< Range of particles angular velocity.
-   Randomizer<Real> mRF_Width; ///< Range of focus width.
-   Randomizer<Real> mRF_Height;///< Range of focus height.
-   Randomizer<Real> mRF_TOL;   ///< Range of focus time of life.
-   Randomizer<Real> mRF_PPS;   ///< Range of focus particles per second.
-   Randomizer<Integer> mRF_NP; ///< Range of focus number of particles.
+   Generator<Real> mRP_TOL;   ///< Range of particles lifetime.
+   Generator<Real> mRP_Width; ///< Range of paricles width.
+   Generator<Real> mRP_Height;///< Range of paricles height.
+   Generator<Real> mRP_Angle; ///< Range of particles angle.
+   Generator<Real> mRP_LV;    ///< Range of paricles impulsion.
+   Generator<Real> mRP_AV;    ///< Range of particles angular velocity.
+   Generator<Real> mRF_Width; ///< Range of focus width.
+   Generator<Real> mRF_Height;///< Range of focus height.
+   Generator<Real> mRF_TOL;   ///< Range of focus time of life.
+   Generator<Real> mRF_PPS;   ///< Range of focus particles per second.
+   Generator<Integer> mRF_NP; ///< Range of focus number of particles.
 
-   static Randomizer<Real> sRealRandom;
+   static Generator<Real> sRealRandom;
 
 };
 //                END OF THE EMITTER CLASS

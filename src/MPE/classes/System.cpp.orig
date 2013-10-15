@@ -205,20 +205,20 @@ void System::update (Real theElapsedTime)
 //      Method:  initFromFile
 // Description:  load the emitter from an xml file
 //------------------------------------------------------------------------------
-bool System::initFromFile(std::string theFilename)
+void System::initFromFile(std::string theFilename)
 {
    tinyxml2::XMLDocument aFile;
 
-   if (tinyxml2::XML_NO_ERROR != aFile.LoadFile(theFilename.c_str()))
+   if (tinyxml2::XML_NO_ERROR != aFile.LoadFile(theFileName.c_str()))
    {
-      return false;
+      return;
    }
 
    tinyxml2::XMLElement* aEmittersNode {aFile.FirstChildElement("emitters")};
 
    if(!aEmittersNode)
    {
-      return false;
+      return;
    }
 
    tinyxml2::XMLElement* aEmitterNode {aEmittersNode->FirstChildElement("emitter")};
@@ -237,7 +237,7 @@ bool System::initFromFile(std::string theFilename)
          aEmitter.setShape(Emitter::RECTANGLE);
       }
 
-      std::string aDispersion {aEmitterNode->Attribute("dispersion")};
+      std::string aDispersion {anNode->Attribute("dispersion")};
 
       if(aDispersion == "LINEAR")
       {
@@ -264,7 +264,7 @@ bool System::initFromFile(std::string theFilename)
 
       if(!aTextRectNode)
       {
-         return false;
+         return;
       }
 
       aEmitter.setTextRect(TextRect {aTextRectNode->IntAttribute("x"),
@@ -277,14 +277,14 @@ bool System::initFromFile(std::string theFilename)
 
       if(!aRangeNode)
       {
-         return false;
+         return;
       }
 
       tinyxml2::XMLElement* aNode {aRangeNode->FirstChildElement("focusTOL")};
 
       if(!aNode)
       {
-         return false;
+         return;
       }
 
       aEmitter.setRangeFocusTOL(aNode->FloatAttribute("min"),
@@ -292,111 +292,104 @@ bool System::initFromFile(std::string theFilename)
 
       aNode = aRangeNode->FirstChildElement("focusWidth");
 
-      if(!aNode)
-      {
-         return false;
-      }
+   if(!aNode)
+   {
+      return;
+   }
 
-      float aFloat{aNode->FloatAttribute("min")};
-      float aFloat1{aNode->FloatAttribute("max")};
+   aEmitter.setRangeFocusWidth(aNode->FloatAttribute("min"),
+                               aNode->FloatAttribute("max"));
 
-      aEmitter.setRangeFocusWidth(aNode->FloatAttribute("min"),
-                                  aNode->FloatAttribute("max"));
+   aNode = aRangeNode->FirstChildElement("focusHeight");
 
-      aNode = aRangeNode->FirstChildElement("focusHeight");
+if(!aNode)
+{
+   return;
+}
 
-      if(!aNode)
-      {
-         return false;
-      }
+aEmitter.setRangeFocusHeight(aNode->FloatAttribute("min"),
+                             aNode->FloatAttribute("max"));
 
-      aEmitter.setRangeFocusHeight(aNode->FloatAttribute("min"),
-                                   aNode->FloatAttribute("max"));
+aNode = aRangeNode->FirstChildElement("focusNP");
 
-      aNode = aRangeNode->FirstChildElement("focusNP");
+if(!aNode)
+{
+   return;
+}
 
-      if(!aNode)
-      {
-         return false;
-      }
+aEmitter.setRangeFocusNP(aNode->FloatAttribute("min"),
+                         aNode->FloatAttribute("max"));
 
-      aEmitter.setRangeFocusNP(aNode->IntAttribute("min"),
-                               aNode->IntAttribute("max"));
+aNode = aRangeNode->FirstChildElement("focusPPS");
 
-      aNode = aRangeNode->FirstChildElement("focusPPS");
+if(!aNode)
+{
+   return;
+}
 
-      if(!aNode)
-      {
-         return false;
-      }
+aEmitter.setRangeFocusPPS(aNode->FloatAttribute("min"),
+                          aNode->FloatAttribute("max"));
 
-      aEmitter.setRangeFocusPPS(aNode->FloatAttribute("min"),
+aNode = aRangeNode->FirstChildElement("particleTOL") ;
+
+if(!aNode)
+{
+   return;
+}
+
+aEmitter.setRangeParticleTOL(aNode->FloatAttribute("min"),
+                             aNode->FloatAttribute("max"));
+
+aNode = aRangeNode->FirstChildElement("particleWidth") ;
+
+if(!aNode)
+{
+   return;
+}
+
+aEmitter.setRangeParticleWidth(aNode->FloatAttribute("min"),
+                               aNode->FloatAttribute("max"));
+
+aNode = aRangeNode->FirstChildElement("particleHeight") ;
+
+if(!aNode)
+{
+   return;
+}
+
+aEmitter.setRangeParticleHeight(aNode->FloatAttribute("min"),
                                 aNode->FloatAttribute("max"));
 
-      aNode = aRangeNode->FirstChildElement("particleTOL") ;
+aNode = aRangeNode->FirstChildElement("particleAngle") ;
 
-      if(!aNode)
-      {
-         return false;
-      }
+if(!aNode)
+{
+   return;
+}
 
-      aEmitter.setRangeParticleTOL(aNode->FloatAttribute("min"),
-                                   aNode->FloatAttribute("max"));
+aEmitter.setRangeParticleAngle(aNode->FloatAttribute("min"),
+                               aNode->FloatAttribute("max"));
 
-      aNode = aRangeNode->FirstChildElement("particleWidth") ;
+aNode = aRangeNode->FirstChildElement("particleLV") ;
 
-      if(!aNode)
-      {
-         return false;
-      }
+if(!aNode)
+{
+   return;
+}
 
-      aEmitter.setRangeParticleWidth(aNode->FloatAttribute("min"),
-                                     aNode->FloatAttribute("max"));
+aEmitter.setRangeParticleLV(aNode->FloatAttribute("min"),
+                            aNode->FloatAttribute("max"));
 
-      aNode = aRangeNode->FirstChildElement("particleHeight") ;
+aNode = aRangeNode->FirstChildElement("particleAV") ;
 
-      if(!aNode)
-      {
-         return false;
-      }
+if(!aNode)
+{
+   return;
+}
 
-      aEmitter.setRangeParticleHeight(aNode->FloatAttribute("min"),
-                                      aNode->FloatAttribute("max"));
-
-      aNode = aRangeNode->FirstChildElement("particleAngle") ;
-
-      if(!aNode)
-      {
-         return false;
-      }
-
-      aEmitter.setRangeParticleAngle(aNode->FloatAttribute("min"),
-                                     aNode->FloatAttribute("max"));
-
-      aNode = aRangeNode->FirstChildElement("particleLV") ;
-
-      if(!aNode)
-      {
-         return false;
-      }
-
-      aEmitter.setRangeParticleLV(aNode->FloatAttribute("min"),
-                                  aNode->FloatAttribute("max"));
-
-      aNode = aRangeNode->FirstChildElement("particleAV") ;
-
-      if(!aNode)
-      {
-         return false;
-      }
-
-      aEmitter.setRangeParticleAV(aNode->FloatAttribute("min"),
-                                  aNode->FloatAttribute("max"));
-
-      addEmitter(aEmitter);
-      aEmitterNode = aEmitterNode->NextSiblingElement("emitter");
-   }
-   return true;
+aEmitter.setRangeParticleAV(aNode->FloatAttribute("min"),
+                            aNode->FloatAttribute("max"));
+}
 }
 ////////////////////////////////////// END NAMESPACE  mpe //////////////////////
 }

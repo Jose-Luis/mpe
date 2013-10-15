@@ -59,25 +59,26 @@ public:
       }
    }
 
-   Vec2& scale(const Real& theScalarX,const Real& theScalarY)
+   Vec2& scale(const Real& theScalarX, const Real& theScalarY)
    {
-       x *= theScalarX; y *= theScalarY;
-       return (*this);
+      x *= theScalarX;
+      y *= theScalarY;
+      return (*this);
    }
 
-Vec2& rotate ( Real theAngle )
-{
-   Real aCosine = std::cos(theAngle);
-   Real aSine = std::sin(theAngle);
+   Vec2& rotate ( Real theAngle )
+   {
+      Real aCosine = std::cos(theAngle);
+      Real aSine = std::sin(theAngle);
 
-   Real nx = x * aCosine - y * aSine;
-   Real ny = x * aSine + y * aCosine;
+      Real nx = x * aCosine - y * aSine;
+      Real ny = x * aSine + y * aCosine;
 
-   x = nx;
-   y = ny;
+      x = nx;
+      y = ny;
 
-   return (*this);
-}
+      return (*this);
+   }
 
    Vec2 operator*(const Real& theScalar) const
    {
