@@ -1166,10 +1166,12 @@ setXFactor	include/MPE/classes/System.hpp	/^   void     setXFactor(Real theXFact
 setXFactor	src/MPE/classes/System.cpp	/^void System::setXFactor(Real theXFactor)$/;"	kind:f	class:mpe::System	signature:(Real theXFactor)
 setYFactor	include/MPE/classes/System.hpp	/^   void     setYFactor(Real theYFactor);$/;"	kind:p	class:mpe::System	access:public	signature:(Real theYFactor)
 setYFactor	src/MPE/classes/System.cpp	/^void System::setYFactor(Real theYFactor)$/;"	kind:f	class:mpe::System	signature:(Real theYFactor)
+sizeof	tests/tests.cpp	/^   std::cout <<  "\\nParticle size: " <<sizeof(Particle);$/;"	kind:p	file:	signature:(Particle)
 squareLength	include/MPE/classes/Vec2.hpp	/^   Real squareLength()$/;"	kind:f	class:mpe::Vec2	access:public	signature:()
 std::cout	tests/tests.cpp	/^      std::cout << "Particle system init from 'Emitter.xml'";$/;"	kind:m	class:std	file:
 std::cout	tests/tests.cpp	/^      std::cout << "Something was wrong...";$/;"	kind:m	class:std	file:
 test1	tests/tests.cpp	/^int test1()$/;"	kind:f	signature:()
+test2	tests/tests.cpp	/^int test2()$/;"	kind:f	signature:()
 tinyxml2	ext_libs/include/TinyXML2/tinyxml2.h	/^namespace tinyxml2$/;"	kind:n
 tinyxml2::COLLAPSE_WHITESPACE	ext_libs/include/TinyXML2/tinyxml2.h	/^   COLLAPSE_WHITESPACE$/;"	kind:e	enum:tinyxml2::Whitespace
 tinyxml2::DynArray	ext_libs/include/TinyXML2/tinyxml2.h	/^class DynArray$/;"	kind:c	namespace:tinyxml2

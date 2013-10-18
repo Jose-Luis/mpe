@@ -19,14 +19,19 @@ int test1()
       std::cout << "Something was wrong...";
    }
 
-   return 33;
+   return EXIT_SUCCESS;
+}
+
+int test2()
+{
+   std::cout <<  "\nParticle size: " <<sizeof(mpe::Particle);
+
+   return EXIT_SUCCESS;
 }
 
 int main(void)
 {
    test1();
-   mpe::Generator<float> aGen{12.7};
-   mpe::Generator<float> aGen1{10,23.5};
-   std::cout << "\n\n" << aGen() << "\n" << aGen1();
+   test2();
    return EXIT_SUCCESS;
 }
