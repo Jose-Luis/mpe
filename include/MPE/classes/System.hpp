@@ -10,6 +10,7 @@
 #include <map>
 #include <MPE/Config.hpp>
 #include <MPE/classes/Particle.hpp>
+#include <MPE/classes/ParticleContainer.hpp>
 #include <MPE/classes/Affector.hpp>
 #include <MPE/classes/Emitter.hpp>
 #include <MPE/classes/Focus.hpp>
@@ -21,9 +22,10 @@ namespace mpe
 class System
 {
 public:
-   /// @brief System
-   /// @param theFactor
-   System();
+   /// @brief System 
+   /// @param theNParticles
+   /// @param theFixed
+   System(size_t theNParticles,bool theFixed=true);
    /// @brief addEmitter
    /// @param theEmitter
    void     addEmitter(Emitter& theEmitter);
@@ -35,7 +37,7 @@ public:
    void     addAffector(AffectorPtr theAffector);
    /// @brief addParticle
    /// @param theParticle
-   void     addParticle(Particle& theParticle);
+   Particle*  addParticle();
    /// @brief addFocus
    /// @param theEmitter
    /// @param thePosition
@@ -51,6 +53,9 @@ public:
    /// @param theEmitterID
    /// @return
    Emitter& getEmitter(EmitterID theEmitterID);
+   /// @brief getParticleSize 
+   /// @return 
+   Integer getParticlesSize();
    /// @brief getXFactor
    /// @return
    Real     getXFactor() const;
@@ -73,8 +78,8 @@ protected:
    Real mYFactor;
    std::list<FocusPtr>           mFocusses;
    std::list<AffectorPtr>        mAffectors;
-   std::list<Particle>           mParticles;
-   std::map<EmitterID, Emitter>   mEmitters;
+   ParticleContainer             mParticles;
+   std::map<EmitterID, Emitter>  mEmitters;
    //    METHODS
    ///////////////////////////////////////////////////////////////////////
    void updateParticles(Real theElapsedTime);

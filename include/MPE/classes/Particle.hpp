@@ -20,34 +20,19 @@ class Particle: public Mortal
 public:
    /// @brief Particle
    Particle();
-   /// @brief
+   /// @brief ~Particle
+   ~Particle();
+   /// @brief init 
    /// @param theTLL
-   /// @param theWidth
-   /// @param theHeight
+   /// @param theSize
    /// @param thePosition
    /// @param theAngle
    /// @param theLinearVelocity
    /// @param theAngularVelocity
+   /// @param theTextRect
    /// @param theColor
-   /// @param theGroups
-   /// @return
-   Particle(Real    theTLL,
-            Real    theWidth,
-            Real    theHeight,
-            Vec2    thePosition,
-            Real    theAngle,
-            Vec2    theLinearVelocity,
-            Real    theAngularVelocity,
-            TextRect theTextRect,
-            Color   theColor = Color {255, 255, 255, 255},
-            GroupID theGroups = mpe::NO_GROUP);
-   /// @brief ~Particle
-   ~Particle();
-   /// @brief update
-   /// @param theElapsedTime
    void init(Real    theTLL,
-             Real    theWidth,
-             Real    theHeight,
+             Real    theSize,
              Vec2    thePosition,
              Real    theAngle,
              Vec2    theLinearVelocity,
@@ -58,11 +43,8 @@ public:
 
    void update(Real theElapsedTime);
 
-   Real getWidth() const;
-   void setWidth(Real theWidth);
-
-   Real getHeight() const;
-   void setHeight(Real theHeight);
+   Real getSize() const;
+   void setSize(Real theSize);
 
    Vec2 getPosition() const;
 
@@ -84,8 +66,7 @@ public:
 
 private:
 
-   Real      mWidth;
-   Real      mHeight;
+   Real      mSize;
    Vec2      mPosition;
    Real      mAngle;
    Vec2      mLinearVelocity;

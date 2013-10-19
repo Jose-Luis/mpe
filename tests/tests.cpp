@@ -4,7 +4,7 @@
 
 int test1()
 {
-   mpe::System aParticleSystem;
+   mpe::System aParticleSystem{1024,false};
    bool aBoolean = aParticleSystem.initFromFile("Emitter.xml");
 
    if (aBoolean)
@@ -12,11 +12,19 @@ int test1()
       std::cout << "Particle system init from 'Emitter.xml'";
       mpe::Emitter& aEmitter = aParticleSystem.getEmitter("Emitter1");
       std::cout << aEmitter.getID() << " TextRect: "  << aEmitter.getTextRect().width<< "   "<< aEmitter.getTextRect().height << "\n";
-      std::cout << aEmitter.getFocusWidth() << "  " << aEmitter.getParticleAngle() ;
+      std::cout << aEmitter.getFocusTOL() << "  " << aEmitter.getParticleAngle() ;
    }
    else
    {
       std::cout << "Something was wrong...";
+   }
+   
+   mpe::FocusPtr aFocus{aParticleSystem.createFocus("Emitter1",mpe::Vec2(0,0),0)};
+   aParticleSystem.addFocus(aFocus);
+   for (int i=0; i<100;++i)
+   {
+      aParticleSystem.update(6);
+      std::cout << "\nNumber of Particles: " << aParticleSystem.getParticlesSize();
    }
 
    return EXIT_SUCCESS;

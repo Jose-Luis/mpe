@@ -48,9 +48,10 @@ void System::setYFactor(Real theYFactor)
 //      Method:  System
 // Description:
 //------------------------------------------------------------------------------
-System::System ():
-   mXFactor(1),
-   mYFactor(1)
+System::System (size_t theNParticles,bool theFixed):
+   mXFactor{1},
+   mYFactor{1},
+   mParticles{theNParticles,theFixed}
 {
 }
 //------------------------------------------------------------------------------
@@ -104,9 +105,9 @@ FocusPtr System::createFocus(EmitterID theEmitterID,
 //      Method:  addParticle
 // Description:
 //------------------------------------------------------------------------------
-void System::addParticle (Particle& theParticle)
+Particle* System::addParticle ()
 {
-   mParticles.push_back(theParticle);
+   return mParticles.addParticle();
 }
 //------------------------------------------------------------------------------
 //       Class:  System
@@ -175,7 +176,7 @@ void System::updateParticles(Real theElapsedTime)
    }
 
    for (auto particle =  mParticles.begin();
-         particle != mParticles.end();
+         particle < mParticles.end();
          particle++)
    {
       if(particle->isAlive())
@@ -184,8 +185,7 @@ void System::updateParticles(Real theElapsedTime)
       }
       else
       {
-         particle = mParticles.erase(particle);
-         particle--;
+          mParticles.removeParticle(particle);
       }
    }
 
@@ -297,8 +297,8 @@ bool System::initFromFile(std::string theFilename)
          return false;
       }
 
-      float aFloat{aNode->FloatAttribute("min")};
-      float aFloat1{aNode->FloatAttribute("max")};
+      //float aFloat{aNode->FloatAttribute("min")};
+      //float aFloat1{aNode->FloatAttribute("max")};
 
       aEmitter.setRangeFocusWidth(aNode->FloatAttribute("min"),
                                   aNode->FloatAttribute("max"));
@@ -343,25 +343,16 @@ bool System::initFromFile(std::string theFilename)
       aEmitter.setRangeParticleTOL(aNode->FloatAttribute("min"),
                                    aNode->FloatAttribute("max"));
 
-      aNode = aRangeNode->FirstChildElement("particleWidth") ;
+      aNode = aRangeNode->FirstChildElement("particleSize") ;
 
       if(!aNode)
       {
          return false;
       }
 
-      aEmitter.setRangeParticleWidth(aNode->FloatAttribute("min"),
+      aEmitter.setRangeParticleSize(aNode->FloatAttribute("min"),
                                      aNode->FloatAttribute("max"));
 
-      aNode = aRangeNode->FirstChildElement("particleHeight") ;
-
-      if(!aNode)
-      {
-         return false;
-      }
-
-      aEmitter.setRangeParticleHeight(aNode->FloatAttribute("min"),
-                                      aNode->FloatAttribute("max"));
 
       aNode = aRangeNode->FirstChildElement("particleAngle") ;
 
@@ -397,6 +388,15 @@ bool System::initFromFile(std::string theFilename)
       aEmitterNode = aEmitterNode->NextSiblingElement("emitter");
    }
    return true;
+}
+//------------------------------------------------------------------------------
+//       Class:  System
+//      Method:  getParticlesSize
+// Description:  A stupid method 
+//------------------------------------------------------------------------------
+Integer System::getParticlesSize()
+{
+   return mParticles.size();
 }
 ////////////////////////////////////// END NAMESPACE  mpe //////////////////////
 }

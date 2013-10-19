@@ -66,10 +66,7 @@ public:
    TextRect getTextRect() const;
    /// @brief getParticleWidth
    /// @return
-   Real getParticleWidth() const;
-   /// @brief getParticleHeight
-   /// @return
-   Real getParticleHeight() const;
+   Real getParticleSize() const;
    /// @brief getFocusAngle
    /// @return
    Real getParticleAngle() const;
@@ -105,10 +102,7 @@ public:
    void setDispersion(Dispersion theDispersion);
    /// @brief setRangeParticleWidth
    /// @param theRangeParticleWidth
-   void setRangeParticleWidth(Real theMin, Real theMax);
-   /// @brief setRangeParticleHeight
-   /// @param theRangeParticleHeight
-   void setRangeParticleHeight(Real theMin, Real theMax);
+   void setRangeParticleSize(Real theMin, Real theMax);
    /// @brief setRangeParticleAngle
    /// @param theMin
    /// @param theMax
@@ -153,8 +147,7 @@ private:
    Dispersion  mDispersion;    ///< Type of paricles' dispersion.
    TextRect    mRect;
    Generator<Real> mRP_TOL;   ///< Range of particles lifetime.
-   Generator<Real> mRP_Width; ///< Range of paricles width.
-   Generator<Real> mRP_Height;///< Range of paricles height.
+   Generator<Real> mRP_Size; ///< Range of paricles width.
    Generator<Real> mRP_Angle; ///< Range of particles angle.
    Generator<Real> mRP_LV;    ///< Range of paricles impulsion.
    Generator<Real> mRP_AV;    ///< Range of particles angular velocity.

@@ -58,6 +58,7 @@ set(HEADERS_FILES
    ${HEADERS_DIR}/classes/Emitter.hpp
    ${HEADERS_DIR}/classes/Focus.hpp
    ${HEADERS_DIR}/classes/Particle.hpp
+   ${HEADERS_DIR}/classes/ParticleContainer.hpp
    ${HEADERS_DIR}/classes/System.hpp
    ${HEADERS_DIR}/classes/Vec2.hpp
    ${HEADERS_DIR}/classes/Generator.hpp
@@ -68,6 +69,7 @@ set(SOURCES_FILES
    ${SOURCES_DIR}/classes/Emitter.cpp
    ${SOURCES_DIR}/classes/Focus.cpp
    ${SOURCES_DIR}/classes/Particle.cpp
+   ${SOURCES_DIR}/classes/ParticleContainer.cpp
    ${SOURCES_DIR}/classes/System.cpp
    ${SOURCES_DIR}/classes/Generator.cpp
    ${SOURCES_DIR}/classes/Mortal.cpp)

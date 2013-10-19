@@ -17,42 +17,11 @@ namespace mpe
 Particle::Particle():
    Mortal(0)
 {}
-/*
-*-------------------------------------------------------------------------------
-*      Class:        Particle
-*      Method:       Constructor
-*      Description:
-*-------------------------------------------------------------------------------
-*/
-Particle::Particle(Real     theTTL,
-                   Real     theWidth,
-                   Real     theHeight,
-                   Vec2     thePosition,
-                   Real     theAngle,
-                   Vec2     theLinearVelocity,
-                   Real     theAngularVelocity,
-                   TextRect theTextRect,
-                   Color    theColor,
-                   GroupID  theGroups):
-   Mortal {theTTL},
-       mWidth {theWidth},
-       mHeight {theHeight},
-       mPosition {thePosition},
-       mAngle {theAngle},
-       mLinearVelocity {theLinearVelocity},
-       mAngularVelocity {theAngularVelocity},
-       mTextRect(theTextRect),
-       mColor(theColor),
-mGroups {theGroups}
-{
-}
-/*
-* ------------------------------------------------------------------------------
-*      Class:        Particle
-*      Method:       Destructor
-*      Description:
-*------------------------------------------------------------------------------
-*/
+//------------------------------------------------------------------------------
+//       Class:  Particle
+//      Method:  Destructor
+// Description:   
+//------------------------------------------------------------------------------
 Particle::~Particle() {}
 //------------------------------------------------------------------------------
 //       Class:  Particle
@@ -60,8 +29,7 @@ Particle::~Particle() {}
 // Description:  A stupid method
 //------------------------------------------------------------------------------
 void Particle::init(Real    theTTL,
-                    Real    theWidth,
-                    Real    theHeight,
+                    Real    theSize,
                     Vec2    thePosition,
                     Real    theAngle,
                     Vec2    theLinearVelocity,
@@ -71,8 +39,7 @@ void Particle::init(Real    theTTL,
                     GroupID theGroups)
 {
    resetLife(theTTL);
-   mWidth = theWidth;
-   mHeight = theHeight;
+   mSize = theSize;
    mPosition = thePosition;
    mAngle = theAngle;
    mLinearVelocity = theLinearVelocity;
@@ -101,36 +68,18 @@ void Particle::update(Real theElapsedTime)
 //      Method:  getWidth
 // Description:  Width getter
 //------------------------------------------------------------------------------
-Real Particle::getWidth() const
+Real Particle::getSize() const
 {
-   return mWidth;
+   return mSize;
 }
 //------------------------------------------------------------------------------
 //       Class:  Particle
-//      Method:  setWidth
+//      Method:  setSize
 // Description:  A stupid method
 //------------------------------------------------------------------------------
-void Particle::setWidth(Real theWidth)
+void Particle::setSize(Real theSize)
 {
-   mWidth = theWidth;
-}
-//------------------------------------------------------------------------------
-//       Class:  Particle
-//      Method:  getHeight
-// Description:  Height getter
-//------------------------------------------------------------------------------
-Real Particle::getHeight() const
-{
-   return mHeight;
-}
-//------------------------------------------------------------------------------
-//       Class:  Particle
-//      Method:  setHeight
-// Description:  A stupid method
-//------------------------------------------------------------------------------
-void Particle::setHeight(Real theHeight)
-{
-   mHeight = theHeight;
+   mSize = theSize;
 }
 //------------------------------------------------------------------------------
 //       Class:  Particle

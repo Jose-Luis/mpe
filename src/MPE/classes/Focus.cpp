@@ -52,17 +52,15 @@ FocusPtr Focus::create(Real    theLifetime,
                        GroupID theGroups,
                        const Emitter&  theEmitter)
 {
-   return FocusPtr {new Focus{theLifetime,
-                                 theWidth,
-                                 theHeight,
-                                 thePosition,
-                                 theAngle,
-                                 theTP,
-                                 thePPS,
-                                 theGroups,
-                                 theEmitter
-                                }
-   };
+   return FocusPtr{new Focus{theLifetime,
+                             theWidth,
+                             theHeight,
+                             thePosition,
+                             theAngle,
+                             theTP,
+                             thePPS,
+                             theGroups,
+                             theEmitter}};
 }
 //------------------------------------------------------------------------------
 //       Class:  Focus
@@ -86,33 +84,25 @@ void Focus::update(Real theElapsedTime)
 //------------------------------------------------------------------------------
 void Focus::emit(Integer theNParticles)
 {
-   System* anSystem = mEmitter.getSystem();
+   System* anSystem{mEmitter.getSystem()};
 
    for(int i = 0; i < theNParticles; i++)
    {
-      Particle anParticle = createParticle();
-      anSystem->addParticle(anParticle);
+      Particle* anParticle{anSystem->addParticle()};
+      if (anParticle != nullptr)
+      {
+         Vec2 anPosition; 
+         anParticle->init(mEmitter.getParticleTOL(),                   
+                          mEmitter.getParticleSize(),                 
+                          anPosition = mEmitter.generatePosition(*this),                                  
+                          mEmitter.getParticleAngle(),                 
+                          mEmitter.generateVelocity(*this, anPosition),
+                          mEmitter.getParticleAV(),                    
+                          mEmitter.getTextRect(),                      
+                          Color {255, 255, 255, 255},                  
+                          mGroups);                                    
+      }
    }
-}
-//------------------------------------------------------------------------------
-//       Class:  Focus
-//      Method:  createParticle
-// Description:
-//------------------------------------------------------------------------------
-Particle Focus::createParticle ()
-{
-   Vec2 anPosition = mEmitter.generatePosition(*this);
-   Particle  anParticle = Particle( mEmitter.getParticleTOL(),
-                                    mEmitter.getParticleWidth(),
-                                    mEmitter.getParticleHeight(),
-                                    anPosition,
-                                    mEmitter.getParticleAngle(),
-                                    mEmitter.generateVelocity(*this, anPosition),
-                                    mEmitter.getParticleAV(),
-                                    mEmitter.getTextRect(),
-                                    Color {255, 255, 255, 255},
-                                    mGroups);
-   return anParticle;
 }
 //------------------------------------------------------------------------------
 //      Class:        Focus

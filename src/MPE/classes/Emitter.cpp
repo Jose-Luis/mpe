@@ -130,18 +130,9 @@ System* Emitter::getSystem() const
 //      Method:  getID
 // Description:
 //------------------------------------------------------------------------------
-Real Emitter::getParticleWidth() const
+Real Emitter::getParticleSize() const
 {
-   return mRP_Width();
-}
-//------------------------------------------------------------------------------
-//       Class:  Emitter
-//      Method:  getID
-// Description:
-//------------------------------------------------------------------------------
-Real Emitter::getParticleHeight() const
-{
-   return mRP_Height();
+   return mRP_Size();
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
@@ -262,21 +253,12 @@ void Emitter::setTextRect(TextRect theTextRect)
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
-//      Method:  setRangeParticleWidth
+//      Method:  setRangeParticleSize
 // Description:
 //------------------------------------------------------------------------------
-void Emitter::setRangeParticleWidth(Real theMin, Real theMax)
+void Emitter::setRangeParticleSize(Real theMin, Real theMax)
 {
-   mRP_Width = Generator<Real> {theMin, theMax};
-}
-//------------------------------------------------------------------------------
-//       Class:  Emitter
-//      Method:  setRangeParticleHeight
-// Description:
-//------------------------------------------------------------------------------
-void Emitter::setRangeParticleHeight(Real theMin, Real theMax)
-{
-   mRP_Height = Generator<Real> {theMin, theMax};
+   mRP_Size = Generator<Real> {theMin, theMax};
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
