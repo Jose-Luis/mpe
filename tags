@@ -541,8 +541,7 @@ anEmitterID	src/MPE/classes/System.cpp	/^   EmitterID anEmitterID = theEmitter.g
 anFocus	src/MPE/classes/Emitter.cpp	/^   FocusPtr anFocus = Focus::create(getFocusWidth(),$/;"	kind:l
 anLength	include/MPE/classes/Vec2.hpp	/^      Real anLength = length();$/;"	kind:l
 anPosition	src/MPE/classes/Emitter.cpp	/^   Vec2 anPosition;$/;"	kind:l
-anPosition	src/MPE/classes/Focus.cpp	/^         Vec2 anPosition = mEmitter.generatePosition(*this);$/;"	kind:l
-anSystem	src/MPE/classes/Focus.cpp	/^   System* anSystem = mEmitter.getSystem();$/;"	kind:l
+anPosition	src/MPE/classes/Focus.cpp	/^         Vec2 anPosition; $/;"	kind:l
 anVelocity	src/MPE/classes/Emitter.cpp	/^   Vec2 anVelocity;$/;"	kind:l
 b	ext_libs/include/TinyXML2/tinyxml2.h	/^      bool b = false;$/;"	kind:l
 b	include/MPE/Config.hpp	/^   Integer r, g, b, a;$/;"	kind:m	struct:mpe::Color	access:public
@@ -556,7 +555,9 @@ chunk	ext_libs/include/TinyXML2/tinyxml2.h	/^      Chunk* chunk = (Chunk*)mem;$/
 cout	tests/tests.cpp	/^      std::cout << "Particle system init from 'Emitter.xml'";$/;"	kind:m	class:std	file:
 cout	tests/tests.cpp	/^      std::cout << "Something was wrong...";$/;"	kind:m	class:std	file:
 create	include/MPE/classes/Focus.hpp	/^   static FocusPtr create(Real    theLifetime,$/;"	kind:p	class:mpe::Focus	access:public	signature:(Real theLifetime, Real theWidth, Real theHeight, Vec2 thePosition, Real theAngle, Integer theTP, Real thePPS, GroupID theGroups, const Emitter& theEmitter)
+create	include/MPE/classes/Generator.hpp	/^   static Generator<T> create(T theMin,T theMax);$/;"	kind:p	class:mpe::Generator	access:public	signature:(T theMin,T theMax)
 create	src/MPE/classes/Focus.cpp	/^FocusPtr Focus::create(Real    theLifetime,$/;"	kind:f	class:mpe::Focus	signature:(Real theLifetime, Real theWidth, Real theHeight, Vec2 thePosition, Real theAngle, Integer theTP, Real thePPS, GroupID theGroups, const Emitter& theEmitter)
+create	src/MPE/classes/Generator.cpp	/^Generator<T> Generator<T>::create(T theMin, T theMax)$/;"	kind:f	class:mpe::Generator	signature:(T theMin, T theMax)
 createFocus	include/MPE/classes/Emitter.hpp	/^   FocusPtr createFocus(Vec2 thePosition,$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Vec2 thePosition, Real theAngle, GroupID theGroups = mpe::NO_GROUP) const
 createFocus	include/MPE/classes/System.hpp	/^   FocusPtr   createFocus(EmitterID theEmitter,$/;"	kind:p	class:mpe::System	access:public	signature:(EmitterID theEmitter, Vec2 thePosition, Real theAngle, GroupID theGroups = mpe::NO_GROUP)
 createFocus	src/MPE/classes/Emitter.cpp	/^FocusPtr Emitter::createFocus(Vec2   thePosition,$/;"	kind:f	class:mpe::Emitter	signature:(Vec2 thePosition, Real theAngle, GroupID theGroups) const
@@ -610,14 +611,12 @@ getParticleAV	src/MPE/classes/Emitter.cpp	/^Real Emitter::getParticleAV() const$
 getParticleAngle	include/MPE/classes/Emitter.hpp	/^   Real getParticleAngle() const;$/;"	kind:p	class:mpe::Emitter	access:public	signature:() const
 getParticleAngle	src/MPE/classes/Emitter.cpp	/^Real Emitter::getParticleAngle() const$/;"	kind:f	class:mpe::Emitter	signature:() const
 getParticleAngle	tests/tests.cpp	/^      std::cout << aEmitter.getFocusTOL() << "  " << aEmitter.getParticleAngle() ;$/;"	kind:p	file:	signature:()
-getParticleHeight	include/MPE/classes/Emitter.hpp	/^   Real getParticleHeight() const;$/;"	kind:p	class:mpe::Emitter	access:public	signature:() const
-getParticleHeight	src/MPE/classes/Emitter.cpp	/^Real Emitter::getParticleHeight() const$/;"	kind:f	class:mpe::Emitter	signature:() const
 getParticleLV	include/MPE/classes/Emitter.hpp	/^   Real getParticleLV() const;$/;"	kind:p	class:mpe::Emitter	access:public	signature:() const
 getParticleLV	src/MPE/classes/Emitter.cpp	/^Real Emitter::getParticleLV() const$/;"	kind:f	class:mpe::Emitter	signature:() const
+getParticleSize	include/MPE/classes/Emitter.hpp	/^   Real getParticleSize() const;$/;"	kind:p	class:mpe::Emitter	access:public	signature:() const
 getParticleSize	src/MPE/classes/Emitter.cpp	/^Real Emitter::getParticleSize() const$/;"	kind:f	class:mpe::Emitter	signature:() const
 getParticleTOL	include/MPE/classes/Emitter.hpp	/^   Real getParticleTOL() const;$/;"	kind:p	class:mpe::Emitter	access:public	signature:() const
 getParticleTOL	src/MPE/classes/Emitter.cpp	/^Real Emitter::getParticleTOL() const$/;"	kind:f	class:mpe::Emitter	signature:() const
-getParticleWidth	include/MPE/classes/Emitter.hpp	/^   Real getParticleWidth() const;$/;"	kind:p	class:mpe::Emitter	access:public	signature:() const
 getParticlesSize	include/MPE/classes/System.hpp	/^   Integer getParticlesSize();$/;"	kind:p	class:mpe::System	access:public	signature:()
 getParticlesSize	src/MPE/classes/System.cpp	/^Integer System::getParticlesSize()$/;"	kind:f	class:mpe::System	signature:()
 getParticlesSize	tests/tests.cpp	/^      std::cout << "\\nNumber of Particles: " << aParticleSystem.getParticlesSize();$/;"	kind:p	file:	signature:()
@@ -648,7 +647,7 @@ i	ext_libs/include/TinyXML2/tinyxml2.h	/^      int i = 0;$/;"	kind:l
 i	ext_libs/include/TinyXML2/tinyxml2.h	/^      unsigned i = 0;$/;"	kind:l
 init	include/MPE/classes/Particle.hpp	/^   void init(Real    theTLL,$/;"	kind:p	class:mpe::Particle	access:public	signature:(Real theTLL, Real theSize, Vec2 thePosition, Real theAngle, Vec2 theLinearVelocity, Real theAngularVelocity, TextRect theTextRect, Color theColor = Color {255, 255, 255, 255}, GroupID theGroups = mpe::NO_GROUP)
 init	include/MPE/classes/Vec2.hpp	/^   void init(Real theX, Real theY)$/;"	kind:f	class:mpe::Vec2	access:public	signature:(Real theX, Real theY)
-init	src/MPE/classes/Focus.cpp	/^         anParticle->init(mEmitter.getParticleTOL(),                   $/;"	kind:p	file:	signature:(mEmitter.getParticleTOL(), mEmitter.getParticleSize(), anPosition, mEmitter.getParticleAngle(), mEmitter.generateVelocity(*this, anPosition), mEmitter.getParticleAV(), mEmitter.getTextRect(), Color {255, 255, 255, 255}, mGroups)
+init	src/MPE/classes/Focus.cpp	/^         anParticle->init(mEmitter.getParticleTOL(),                   $/;"	kind:p	file:	signature:(mEmitter.getParticleTOL(), mEmitter.getParticleSize(), anPosition = mEmitter.generatePosition(*this), mEmitter.getParticleAngle(), mEmitter.generateVelocity(*this, anPosition), mEmitter.getParticleAV(), mEmitter.getTextRect(), Color {255, 255, 255, 255}, mGroups)
 init	src/MPE/classes/Particle.cpp	/^void Particle::init(Real    theTTL,$/;"	kind:f	class:mpe::Particle	signature:(Real theTTL, Real theSize, Vec2 thePosition, Real theAngle, Vec2 theLinearVelocity, Real theAngularVelocity, TextRect theTextRect, Color theColor, GroupID theGroups)
 initFromFile	include/MPE/classes/System.hpp	/^   bool initFromFile(std::string theFilename);$/;"	kind:p	class:mpe::System	access:public	signature:(std::string theFilename)
 initFromFile	src/MPE/classes/System.cpp	/^bool System::initFromFile(std::string theFilename)$/;"	kind:f	class:mpe::System	signature:(std::string theFilename)
@@ -671,6 +670,16 @@ mEmitters	include/MPE/classes/System.hpp	/^   std::map<EmitterID, Emitter>  mEmi
 mFixedSize	include/MPE/classes/ParticleContainer.hpp	/^      bool mFixedSize;$/;"	kind:m	class:mpe::ParticleContainer	access:private
 mFixedSize	src/MPE/classes/ParticleContainer.cpp	/^   mFixedSize(theFixed)$/;"	kind:f	namespace:mpe	signature:(theFixed)
 mFocusses	include/MPE/classes/System.hpp	/^   std::list<FocusPtr>           mFocusses;$/;"	kind:m	class:mpe::System	access:protected
+mGenFocHeight	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mGenFocHeight;\/\/\/< Generator of focus height.$/;"	kind:m	class:mpe::Emitter	access:private
+mGenFocNP	include/MPE/classes/Emitter.hpp	/^   Generator<Integer> mGenFocNP; \/\/\/< Generator of focus number of particles.$/;"	kind:m	class:mpe::Emitter	access:private
+mGenFocPPS	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mGenFocPPS;   \/\/\/< Generator of focus particles per second.$/;"	kind:m	class:mpe::Emitter	access:private
+mGenFocTOL	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mGenFocTOL;   \/\/\/< Generator of focus time of life.$/;"	kind:m	class:mpe::Emitter	access:private
+mGenFocWidth	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mGenFocWidth; \/\/\/< Generator of focus width.$/;"	kind:m	class:mpe::Emitter	access:private
+mGenParAV	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mGenParAV;    \/\/\/< Generator of particles angular velocity.$/;"	kind:m	class:mpe::Emitter	access:private
+mGenParAngle	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mGenParAngle; \/\/\/< Generator of particles angle.$/;"	kind:m	class:mpe::Emitter	access:private
+mGenParLV	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mGenParLV;    \/\/\/< Generator of paricles impulsion.$/;"	kind:m	class:mpe::Emitter	access:private
+mGenParSize	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mGenParSize; \/\/\/< Generator of paricles width.$/;"	kind:m	class:mpe::Emitter	access:private
+mGenParTOL	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mGenParTOL;   \/\/\/< Generator of particles lifetime.$/;"	kind:m	class:mpe::Emitter	access:private
 mGenerator	include/MPE/classes/Generator.hpp	/^   std::function<T()> mGenerator;$/;"	kind:m	class:mpe::Generator	access:private
 mGroups	include/MPE/classes/Focus.hpp	/^   GroupID   mGroups;$/;"	kind:m	class:mpe::Focus	access:private
 mGroups	include/MPE/classes/Particle.hpp	/^   GroupID   mGroups;$/;"	kind:m	class:mpe::Particle	access:private
@@ -684,16 +693,6 @@ mParticles	include/MPE/classes/ParticleContainer.hpp	/^      Particle*  mParticl
 mParticles	include/MPE/classes/System.hpp	/^   ParticleContainer             mParticles;$/;"	kind:m	class:mpe::System	access:protected
 mPosition	include/MPE/classes/Focus.hpp	/^   Vec2      mPosition;$/;"	kind:m	class:mpe::Focus	access:private
 mPosition	include/MPE/classes/Particle.hpp	/^   Vec2      mPosition;$/;"	kind:m	class:mpe::Particle	access:private
-mRF_Height	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mRF_Height;\/\/\/< Range of focus height.$/;"	kind:m	class:mpe::Emitter	access:private
-mRF_NP	include/MPE/classes/Emitter.hpp	/^   Generator<Integer> mRF_NP; \/\/\/< Range of focus number of particles.$/;"	kind:m	class:mpe::Emitter	access:private
-mRF_PPS	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mRF_PPS;   \/\/\/< Range of focus particles per second.$/;"	kind:m	class:mpe::Emitter	access:private
-mRF_TOL	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mRF_TOL;   \/\/\/< Range of focus time of life.$/;"	kind:m	class:mpe::Emitter	access:private
-mRF_Width	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mRF_Width; \/\/\/< Range of focus width.$/;"	kind:m	class:mpe::Emitter	access:private
-mRP_AV	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mRP_AV;    \/\/\/< Range of particles angular velocity.$/;"	kind:m	class:mpe::Emitter	access:private
-mRP_Angle	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mRP_Angle; \/\/\/< Range of particles angle.$/;"	kind:m	class:mpe::Emitter	access:private
-mRP_LV	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mRP_LV;    \/\/\/< Range of paricles impulsion.$/;"	kind:m	class:mpe::Emitter	access:private
-mRP_Size	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mRP_Size; \/\/\/< Range of paricles width.$/;"	kind:m	class:mpe::Emitter	access:private
-mRP_TOL	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mRP_TOL;   \/\/\/< Range of particles lifetime.$/;"	kind:m	class:mpe::Emitter	access:private
 mRect	include/MPE/classes/Emitter.hpp	/^   TextRect    mRect;$/;"	kind:m	class:mpe::Emitter	access:private
 mShape	include/MPE/classes/Emitter.hpp	/^   Shape       mShape;         \/\/\/< The emitter's shape.$/;"	kind:m	class:mpe::Emitter	access:private
 mSize	include/MPE/classes/Particle.hpp	/^   Real      mSize;$/;"	kind:m	class:mpe::Particle	access:private
@@ -773,57 +772,54 @@ mpe::Emitter::getParticleAV	include/MPE/classes/Emitter.hpp	/^   Real getParticl
 mpe::Emitter::getParticleAV	src/MPE/classes/Emitter.cpp	/^Real Emitter::getParticleAV() const$/;"	kind:f	class:mpe::Emitter	signature:() const
 mpe::Emitter::getParticleAngle	include/MPE/classes/Emitter.hpp	/^   Real getParticleAngle() const;$/;"	kind:p	class:mpe::Emitter	access:public	signature:() const
 mpe::Emitter::getParticleAngle	src/MPE/classes/Emitter.cpp	/^Real Emitter::getParticleAngle() const$/;"	kind:f	class:mpe::Emitter	signature:() const
-mpe::Emitter::getParticleHeight	include/MPE/classes/Emitter.hpp	/^   Real getParticleHeight() const;$/;"	kind:p	class:mpe::Emitter	access:public	signature:() const
-mpe::Emitter::getParticleHeight	src/MPE/classes/Emitter.cpp	/^Real Emitter::getParticleHeight() const$/;"	kind:f	class:mpe::Emitter	signature:() const
 mpe::Emitter::getParticleLV	include/MPE/classes/Emitter.hpp	/^   Real getParticleLV() const;$/;"	kind:p	class:mpe::Emitter	access:public	signature:() const
 mpe::Emitter::getParticleLV	src/MPE/classes/Emitter.cpp	/^Real Emitter::getParticleLV() const$/;"	kind:f	class:mpe::Emitter	signature:() const
+mpe::Emitter::getParticleSize	include/MPE/classes/Emitter.hpp	/^   Real getParticleSize() const;$/;"	kind:p	class:mpe::Emitter	access:public	signature:() const
 mpe::Emitter::getParticleSize	src/MPE/classes/Emitter.cpp	/^Real Emitter::getParticleSize() const$/;"	kind:f	class:mpe::Emitter	signature:() const
 mpe::Emitter::getParticleTOL	include/MPE/classes/Emitter.hpp	/^   Real getParticleTOL() const;$/;"	kind:p	class:mpe::Emitter	access:public	signature:() const
 mpe::Emitter::getParticleTOL	src/MPE/classes/Emitter.cpp	/^Real Emitter::getParticleTOL() const$/;"	kind:f	class:mpe::Emitter	signature:() const
-mpe::Emitter::getParticleWidth	include/MPE/classes/Emitter.hpp	/^   Real getParticleWidth() const;$/;"	kind:p	class:mpe::Emitter	access:public	signature:() const
 mpe::Emitter::getSystem	include/MPE/classes/Emitter.hpp	/^   System* getSystem() const;$/;"	kind:p	class:mpe::Emitter	access:public	signature:() const
 mpe::Emitter::getSystem	src/MPE/classes/Emitter.cpp	/^System* Emitter::getSystem() const$/;"	kind:f	class:mpe::Emitter	signature:() const
 mpe::Emitter::getTextRect	include/MPE/classes/Emitter.hpp	/^   TextRect getTextRect() const;$/;"	kind:p	class:mpe::Emitter	access:public	signature:() const
 mpe::Emitter::getTextRect	src/MPE/classes/Emitter.cpp	/^TextRect Emitter::getTextRect() const$/;"	kind:f	class:mpe::Emitter	signature:() const
 mpe::Emitter::mDispersion	include/MPE/classes/Emitter.hpp	/^   Dispersion  mDispersion;    \/\/\/< Type of paricles' dispersion.$/;"	kind:m	class:mpe::Emitter	access:private
+mpe::Emitter::mGenFocHeight	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mGenFocHeight;\/\/\/< Generator of focus height.$/;"	kind:m	class:mpe::Emitter	access:private
+mpe::Emitter::mGenFocNP	include/MPE/classes/Emitter.hpp	/^   Generator<Integer> mGenFocNP; \/\/\/< Generator of focus number of particles.$/;"	kind:m	class:mpe::Emitter	access:private
+mpe::Emitter::mGenFocPPS	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mGenFocPPS;   \/\/\/< Generator of focus particles per second.$/;"	kind:m	class:mpe::Emitter	access:private
+mpe::Emitter::mGenFocTOL	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mGenFocTOL;   \/\/\/< Generator of focus time of life.$/;"	kind:m	class:mpe::Emitter	access:private
+mpe::Emitter::mGenFocWidth	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mGenFocWidth; \/\/\/< Generator of focus width.$/;"	kind:m	class:mpe::Emitter	access:private
+mpe::Emitter::mGenParAV	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mGenParAV;    \/\/\/< Generator of particles angular velocity.$/;"	kind:m	class:mpe::Emitter	access:private
+mpe::Emitter::mGenParAngle	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mGenParAngle; \/\/\/< Generator of particles angle.$/;"	kind:m	class:mpe::Emitter	access:private
+mpe::Emitter::mGenParLV	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mGenParLV;    \/\/\/< Generator of paricles impulsion.$/;"	kind:m	class:mpe::Emitter	access:private
+mpe::Emitter::mGenParSize	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mGenParSize; \/\/\/< Generator of paricles width.$/;"	kind:m	class:mpe::Emitter	access:private
+mpe::Emitter::mGenParTOL	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mGenParTOL;   \/\/\/< Generator of particles lifetime.$/;"	kind:m	class:mpe::Emitter	access:private
 mpe::Emitter::mID	include/MPE/classes/Emitter.hpp	/^   EmitterID   mID;            \/\/\/< Unique EmitterID for the emitter.$/;"	kind:m	class:mpe::Emitter	access:private
-mpe::Emitter::mRF_Height	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mRF_Height;\/\/\/< Range of focus height.$/;"	kind:m	class:mpe::Emitter	access:private
-mpe::Emitter::mRF_NP	include/MPE/classes/Emitter.hpp	/^   Generator<Integer> mRF_NP; \/\/\/< Range of focus number of particles.$/;"	kind:m	class:mpe::Emitter	access:private
-mpe::Emitter::mRF_PPS	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mRF_PPS;   \/\/\/< Range of focus particles per second.$/;"	kind:m	class:mpe::Emitter	access:private
-mpe::Emitter::mRF_TOL	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mRF_TOL;   \/\/\/< Range of focus time of life.$/;"	kind:m	class:mpe::Emitter	access:private
-mpe::Emitter::mRF_Width	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mRF_Width; \/\/\/< Range of focus width.$/;"	kind:m	class:mpe::Emitter	access:private
-mpe::Emitter::mRP_AV	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mRP_AV;    \/\/\/< Range of particles angular velocity.$/;"	kind:m	class:mpe::Emitter	access:private
-mpe::Emitter::mRP_Angle	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mRP_Angle; \/\/\/< Range of particles angle.$/;"	kind:m	class:mpe::Emitter	access:private
-mpe::Emitter::mRP_LV	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mRP_LV;    \/\/\/< Range of paricles impulsion.$/;"	kind:m	class:mpe::Emitter	access:private
-mpe::Emitter::mRP_Size	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mRP_Size; \/\/\/< Range of paricles width.$/;"	kind:m	class:mpe::Emitter	access:private
-mpe::Emitter::mRP_TOL	include/MPE/classes/Emitter.hpp	/^   Generator<Real> mRP_TOL;   \/\/\/< Range of particles lifetime.$/;"	kind:m	class:mpe::Emitter	access:private
 mpe::Emitter::mRect	include/MPE/classes/Emitter.hpp	/^   TextRect    mRect;$/;"	kind:m	class:mpe::Emitter	access:private
 mpe::Emitter::mShape	include/MPE/classes/Emitter.hpp	/^   Shape       mShape;         \/\/\/< The emitter's shape.$/;"	kind:m	class:mpe::Emitter	access:private
 mpe::Emitter::mSystem	include/MPE/classes/Emitter.hpp	/^   System*     mSystem;$/;"	kind:m	class:mpe::Emitter	access:private
 mpe::Emitter::sRealRandom	include/MPE/classes/Emitter.hpp	/^   static Generator<Real> sRealRandom;$/;"	kind:m	class:mpe::Emitter	access:private
 mpe::Emitter::setDispersion	include/MPE/classes/Emitter.hpp	/^   void setDispersion(Dispersion theDispersion);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Dispersion theDispersion)
 mpe::Emitter::setDispersion	src/MPE/classes/Emitter.cpp	/^void Emitter::setDispersion(Dispersion theDispersion)$/;"	kind:f	class:mpe::Emitter	signature:(Dispersion theDispersion)
-mpe::Emitter::setRangeFocusHeight	include/MPE/classes/Emitter.hpp	/^   void setRangeFocusHeight(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
-mpe::Emitter::setRangeFocusHeight	src/MPE/classes/Emitter.cpp	/^void Emitter::setRangeFocusHeight(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
-mpe::Emitter::setRangeFocusNP	include/MPE/classes/Emitter.hpp	/^   void setRangeFocusNP(Integer theMin, Integer theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Integer theMin, Integer theMax)
-mpe::Emitter::setRangeFocusNP	src/MPE/classes/Emitter.cpp	/^void Emitter::setRangeFocusNP(Integer theMin, Integer theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Integer theMin, Integer theMax)
-mpe::Emitter::setRangeFocusPPS	include/MPE/classes/Emitter.hpp	/^   void setRangeFocusPPS(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
-mpe::Emitter::setRangeFocusPPS	src/MPE/classes/Emitter.cpp	/^void Emitter::setRangeFocusPPS(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
-mpe::Emitter::setRangeFocusTOL	include/MPE/classes/Emitter.hpp	/^   void setRangeFocusTOL(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
-mpe::Emitter::setRangeFocusTOL	src/MPE/classes/Emitter.cpp	/^void Emitter::setRangeFocusTOL(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
-mpe::Emitter::setRangeFocusWidth	include/MPE/classes/Emitter.hpp	/^   void setRangeFocusWidth(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
-mpe::Emitter::setRangeFocusWidth	src/MPE/classes/Emitter.cpp	/^void Emitter::setRangeFocusWidth(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
-mpe::Emitter::setRangeParticleAV	include/MPE/classes/Emitter.hpp	/^   void setRangeParticleAV(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
-mpe::Emitter::setRangeParticleAV	src/MPE/classes/Emitter.cpp	/^void Emitter::setRangeParticleAV(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
-mpe::Emitter::setRangeParticleAngle	include/MPE/classes/Emitter.hpp	/^   void setRangeParticleAngle(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
-mpe::Emitter::setRangeParticleAngle	src/MPE/classes/Emitter.cpp	/^void Emitter::setRangeParticleAngle(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
-mpe::Emitter::setRangeParticleHeight	src/MPE/classes/Emitter.cpp	/^void Emitter::setRangeParticleHeight(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
-mpe::Emitter::setRangeParticleLV	include/MPE/classes/Emitter.hpp	/^   void setRangeParticleLV(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
-mpe::Emitter::setRangeParticleLV	src/MPE/classes/Emitter.cpp	/^void Emitter::setRangeParticleLV(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
-mpe::Emitter::setRangeParticleSize	include/MPE/classes/Emitter.hpp	/^   void setRangeParticleSize(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
-mpe::Emitter::setRangeParticleSize	src/MPE/classes/Emitter.cpp	/^void Emitter::setRangeParticleSize(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
-mpe::Emitter::setRangeParticleTOL	include/MPE/classes/Emitter.hpp	/^   void setRangeParticleTOL(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
-mpe::Emitter::setRangeParticleTOL	src/MPE/classes/Emitter.cpp	/^void Emitter::setRangeParticleTOL(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
+mpe::Emitter::setGeneratorFocusHeight	include/MPE/classes/Emitter.hpp	/^   void setGeneratorFocusHeight(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
+mpe::Emitter::setGeneratorFocusHeight	src/MPE/classes/Emitter.cpp	/^void Emitter::setGeneratorFocusHeight(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
+mpe::Emitter::setGeneratorFocusNP	include/MPE/classes/Emitter.hpp	/^   void setGeneratorFocusNP(Integer theMin, Integer theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Integer theMin, Integer theMax)
+mpe::Emitter::setGeneratorFocusNP	src/MPE/classes/Emitter.cpp	/^void Emitter::setGeneratorFocusNP(Integer theMin, Integer theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Integer theMin, Integer theMax)
+mpe::Emitter::setGeneratorFocusPPS	include/MPE/classes/Emitter.hpp	/^   void setGeneratorFocusPPS(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
+mpe::Emitter::setGeneratorFocusPPS	src/MPE/classes/Emitter.cpp	/^void Emitter::setGeneratorFocusPPS(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
+mpe::Emitter::setGeneratorFocusTOL	include/MPE/classes/Emitter.hpp	/^   void setGeneratorFocusTOL(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
+mpe::Emitter::setGeneratorFocusTOL	src/MPE/classes/Emitter.cpp	/^void Emitter::setGeneratorFocusTOL(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
+mpe::Emitter::setGeneratorFocusWidth	include/MPE/classes/Emitter.hpp	/^   void setGeneratorFocusWidth(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
+mpe::Emitter::setGeneratorFocusWidth	src/MPE/classes/Emitter.cpp	/^void Emitter::setGeneratorFocusWidth(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
+mpe::Emitter::setGeneratorParticleAV	include/MPE/classes/Emitter.hpp	/^   void setGeneratorParticleAV(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
+mpe::Emitter::setGeneratorParticleAV	src/MPE/classes/Emitter.cpp	/^void Emitter::setGeneratorParticleAV(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
+mpe::Emitter::setGeneratorParticleAngle	include/MPE/classes/Emitter.hpp	/^   void setGeneratorParticleAngle(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
+mpe::Emitter::setGeneratorParticleAngle	src/MPE/classes/Emitter.cpp	/^void Emitter::setGeneratorParticleAngle(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
+mpe::Emitter::setGeneratorParticleLV	include/MPE/classes/Emitter.hpp	/^   void setGeneratorParticleLV(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
+mpe::Emitter::setGeneratorParticleLV	src/MPE/classes/Emitter.cpp	/^void Emitter::setGeneratorParticleLV(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
+mpe::Emitter::setGeneratorParticleSize	include/MPE/classes/Emitter.hpp	/^   void setGeneratorParticleSize(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
+mpe::Emitter::setGeneratorParticleSize	src/MPE/classes/Emitter.cpp	/^void Emitter::setGeneratorParticleSize(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
+mpe::Emitter::setGeneratorParticleTOL	include/MPE/classes/Emitter.hpp	/^   void setGeneratorParticleTOL(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
+mpe::Emitter::setGeneratorParticleTOL	src/MPE/classes/Emitter.cpp	/^void Emitter::setGeneratorParticleTOL(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
 mpe::Emitter::setShape	include/MPE/classes/Emitter.hpp	/^   void setShape(Shape theShape);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Shape theShape)
 mpe::Emitter::setShape	src/MPE/classes/Emitter.cpp	/^void Emitter::setShape(Shape theShape)$/;"	kind:f	class:mpe::Emitter	signature:(Shape theShape)
 mpe::Emitter::setSystem	include/MPE/classes/Emitter.hpp	/^   void setSystem(System* theSystem);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(System* theSystem)
@@ -891,10 +887,11 @@ mpe::Generator::Generator	src/MPE/classes/Generator.cpp	/^Generator<Integer>::Ge
 mpe::Generator::Generator	src/MPE/classes/Generator.cpp	/^Generator<Real>::Generator():$/;"	kind:f	class:mpe::Generator	signature:()
 mpe::Generator::Generator	src/MPE/classes/Generator.cpp	/^Generator<Real>::Generator(Real theMin, Real theMax):$/;"	kind:f	class:mpe::Generator	signature:(Real theMin, Real theMax)
 mpe::Generator::Generator	src/MPE/classes/Generator.cpp	/^Generator<T>::Generator(T theNumber):$/;"	kind:f	class:mpe::Generator	signature:(T theNumber)
+mpe::Generator::create	include/MPE/classes/Generator.hpp	/^   static Generator<T> create(T theMin,T theMax);$/;"	kind:p	class:mpe::Generator	access:public	signature:(T theMin,T theMax)
+mpe::Generator::create	src/MPE/classes/Generator.cpp	/^Generator<T> Generator<T>::create(T theMin, T theMax)$/;"	kind:f	class:mpe::Generator	signature:(T theMin, T theMax)
 mpe::Generator::mGenerator	include/MPE/classes/Generator.hpp	/^   std::function<T()> mGenerator;$/;"	kind:m	class:mpe::Generator	access:private
 mpe::Generator::operator ()	include/MPE/classes/Generator.hpp	/^   T operator()() const;$/;"	kind:p	class:mpe::Generator	access:public	signature:() const
 mpe::Generator::operator ()	src/MPE/classes/Generator.cpp	/^T Generator<T>::operator()() const$/;"	kind:f	class:mpe::Generator	signature:() const
-mpe::Generator::sEngine	include/MPE/classes/Generator.hpp	/^   static std::default_random_engine sEngine;$/;"	kind:m	class:mpe::Generator	access:private
 mpe::GroupID	include/MPE/Config.hpp	/^typedef unsigned char GroupID;$/;"	kind:t	namespace:mpe
 mpe::Integer	include/MPE/Config.hpp	/^typedef int Integer;$/;"	kind:t	namespace:mpe
 mpe::MAX_INTEGER	include/MPE/Config.hpp	/^const Integer MAX_INTEGER = std::numeric_limits<Integer>::max();$/;"	kind:m	namespace:mpe
@@ -1047,10 +1044,9 @@ mpe::aFile	src/MPE/classes/System.cpp	/^   tinyxml2::XMLDocument aFile;$/;"	kind
 mpe::anEmitterID	src/MPE/classes/System.cpp	/^   EmitterID anEmitterID = theEmitter.getID();$/;"	kind:l
 mpe::anFocus	src/MPE/classes/Emitter.cpp	/^   FocusPtr anFocus = Focus::create(getFocusWidth(),$/;"	kind:l
 mpe::anPosition	src/MPE/classes/Emitter.cpp	/^   Vec2 anPosition;$/;"	kind:l
-mpe::anPosition	src/MPE/classes/Focus.cpp	/^         Vec2 anPosition = mEmitter.generatePosition(*this);$/;"	kind:l
-mpe::anSystem	src/MPE/classes/Focus.cpp	/^   System* anSystem = mEmitter.getSystem();$/;"	kind:l
+mpe::anPosition	src/MPE/classes/Focus.cpp	/^         Vec2 anPosition; $/;"	kind:l
 mpe::anVelocity	src/MPE/classes/Emitter.cpp	/^   Vec2 anVelocity;$/;"	kind:l
-mpe::init	src/MPE/classes/Focus.cpp	/^         anParticle->init(mEmitter.getParticleTOL(),                   $/;"	kind:p	file:	signature:(mEmitter.getParticleTOL(), mEmitter.getParticleSize(), anPosition, mEmitter.getParticleAngle(), mEmitter.generateVelocity(*this, anPosition), mEmitter.getParticleAV(), mEmitter.getTextRect(), Color {255, 255, 255, 255}, mGroups)
+mpe::init	src/MPE/classes/Focus.cpp	/^         anParticle->init(mEmitter.getParticleTOL(),                   $/;"	kind:p	file:	signature:(mEmitter.getParticleTOL(), mEmitter.getParticleSize(), anPosition = mEmitter.generatePosition(*this), mEmitter.getParticleAngle(), mEmitter.generateVelocity(*this, anPosition), mEmitter.getParticleAV(), mEmitter.getTextRect(), Color {255, 255, 255, 255}, mGroups)
 mpe::it	src/MPE/classes/System.cpp	/^   auto it = mEmitters.find(anEmitterID);$/;"	kind:l
 mpe::it	src/MPE/classes/System.cpp	/^   auto it = mEmitters.find(theEmitterID);$/;"	kind:l
 mpe::mFixedSize	src/MPE/classes/ParticleContainer.cpp	/^   mFixedSize(theFixed)$/;"	kind:f	namespace:mpe	signature:(theFixed)
@@ -1119,7 +1115,6 @@ result	ext_libs/include/TinyXML2/tinyxml2.h	/^   int result = vsnprintf_s( buffe
 ret	ext_libs/include/TinyXML2/tinyxml2.h	/^      T* ret = &_mem[_size];$/;"	kind:l
 rotate	include/MPE/classes/Vec2.hpp	/^   Vec2& rotate ( Real theAngle )$/;"	kind:f	class:mpe::Vec2	access:public	signature:( Real theAngle )
 rotate	src/MPE/classes/Emitter.cpp	/^   anPosition.rotate(theFocus.getAngle());$/;"	kind:p	file:	signature:(theFocus.getAngle())
-sEngine	include/MPE/classes/Generator.hpp	/^   static std::default_random_engine sEngine;$/;"	kind:m	class:mpe::Generator	access:private
 sRealRandom	include/MPE/classes/Emitter.hpp	/^   static Generator<Real> sRealRandom;$/;"	kind:m	class:mpe::Emitter	access:private
 sRealRandom	src/MPE/classes/Emitter.cpp	/^      anPosition.init(sRealRandom(), sRealRandom());$/;"	kind:p	file:	signature:()
 scale	include/MPE/classes/Vec2.hpp	/^   Vec2& scale(const Real& theScalarX, const Real& theScalarY)$/;"	kind:f	class:mpe::Vec2	access:public	signature:(const Real& theScalarX, const Real& theScalarY)
@@ -1137,6 +1132,26 @@ setDispersion	src/MPE/classes/System.cpp	/^         aEmitter.setDispersion(Emitt
 setDispersion	src/MPE/classes/System.cpp	/^         aEmitter.setDispersion(Emitter::RANDOM);$/;"	kind:p	file:	signature:(Emitter::RANDOM)
 setDispersion	src/MPE/classes/System.cpp	/^         aEmitter.setDispersion(Emitter::REFLECT);$/;"	kind:p	file:	signature:(Emitter::REFLECT)
 setDispersion	src/MPE/classes/System.cpp	/^         aEmitter.setDispersion(Emitter::STATIC);$/;"	kind:p	file:	signature:(Emitter::STATIC)
+setGeneratorFocusHeight	include/MPE/classes/Emitter.hpp	/^   void setGeneratorFocusHeight(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
+setGeneratorFocusHeight	src/MPE/classes/Emitter.cpp	/^void Emitter::setGeneratorFocusHeight(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
+setGeneratorFocusNP	include/MPE/classes/Emitter.hpp	/^   void setGeneratorFocusNP(Integer theMin, Integer theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Integer theMin, Integer theMax)
+setGeneratorFocusNP	src/MPE/classes/Emitter.cpp	/^void Emitter::setGeneratorFocusNP(Integer theMin, Integer theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Integer theMin, Integer theMax)
+setGeneratorFocusPPS	include/MPE/classes/Emitter.hpp	/^   void setGeneratorFocusPPS(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
+setGeneratorFocusPPS	src/MPE/classes/Emitter.cpp	/^void Emitter::setGeneratorFocusPPS(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
+setGeneratorFocusTOL	include/MPE/classes/Emitter.hpp	/^   void setGeneratorFocusTOL(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
+setGeneratorFocusTOL	src/MPE/classes/Emitter.cpp	/^void Emitter::setGeneratorFocusTOL(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
+setGeneratorFocusWidth	include/MPE/classes/Emitter.hpp	/^   void setGeneratorFocusWidth(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
+setGeneratorFocusWidth	src/MPE/classes/Emitter.cpp	/^void Emitter::setGeneratorFocusWidth(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
+setGeneratorParticleAV	include/MPE/classes/Emitter.hpp	/^   void setGeneratorParticleAV(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
+setGeneratorParticleAV	src/MPE/classes/Emitter.cpp	/^void Emitter::setGeneratorParticleAV(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
+setGeneratorParticleAngle	include/MPE/classes/Emitter.hpp	/^   void setGeneratorParticleAngle(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
+setGeneratorParticleAngle	src/MPE/classes/Emitter.cpp	/^void Emitter::setGeneratorParticleAngle(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
+setGeneratorParticleLV	include/MPE/classes/Emitter.hpp	/^   void setGeneratorParticleLV(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
+setGeneratorParticleLV	src/MPE/classes/Emitter.cpp	/^void Emitter::setGeneratorParticleLV(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
+setGeneratorParticleSize	include/MPE/classes/Emitter.hpp	/^   void setGeneratorParticleSize(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
+setGeneratorParticleSize	src/MPE/classes/Emitter.cpp	/^void Emitter::setGeneratorParticleSize(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
+setGeneratorParticleTOL	include/MPE/classes/Emitter.hpp	/^   void setGeneratorParticleTOL(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
+setGeneratorParticleTOL	src/MPE/classes/Emitter.cpp	/^void Emitter::setGeneratorParticleTOL(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
 setHeight	include/MPE/classes/Focus.hpp	/^   void setHeight(Real theHeight);$/;"	kind:p	class:mpe::Focus	access:public	signature:(Real theHeight)
 setHeight	src/MPE/classes/Focus.cpp	/^void Focus::setHeight(Real theHeight)$/;"	kind:f	class:mpe::Focus	signature:(Real theHeight)
 setLinearVelocity	include/MPE/classes/Particle.hpp	/^   void setLinearVelocity(Vec2 theLinearVelocity);$/;"	kind:p	class:mpe::Particle	access:public	signature:(Vec2 theLinearVelocity)
@@ -1145,27 +1160,6 @@ setPPS	include/MPE/classes/Focus.hpp	/^   void setPPS(Real thePPS);$/;"	kind:p	c
 setPPS	src/MPE/classes/Focus.cpp	/^void Focus::setPPS(Real thePPS)$/;"	kind:f	class:mpe::Focus	signature:(Real thePPS)
 setPosition	include/MPE/classes/Focus.hpp	/^   void setPosition(Vec2 thePosition);$/;"	kind:p	class:mpe::Focus	access:public	signature:(Vec2 thePosition)
 setPosition	src/MPE/classes/Focus.cpp	/^void Focus::setPosition(Vec2 thePosition)$/;"	kind:f	class:mpe::Focus	signature:(Vec2 thePosition)
-setRangeFocusHeight	include/MPE/classes/Emitter.hpp	/^   void setRangeFocusHeight(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
-setRangeFocusHeight	src/MPE/classes/Emitter.cpp	/^void Emitter::setRangeFocusHeight(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
-setRangeFocusNP	include/MPE/classes/Emitter.hpp	/^   void setRangeFocusNP(Integer theMin, Integer theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Integer theMin, Integer theMax)
-setRangeFocusNP	src/MPE/classes/Emitter.cpp	/^void Emitter::setRangeFocusNP(Integer theMin, Integer theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Integer theMin, Integer theMax)
-setRangeFocusPPS	include/MPE/classes/Emitter.hpp	/^   void setRangeFocusPPS(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
-setRangeFocusPPS	src/MPE/classes/Emitter.cpp	/^void Emitter::setRangeFocusPPS(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
-setRangeFocusTOL	include/MPE/classes/Emitter.hpp	/^   void setRangeFocusTOL(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
-setRangeFocusTOL	src/MPE/classes/Emitter.cpp	/^void Emitter::setRangeFocusTOL(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
-setRangeFocusWidth	include/MPE/classes/Emitter.hpp	/^   void setRangeFocusWidth(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
-setRangeFocusWidth	src/MPE/classes/Emitter.cpp	/^void Emitter::setRangeFocusWidth(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
-setRangeParticleAV	include/MPE/classes/Emitter.hpp	/^   void setRangeParticleAV(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
-setRangeParticleAV	src/MPE/classes/Emitter.cpp	/^void Emitter::setRangeParticleAV(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
-setRangeParticleAngle	include/MPE/classes/Emitter.hpp	/^   void setRangeParticleAngle(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
-setRangeParticleAngle	src/MPE/classes/Emitter.cpp	/^void Emitter::setRangeParticleAngle(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
-setRangeParticleHeight	src/MPE/classes/Emitter.cpp	/^void Emitter::setRangeParticleHeight(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
-setRangeParticleLV	include/MPE/classes/Emitter.hpp	/^   void setRangeParticleLV(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
-setRangeParticleLV	src/MPE/classes/Emitter.cpp	/^void Emitter::setRangeParticleLV(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
-setRangeParticleSize	include/MPE/classes/Emitter.hpp	/^   void setRangeParticleSize(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
-setRangeParticleSize	src/MPE/classes/Emitter.cpp	/^void Emitter::setRangeParticleSize(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
-setRangeParticleTOL	include/MPE/classes/Emitter.hpp	/^   void setRangeParticleTOL(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
-setRangeParticleTOL	src/MPE/classes/Emitter.cpp	/^void Emitter::setRangeParticleTOL(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
 setShape	include/MPE/classes/Emitter.hpp	/^   void setShape(Shape theShape);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Shape theShape)
 setShape	src/MPE/classes/Emitter.cpp	/^void Emitter::setShape(Shape theShape)$/;"	kind:f	class:mpe::Emitter	signature:(Shape theShape)
 setShape	src/MPE/classes/System.cpp	/^         aEmitter.setShape(Emitter::CIRCLE);$/;"	kind:p	file:	signature:(Emitter::CIRCLE)

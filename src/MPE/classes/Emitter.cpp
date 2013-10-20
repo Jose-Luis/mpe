@@ -16,8 +16,8 @@ namespace mpe
 //------------------------------------------------------------------------------
 Emitter::Emitter(EmitterID theID):
    mID(theID),
-   mRF_TOL(0, 0),
-   mRF_PPS(0, 0)
+   mGenFocTOL(0, 0),
+   mGenFocPPS(0, 0)
 {
 }
 //------------------------------------------------------------------------------
@@ -61,7 +61,7 @@ Vec2 Emitter::generateVelocity(const Focus& theFocus,
       break;
    }
 
-   anVelocity *= mRP_LV();
+   anVelocity *= mGenParLV();
 
    return anVelocity;
 }
@@ -95,12 +95,12 @@ FocusPtr Emitter::createFocus(Vec2   thePosition,
                               Real    theAngle,
                               GroupID theGroups) const
 {
-   FocusPtr anFocus = Focus::create(getFocusWidth(),
+   FocusPtr anFocus = Focus::create(getFocusTOL(),
+                                    getFocusWidth(),
                                     getFocusHeight(),
-                                    getParticleAngle(),
                                     thePosition,
+                                    theAngle,
                                     getFocusNP(),
-                                    getFocusTOL(),
                                     getFocusPPS(),
                                     theGroups,
                                     (*this));
@@ -132,7 +132,7 @@ System* Emitter::getSystem() const
 //------------------------------------------------------------------------------
 Real Emitter::getParticleSize() const
 {
-   return mRP_Size();
+   return mGenParSize();
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
@@ -141,7 +141,7 @@ Real Emitter::getParticleSize() const
 //------------------------------------------------------------------------------
 Real Emitter::getParticleAngle() const
 {
-   return mRP_Angle();
+   return mGenParAngle();
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
@@ -150,7 +150,7 @@ Real Emitter::getParticleAngle() const
 //------------------------------------------------------------------------------
 Real Emitter::getParticleLV() const
 {
-   return mRP_LV();
+   return mGenParLV();
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
@@ -159,7 +159,7 @@ Real Emitter::getParticleLV() const
 //------------------------------------------------------------------------------
 Real Emitter::getParticleAV() const
 {
-   return mRP_AV();
+   return mGenParAV();
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
@@ -168,7 +168,7 @@ Real Emitter::getParticleAV() const
 //------------------------------------------------------------------------------
 Real Emitter::getParticleTOL() const
 {
-   return mRP_TOL();
+   return mGenParTOL();
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
@@ -177,7 +177,7 @@ Real Emitter::getParticleTOL() const
 //------------------------------------------------------------------------------
 Real Emitter::getFocusTOL() const
 {
-   return mRF_TOL();
+   return mGenFocTOL();
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
@@ -186,7 +186,7 @@ Real Emitter::getFocusTOL() const
 //------------------------------------------------------------------------------
 Real Emitter::getFocusWidth() const
 {
-   return mRF_Width();
+   return mGenFocWidth();
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
@@ -195,7 +195,7 @@ Real Emitter::getFocusWidth() const
 //------------------------------------------------------------------------------
 Real Emitter::getFocusHeight() const
 {
-   return mRF_Height();
+   return mGenFocHeight();
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
@@ -204,7 +204,7 @@ Real Emitter::getFocusHeight() const
 //------------------------------------------------------------------------------
 Real Emitter::getFocusPPS() const
 {
-   return mRF_PPS();
+   return mGenFocPPS();
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
@@ -213,7 +213,7 @@ Real Emitter::getFocusPPS() const
 //------------------------------------------------------------------------------
 Integer Emitter::getFocusNP() const
 {
-   return mRF_NP();
+   return mGenFocNP();
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
@@ -253,93 +253,93 @@ void Emitter::setTextRect(TextRect theTextRect)
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
-//      Method:  setRangeParticleSize
+//      Method:  setGeneratorParticleSize
 // Description:
 //------------------------------------------------------------------------------
-void Emitter::setRangeParticleSize(Real theMin, Real theMax)
+void Emitter::setGeneratorParticleSize(Real theMin, Real theMax)
 {
-   mRP_Size = Generator<Real> {theMin, theMax};
+   mGenParSize = Generator<Real>::create(theMin,theMax);
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
-//      Method:  setRangeParticleAngle
+//      Method:  setGeneratorParticleAngle
 // Description:
 //------------------------------------------------------------------------------
-void Emitter::setRangeParticleAngle(Real theMin, Real theMax)
+void Emitter::setGeneratorParticleAngle(Real theMin, Real theMax)
 {
-   mRP_Angle = Generator<Real> {theMin, theMax};
+   mGenParAngle = Generator<Real>::create(theMin,theMax);
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
-//      Method:  setRangeParticleLV
+//      Method:  setGeneratorParticleLV
 // Description:
 //------------------------------------------------------------------------------
-void Emitter::setRangeParticleLV(Real theMin, Real theMax)
+void Emitter::setGeneratorParticleLV(Real theMin, Real theMax)
 {
-   mRP_LV = Generator<Real> {theMin, theMax};
+   mGenParLV = Generator<Real>::create(theMin,theMax);
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
-//      Method:  setRangeParticleAV
+//      Method:  setGeneratorParticleAV
 // Description:
 //------------------------------------------------------------------------------
-void Emitter::setRangeParticleAV(Real theMin, Real theMax)
+void Emitter::setGeneratorParticleAV(Real theMin, Real theMax)
 {
-   mRP_AV = Generator<Real> {theMin, theMax};
+   mGenParAV = Generator<Real>::create(theMin,theMax);
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
-//      Method:  setRangeParticleTOL
+//      Method:  setGeneratorParticleTOL
 // Description:
 //------------------------------------------------------------------------------
-void Emitter::setRangeParticleTOL(Real theMin, Real theMax)
+void Emitter::setGeneratorParticleTOL(Real theMin, Real theMax)
 {
-   mRP_TOL = Generator<Real> {theMin, theMax};
+   mGenParTOL = Generator<Real>::create(theMin,theMax);
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
-//      Method:  setRangeFocusWidth
+//      Method:  setGeneratorFocusWidth
 // Description:
 //------------------------------------------------------------------------------
-void Emitter::setRangeFocusWidth(Real theMin, Real theMax)
+void Emitter::setGeneratorFocusWidth(Real theMin, Real theMax)
 {
-   mRF_Width = Generator<Real> {theMin, theMax};
+   mGenFocWidth = Generator<Real>::create(theMin,theMax);
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
-//      Method:  setRangeFocusHeight
+//      Method:  setGeneratorFocusHeight
 // Description:
 //------------------------------------------------------------------------------
-void Emitter::setRangeFocusHeight(Real theMin, Real theMax)
+void Emitter::setGeneratorFocusHeight(Real theMin, Real theMax)
 {
-   mRF_Height = Generator<Real> {theMin, theMax};
+   mGenFocHeight = Generator<Real>::create(theMin,theMax);
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
-//      Method:  setRangeFocusTOL
+//      Method:  setGeneratorFocusTOL
 // Description:
 //------------------------------------------------------------------------------
-void Emitter::setRangeFocusTOL(Real theMin, Real theMax)
+void Emitter::setGeneratorFocusTOL(Real theMin, Real theMax)
 {
-   mRF_TOL = Generator<Real> {theMin, theMax};
+   mGenFocTOL = Generator<Real>::create(theMin,theMax);
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
-//      Method:  setRangeFocusPPS
+//      Method:  setGeneratorFocusPPS
 // Description:
 //------------------------------------------------------------------------------
-void Emitter::setRangeFocusPPS(Real theMin, Real theMax)
+void Emitter::setGeneratorFocusPPS(Real theMin, Real theMax)
 {
-   mRF_PPS = Generator<Real> {theMin, theMax};
+   mGenFocPPS = Generator<Real>::create(theMin,theMax);
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
-//      Method:  setRangeFocusNP
+//      Method:  setGeneratorFocusNP
 // Description:
 //------------------------------------------------------------------------------
-void Emitter::setRangeFocusNP(Integer theMin, Integer theMax)
+void Emitter::setGeneratorFocusNP(Integer theMin, Integer theMax)
 {
-   mRF_NP = Generator<Integer> {theMin, theMax};
+   mGenFocNP = Generator<Integer>::create(theMin,theMax);
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter

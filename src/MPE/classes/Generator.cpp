@@ -66,10 +66,17 @@ T Generator<T>::operator()() const
 {
    return mGenerator();
 }
-////////////////////////////////////////////////////////////////////////////////
+//------------------------------------------------------------------------------
+//       Class:  Generator
+//      Method:  methodName
+// Description:  A stupid method 
+//------------------------------------------------------------------------------
 template<typename T>
-std::default_random_engine Generator<T>::sEngine{std::random_device{}()};
-////////////////////////////////////////////////////////////////////////////////
+Generator<T> Generator<T>::create(T theMin, T theMax)
+{
+   return theMin==theMax?Generator<T>(theMin):Generator<T>(theMin,theMax);
+}
+///////////////////////////////////////////////////////////////////////////////
 template class Generator<Integer>;
 template class Generator<Real>;
 ////////////////////////////////////////////////////////////////////////////////

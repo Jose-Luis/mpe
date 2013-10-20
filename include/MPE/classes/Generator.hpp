@@ -17,9 +17,10 @@ public:
    Generator(T theMin, T theMax);
    T operator()() const;
 
+   static Generator<T> create(T theMin,T theMax);
+
 private:
    std::function<T()> mGenerator;
-   static std::default_random_engine sEngine;
 };
 } /* mpe */
 

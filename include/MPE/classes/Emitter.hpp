@@ -100,38 +100,38 @@ public:
    /// @brief getDispersion
    /// @return
    void setDispersion(Dispersion theDispersion);
-   /// @brief setRangeParticleWidth
-   /// @param theRangeParticleWidth
-   void setRangeParticleSize(Real theMin, Real theMax);
-   /// @brief setRangeParticleAngle
+   /// @brief setGeneratorParticleWidth
+   /// @param theGeneratorParticleWidth
+   void setGeneratorParticleSize(Real theMin, Real theMax);
+   /// @brief setGeneratorParticleAngle
    /// @param theMin
    /// @param theMax
-   void setRangeParticleAngle(Real theMin, Real theMax);
-   /// @brief setRangeParticlePOW
-   /// @param theRangeParticlePOW
-   void setRangeParticleLV(Real theMin, Real theMax);
-   /// @brief setRangeParticleAV
+   void setGeneratorParticleAngle(Real theMin, Real theMax);
+   /// @brief setGeneratorParticlePOW
+   /// @param theGeneratorParticlePOW
+   void setGeneratorParticleLV(Real theMin, Real theMax);
+   /// @brief setGeneratorParticleAV
    /// @param theMin
    /// @param theMax
-   void setRangeParticleAV(Real theMin, Real theMax);
-   /// @brief setRangeParticleTOL
-   /// @param theRangeParticleTOL
-   void setRangeParticleTOL(Real theMin, Real theMax);
-   /// @brief setRangeFocusTOL
-   /// @param theRangeFocusTOL
-   void setRangeFocusTOL(Real theMin, Real theMax);
-   /// @brief setRangeFocusWidth
-   /// @param theRangeFocusWidth
-   void setRangeFocusWidth(Real theMin, Real theMax);
-   /// @brief setRangeFocusHeight
-   /// @param theRangeFocusHeight
-   void setRangeFocusHeight(Real theMin, Real theMax);
-   /// @brief setRangeFocusPPS
-   /// @param theRangeFocusPPS
-   void setRangeFocusPPS(Real theMin, Real theMax);
-   /// @brief setRangeFocusNP
-   /// @param theRangeFocusNP
-   void setRangeFocusNP(Integer theMin, Integer theMax);
+   void setGeneratorParticleAV(Real theMin, Real theMax);
+   /// @brief setGeneratorParticleTOL
+   /// @param theGeneratorParticleTOL
+   void setGeneratorParticleTOL(Real theMin, Real theMax);
+   /// @brief setGeneratorFocusTOL
+   /// @param theGeneratorFocusTOL
+   void setGeneratorFocusTOL(Real theMin, Real theMax);
+   /// @brief setGeneratorFocusWidth
+   /// @param theGeneratorFocusWidth
+   void setGeneratorFocusWidth(Real theMin, Real theMax);
+   /// @brief setGeneratorFocusHeight
+   /// @param theGeneratorFocusHeight
+   void setGeneratorFocusHeight(Real theMin, Real theMax);
+   /// @brief setGeneratorFocusPPS
+   /// @param theGeneratorFocusPPS
+   void setGeneratorFocusPPS(Real theMin, Real theMax);
+   /// @brief setGeneratorFocusNP
+   /// @param theGeneratorFocusNP
+   void setGeneratorFocusNP(Integer theMin, Integer theMax);
    /// @brief setSystem
    /// @param theSystem
    void setSystem(System* theSystem);
@@ -146,16 +146,16 @@ private:
    Shape       mShape;         ///< The emitter's shape.
    Dispersion  mDispersion;    ///< Type of paricles' dispersion.
    TextRect    mRect;
-   Generator<Real> mRP_TOL;   ///< Range of particles lifetime.
-   Generator<Real> mRP_Size; ///< Range of paricles width.
-   Generator<Real> mRP_Angle; ///< Range of particles angle.
-   Generator<Real> mRP_LV;    ///< Range of paricles impulsion.
-   Generator<Real> mRP_AV;    ///< Range of particles angular velocity.
-   Generator<Real> mRF_Width; ///< Range of focus width.
-   Generator<Real> mRF_Height;///< Range of focus height.
-   Generator<Real> mRF_TOL;   ///< Range of focus time of life.
-   Generator<Real> mRF_PPS;   ///< Range of focus particles per second.
-   Generator<Integer> mRF_NP; ///< Range of focus number of particles.
+   Generator<Real> mGenParTOL;   ///< Generator of particles lifetime.
+   Generator<Real> mGenParSize; ///< Generator of paricles width.
+   Generator<Real> mGenParAngle; ///< Generator of particles angle.
+   Generator<Real> mGenParLV;    ///< Generator of paricles impulsion.
+   Generator<Real> mGenParAV;    ///< Generator of particles angular velocity.
+   Generator<Real> mGenFocWidth; ///< Generator of focus width.
+   Generator<Real> mGenFocHeight;///< Generator of focus height.
+   Generator<Real> mGenFocTOL;   ///< Generator of focus time of life.
+   Generator<Real> mGenFocPPS;   ///< Generator of focus particles per second.
+   Generator<Integer> mGenFocNP; ///< Generator of focus number of particles.
 
    static Generator<Real> sRealRandom;
 

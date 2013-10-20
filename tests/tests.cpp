@@ -4,7 +4,7 @@
 
 int test1()
 {
-   mpe::System aParticleSystem{1024,false};
+   mpe::System aParticleSystem{1024};
    bool aBoolean = aParticleSystem.initFromFile("Emitter.xml");
 
    if (aBoolean)
@@ -21,9 +21,9 @@ int test1()
    
    mpe::FocusPtr aFocus{aParticleSystem.createFocus("Emitter1",mpe::Vec2(0,0),0)};
    aParticleSystem.addFocus(aFocus);
-   for (int i=0; i<100;++i)
+   for (int i=0; i<60;++i)
    {
-      aParticleSystem.update(6);
+      aParticleSystem.update(100);
       std::cout << "\nNumber of Particles: " << aParticleSystem.getParticlesSize();
    }
 
