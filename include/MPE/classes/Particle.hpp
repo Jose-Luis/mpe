@@ -22,24 +22,6 @@ public:
    Particle();
    /// @brief ~Particle
    ~Particle();
-   /// @brief init 
-   /// @param theTLL
-   /// @param theSize
-   /// @param thePosition
-   /// @param theAngle
-   /// @param theLinearVelocity
-   /// @param theAngularVelocity
-   /// @param theTextRect
-   /// @param theColor
-   void init(Real    theTLL,
-             Real    theSize,
-             Vec2    thePosition,
-             Real    theAngle,
-             Vec2    theLinearVelocity,
-             Real    theAngularVelocity,
-             TextRect theTextRect,
-             Color   theColor = Color {255, 255, 255, 255},
-             GroupID theGroups = mpe::NO_GROUP);
 
    void update(Real theElapsedTime);
 
@@ -47,8 +29,11 @@ public:
    void setSize(Real theSize);
 
    Vec2 getPosition() const;
+   void setPosition(Vec2 thePosition);
+
 
    Real getAngle() const;
+   void setAngle(Real theAngle);
 
    Vec2 getLinearVelocity() const;
    void setLinearVelocity(Vec2 theLinearVelocity);
@@ -62,6 +47,8 @@ public:
    Color getColor() const;
    void  setColor(Color theColor);
 
+   GroupID getGroups() const;
+   void  setGroups(GroupID theGroup);
    bool belongToGroup(const GroupID theGroups) const;
 
 private:

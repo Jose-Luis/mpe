@@ -33,9 +33,6 @@ public:
    {
       return mAge;
    }
-
-protected:
-
    /// @brief Mortal
    /// @param theLifetime
    Mortal(Real theLifetime);

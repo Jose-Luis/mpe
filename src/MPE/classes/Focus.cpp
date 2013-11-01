@@ -84,24 +84,32 @@ void Focus::update(Real theElapsedTime)
 //------------------------------------------------------------------------------
 void Focus::emit(Integer theNParticles)
 {
-   System* anSystem{mEmitter.getSystem()};
-
    for(int i = 0; i < theNParticles; i++)
    {
-      Particle* anParticle{anSystem->addParticle()};
-      if (anParticle != nullptr)
-      {
-         Vec2 anPosition; 
-         anParticle->init(mEmitter.getParticleTOL(),                   
-                          mEmitter.getParticleSize(),                 
-                          anPosition = mEmitter.generatePosition(*this),                                  
-                          mEmitter.getParticleAngle(),                 
-                          mEmitter.generateVelocity(*this, anPosition),
-                          mEmitter.getParticleAV(),                    
-                          mEmitter.getTextRect(),                      
-                          Color {255, 255, 255, 255},                  
-                          mGroups);                                    
-      }
+      initParticle();
+   }
+}
+//------------------------------------------------------------------------------
+//       Class:  Focus
+//      Method:  initParticle
+// Description:  init a particle 
+//------------------------------------------------------------------------------
+void Focus::initParticle()
+{
+   Particle* anParticle = mEmitter.getSystem()->addParticle();
+   if (anParticle != nullptr)
+   {
+      Vec2 anPosition = mEmitter.generatePosition(*this); 
+      Vec2 anVelocity = mEmitter.generateVelocity(*this,anPosition); 
+
+      anParticle->resetLife(mEmitter.getParticleTOL());                  
+      anParticle->setSize(mEmitter.getParticleSize());                  
+      anParticle->setPosition(anPosition);                  
+      anParticle->setAngle(mEmitter.getParticleAngle());                  
+      anParticle->setLinearVelocity(anVelocity);                  
+      anParticle->setAngularVelocity(mEmitter.getParticleAV());                  
+      anParticle->setColor(Color{255,255,255,255});                  
+      anParticle->setGroups(mGroups);                  
    }
 }
 //------------------------------------------------------------------------------

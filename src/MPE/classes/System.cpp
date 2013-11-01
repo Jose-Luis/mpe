@@ -398,6 +398,24 @@ Integer System::getParticlesSize()
 {
    return mParticles.size();
 }
+//------------------------------------------------------------------------------
+//       Class:  System
+//      Method:  methodName
+// Description:  A stupid method 
+//------------------------------------------------------------------------------
+ParticleContainer::const_iterator System::getParticlesEnd() const
+{
+   return mParticles.end();
+}
+//------------------------------------------------------------------------------
+//       Class:  System
+//      Method:  methodName
+// Description:  A stupid method 
+//------------------------------------------------------------------------------
+ParticleContainer::const_iterator System::getParticlesBegin() const
+{
+   return mParticles.begin();
+}
 ////////////////////////////////////// END NAMESPACE  mpe //////////////////////
 }
 

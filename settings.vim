@@ -1,2 +1,1 @@
-set makeprg=make\ -C\ build/
-nnoremap <F8> :!urxvt -e cgdb build/bin/TTX& <CR>
+map <Leader>m :make -C ~/Development/Builds/MPE/debug | cwindow 3<CR>

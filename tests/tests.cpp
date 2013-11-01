@@ -24,13 +24,34 @@ int test1()
    for (int i=0; i<60;++i)
    {
       aParticleSystem.update(100);
-      std::cout << "\nNumber of Particles: " << aParticleSystem.getParticlesSize();
+      
+      for (auto it = aParticleSystem.getParticlesBegin(); it != aParticleSystem.getParticlesEnd();it++)
+      {
+         std::cout << "\n\tX,Y: " << it->getPosition().getX() << "," <<  it->getPosition().getY(); 
+      } 
    }
 
    return EXIT_SUCCESS;
 }
 
 int test2()
+{
+   mpe::System aParticleSystem{1024};
+   aParticleSystem.initFromFile("Emitter.xml");
+   mpe::FocusPtr aFocus{aParticleSystem.createFocus("Emitter1",mpe::Vec2(0,0),0)};
+   aParticleSystem.addFocus(aFocus);
+
+   while(aFocus->isAlive() && aFocus->getAge() < 10000)
+   {
+      aParticleSystem.update(100);
+      std::cout <<  "\nNumber of particles:  " << aParticleSystem.getParticlesSize();
+   }
+
+
+   return EXIT_SUCCESS;
+}
+
+int test3()
 {
    std::cout <<  "\nParticle size: " <<sizeof(mpe::Particle);
 
@@ -41,5 +62,7 @@ int main(void)
 {
    test1();
    test2();
+   test3();
+
    return EXIT_SUCCESS;
 }

@@ -17,7 +17,6 @@ namespace mpe
       ~ParticleContainer ();
    
       Particle* addParticle();
-
       void removeParticle(Particle* theParticle);
 
       size_t size(){return mSize;};

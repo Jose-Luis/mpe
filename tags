@@ -153,7 +153,7 @@ MemPool	ext_libs/include/TinyXML2/tinyxml2.h	/^   MemPool() {}$/;"	kind:f	class:
 MemPool	ext_libs/include/TinyXML2/tinyxml2.h	/^class MemPool$/;"	kind:c	namespace:tinyxml2
 MemPoolT	ext_libs/include/TinyXML2/tinyxml2.h	/^   MemPoolT() : _root(0), _currentAllocs(0), _nAllocs(0), _maxAllocs(0), _nUntracked(0)	{}$/;"	kind:f	class:tinyxml2::MemPoolT	access:public	signature:()
 MemPoolT	ext_libs/include/TinyXML2/tinyxml2.h	/^class MemPoolT : public MemPool$/;"	kind:c	namespace:tinyxml2	inherits:MemPool
-Mortal	include/MPE/classes/Mortal.hpp	/^   Mortal(Real theLifetime);$/;"	kind:p	class:mpe::Mortal	access:protected	signature:(Real theLifetime)
+Mortal	include/MPE/classes/Mortal.hpp	/^   Mortal(Real theLifetime);$/;"	kind:p	class:mpe::Mortal	access:public	signature:(Real theLifetime)
 Mortal	include/MPE/classes/Mortal.hpp	/^class Mortal$/;"	kind:c	namespace:mpe
 Mortal	src/MPE/classes/Mortal.cpp	/^Mortal::Mortal(Real theLifetime):$/;"	kind:f	class:mpe::Mortal	signature:(Real theLifetime)
 NEEDS_DELETE	ext_libs/include/TinyXML2/tinyxml2.h	/^      NEEDS_DELETE = 0x200$/;"	kind:e	enum:tinyxml2::StrPair::__anon2
@@ -536,13 +536,15 @@ addParticle	include/MPE/classes/System.hpp	/^   Particle*  addParticle();$/;"	ki
 addParticle	src/MPE/classes/ParticleContainer.cpp	/^Particle* ParticleContainer::addParticle()            $/;"	kind:f	class:mpe::ParticleContainer	signature:()
 addParticle	src/MPE/classes/System.cpp	/^Particle* System::addParticle ()$/;"	kind:f	class:mpe::System	signature:()
 affect	include/MPE/classes/Affector.hpp	/^   virtual void affect(Particle& theParticle, Real theElapsedTime) = 0;$/;"	kind:p	class:mpe::Affector	access:public	signature:(Particle& theParticle, Real theElapsedTime)
-age	include/MPE/classes/Mortal.hpp	/^   inline void age(Real theElapsedTime)$/;"	kind:f	class:mpe::Mortal	access:protected	signature:(Real theElapsedTime)
+age	include/MPE/classes/Mortal.hpp	/^   inline void age(Real theElapsedTime)$/;"	kind:f	class:mpe::Mortal	access:public	signature:(Real theElapsedTime)
 anEmitterID	src/MPE/classes/System.cpp	/^   EmitterID anEmitterID = theEmitter.getID();$/;"	kind:l
-anFocus	src/MPE/classes/Emitter.cpp	/^   FocusPtr anFocus = Focus::create(getFocusWidth(),$/;"	kind:l
+anFocus	src/MPE/classes/Emitter.cpp	/^   FocusPtr anFocus = Focus::create(getFocusTOL(),$/;"	kind:l
 anLength	include/MPE/classes/Vec2.hpp	/^      Real anLength = length();$/;"	kind:l
+anParticle	src/MPE/classes/Focus.cpp	/^   Particle* anParticle = mEmitter.getSystem()->addParticle();$/;"	kind:l
 anPosition	src/MPE/classes/Emitter.cpp	/^   Vec2 anPosition;$/;"	kind:l
-anPosition	src/MPE/classes/Focus.cpp	/^         Vec2 anPosition; $/;"	kind:l
+anPosition	src/MPE/classes/Focus.cpp	/^      Vec2 anPosition = mEmitter.generatePosition(*this); $/;"	kind:l
 anVelocity	src/MPE/classes/Emitter.cpp	/^   Vec2 anVelocity;$/;"	kind:l
+anVelocity	src/MPE/classes/Focus.cpp	/^      Vec2 anVelocity = mEmitter.generateVelocity(*this,anPosition); $/;"	kind:l
 b	ext_libs/include/TinyXML2/tinyxml2.h	/^      bool b = false;$/;"	kind:l
 b	include/MPE/Config.hpp	/^   Integer r, g, b, a;$/;"	kind:m	struct:mpe::Color	access:public
 begin	include/MPE/classes/ParticleContainer.hpp	/^      const_iterator begin() const {return mParticles;}$/;"	kind:f	class:mpe::ParticleContainer	access:public	signature:() const
@@ -598,6 +600,8 @@ getFocusTOL	include/MPE/classes/Emitter.hpp	/^   Real getFocusTOL() const;$/;"	k
 getFocusTOL	src/MPE/classes/Emitter.cpp	/^Real Emitter::getFocusTOL() const$/;"	kind:f	class:mpe::Emitter	signature:() const
 getFocusWidth	include/MPE/classes/Emitter.hpp	/^   Real getFocusWidth() const;$/;"	kind:p	class:mpe::Emitter	access:public	signature:() const
 getFocusWidth	src/MPE/classes/Emitter.cpp	/^Real Emitter::getFocusWidth() const$/;"	kind:f	class:mpe::Emitter	signature:() const
+getGroups	include/MPE/classes/Particle.hpp	/^   GroupID getGroups() const;$/;"	kind:p	class:mpe::Particle	access:public	signature:() const
+getGroups	src/MPE/classes/Particle.cpp	/^GroupID Particle::getGroups() const$/;"	kind:f	class:mpe::Particle	signature:() const
 getHeight	include/MPE/classes/Focus.hpp	/^   Real getHeight() const;$/;"	kind:p	class:mpe::Focus	access:public	signature:() const
 getHeight	src/MPE/classes/Focus.cpp	/^Real Focus::getHeight() const$/;"	kind:f	class:mpe::Focus	signature:() const
 getID	include/MPE/classes/Emitter.hpp	/^   EmitterID getID() const;$/;"	kind:p	class:mpe::Emitter	access:public	signature:() const
@@ -617,9 +621,13 @@ getParticleSize	include/MPE/classes/Emitter.hpp	/^   Real getParticleSize() cons
 getParticleSize	src/MPE/classes/Emitter.cpp	/^Real Emitter::getParticleSize() const$/;"	kind:f	class:mpe::Emitter	signature:() const
 getParticleTOL	include/MPE/classes/Emitter.hpp	/^   Real getParticleTOL() const;$/;"	kind:p	class:mpe::Emitter	access:public	signature:() const
 getParticleTOL	src/MPE/classes/Emitter.cpp	/^Real Emitter::getParticleTOL() const$/;"	kind:f	class:mpe::Emitter	signature:() const
+getParticlesBegin	include/MPE/classes/System.hpp	/^   ParticleContainer::const_iterator getParticlesBegin() const;$/;"	kind:p	class:mpe::System	access:public	signature:() const
+getParticlesBegin	src/MPE/classes/System.cpp	/^ParticleContainer::const_iterator System::getParticlesBegin() const$/;"	kind:f	class:mpe::System	signature:() const
+getParticlesEnd	include/MPE/classes/System.hpp	/^   ParticleContainer::const_iterator getParticlesEnd() const;$/;"	kind:p	class:mpe::System	access:public	signature:() const
+getParticlesEnd	src/MPE/classes/System.cpp	/^ParticleContainer::const_iterator System::getParticlesEnd() const$/;"	kind:f	class:mpe::System	signature:() const
 getParticlesSize	include/MPE/classes/System.hpp	/^   Integer getParticlesSize();$/;"	kind:p	class:mpe::System	access:public	signature:()
 getParticlesSize	src/MPE/classes/System.cpp	/^Integer System::getParticlesSize()$/;"	kind:f	class:mpe::System	signature:()
-getParticlesSize	tests/tests.cpp	/^      std::cout << "\\nNumber of Particles: " << aParticleSystem.getParticlesSize();$/;"	kind:p	file:	signature:()
+getParticlesSize	tests/tests.cpp	/^      std::cout <<  "\\nNumber of particles:  " << aParticleSystem->getParticlesSize();$/;"	kind:p	file:	signature:()
 getPosition	include/MPE/classes/Focus.hpp	/^   Vec2 getPosition() const;$/;"	kind:p	class:mpe::Focus	access:public	signature:() const
 getPosition	include/MPE/classes/Particle.hpp	/^   Vec2 getPosition() const;$/;"	kind:p	class:mpe::Particle	access:public	signature:() const
 getPosition	src/MPE/classes/Focus.cpp	/^Vec2 Focus::getPosition() const$/;"	kind:f	class:mpe::Focus	signature:() const
@@ -645,12 +653,11 @@ grow	src/MPE/classes/ParticleContainer.cpp	/^bool ParticleContainer::grow()$/;"	
 height	include/MPE/Config.hpp	/^   Integer x, y, width, height;$/;"	kind:m	struct:mpe::TextRect	access:public
 i	ext_libs/include/TinyXML2/tinyxml2.h	/^      int i = 0;$/;"	kind:l
 i	ext_libs/include/TinyXML2/tinyxml2.h	/^      unsigned i = 0;$/;"	kind:l
-init	include/MPE/classes/Particle.hpp	/^   void init(Real    theTLL,$/;"	kind:p	class:mpe::Particle	access:public	signature:(Real theTLL, Real theSize, Vec2 thePosition, Real theAngle, Vec2 theLinearVelocity, Real theAngularVelocity, TextRect theTextRect, Color theColor = Color {255, 255, 255, 255}, GroupID theGroups = mpe::NO_GROUP)
 init	include/MPE/classes/Vec2.hpp	/^   void init(Real theX, Real theY)$/;"	kind:f	class:mpe::Vec2	access:public	signature:(Real theX, Real theY)
-init	src/MPE/classes/Focus.cpp	/^         anParticle->init(mEmitter.getParticleTOL(),                   $/;"	kind:p	file:	signature:(mEmitter.getParticleTOL(), mEmitter.getParticleSize(), anPosition = mEmitter.generatePosition(*this), mEmitter.getParticleAngle(), mEmitter.generateVelocity(*this, anPosition), mEmitter.getParticleAV(), mEmitter.getTextRect(), Color {255, 255, 255, 255}, mGroups)
-init	src/MPE/classes/Particle.cpp	/^void Particle::init(Real    theTTL,$/;"	kind:f	class:mpe::Particle	signature:(Real theTTL, Real theSize, Vec2 thePosition, Real theAngle, Vec2 theLinearVelocity, Real theAngularVelocity, TextRect theTextRect, Color theColor, GroupID theGroups)
 initFromFile	include/MPE/classes/System.hpp	/^   bool initFromFile(std::string theFilename);$/;"	kind:p	class:mpe::System	access:public	signature:(std::string theFilename)
 initFromFile	src/MPE/classes/System.cpp	/^bool System::initFromFile(std::string theFilename)$/;"	kind:f	class:mpe::System	signature:(std::string theFilename)
+initParticle	include/MPE/classes/Focus.hpp	/^   void initParticle();$/;"	kind:p	class:mpe::Focus	access:private	signature:()
+initParticle	src/MPE/classes/Focus.cpp	/^void Focus::initParticle()$/;"	kind:f	class:mpe::Focus	signature:()
 isAlive	include/MPE/classes/Mortal.hpp	/^   inline bool isAlive()$/;"	kind:f	class:mpe::Mortal	access:public	signature:()
 it	src/MPE/classes/System.cpp	/^   auto it = mEmitters.find(anEmitterID);$/;"	kind:l
 it	src/MPE/classes/System.cpp	/^   auto it = mEmitters.find(theEmitterID);$/;"	kind:l
@@ -847,6 +854,8 @@ mpe::Focus::getPosition	include/MPE/classes/Focus.hpp	/^   Vec2 getPosition() co
 mpe::Focus::getPosition	src/MPE/classes/Focus.cpp	/^Vec2 Focus::getPosition() const$/;"	kind:f	class:mpe::Focus	signature:() const
 mpe::Focus::getWidth	include/MPE/classes/Focus.hpp	/^   Real getWidth() const;$/;"	kind:p	class:mpe::Focus	access:public	signature:() const
 mpe::Focus::getWidth	src/MPE/classes/Focus.cpp	/^Real Focus::getWidth() const$/;"	kind:f	class:mpe::Focus	signature:() const
+mpe::Focus::initParticle	include/MPE/classes/Focus.hpp	/^   void initParticle();$/;"	kind:p	class:mpe::Focus	access:private	signature:()
+mpe::Focus::initParticle	src/MPE/classes/Focus.cpp	/^void Focus::initParticle()$/;"	kind:f	class:mpe::Focus	signature:()
 mpe::Focus::mAngle	include/MPE/classes/Focus.hpp	/^   Real      mAngle;   \/\/\/< Angle.$/;"	kind:m	class:mpe::Focus	access:private
 mpe::Focus::mEP	include/MPE/classes/Focus.hpp	/^   Integer   mEP;      \/\/\/< Particles already emitted by the focus.$/;"	kind:m	class:mpe::Focus	access:private
 mpe::Focus::mEmitter	include/MPE/classes/Focus.hpp	/^   const Emitter&  mEmitter;\/\/\/< The emitter server for the focus.$/;"	kind:m	class:mpe::Focus	access:private
@@ -896,9 +905,9 @@ mpe::GroupID	include/MPE/Config.hpp	/^typedef unsigned char GroupID;$/;"	kind:t	
 mpe::Integer	include/MPE/Config.hpp	/^typedef int Integer;$/;"	kind:t	namespace:mpe
 mpe::MAX_INTEGER	include/MPE/Config.hpp	/^const Integer MAX_INTEGER = std::numeric_limits<Integer>::max();$/;"	kind:m	namespace:mpe
 mpe::Mortal	include/MPE/classes/Mortal.hpp	/^class Mortal$/;"	kind:c	namespace:mpe
-mpe::Mortal::Mortal	include/MPE/classes/Mortal.hpp	/^   Mortal(Real theLifetime);$/;"	kind:p	class:mpe::Mortal	access:protected	signature:(Real theLifetime)
+mpe::Mortal::Mortal	include/MPE/classes/Mortal.hpp	/^   Mortal(Real theLifetime);$/;"	kind:p	class:mpe::Mortal	access:public	signature:(Real theLifetime)
 mpe::Mortal::Mortal	src/MPE/classes/Mortal.cpp	/^Mortal::Mortal(Real theLifetime):$/;"	kind:f	class:mpe::Mortal	signature:(Real theLifetime)
-mpe::Mortal::age	include/MPE/classes/Mortal.hpp	/^   inline void age(Real theElapsedTime)$/;"	kind:f	class:mpe::Mortal	access:protected	signature:(Real theElapsedTime)
+mpe::Mortal::age	include/MPE/classes/Mortal.hpp	/^   inline void age(Real theElapsedTime)$/;"	kind:f	class:mpe::Mortal	access:public	signature:(Real theElapsedTime)
 mpe::Mortal::die	include/MPE/classes/Mortal.hpp	/^   inline void die()$/;"	kind:f	class:mpe::Mortal	access:private	signature:()
 mpe::Mortal::getAge	include/MPE/classes/Mortal.hpp	/^   inline Real getAge() const$/;"	kind:f	class:mpe::Mortal	access:public	signature:() const
 mpe::Mortal::isAlive	include/MPE/classes/Mortal.hpp	/^   inline bool isAlive()$/;"	kind:f	class:mpe::Mortal	access:public	signature:()
@@ -906,7 +915,7 @@ mpe::Mortal::kill	include/MPE/classes/Mortal.hpp	/^   inline void kill()$/;"	kin
 mpe::Mortal::mAge	include/MPE/classes/Mortal.hpp	/^   Real mAge;$/;"	kind:m	class:mpe::Mortal	access:private
 mpe::Mortal::mAlive	include/MPE/classes/Mortal.hpp	/^   bool mAlive;$/;"	kind:m	class:mpe::Mortal	access:private
 mpe::Mortal::mLifetime	include/MPE/classes/Mortal.hpp	/^   Real mLifetime;$/;"	kind:m	class:mpe::Mortal	access:private
-mpe::Mortal::resetLife	include/MPE/classes/Mortal.hpp	/^   inline void resetLife(Real theLifetime)$/;"	kind:f	class:mpe::Mortal	access:protected	signature:(Real theLifetime)
+mpe::Mortal::resetLife	include/MPE/classes/Mortal.hpp	/^   inline void resetLife(Real theLifetime)$/;"	kind:f	class:mpe::Mortal	access:public	signature:(Real theLifetime)
 mpe::NO_GROUP	include/MPE/Config.hpp	/^const GroupID NO_GROUP = 0x00;$/;"	kind:m	namespace:mpe
 mpe::Particle	include/MPE/classes/Particle.hpp	/^class Particle: public Mortal$/;"	kind:c	namespace:mpe	inherits:Mortal
 mpe::Particle::Particle	include/MPE/classes/Particle.hpp	/^   Particle();$/;"	kind:p	class:mpe::Particle	access:public	signature:()
@@ -919,6 +928,8 @@ mpe::Particle::getAngularVelocity	include/MPE/classes/Particle.hpp	/^   Real get
 mpe::Particle::getAngularVelocity	src/MPE/classes/Particle.cpp	/^Real Particle::getAngularVelocity() const$/;"	kind:f	class:mpe::Particle	signature:() const
 mpe::Particle::getColor	include/MPE/classes/Particle.hpp	/^   Color getColor() const;$/;"	kind:p	class:mpe::Particle	access:public	signature:() const
 mpe::Particle::getColor	src/MPE/classes/Particle.cpp	/^Color Particle::getColor() const$/;"	kind:f	class:mpe::Particle	signature:() const
+mpe::Particle::getGroups	include/MPE/classes/Particle.hpp	/^   GroupID getGroups() const;$/;"	kind:p	class:mpe::Particle	access:public	signature:() const
+mpe::Particle::getGroups	src/MPE/classes/Particle.cpp	/^GroupID Particle::getGroups() const$/;"	kind:f	class:mpe::Particle	signature:() const
 mpe::Particle::getLinearVelocity	include/MPE/classes/Particle.hpp	/^   Vec2 getLinearVelocity() const;$/;"	kind:p	class:mpe::Particle	access:public	signature:() const
 mpe::Particle::getLinearVelocity	src/MPE/classes/Particle.cpp	/^Vec2 Particle::getLinearVelocity() const$/;"	kind:f	class:mpe::Particle	signature:() const
 mpe::Particle::getPosition	include/MPE/classes/Particle.hpp	/^   Vec2 getPosition() const;$/;"	kind:p	class:mpe::Particle	access:public	signature:() const
@@ -927,8 +938,6 @@ mpe::Particle::getSize	include/MPE/classes/Particle.hpp	/^   Real getSize() cons
 mpe::Particle::getSize	src/MPE/classes/Particle.cpp	/^Real Particle::getSize() const$/;"	kind:f	class:mpe::Particle	signature:() const
 mpe::Particle::getTextRect	include/MPE/classes/Particle.hpp	/^   TextRect getTextRect() const;$/;"	kind:p	class:mpe::Particle	access:public	signature:() const
 mpe::Particle::getTextRect	src/MPE/classes/Particle.cpp	/^TextRect Particle::getTextRect() const$/;"	kind:f	class:mpe::Particle	signature:() const
-mpe::Particle::init	include/MPE/classes/Particle.hpp	/^   void init(Real    theTLL,$/;"	kind:p	class:mpe::Particle	access:public	signature:(Real theTLL, Real theSize, Vec2 thePosition, Real theAngle, Vec2 theLinearVelocity, Real theAngularVelocity, TextRect theTextRect, Color theColor = Color {255, 255, 255, 255}, GroupID theGroups = mpe::NO_GROUP)
-mpe::Particle::init	src/MPE/classes/Particle.cpp	/^void Particle::init(Real    theTTL,$/;"	kind:f	class:mpe::Particle	signature:(Real theTTL, Real theSize, Vec2 thePosition, Real theAngle, Vec2 theLinearVelocity, Real theAngularVelocity, TextRect theTextRect, Color theColor, GroupID theGroups)
 mpe::Particle::mAngle	include/MPE/classes/Particle.hpp	/^   Real      mAngle;$/;"	kind:m	class:mpe::Particle	access:private
 mpe::Particle::mAngularVelocity	include/MPE/classes/Particle.hpp	/^   Real      mAngularVelocity;$/;"	kind:m	class:mpe::Particle	access:private
 mpe::Particle::mColor	include/MPE/classes/Particle.hpp	/^   Color     mColor;$/;"	kind:m	class:mpe::Particle	access:private
@@ -937,12 +946,18 @@ mpe::Particle::mLinearVelocity	include/MPE/classes/Particle.hpp	/^   Vec2      m
 mpe::Particle::mPosition	include/MPE/classes/Particle.hpp	/^   Vec2      mPosition;$/;"	kind:m	class:mpe::Particle	access:private
 mpe::Particle::mSize	include/MPE/classes/Particle.hpp	/^   Real      mSize;$/;"	kind:m	class:mpe::Particle	access:private
 mpe::Particle::mTextRect	include/MPE/classes/Particle.hpp	/^   TextRect  mTextRect;$/;"	kind:m	class:mpe::Particle	access:private
+mpe::Particle::setAngle	include/MPE/classes/Particle.hpp	/^   void setAngle(Real theAngle);$/;"	kind:p	class:mpe::Particle	access:public	signature:(Real theAngle)
+mpe::Particle::setAngle	src/MPE/classes/Particle.cpp	/^void Particle::setAngle(Real theAngle)$/;"	kind:f	class:mpe::Particle	signature:(Real theAngle)
 mpe::Particle::setAngularVelocity	include/MPE/classes/Particle.hpp	/^   void setAngularVelocity(Real theAngularVelocity);$/;"	kind:p	class:mpe::Particle	access:public	signature:(Real theAngularVelocity)
 mpe::Particle::setAngularVelocity	src/MPE/classes/Particle.cpp	/^void Particle::setAngularVelocity(Real theAngularVelocity)$/;"	kind:f	class:mpe::Particle	signature:(Real theAngularVelocity)
 mpe::Particle::setColor	include/MPE/classes/Particle.hpp	/^   void  setColor(Color theColor);$/;"	kind:p	class:mpe::Particle	access:public	signature:(Color theColor)
 mpe::Particle::setColor	src/MPE/classes/Particle.cpp	/^void Particle::setColor(Color theColor)$/;"	kind:f	class:mpe::Particle	signature:(Color theColor)
+mpe::Particle::setGroups	include/MPE/classes/Particle.hpp	/^   void  setGroups(GroupID theGroup);$/;"	kind:p	class:mpe::Particle	access:public	signature:(GroupID theGroup)
+mpe::Particle::setGroups	src/MPE/classes/Particle.cpp	/^void Particle::setGroups(GroupID theGroups)$/;"	kind:f	class:mpe::Particle	signature:(GroupID theGroups)
 mpe::Particle::setLinearVelocity	include/MPE/classes/Particle.hpp	/^   void setLinearVelocity(Vec2 theLinearVelocity);$/;"	kind:p	class:mpe::Particle	access:public	signature:(Vec2 theLinearVelocity)
 mpe::Particle::setLinearVelocity	src/MPE/classes/Particle.cpp	/^void Particle::setLinearVelocity(Vec2 theLinearVelocity)$/;"	kind:f	class:mpe::Particle	signature:(Vec2 theLinearVelocity)
+mpe::Particle::setPosition	include/MPE/classes/Particle.hpp	/^   void setPosition(Vec2 thePosition);$/;"	kind:p	class:mpe::Particle	access:public	signature:(Vec2 thePosition)
+mpe::Particle::setPosition	src/MPE/classes/Particle.cpp	/^void Particle::setPosition(Vec2 thePosition)$/;"	kind:f	class:mpe::Particle	signature:(Vec2 thePosition)
 mpe::Particle::setSize	include/MPE/classes/Particle.hpp	/^   void setSize(Real theSize);$/;"	kind:p	class:mpe::Particle	access:public	signature:(Real theSize)
 mpe::Particle::setSize	src/MPE/classes/Particle.cpp	/^void Particle::setSize(Real theSize)$/;"	kind:f	class:mpe::Particle	signature:(Real theSize)
 mpe::Particle::setTextRect	include/MPE/classes/Particle.hpp	/^   void setTextRect(TextRect theTextRect);$/;"	kind:p	class:mpe::Particle	access:public	signature:(TextRect theTextRect)
@@ -987,6 +1002,10 @@ mpe::System::createFocus	include/MPE/classes/System.hpp	/^   FocusPtr   createFo
 mpe::System::createFocus	src/MPE/classes/System.cpp	/^FocusPtr System::createFocus(EmitterID theEmitterID,$/;"	kind:f	class:mpe::System	signature:(EmitterID theEmitterID, Vec2 thePosition, Real theAngle, GroupID theGroups)
 mpe::System::getEmitter	include/MPE/classes/System.hpp	/^   Emitter& getEmitter(EmitterID theEmitterID);$/;"	kind:p	class:mpe::System	access:public	signature:(EmitterID theEmitterID)
 mpe::System::getEmitter	src/MPE/classes/System.cpp	/^Emitter& System::getEmitter ( EmitterID theEmitterID )$/;"	kind:f	class:mpe::System	signature:( EmitterID theEmitterID )
+mpe::System::getParticlesBegin	include/MPE/classes/System.hpp	/^   ParticleContainer::const_iterator getParticlesBegin() const;$/;"	kind:p	class:mpe::System	access:public	signature:() const
+mpe::System::getParticlesBegin	src/MPE/classes/System.cpp	/^ParticleContainer::const_iterator System::getParticlesBegin() const$/;"	kind:f	class:mpe::System	signature:() const
+mpe::System::getParticlesEnd	include/MPE/classes/System.hpp	/^   ParticleContainer::const_iterator getParticlesEnd() const;$/;"	kind:p	class:mpe::System	access:public	signature:() const
+mpe::System::getParticlesEnd	src/MPE/classes/System.cpp	/^ParticleContainer::const_iterator System::getParticlesEnd() const$/;"	kind:f	class:mpe::System	signature:() const
 mpe::System::getParticlesSize	include/MPE/classes/System.hpp	/^   Integer getParticlesSize();$/;"	kind:p	class:mpe::System	access:public	signature:()
 mpe::System::getParticlesSize	src/MPE/classes/System.cpp	/^Integer System::getParticlesSize()$/;"	kind:f	class:mpe::System	signature:()
 mpe::System::getXFactor	include/MPE/classes/System.hpp	/^   Real     getXFactor() const;$/;"	kind:p	class:mpe::System	access:public	signature:() const
@@ -1042,11 +1061,12 @@ mpe::Vec2::x	include/MPE/classes/Vec2.hpp	/^   Real x, y;$/;"	kind:m	class:mpe::
 mpe::Vec2::y	include/MPE/classes/Vec2.hpp	/^   Real x, y;$/;"	kind:m	class:mpe::Vec2	access:private
 mpe::aFile	src/MPE/classes/System.cpp	/^   tinyxml2::XMLDocument aFile;$/;"	kind:l
 mpe::anEmitterID	src/MPE/classes/System.cpp	/^   EmitterID anEmitterID = theEmitter.getID();$/;"	kind:l
-mpe::anFocus	src/MPE/classes/Emitter.cpp	/^   FocusPtr anFocus = Focus::create(getFocusWidth(),$/;"	kind:l
+mpe::anFocus	src/MPE/classes/Emitter.cpp	/^   FocusPtr anFocus = Focus::create(getFocusTOL(),$/;"	kind:l
+mpe::anParticle	src/MPE/classes/Focus.cpp	/^   Particle* anParticle = mEmitter.getSystem()->addParticle();$/;"	kind:l
 mpe::anPosition	src/MPE/classes/Emitter.cpp	/^   Vec2 anPosition;$/;"	kind:l
-mpe::anPosition	src/MPE/classes/Focus.cpp	/^         Vec2 anPosition; $/;"	kind:l
+mpe::anPosition	src/MPE/classes/Focus.cpp	/^      Vec2 anPosition = mEmitter.generatePosition(*this); $/;"	kind:l
 mpe::anVelocity	src/MPE/classes/Emitter.cpp	/^   Vec2 anVelocity;$/;"	kind:l
-mpe::init	src/MPE/classes/Focus.cpp	/^         anParticle->init(mEmitter.getParticleTOL(),                   $/;"	kind:p	file:	signature:(mEmitter.getParticleTOL(), mEmitter.getParticleSize(), anPosition = mEmitter.generatePosition(*this), mEmitter.getParticleAngle(), mEmitter.generateVelocity(*this, anPosition), mEmitter.getParticleAV(), mEmitter.getTextRect(), Color {255, 255, 255, 255}, mGroups)
+mpe::anVelocity	src/MPE/classes/Focus.cpp	/^      Vec2 anVelocity = mEmitter.generateVelocity(*this,anPosition); $/;"	kind:l
 mpe::it	src/MPE/classes/System.cpp	/^   auto it = mEmitters.find(anEmitterID);$/;"	kind:l
 mpe::it	src/MPE/classes/System.cpp	/^   auto it = mEmitters.find(theEmitterID);$/;"	kind:l
 mpe::mFixedSize	src/MPE/classes/ParticleContainer.cpp	/^   mFixedSize(theFixed)$/;"	kind:f	namespace:mpe	signature:(theFixed)
@@ -1057,16 +1077,23 @@ mpe::pair	src/MPE/classes/System.cpp	/^      mEmitters.insert(std::pair<EmitterI
 mpe::push_back	src/MPE/classes/System.cpp	/^   mAffectors.push_back(theAffector);$/;"	kind:p	file:	signature:(theAffector)
 mpe::push_back	src/MPE/classes/System.cpp	/^   mFocusses.push_back(theFocus);$/;"	kind:p	file:	signature:(theFocus)
 mpe::removeParticle	src/MPE/classes/System.cpp	/^          mParticles.removeParticle(particle);$/;"	kind:p	file:	signature:(particle)
+mpe::resetLife	src/MPE/classes/Focus.cpp	/^      anParticle->resetLife(mEmitter.getParticleTOL());                  $/;"	kind:p	file:	signature:(mEmitter.getParticleTOL())
 mpe::rotate	src/MPE/classes/Emitter.cpp	/^   anPosition.rotate(theFocus.getAngle());$/;"	kind:p	file:	signature:(theFocus.getAngle())
 mpe::sRealRandom	src/MPE/classes/Emitter.cpp	/^      anPosition.init(sRealRandom(), sRealRandom());$/;"	kind:p	file:	signature:()
 mpe::scale	src/MPE/classes/Emitter.cpp	/^   anPosition.scale(theFocus.getWidth(), theFocus.getHeight());$/;"	kind:p	file:	signature:(theFocus.getWidth(), theFocus.getHeight())
+mpe::setAngle	src/MPE/classes/Focus.cpp	/^      anParticle->setAngle(mEmitter.getParticleAngle());                  $/;"	kind:p	file:	signature:(mEmitter.getParticleAngle())
+mpe::setAngularVelocity	src/MPE/classes/Focus.cpp	/^      anParticle->setAngularVelocity(mEmitter.getParticleAV());                  $/;"	kind:p	file:	signature:(mEmitter.getParticleAV())
 mpe::setDispersion	src/MPE/classes/System.cpp	/^         aEmitter.setDispersion(Emitter::LINEAR);$/;"	kind:p	file:	signature:(Emitter::LINEAR)
 mpe::setDispersion	src/MPE/classes/System.cpp	/^         aEmitter.setDispersion(Emitter::RADIAL);$/;"	kind:p	file:	signature:(Emitter::RADIAL)
 mpe::setDispersion	src/MPE/classes/System.cpp	/^         aEmitter.setDispersion(Emitter::RANDOM);$/;"	kind:p	file:	signature:(Emitter::RANDOM)
 mpe::setDispersion	src/MPE/classes/System.cpp	/^         aEmitter.setDispersion(Emitter::REFLECT);$/;"	kind:p	file:	signature:(Emitter::REFLECT)
 mpe::setDispersion	src/MPE/classes/System.cpp	/^         aEmitter.setDispersion(Emitter::STATIC);$/;"	kind:p	file:	signature:(Emitter::STATIC)
+mpe::setGroups	src/MPE/classes/Focus.cpp	/^      anParticle->setGroups(mGroups);                  $/;"	kind:p	file:	signature:(mGroups)
+mpe::setLinearVelocity	src/MPE/classes/Focus.cpp	/^      anParticle->setLinearVelocity(anVelocity);                  $/;"	kind:p	file:	signature:(anVelocity)
+mpe::setPosition	src/MPE/classes/Focus.cpp	/^      anParticle->setPosition(anPosition);                  $/;"	kind:p	file:	signature:(anPosition)
 mpe::setShape	src/MPE/classes/System.cpp	/^         aEmitter.setShape(Emitter::CIRCLE);$/;"	kind:p	file:	signature:(Emitter::CIRCLE)
 mpe::setShape	src/MPE/classes/System.cpp	/^         aEmitter.setShape(Emitter::RECTANGLE);$/;"	kind:p	file:	signature:(Emitter::RECTANGLE)
+mpe::setSize	src/MPE/classes/Focus.cpp	/^      anParticle->setSize(mEmitter.getParticleSize());                  $/;"	kind:p	file:	signature:(mEmitter.getParticleSize())
 mpe::setSystem	src/MPE/classes/System.cpp	/^      theEmitter.setSystem(this);$/;"	kind:p	file:	signature:(this)
 mpe::std::memcpy	src/MPE/classes/ParticleContainer.cpp	/^      std::memcpy(aParticles,mParticles,sizeof(Particle)*mSize);$/;"	kind:p	class:mpe::std	file:	signature:(aParticles,mParticles,sizeof(Particle)*mSize)
 mpe::update	src/MPE/classes/System.cpp	/^         (*affector)->update(theElapsedTime);$/;"	kind:p	file:	signature:(theElapsedTime)
@@ -1109,7 +1136,8 @@ r	include/MPE/Config.hpp	/^   Integer r, g, b, a;$/;"	kind:m	struct:mpe::Color	a
 removeParticle	include/MPE/classes/ParticleContainer.hpp	/^      void removeParticle(Particle* theParticle);$/;"	kind:p	class:mpe::ParticleContainer	access:public	signature:(Particle* theParticle)
 removeParticle	src/MPE/classes/ParticleContainer.cpp	/^void ParticleContainer::removeParticle(Particle* theParticle)$/;"	kind:f	class:mpe::ParticleContainer	signature:(Particle* theParticle)
 removeParticle	src/MPE/classes/System.cpp	/^          mParticles.removeParticle(particle);$/;"	kind:p	file:	signature:(particle)
-resetLife	include/MPE/classes/Mortal.hpp	/^   inline void resetLife(Real theLifetime)$/;"	kind:f	class:mpe::Mortal	access:protected	signature:(Real theLifetime)
+resetLife	include/MPE/classes/Mortal.hpp	/^   inline void resetLife(Real theLifetime)$/;"	kind:f	class:mpe::Mortal	access:public	signature:(Real theLifetime)
+resetLife	src/MPE/classes/Focus.cpp	/^      anParticle->resetLife(mEmitter.getParticleTOL());                  $/;"	kind:p	file:	signature:(mEmitter.getParticleTOL())
 result	ext_libs/include/TinyXML2/tinyxml2.h	/^      void* result = _root;$/;"	kind:l
 result	ext_libs/include/TinyXML2/tinyxml2.h	/^   int result = vsnprintf_s( buffer, size, _TRUNCATE, format, va );$/;"	kind:l
 ret	ext_libs/include/TinyXML2/tinyxml2.h	/^      T* ret = &_mem[_size];$/;"	kind:l
@@ -1120,8 +1148,12 @@ sRealRandom	src/MPE/classes/Emitter.cpp	/^      anPosition.init(sRealRandom(), s
 scale	include/MPE/classes/Vec2.hpp	/^   Vec2& scale(const Real& theScalarX, const Real& theScalarY)$/;"	kind:f	class:mpe::Vec2	access:public	signature:(const Real& theScalarX, const Real& theScalarY)
 scale	src/MPE/classes/Emitter.cpp	/^   anPosition.scale(theFocus.getWidth(), theFocus.getHeight());$/;"	kind:p	file:	signature:(theFocus.getWidth(), theFocus.getHeight())
 setAngle	include/MPE/classes/Focus.hpp	/^   void setAngle(Real theAngle);$/;"	kind:p	class:mpe::Focus	access:public	signature:(Real theAngle)
+setAngle	include/MPE/classes/Particle.hpp	/^   void setAngle(Real theAngle);$/;"	kind:p	class:mpe::Particle	access:public	signature:(Real theAngle)
+setAngle	src/MPE/classes/Focus.cpp	/^      anParticle->setAngle(mEmitter.getParticleAngle());                  $/;"	kind:p	file:	signature:(mEmitter.getParticleAngle())
 setAngle	src/MPE/classes/Focus.cpp	/^void Focus::setAngle(Real theAngle)$/;"	kind:f	class:mpe::Focus	signature:(Real theAngle)
+setAngle	src/MPE/classes/Particle.cpp	/^void Particle::setAngle(Real theAngle)$/;"	kind:f	class:mpe::Particle	signature:(Real theAngle)
 setAngularVelocity	include/MPE/classes/Particle.hpp	/^   void setAngularVelocity(Real theAngularVelocity);$/;"	kind:p	class:mpe::Particle	access:public	signature:(Real theAngularVelocity)
+setAngularVelocity	src/MPE/classes/Focus.cpp	/^      anParticle->setAngularVelocity(mEmitter.getParticleAV());                  $/;"	kind:p	file:	signature:(mEmitter.getParticleAV())
 setAngularVelocity	src/MPE/classes/Particle.cpp	/^void Particle::setAngularVelocity(Real theAngularVelocity)$/;"	kind:f	class:mpe::Particle	signature:(Real theAngularVelocity)
 setColor	include/MPE/classes/Particle.hpp	/^   void  setColor(Color theColor);$/;"	kind:p	class:mpe::Particle	access:public	signature:(Color theColor)
 setColor	src/MPE/classes/Particle.cpp	/^void Particle::setColor(Color theColor)$/;"	kind:f	class:mpe::Particle	signature:(Color theColor)
@@ -1152,19 +1184,27 @@ setGeneratorParticleSize	include/MPE/classes/Emitter.hpp	/^   void setGeneratorP
 setGeneratorParticleSize	src/MPE/classes/Emitter.cpp	/^void Emitter::setGeneratorParticleSize(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
 setGeneratorParticleTOL	include/MPE/classes/Emitter.hpp	/^   void setGeneratorParticleTOL(Real theMin, Real theMax);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Real theMin, Real theMax)
 setGeneratorParticleTOL	src/MPE/classes/Emitter.cpp	/^void Emitter::setGeneratorParticleTOL(Real theMin, Real theMax)$/;"	kind:f	class:mpe::Emitter	signature:(Real theMin, Real theMax)
+setGroups	include/MPE/classes/Particle.hpp	/^   void  setGroups(GroupID theGroup);$/;"	kind:p	class:mpe::Particle	access:public	signature:(GroupID theGroup)
+setGroups	src/MPE/classes/Focus.cpp	/^      anParticle->setGroups(mGroups);                  $/;"	kind:p	file:	signature:(mGroups)
+setGroups	src/MPE/classes/Particle.cpp	/^void Particle::setGroups(GroupID theGroups)$/;"	kind:f	class:mpe::Particle	signature:(GroupID theGroups)
 setHeight	include/MPE/classes/Focus.hpp	/^   void setHeight(Real theHeight);$/;"	kind:p	class:mpe::Focus	access:public	signature:(Real theHeight)
 setHeight	src/MPE/classes/Focus.cpp	/^void Focus::setHeight(Real theHeight)$/;"	kind:f	class:mpe::Focus	signature:(Real theHeight)
 setLinearVelocity	include/MPE/classes/Particle.hpp	/^   void setLinearVelocity(Vec2 theLinearVelocity);$/;"	kind:p	class:mpe::Particle	access:public	signature:(Vec2 theLinearVelocity)
+setLinearVelocity	src/MPE/classes/Focus.cpp	/^      anParticle->setLinearVelocity(anVelocity);                  $/;"	kind:p	file:	signature:(anVelocity)
 setLinearVelocity	src/MPE/classes/Particle.cpp	/^void Particle::setLinearVelocity(Vec2 theLinearVelocity)$/;"	kind:f	class:mpe::Particle	signature:(Vec2 theLinearVelocity)
 setPPS	include/MPE/classes/Focus.hpp	/^   void setPPS(Real thePPS);$/;"	kind:p	class:mpe::Focus	access:public	signature:(Real thePPS)
 setPPS	src/MPE/classes/Focus.cpp	/^void Focus::setPPS(Real thePPS)$/;"	kind:f	class:mpe::Focus	signature:(Real thePPS)
 setPosition	include/MPE/classes/Focus.hpp	/^   void setPosition(Vec2 thePosition);$/;"	kind:p	class:mpe::Focus	access:public	signature:(Vec2 thePosition)
+setPosition	include/MPE/classes/Particle.hpp	/^   void setPosition(Vec2 thePosition);$/;"	kind:p	class:mpe::Particle	access:public	signature:(Vec2 thePosition)
+setPosition	src/MPE/classes/Focus.cpp	/^      anParticle->setPosition(anPosition);                  $/;"	kind:p	file:	signature:(anPosition)
 setPosition	src/MPE/classes/Focus.cpp	/^void Focus::setPosition(Vec2 thePosition)$/;"	kind:f	class:mpe::Focus	signature:(Vec2 thePosition)
+setPosition	src/MPE/classes/Particle.cpp	/^void Particle::setPosition(Vec2 thePosition)$/;"	kind:f	class:mpe::Particle	signature:(Vec2 thePosition)
 setShape	include/MPE/classes/Emitter.hpp	/^   void setShape(Shape theShape);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Shape theShape)
 setShape	src/MPE/classes/Emitter.cpp	/^void Emitter::setShape(Shape theShape)$/;"	kind:f	class:mpe::Emitter	signature:(Shape theShape)
 setShape	src/MPE/classes/System.cpp	/^         aEmitter.setShape(Emitter::CIRCLE);$/;"	kind:p	file:	signature:(Emitter::CIRCLE)
 setShape	src/MPE/classes/System.cpp	/^         aEmitter.setShape(Emitter::RECTANGLE);$/;"	kind:p	file:	signature:(Emitter::RECTANGLE)
 setSize	include/MPE/classes/Particle.hpp	/^   void setSize(Real theSize);$/;"	kind:p	class:mpe::Particle	access:public	signature:(Real theSize)
+setSize	src/MPE/classes/Focus.cpp	/^      anParticle->setSize(mEmitter.getParticleSize());                  $/;"	kind:p	file:	signature:(mEmitter.getParticleSize())
 setSize	src/MPE/classes/Particle.cpp	/^void Particle::setSize(Real theSize)$/;"	kind:f	class:mpe::Particle	signature:(Real theSize)
 setSystem	include/MPE/classes/Emitter.hpp	/^   void setSystem(System* theSystem);$/;"	kind:p	class:mpe::Emitter	access:public	signature:(System* theSystem)
 setSystem	src/MPE/classes/Emitter.cpp	/^void Emitter::setSystem(System* theSystem)$/;"	kind:f	class:mpe::Emitter	signature:(System* theSystem)
@@ -1186,6 +1226,7 @@ std::cout	tests/tests.cpp	/^      std::cout << "Particle system init from 'Emitt
 std::cout	tests/tests.cpp	/^      std::cout << "Something was wrong...";$/;"	kind:m	class:std	file:
 test1	tests/tests.cpp	/^int test1()$/;"	kind:f	signature:()
 test2	tests/tests.cpp	/^int test2()$/;"	kind:f	signature:()
+test3	tests/tests.cpp	/^int test3()$/;"	kind:f	signature:()
 tinyxml2	ext_libs/include/TinyXML2/tinyxml2.h	/^namespace tinyxml2$/;"	kind:n
 tinyxml2::COLLAPSE_WHITESPACE	ext_libs/include/TinyXML2/tinyxml2.h	/^   COLLAPSE_WHITESPACE$/;"	kind:e	enum:tinyxml2::Whitespace
 tinyxml2::DynArray	ext_libs/include/TinyXML2/tinyxml2.h	/^class DynArray$/;"	kind:c	namespace:tinyxml2

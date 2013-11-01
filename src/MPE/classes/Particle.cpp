@@ -24,31 +24,6 @@ Particle::Particle():
 //------------------------------------------------------------------------------
 Particle::~Particle() {}
 //------------------------------------------------------------------------------
-//       Class:  Particle
-//      Method:  init
-// Description:  A stupid method
-//------------------------------------------------------------------------------
-void Particle::init(Real    theTTL,
-                    Real    theSize,
-                    Vec2    thePosition,
-                    Real    theAngle,
-                    Vec2    theLinearVelocity,
-                    Real    theAngularVelocity,
-                    TextRect theTextRect,
-                    Color   theColor,
-                    GroupID theGroups)
-{
-   resetLife(theTTL);
-   mSize = theSize;
-   mPosition = thePosition;
-   mAngle = theAngle;
-   mLinearVelocity = theLinearVelocity;
-   mAngularVelocity = theAngularVelocity;
-   mTextRect = theTextRect;
-   mColor = theColor;
-   mGroups = theGroups;
-}
-//------------------------------------------------------------------------------
 //      Class:        Particle
 //      Method:       update
 //      Description:
@@ -92,12 +67,30 @@ Vec2 Particle::getPosition() const
 }
 //------------------------------------------------------------------------------
 //       Class:  Particle
+//      Method:  setPosition
+// Description:  A stupid method 
+//------------------------------------------------------------------------------
+void Particle::setPosition(Vec2 thePosition)
+{
+   mPosition = thePosition;
+}
+//------------------------------------------------------------------------------
+//       Class:  Particle
 //      Method:  getAngle
 // Description:  Angle getter
 //------------------------------------------------------------------------------
 Real Particle::getAngle() const
 {
    return mAngle;
+}
+//------------------------------------------------------------------------------
+//       Class:  Particle
+//      Method:  setAngle
+// Description:  A stupid method 
+//------------------------------------------------------------------------------
+void Particle::setAngle(Real theAngle)
+{
+   mAngle = theAngle;
 }
 //------------------------------------------------------------------------------
 //      Class:        Particle
@@ -170,6 +163,24 @@ Color Particle::getColor() const
 void Particle::setColor(Color theColor)
 {
    mColor = theColor;
+}
+//------------------------------------------------------------------------------
+//       Class:  Particle
+//      Method:  getGroups
+// Description:  A stupid method 
+//------------------------------------------------------------------------------
+GroupID Particle::getGroups() const
+{
+   return mGroups;
+}
+//------------------------------------------------------------------------------
+//       Class:  Particle
+//      Method:  setGroups
+// Description:  A stupid method 
+//------------------------------------------------------------------------------
+void Particle::setGroups(GroupID theGroups)
+{
+   mGroups = theGroups;
 }
 //--------------------------------------------------------------------------------------
 //       Class:  Particle

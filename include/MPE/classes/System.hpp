@@ -56,6 +56,12 @@ public:
    /// @brief getParticleSize 
    /// @return 
    Integer getParticlesSize();
+   /// @brief getParticlesBegin
+   /// @return 
+   ParticleContainer::const_iterator getParticlesBegin() const;
+   /// @brief getParticlesEnd 
+   /// @return 
+   ParticleContainer::const_iterator getParticlesEnd() const;
    /// @brief getXFactor
    /// @return
    Real     getXFactor() const;

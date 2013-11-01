@@ -110,6 +110,8 @@ private:
          const Emitter&  theEmitter);
 
    void emit(Integer theNParticles);
+   
+   void initParticle();
 
    Integer drain(Real theElapsedTime);
 
