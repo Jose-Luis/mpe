@@ -33,15 +33,7 @@ public:
    /// @param theGroups
    /// @param theEmitter
    /// @return
-   static FocusPtr create(Real    theLifetime,
-                          Real    theWidth,
-                          Real    theHeight,
-                          Vec2    thePosition,
-                          Real    theAngle,
-                          Integer theTP,
-                          Real    thePPS,
-                          GroupID theGroups,
-                          const Emitter&  theEmitter);
+   static FocusPtr create(const Emitter&  theEmitter);
    //////////////////////////////////////////////////////////////////////////
    //     METHODS
    //////////////////////////////////////////////////////////////////////////
@@ -75,12 +67,23 @@ public:
    /// @brief setAngle
    /// @param theAngle
    void setAngle(Real theAngle);
+   /// @brief setNP
+   /// @param theNP
+   void resetNP(Real theNP);
    /// @brief setPPS
    /// @param thePPS
    void setPPS(Real thePPS);
    /// @brief getPPS
    /// @return
    Real getPPS();
+   /// @brief addGroups 
+   /// @param theGroups
+   void addGroups(GroupID theGroups);
+   /// @brief removeGroups 
+   /// @param theGroups
+   void removeGroups(GroupID theGroups);
+   /// @brief removeFromAllGroups 
+   void removeFromAllGroups();
 
 private:
    //////////////////////////////////////////////////////////////////////////
@@ -99,15 +102,7 @@ private:
    //////////////////////////////////////////////////////////////////////////
    //     METHODS
    //////////////////////////////////////////////////////////////////////////
-   Focus(Real    theLifetime,
-         Real    theWidth,
-         Real    theHeight,
-         Vec2    thePosition,
-         Real    theAngle,
-         Integer theTP,
-         Real    thePPS,
-         GroupID theGroups,
-         const Emitter&  theEmitter);
+   Focus(const Emitter&  theEmitter);
 
    void emit(Integer theNParticles);
    

@@ -38,9 +38,7 @@ public:
    Emitter(EmitterID theID);
    /// @brief createFocus
    /// @return
-   FocusPtr createFocus(Vec2 thePosition,
-                        Real theAngle,
-                        GroupID   theGroups = mpe::NO_GROUP) const;
+   FocusPtr createFocus() const;
    /// @brief Generate a random position inside the Shape of the emitter.
    /// The position is transformed by the system factor member to scale it
    /// to the world coordinates.

@@ -93,12 +93,9 @@ void System::addFocus(FocusPtr theFocus)
 //      Method:  createFocus
 // Description:
 //------------------------------------------------------------------------------
-FocusPtr System::createFocus(EmitterID theEmitterID,
-                             Vec2  thePosition,
-                             Real       theAngle,
-                             GroupID    theGroups)
+FocusPtr System::createFocus(EmitterID theEmitterID)
 {
-   return getEmitter(theEmitterID).createFocus(thePosition, theAngle, theGroups);
+   return getEmitter(theEmitterID).createFocus();
 }
 //------------------------------------------------------------------------------
 //       Class:  System

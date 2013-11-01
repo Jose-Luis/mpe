@@ -86,9 +86,9 @@ FirstChildElement	ext_libs/include/TinyXML2/tinyxml2.h	/^   const XMLConstHandle
 FirstChildElement	ext_libs/include/TinyXML2/tinyxml2.h	/^   const XMLElement* FirstChildElement( const char* value = 0 ) const;$/;"	kind:p	class:tinyxml2::XMLNode	access:public	signature:( const char* value = 0 ) const
 FloatAttribute	ext_libs/include/TinyXML2/tinyxml2.h	/^   float	 FloatAttribute( const char* name ) const$/;"	kind:f	class:tinyxml2::XMLElement	access:public	signature:( const char* name ) const
 FloatValue	ext_libs/include/TinyXML2/tinyxml2.h	/^   float	 FloatValue() const$/;"	kind:f	class:tinyxml2::XMLAttribute	access:public	signature:() const
-Focus	include/MPE/classes/Focus.hpp	/^   Focus(Real    theLifetime,$/;"	kind:p	class:mpe::Focus	access:private	signature:(Real theLifetime, Real theWidth, Real theHeight, Vec2 thePosition, Real theAngle, Integer theTP, Real thePPS, GroupID theGroups, const Emitter& theEmitter)
+Focus	include/MPE/classes/Focus.hpp	/^   Focus(const Emitter&  theEmitter);$/;"	kind:p	class:mpe::Focus	access:private	signature:(const Emitter& theEmitter)
 Focus	include/MPE/classes/Focus.hpp	/^class Focus: public Mortal$/;"	kind:c	namespace:mpe	inherits:Mortal
-Focus	src/MPE/classes/Focus.cpp	/^Focus::Focus(Real           theLifetime,$/;"	kind:f	class:mpe::Focus	signature:(Real theLifetime, Real theWidth, Real theHeight, Vec2 thePosition, Real theAngle, Integer theTP, Real thePPS, GroupID theGroups, const Emitter& theEmitter)
+Focus	src/MPE/classes/Focus.cpp	/^Focus::Focus(const Emitter& theEmitter):$/;"	kind:f	class:mpe::Focus	signature:(const Emitter& theEmitter)
 FocusPtr	include/MPE/Config.hpp	/^typedef std::shared_ptr<Focus> FocusPtr;$/;"	kind:t	namespace:mpe
 Free	ext_libs/include/TinyXML2/tinyxml2.h	/^   virtual void Free( void* ) = 0;$/;"	kind:p	class:tinyxml2::MemPool	access:public	signature:( void* )
 Free	ext_libs/include/TinyXML2/tinyxml2.h	/^   virtual void Free( void* mem )$/;"	kind:f	class:tinyxml2::MemPoolT	access:public	signature:( void* mem )
@@ -531,6 +531,9 @@ addEmitter	src/MPE/classes/System.cpp	/^void System::addEmitter(Emitter& theEmit
 addFocus	include/MPE/classes/System.hpp	/^   void     addFocus(FocusPtr theFocus);$/;"	kind:p	class:mpe::System	access:public	signature:(FocusPtr theFocus)
 addFocus	src/MPE/classes/System.cpp	/^void System::addFocus(FocusPtr theFocus)$/;"	kind:f	class:mpe::System	signature:(FocusPtr theFocus)
 addFocus	tests/tests.cpp	/^   aParticleSystem.addFocus(aFocus);$/;"	kind:p	file:	signature:(aFocus)
+addGroups	include/MPE/classes/Focus.hpp	/^   void addGroups(GroupID theGroups);$/;"	kind:p	class:mpe::Focus	access:public	signature:(GroupID theGroups)
+addGroups	src/MPE/classes/Emitter.cpp	/^   anFocus->addGroups(mpe::GROUP_A);$/;"	kind:p	file:	signature:(mpe::GROUP_A)
+addGroups	src/MPE/classes/Focus.cpp	/^void Focus::addGroups(GroupID theGroups)$/;"	kind:f	class:mpe::Focus	signature:(GroupID theGroups)
 addParticle	include/MPE/classes/ParticleContainer.hpp	/^      Particle* addParticle();$/;"	kind:p	class:mpe::ParticleContainer	access:public	signature:()
 addParticle	include/MPE/classes/System.hpp	/^   Particle*  addParticle();$/;"	kind:p	class:mpe::System	access:public	signature:()
 addParticle	src/MPE/classes/ParticleContainer.cpp	/^Particle* ParticleContainer::addParticle()            $/;"	kind:f	class:mpe::ParticleContainer	signature:()
@@ -538,7 +541,7 @@ addParticle	src/MPE/classes/System.cpp	/^Particle* System::addParticle ()$/;"	ki
 affect	include/MPE/classes/Affector.hpp	/^   virtual void affect(Particle& theParticle, Real theElapsedTime) = 0;$/;"	kind:p	class:mpe::Affector	access:public	signature:(Particle& theParticle, Real theElapsedTime)
 age	include/MPE/classes/Mortal.hpp	/^   inline void age(Real theElapsedTime)$/;"	kind:f	class:mpe::Mortal	access:public	signature:(Real theElapsedTime)
 anEmitterID	src/MPE/classes/System.cpp	/^   EmitterID anEmitterID = theEmitter.getID();$/;"	kind:l
-anFocus	src/MPE/classes/Emitter.cpp	/^   FocusPtr anFocus = Focus::create(getFocusTOL(),$/;"	kind:l
+anFocus	src/MPE/classes/Emitter.cpp	/^   FocusPtr anFocus = Focus::create((*this));$/;"	kind:l
 anLength	include/MPE/classes/Vec2.hpp	/^      Real anLength = length();$/;"	kind:l
 anParticle	src/MPE/classes/Focus.cpp	/^   Particle* anParticle = mEmitter.getSystem()->addParticle();$/;"	kind:l
 anPosition	src/MPE/classes/Emitter.cpp	/^   Vec2 anPosition;$/;"	kind:l
@@ -556,14 +559,14 @@ chunk	ext_libs/include/TinyXML2/tinyxml2.h	/^      Chunk chunk[COUNT];$/;"	kind:
 chunk	ext_libs/include/TinyXML2/tinyxml2.h	/^      Chunk* chunk = (Chunk*)mem;$/;"	kind:l
 cout	tests/tests.cpp	/^      std::cout << "Particle system init from 'Emitter.xml'";$/;"	kind:m	class:std	file:
 cout	tests/tests.cpp	/^      std::cout << "Something was wrong...";$/;"	kind:m	class:std	file:
-create	include/MPE/classes/Focus.hpp	/^   static FocusPtr create(Real    theLifetime,$/;"	kind:p	class:mpe::Focus	access:public	signature:(Real theLifetime, Real theWidth, Real theHeight, Vec2 thePosition, Real theAngle, Integer theTP, Real thePPS, GroupID theGroups, const Emitter& theEmitter)
+create	include/MPE/classes/Focus.hpp	/^   static FocusPtr create(const Emitter&  theEmitter);$/;"	kind:p	class:mpe::Focus	access:public	signature:(const Emitter& theEmitter)
 create	include/MPE/classes/Generator.hpp	/^   static Generator<T> create(T theMin,T theMax);$/;"	kind:p	class:mpe::Generator	access:public	signature:(T theMin,T theMax)
-create	src/MPE/classes/Focus.cpp	/^FocusPtr Focus::create(Real    theLifetime,$/;"	kind:f	class:mpe::Focus	signature:(Real theLifetime, Real theWidth, Real theHeight, Vec2 thePosition, Real theAngle, Integer theTP, Real thePPS, GroupID theGroups, const Emitter& theEmitter)
+create	src/MPE/classes/Focus.cpp	/^FocusPtr Focus::create(const Emitter&  theEmitter)$/;"	kind:f	class:mpe::Focus	signature:(const Emitter& theEmitter)
 create	src/MPE/classes/Generator.cpp	/^Generator<T> Generator<T>::create(T theMin, T theMax)$/;"	kind:f	class:mpe::Generator	signature:(T theMin, T theMax)
-createFocus	include/MPE/classes/Emitter.hpp	/^   FocusPtr createFocus(Vec2 thePosition,$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Vec2 thePosition, Real theAngle, GroupID theGroups = mpe::NO_GROUP) const
-createFocus	include/MPE/classes/System.hpp	/^   FocusPtr   createFocus(EmitterID theEmitter,$/;"	kind:p	class:mpe::System	access:public	signature:(EmitterID theEmitter, Vec2 thePosition, Real theAngle, GroupID theGroups = mpe::NO_GROUP)
-createFocus	src/MPE/classes/Emitter.cpp	/^FocusPtr Emitter::createFocus(Vec2   thePosition,$/;"	kind:f	class:mpe::Emitter	signature:(Vec2 thePosition, Real theAngle, GroupID theGroups) const
-createFocus	src/MPE/classes/System.cpp	/^FocusPtr System::createFocus(EmitterID theEmitterID,$/;"	kind:f	class:mpe::System	signature:(EmitterID theEmitterID, Vec2 thePosition, Real theAngle, GroupID theGroups)
+createFocus	include/MPE/classes/Emitter.hpp	/^   FocusPtr createFocus() const;$/;"	kind:p	class:mpe::Emitter	access:public	signature:() const
+createFocus	include/MPE/classes/System.hpp	/^   FocusPtr   createFocus(EmitterID theEmitter);$/;"	kind:p	class:mpe::System	access:public	signature:(EmitterID theEmitter)
+createFocus	src/MPE/classes/Emitter.cpp	/^FocusPtr Emitter::createFocus() const$/;"	kind:f	class:mpe::Emitter	signature:() const
+createFocus	src/MPE/classes/System.cpp	/^FocusPtr System::createFocus(EmitterID theEmitterID)$/;"	kind:f	class:mpe::System	signature:(EmitterID theEmitterID)
 createParticle	include/MPE/classes/Focus.hpp	/^   Particle createParticle();$/;"	kind:p	class:mpe::Focus	access:private	signature:()
 d	ext_libs/include/TinyXML2/tinyxml2.h	/^      double d = 0;$/;"	kind:l
 die	include/MPE/classes/Mortal.hpp	/^   inline void die()$/;"	kind:f	class:mpe::Mortal	access:private	signature:()
@@ -591,14 +594,19 @@ getColor	src/MPE/classes/Particle.cpp	/^Color Particle::getColor() const$/;"	kin
 getEmitter	include/MPE/classes/System.hpp	/^   Emitter& getEmitter(EmitterID theEmitterID);$/;"	kind:p	class:mpe::System	access:public	signature:(EmitterID theEmitterID)
 getEmitter	src/MPE/classes/System.cpp	/^Emitter& System::getEmitter ( EmitterID theEmitterID )$/;"	kind:f	class:mpe::System	signature:( EmitterID theEmitterID )
 getFocusHeight	include/MPE/classes/Emitter.hpp	/^   Real getFocusHeight() const;$/;"	kind:p	class:mpe::Emitter	access:public	signature:() const
+getFocusHeight	src/MPE/classes/Emitter.cpp	/^   anFocus->setHeight(getFocusHeight());$/;"	kind:p	file:	signature:()
 getFocusHeight	src/MPE/classes/Emitter.cpp	/^Real Emitter::getFocusHeight() const$/;"	kind:f	class:mpe::Emitter	signature:() const
 getFocusNP	include/MPE/classes/Emitter.hpp	/^   Integer getFocusNP() const;$/;"	kind:p	class:mpe::Emitter	access:public	signature:() const
+getFocusNP	src/MPE/classes/Emitter.cpp	/^   anFocus->resetNP(getFocusNP());$/;"	kind:p	file:	signature:()
 getFocusNP	src/MPE/classes/Emitter.cpp	/^Integer Emitter::getFocusNP() const$/;"	kind:f	class:mpe::Emitter	signature:() const
 getFocusPPS	include/MPE/classes/Emitter.hpp	/^   Real getFocusPPS() const;$/;"	kind:p	class:mpe::Emitter	access:public	signature:() const
+getFocusPPS	src/MPE/classes/Emitter.cpp	/^   anFocus->setPPS(getFocusPPS());$/;"	kind:p	file:	signature:()
 getFocusPPS	src/MPE/classes/Emitter.cpp	/^Real Emitter::getFocusPPS() const$/;"	kind:f	class:mpe::Emitter	signature:() const
 getFocusTOL	include/MPE/classes/Emitter.hpp	/^   Real getFocusTOL() const;$/;"	kind:p	class:mpe::Emitter	access:public	signature:() const
+getFocusTOL	src/MPE/classes/Emitter.cpp	/^   anFocus->resetLife(getFocusTOL());$/;"	kind:p	file:	signature:()
 getFocusTOL	src/MPE/classes/Emitter.cpp	/^Real Emitter::getFocusTOL() const$/;"	kind:f	class:mpe::Emitter	signature:() const
 getFocusWidth	include/MPE/classes/Emitter.hpp	/^   Real getFocusWidth() const;$/;"	kind:p	class:mpe::Emitter	access:public	signature:() const
+getFocusWidth	src/MPE/classes/Emitter.cpp	/^   anFocus->setWidth(getFocusWidth());$/;"	kind:p	file:	signature:()
 getFocusWidth	src/MPE/classes/Emitter.cpp	/^Real Emitter::getFocusWidth() const$/;"	kind:f	class:mpe::Emitter	signature:() const
 getGroups	include/MPE/classes/Particle.hpp	/^   GroupID getGroups() const;$/;"	kind:p	class:mpe::Particle	access:public	signature:() const
 getGroups	src/MPE/classes/Particle.cpp	/^GroupID Particle::getGroups() const$/;"	kind:f	class:mpe::Particle	signature:() const
@@ -627,7 +635,7 @@ getParticlesEnd	include/MPE/classes/System.hpp	/^   ParticleContainer::const_ite
 getParticlesEnd	src/MPE/classes/System.cpp	/^ParticleContainer::const_iterator System::getParticlesEnd() const$/;"	kind:f	class:mpe::System	signature:() const
 getParticlesSize	include/MPE/classes/System.hpp	/^   Integer getParticlesSize();$/;"	kind:p	class:mpe::System	access:public	signature:()
 getParticlesSize	src/MPE/classes/System.cpp	/^Integer System::getParticlesSize()$/;"	kind:f	class:mpe::System	signature:()
-getParticlesSize	tests/tests.cpp	/^      std::cout <<  "\\nNumber of particles:  " << aParticleSystem->getParticlesSize();$/;"	kind:p	file:	signature:()
+getParticlesSize	tests/tests.cpp	/^      std::cout <<  "\\nNumber of particles:  " << aParticleSystem.getParticlesSize();$/;"	kind:p	file:	signature:()
 getPosition	include/MPE/classes/Focus.hpp	/^   Vec2 getPosition() const;$/;"	kind:p	class:mpe::Focus	access:public	signature:() const
 getPosition	include/MPE/classes/Particle.hpp	/^   Vec2 getPosition() const;$/;"	kind:p	class:mpe::Particle	access:public	signature:() const
 getPosition	src/MPE/classes/Focus.cpp	/^Vec2 Focus::getPosition() const$/;"	kind:f	class:mpe::Focus	signature:() const
@@ -757,8 +765,8 @@ mpe::Emitter::RECTANGLE	include/MPE/classes/Emitter.hpp	/^   enum Shape {RECTANG
 mpe::Emitter::REFLECT	include/MPE/classes/Emitter.hpp	/^   enum Dispersion {LINEAR, RADIAL, REFLECT, RANDOM, STATIC};$/;"	kind:e	enum:mpe::Emitter::Dispersion
 mpe::Emitter::STATIC	include/MPE/classes/Emitter.hpp	/^   enum Dispersion {LINEAR, RADIAL, REFLECT, RANDOM, STATIC};$/;"	kind:e	enum:mpe::Emitter::Dispersion
 mpe::Emitter::Shape	include/MPE/classes/Emitter.hpp	/^   enum Shape {RECTANGLE, CIRCLE};$/;"	kind:g	class:mpe::Emitter	access:public
-mpe::Emitter::createFocus	include/MPE/classes/Emitter.hpp	/^   FocusPtr createFocus(Vec2 thePosition,$/;"	kind:p	class:mpe::Emitter	access:public	signature:(Vec2 thePosition, Real theAngle, GroupID theGroups = mpe::NO_GROUP) const
-mpe::Emitter::createFocus	src/MPE/classes/Emitter.cpp	/^FocusPtr Emitter::createFocus(Vec2   thePosition,$/;"	kind:f	class:mpe::Emitter	signature:(Vec2 thePosition, Real theAngle, GroupID theGroups) const
+mpe::Emitter::createFocus	include/MPE/classes/Emitter.hpp	/^   FocusPtr createFocus() const;$/;"	kind:p	class:mpe::Emitter	access:public	signature:() const
+mpe::Emitter::createFocus	src/MPE/classes/Emitter.cpp	/^FocusPtr Emitter::createFocus() const$/;"	kind:f	class:mpe::Emitter	signature:() const
 mpe::Emitter::generatePosition	include/MPE/classes/Emitter.hpp	/^   Vec2 generatePosition(const Focus& theFocus) const;$/;"	kind:p	class:mpe::Emitter	access:public	signature:(const Focus& theFocus) const
 mpe::Emitter::generatePosition	src/MPE/classes/Emitter.cpp	/^Vec2 Emitter::generatePosition(const Focus& theFocus) const$/;"	kind:f	class:mpe::Emitter	signature:(const Focus& theFocus) const
 mpe::Emitter::generateVelocity	include/MPE/classes/Emitter.hpp	/^   Vec2 generateVelocity(const Focus& theFocus,$/;"	kind:p	class:mpe::Emitter	access:public	signature:(const Focus& theFocus, const Vec2& theParticlePosition) const
@@ -835,10 +843,12 @@ mpe::Emitter::setTextRect	include/MPE/classes/Emitter.hpp	/^   void setTextRect(
 mpe::Emitter::setTextRect	src/MPE/classes/Emitter.cpp	/^void Emitter::setTextRect(TextRect theTextRect)$/;"	kind:f	class:mpe::Emitter	signature:(TextRect theTextRect)
 mpe::EmitterID	include/MPE/Config.hpp	/^typedef std::string EmitterID;$/;"	kind:t	namespace:mpe
 mpe::Focus	include/MPE/classes/Focus.hpp	/^class Focus: public Mortal$/;"	kind:c	namespace:mpe	inherits:Mortal
-mpe::Focus::Focus	include/MPE/classes/Focus.hpp	/^   Focus(Real    theLifetime,$/;"	kind:p	class:mpe::Focus	access:private	signature:(Real theLifetime, Real theWidth, Real theHeight, Vec2 thePosition, Real theAngle, Integer theTP, Real thePPS, GroupID theGroups, const Emitter& theEmitter)
-mpe::Focus::Focus	src/MPE/classes/Focus.cpp	/^Focus::Focus(Real           theLifetime,$/;"	kind:f	class:mpe::Focus	signature:(Real theLifetime, Real theWidth, Real theHeight, Vec2 thePosition, Real theAngle, Integer theTP, Real thePPS, GroupID theGroups, const Emitter& theEmitter)
-mpe::Focus::create	include/MPE/classes/Focus.hpp	/^   static FocusPtr create(Real    theLifetime,$/;"	kind:p	class:mpe::Focus	access:public	signature:(Real theLifetime, Real theWidth, Real theHeight, Vec2 thePosition, Real theAngle, Integer theTP, Real thePPS, GroupID theGroups, const Emitter& theEmitter)
-mpe::Focus::create	src/MPE/classes/Focus.cpp	/^FocusPtr Focus::create(Real    theLifetime,$/;"	kind:f	class:mpe::Focus	signature:(Real theLifetime, Real theWidth, Real theHeight, Vec2 thePosition, Real theAngle, Integer theTP, Real thePPS, GroupID theGroups, const Emitter& theEmitter)
+mpe::Focus::Focus	include/MPE/classes/Focus.hpp	/^   Focus(const Emitter&  theEmitter);$/;"	kind:p	class:mpe::Focus	access:private	signature:(const Emitter& theEmitter)
+mpe::Focus::Focus	src/MPE/classes/Focus.cpp	/^Focus::Focus(const Emitter& theEmitter):$/;"	kind:f	class:mpe::Focus	signature:(const Emitter& theEmitter)
+mpe::Focus::addGroups	include/MPE/classes/Focus.hpp	/^   void addGroups(GroupID theGroups);$/;"	kind:p	class:mpe::Focus	access:public	signature:(GroupID theGroups)
+mpe::Focus::addGroups	src/MPE/classes/Focus.cpp	/^void Focus::addGroups(GroupID theGroups)$/;"	kind:f	class:mpe::Focus	signature:(GroupID theGroups)
+mpe::Focus::create	include/MPE/classes/Focus.hpp	/^   static FocusPtr create(const Emitter&  theEmitter);$/;"	kind:p	class:mpe::Focus	access:public	signature:(const Emitter& theEmitter)
+mpe::Focus::create	src/MPE/classes/Focus.cpp	/^FocusPtr Focus::create(const Emitter&  theEmitter)$/;"	kind:f	class:mpe::Focus	signature:(const Emitter& theEmitter)
 mpe::Focus::createParticle	include/MPE/classes/Focus.hpp	/^   Particle createParticle();$/;"	kind:p	class:mpe::Focus	access:private	signature:()
 mpe::Focus::drain	include/MPE/classes/Focus.hpp	/^   Integer drain(Real theElapsedTime);$/;"	kind:p	class:mpe::Focus	access:private	signature:(Real theElapsedTime)
 mpe::Focus::drain	src/MPE/classes/Focus.cpp	/^Integer Focus::drain(Real theElapsedTime)$/;"	kind:f	class:mpe::Focus	signature:(Real theElapsedTime)
@@ -866,6 +876,12 @@ mpe::Focus::mPosition	include/MPE/classes/Focus.hpp	/^   Vec2      mPosition;$/;
 mpe::Focus::mTP	include/MPE/classes/Focus.hpp	/^   Integer   mTP;      \/\/\/< Total number of Particles. -1 = no number limits$/;"	kind:m	class:mpe::Focus	access:private
 mpe::Focus::mTimeAcum	include/MPE/classes/Focus.hpp	/^   Real      mTimeAcum;$/;"	kind:m	class:mpe::Focus	access:private
 mpe::Focus::mWidth	include/MPE/classes/Focus.hpp	/^   Real      mWidth;   \/\/\/< Width.$/;"	kind:m	class:mpe::Focus	access:private
+mpe::Focus::removeFromAllGroups	include/MPE/classes/Focus.hpp	/^   void removeFromAllGroups();$/;"	kind:p	class:mpe::Focus	access:public	signature:()
+mpe::Focus::removeFromAllGroups	src/MPE/classes/Focus.cpp	/^void Focus::removeFromAllGroups()$/;"	kind:f	class:mpe::Focus	signature:()
+mpe::Focus::removeGroups	include/MPE/classes/Focus.hpp	/^   void removeGroups(GroupID theGroups);$/;"	kind:p	class:mpe::Focus	access:public	signature:(GroupID theGroups)
+mpe::Focus::removeGroups	src/MPE/classes/Focus.cpp	/^void Focus::removeGroups(GroupID theGroups)$/;"	kind:f	class:mpe::Focus	signature:(GroupID theGroups)
+mpe::Focus::resetNP	include/MPE/classes/Focus.hpp	/^   void resetNP(Real theNP);$/;"	kind:p	class:mpe::Focus	access:public	signature:(Real theNP)
+mpe::Focus::resetNP	src/MPE/classes/Focus.cpp	/^void Focus::resetNP(Real theNP)$/;"	kind:f	class:mpe::Focus	signature:(Real theNP)
 mpe::Focus::setAngle	include/MPE/classes/Focus.hpp	/^   void setAngle(Real theAngle);$/;"	kind:p	class:mpe::Focus	access:public	signature:(Real theAngle)
 mpe::Focus::setAngle	src/MPE/classes/Focus.cpp	/^void Focus::setAngle(Real theAngle)$/;"	kind:f	class:mpe::Focus	signature:(Real theAngle)
 mpe::Focus::setHeight	include/MPE/classes/Focus.hpp	/^   void setHeight(Real theHeight);$/;"	kind:p	class:mpe::Focus	access:public	signature:(Real theHeight)
@@ -998,8 +1014,8 @@ mpe::System::addFocus	include/MPE/classes/System.hpp	/^   void     addFocus(Focu
 mpe::System::addFocus	src/MPE/classes/System.cpp	/^void System::addFocus(FocusPtr theFocus)$/;"	kind:f	class:mpe::System	signature:(FocusPtr theFocus)
 mpe::System::addParticle	include/MPE/classes/System.hpp	/^   Particle*  addParticle();$/;"	kind:p	class:mpe::System	access:public	signature:()
 mpe::System::addParticle	src/MPE/classes/System.cpp	/^Particle* System::addParticle ()$/;"	kind:f	class:mpe::System	signature:()
-mpe::System::createFocus	include/MPE/classes/System.hpp	/^   FocusPtr   createFocus(EmitterID theEmitter,$/;"	kind:p	class:mpe::System	access:public	signature:(EmitterID theEmitter, Vec2 thePosition, Real theAngle, GroupID theGroups = mpe::NO_GROUP)
-mpe::System::createFocus	src/MPE/classes/System.cpp	/^FocusPtr System::createFocus(EmitterID theEmitterID,$/;"	kind:f	class:mpe::System	signature:(EmitterID theEmitterID, Vec2 thePosition, Real theAngle, GroupID theGroups)
+mpe::System::createFocus	include/MPE/classes/System.hpp	/^   FocusPtr   createFocus(EmitterID theEmitter);$/;"	kind:p	class:mpe::System	access:public	signature:(EmitterID theEmitter)
+mpe::System::createFocus	src/MPE/classes/System.cpp	/^FocusPtr System::createFocus(EmitterID theEmitterID)$/;"	kind:f	class:mpe::System	signature:(EmitterID theEmitterID)
 mpe::System::getEmitter	include/MPE/classes/System.hpp	/^   Emitter& getEmitter(EmitterID theEmitterID);$/;"	kind:p	class:mpe::System	access:public	signature:(EmitterID theEmitterID)
 mpe::System::getEmitter	src/MPE/classes/System.cpp	/^Emitter& System::getEmitter ( EmitterID theEmitterID )$/;"	kind:f	class:mpe::System	signature:( EmitterID theEmitterID )
 mpe::System::getParticlesBegin	include/MPE/classes/System.hpp	/^   ParticleContainer::const_iterator getParticlesBegin() const;$/;"	kind:p	class:mpe::System	access:public	signature:() const
@@ -1060,13 +1076,19 @@ mpe::Vec2::squareLength	include/MPE/classes/Vec2.hpp	/^   Real squareLength()$/;
 mpe::Vec2::x	include/MPE/classes/Vec2.hpp	/^   Real x, y;$/;"	kind:m	class:mpe::Vec2	access:private
 mpe::Vec2::y	include/MPE/classes/Vec2.hpp	/^   Real x, y;$/;"	kind:m	class:mpe::Vec2	access:private
 mpe::aFile	src/MPE/classes/System.cpp	/^   tinyxml2::XMLDocument aFile;$/;"	kind:l
+mpe::addGroups	src/MPE/classes/Emitter.cpp	/^   anFocus->addGroups(mpe::GROUP_A);$/;"	kind:p	file:	signature:(mpe::GROUP_A)
 mpe::anEmitterID	src/MPE/classes/System.cpp	/^   EmitterID anEmitterID = theEmitter.getID();$/;"	kind:l
-mpe::anFocus	src/MPE/classes/Emitter.cpp	/^   FocusPtr anFocus = Focus::create(getFocusTOL(),$/;"	kind:l
+mpe::anFocus	src/MPE/classes/Emitter.cpp	/^   FocusPtr anFocus = Focus::create((*this));$/;"	kind:l
 mpe::anParticle	src/MPE/classes/Focus.cpp	/^   Particle* anParticle = mEmitter.getSystem()->addParticle();$/;"	kind:l
 mpe::anPosition	src/MPE/classes/Emitter.cpp	/^   Vec2 anPosition;$/;"	kind:l
 mpe::anPosition	src/MPE/classes/Focus.cpp	/^      Vec2 anPosition = mEmitter.generatePosition(*this); $/;"	kind:l
 mpe::anVelocity	src/MPE/classes/Emitter.cpp	/^   Vec2 anVelocity;$/;"	kind:l
 mpe::anVelocity	src/MPE/classes/Focus.cpp	/^      Vec2 anVelocity = mEmitter.generateVelocity(*this,anPosition); $/;"	kind:l
+mpe::getFocusHeight	src/MPE/classes/Emitter.cpp	/^   anFocus->setHeight(getFocusHeight());$/;"	kind:p	file:	signature:()
+mpe::getFocusNP	src/MPE/classes/Emitter.cpp	/^   anFocus->resetNP(getFocusNP());$/;"	kind:p	file:	signature:()
+mpe::getFocusPPS	src/MPE/classes/Emitter.cpp	/^   anFocus->setPPS(getFocusPPS());$/;"	kind:p	file:	signature:()
+mpe::getFocusTOL	src/MPE/classes/Emitter.cpp	/^   anFocus->resetLife(getFocusTOL());$/;"	kind:p	file:	signature:()
+mpe::getFocusWidth	src/MPE/classes/Emitter.cpp	/^   anFocus->setWidth(getFocusWidth());$/;"	kind:p	file:	signature:()
 mpe::it	src/MPE/classes/System.cpp	/^   auto it = mEmitters.find(anEmitterID);$/;"	kind:l
 mpe::it	src/MPE/classes/System.cpp	/^   auto it = mEmitters.find(theEmitterID);$/;"	kind:l
 mpe::mFixedSize	src/MPE/classes/ParticleContainer.cpp	/^   mFixedSize(theFixed)$/;"	kind:f	namespace:mpe	signature:(theFixed)
@@ -1133,11 +1155,17 @@ pair	src/MPE/classes/System.cpp	/^      mEmitters.insert(std::pair<EmitterID, Em
 push_back	src/MPE/classes/System.cpp	/^   mAffectors.push_back(theAffector);$/;"	kind:p	file:	signature:(theAffector)
 push_back	src/MPE/classes/System.cpp	/^   mFocusses.push_back(theFocus);$/;"	kind:p	file:	signature:(theFocus)
 r	include/MPE/Config.hpp	/^   Integer r, g, b, a;$/;"	kind:m	struct:mpe::Color	access:public
+removeFromAllGroups	include/MPE/classes/Focus.hpp	/^   void removeFromAllGroups();$/;"	kind:p	class:mpe::Focus	access:public	signature:()
+removeFromAllGroups	src/MPE/classes/Focus.cpp	/^void Focus::removeFromAllGroups()$/;"	kind:f	class:mpe::Focus	signature:()
+removeGroups	include/MPE/classes/Focus.hpp	/^   void removeGroups(GroupID theGroups);$/;"	kind:p	class:mpe::Focus	access:public	signature:(GroupID theGroups)
+removeGroups	src/MPE/classes/Focus.cpp	/^void Focus::removeGroups(GroupID theGroups)$/;"	kind:f	class:mpe::Focus	signature:(GroupID theGroups)
 removeParticle	include/MPE/classes/ParticleContainer.hpp	/^      void removeParticle(Particle* theParticle);$/;"	kind:p	class:mpe::ParticleContainer	access:public	signature:(Particle* theParticle)
 removeParticle	src/MPE/classes/ParticleContainer.cpp	/^void ParticleContainer::removeParticle(Particle* theParticle)$/;"	kind:f	class:mpe::ParticleContainer	signature:(Particle* theParticle)
 removeParticle	src/MPE/classes/System.cpp	/^          mParticles.removeParticle(particle);$/;"	kind:p	file:	signature:(particle)
 resetLife	include/MPE/classes/Mortal.hpp	/^   inline void resetLife(Real theLifetime)$/;"	kind:f	class:mpe::Mortal	access:public	signature:(Real theLifetime)
 resetLife	src/MPE/classes/Focus.cpp	/^      anParticle->resetLife(mEmitter.getParticleTOL());                  $/;"	kind:p	file:	signature:(mEmitter.getParticleTOL())
+resetNP	include/MPE/classes/Focus.hpp	/^   void resetNP(Real theNP);$/;"	kind:p	class:mpe::Focus	access:public	signature:(Real theNP)
+resetNP	src/MPE/classes/Focus.cpp	/^void Focus::resetNP(Real theNP)$/;"	kind:f	class:mpe::Focus	signature:(Real theNP)
 result	ext_libs/include/TinyXML2/tinyxml2.h	/^      void* result = _root;$/;"	kind:l
 result	ext_libs/include/TinyXML2/tinyxml2.h	/^   int result = vsnprintf_s( buffer, size, _TRUNCATE, format, va );$/;"	kind:l
 ret	ext_libs/include/TinyXML2/tinyxml2.h	/^      T* ret = &_mem[_size];$/;"	kind:l

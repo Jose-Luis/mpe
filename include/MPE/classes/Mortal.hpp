@@ -53,6 +53,7 @@ public:
    {
       mAge = 0;
       mLifetime = theLifetime;
+      mAlive = true;
    }
 
 private:

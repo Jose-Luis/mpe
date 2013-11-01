@@ -91,19 +91,16 @@ Vec2 Emitter::generatePosition(const Focus& theFocus) const
 //      Method:  createFocus
 // Description:
 //------------------------------------------------------------------------------
-FocusPtr Emitter::createFocus(Vec2   thePosition,
-                              Real    theAngle,
-                              GroupID theGroups) const
+FocusPtr Emitter::createFocus() const
 {
-   FocusPtr anFocus = Focus::create(getFocusTOL(),
-                                    getFocusWidth(),
-                                    getFocusHeight(),
-                                    thePosition,
-                                    theAngle,
-                                    getFocusNP(),
-                                    getFocusPPS(),
-                                    theGroups,
-                                    (*this));
+   FocusPtr anFocus = Focus::create((*this));
+
+   anFocus->resetLife(getFocusTOL());
+   anFocus->setWidth(getFocusWidth());
+   anFocus->setHeight(getFocusHeight());
+   anFocus->resetNP(getFocusNP());
+   anFocus->setPPS(getFocusPPS());
+   anFocus->addGroups(mpe::GROUP_A);
 
    return anFocus;
 }

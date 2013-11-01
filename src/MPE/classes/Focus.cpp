@@ -14,26 +14,8 @@ namespace mpe
 //      Method:       Focus
 //      Description:
 //------------------------------------------------------------------------------
-Focus::Focus(Real           theLifetime,
-             Real           theWidth,
-             Real           theHeight,
-             Vec2           thePosition,
-             Real           theAngle,
-             Integer        theTP,
-             Real           thePPS,
-             GroupID        theGroups,
-             const Emitter& theEmitter):
-
-   Mortal(theLifetime),
-   mWidth(theWidth),
-   mHeight(theHeight),
-   mPosition(thePosition),
-   mAngle(theAngle),
-   mTP(theTP),
-   mEP(0),
-   mPPS(thePPS),
-   mTimeAcum(0),
-   mGroups(theGroups),
+Focus::Focus(const Emitter& theEmitter):
+   Mortal(0),
    mEmitter(theEmitter)
 {
 }
@@ -42,25 +24,9 @@ Focus::Focus(Real           theLifetime,
 //      Method:       create
 //      Description:
 //--------------------------------------------------------------------------------------
-FocusPtr Focus::create(Real    theLifetime,
-                       Real    theWidth,
-                       Real    theHeight,
-                       Vec2    thePosition,
-                       Real    theAngle,
-                       Integer theTP,
-                       Real    thePPS,
-                       GroupID theGroups,
-                       const Emitter&  theEmitter)
+FocusPtr Focus::create(const Emitter&  theEmitter)
 {
-   return FocusPtr{new Focus{theLifetime,
-                             theWidth,
-                             theHeight,
-                             thePosition,
-                             theAngle,
-                             theTP,
-                             thePPS,
-                             theGroups,
-                             theEmitter}};
+   return FocusPtr{new Focus{theEmitter}};
 }
 //------------------------------------------------------------------------------
 //       Class:  Focus
@@ -194,13 +160,33 @@ void Focus::setPPS(Real thePPS)
    mPPS = thePPS;
 }
 //------------------------------------------------------------------------------
+//       Class:  Focus
+//      Method:
+// Description:  A stupid method
+//------------------------------------------------------------------------------
+Real Focus::getPPS ()
+{
+   return mPPS;
+}
+//------------------------------------------------------------------------------
+//      Class:        Focus
+//      Method:       setNP
+//      Description:
+//------------------------------------------------------------------------------
+void Focus::resetNP(Real theNP)
+{
+   mTP = theNP;
+   mEP = 0;
+   mTimeAcum = 0;
+}
+//------------------------------------------------------------------------------
 //      Class:        Focus
 //      Method:       drain
 //      Description:
 //------------------------------------------------------------------------------
 Integer Focus::drain(Real theElapsedTime)
 {
-   mTimeAcum += theElapsedTime / 1000;
+   mTimeAcum += theElapsedTime;
    Integer nParticles = mTimeAcum * mPPS;
 
    if(0 < nParticles)
@@ -223,12 +209,30 @@ Integer Focus::drain(Real theElapsedTime)
 }
 //------------------------------------------------------------------------------
 //       Class:  Focus
-//      Method:
-// Description:  A stupid method
+//      Method:  addGroups
+// Description:  A stupid method 
 //------------------------------------------------------------------------------
-Real Focus::getPPS ()
+void Focus::addGroups(GroupID theGroups)
 {
-   return mPPS;
+   mGroups |= theGroups;
+}
+//------------------------------------------------------------------------------
+//       Class:  Focus
+//      Method:  removeGroups
+// Description:  A stupid method 
+//------------------------------------------------------------------------------
+void Focus::removeGroups(GroupID theGroups)
+{
+   mGroups &= ~theGroups;
+}
+//------------------------------------------------------------------------------
+//       Class:  Focus
+//      Method:  removeFromAllGroups
+// Description:  A stupid method 
+//------------------------------------------------------------------------------
+void Focus::removeFromAllGroups()
+{
+   mGroups = mpe::NO_GROUP;
 }
 ////////////////////////////////////////////////////////////////////////////////
 // END NAMESPACE mpe

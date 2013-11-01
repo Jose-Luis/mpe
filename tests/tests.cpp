@@ -19,11 +19,11 @@ int test1()
       std::cout << "Something was wrong...";
    }
    
-   mpe::FocusPtr aFocus{aParticleSystem.createFocus("Emitter1",mpe::Vec2(0,0),0)};
+   mpe::FocusPtr aFocus{aParticleSystem.createFocus("Emitter1")};
    aParticleSystem.addFocus(aFocus);
    for (int i=0; i<60;++i)
    {
-      aParticleSystem.update(100);
+      aParticleSystem.update(0.1f);
       
       for (auto it = aParticleSystem.getParticlesBegin(); it != aParticleSystem.getParticlesEnd();it++)
       {
@@ -38,12 +38,12 @@ int test2()
 {
    mpe::System aParticleSystem{1024};
    aParticleSystem.initFromFile("Emitter.xml");
-   mpe::FocusPtr aFocus{aParticleSystem.createFocus("Emitter1",mpe::Vec2(0,0),0)};
+   mpe::FocusPtr aFocus{aParticleSystem.createFocus("Emitter1")};
    aParticleSystem.addFocus(aFocus);
 
-   while(aFocus->isAlive() && aFocus->getAge() < 10000)
+   while(aFocus->isAlive() && aFocus->getAge() < 11)
    {
-      aParticleSystem.update(100);
+      aParticleSystem.update(0.1f);
       std::cout <<  "\nNumber of particles:  " << aParticleSystem.getParticlesSize();
    }
 

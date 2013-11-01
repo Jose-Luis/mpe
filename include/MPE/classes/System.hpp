@@ -42,10 +42,7 @@ public:
    /// @param theEmitter
    /// @param thePosition
    /// @param theAngle
-   FocusPtr   createFocus(EmitterID theEmitter,
-                          Vec2 thePosition,
-                          Real      theAngle,
-                          GroupID   theGroups = mpe::NO_GROUP);
+   FocusPtr   createFocus(EmitterID theEmitter);
    /// @brief update
    /// @param theElapsedTime
    void     update(Real theElapsedTime);
