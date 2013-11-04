@@ -20,6 +20,7 @@ namespace mpe
       void removeParticle(Particle* theParticle);
 
       size_t size(){return mSize;};
+      bool setSize(size_t theNumberOfParticles);
 
       iterator begin() {return mParticles;}
       const_iterator begin() const {return mParticles;}

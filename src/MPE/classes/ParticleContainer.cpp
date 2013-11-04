@@ -25,23 +25,34 @@ ParticleContainer::~ParticleContainer()
 }
 //------------------------------------------------------------------------------
 //       Class:  ParticleContainer
-//      Method:  grow
-// Description:  Increasing the size 
+//      Method:  setSize
+// Description:  A stupid method 
 //------------------------------------------------------------------------------
-bool ParticleContainer::grow()
+bool ParticleContainer::setSize(size_t theNumberOfParticles)
 {
-   Particle* aParticles{new Particle[mMaxSize*2]};
+   Particle* aParticles{new Particle[theNumberOfParticles]};
 
    if (aParticles)
    {
-      std::memcpy(aParticles,mParticles,sizeof(Particle)*mSize);
-      mMaxSize *= 2;
+      mMaxSize = theNumberOfParticles; 
+      size_t aSize = theNumberOfParticles>mSize?mSize:theNumberOfParticles;
+
+      std::memcpy(aParticles,mParticles,sizeof(Particle)*aSize);
       delete[] mParticles;
       mParticles = aParticles;
 
       return true;
    }
    return false;
+}
+//------------------------------------------------------------------------------
+//       Class:  ParticleContainer
+//      Method:  grow
+// Description:  Increasing the size 
+//------------------------------------------------------------------------------
+bool ParticleContainer::grow()
+{
+   return setSize(mMaxSize*2);
 }
 //------------------------------------------------------------------------------
 //       Class:  ParticleContainer

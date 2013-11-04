@@ -18,75 +18,42 @@
 
 namespace mpe
 {
-/// @class System
 class System
 {
 public:
-   /// @brief System 
-   /// @param theNParticles
-   /// @param theFixed
+   
+   System();
    System(size_t theNParticles,bool theFixed=true);
-   /// @brief addEmitter
-   /// @param theEmitter
-   void     addEmitter(Emitter& theEmitter);
-   /// @brief addFocus
-   /// @param theFocus
-   void     addFocus(FocusPtr theFocus);
-   /// @brief addFocus
-   /// @param theFocus
-   void     addAffector(AffectorPtr theAffector);
-   /// @brief addParticle
-   /// @param theParticle
-   Particle*  addParticle();
-   /// @brief addFocus
-   /// @param theEmitter
-   /// @param thePosition
-   /// @param theAngle
-   FocusPtr   createFocus(EmitterID theEmitter);
-   /// @brief update
-   /// @param theElapsedTime
-   void     update(Real theElapsedTime);
-   /// @brief getEmitter
-   /// @param theEmitterID
-   /// @return
+   bool setSize(size_t theNumberOfParticles);
+   void addEmitter(Emitter& theEmitter);
+   void addFocus(FocusPtr theFocus);
+   void addAffector(AffectorPtr theAffector);
+   Particle* addParticle();
+   FocusPtr createFocus(EmitterID theEmitter);
+   void update(Real theElapsedTime);
    Emitter& getEmitter(EmitterID theEmitterID);
-   /// @brief getParticleSize 
-   /// @return 
    Integer getParticlesSize();
-   /// @brief getParticlesBegin
-   /// @return 
    ParticleContainer::const_iterator getParticlesBegin() const;
-   /// @brief getParticlesEnd 
-   /// @return 
    ParticleContainer::const_iterator getParticlesEnd() const;
-   /// @brief getXFactor
-   /// @return
-   Real     getXFactor() const;
-   /// @brief setXFactor
-   /// @param theXFactor
-   void     setXFactor(Real theXFactor);
-   /// @brief getYFactor
-   /// @return
-   Real     getYFactor() const;
-   /// @brief setYFactor
-   /// @param theYFactor
-   void     setYFactor(Real theYFactor);
-   /// @brief initFromFile
-   /// @param theFilename
+   Real getXFactor() const;
+   void setXFactor(Real theXFactor);
+   Real getYFactor() const;
+   void setYFactor(Real theYFactor);
    bool initFromFile(std::string theFilename);
-protected:
-   //   MEMBERS
-   ///////////////////////////////////////////////////////////////////////
+
+private:
+
+   void updateParticles(Real theElapsedTime);
+   void updateFocusses (Real theElapsedTime);
+
+private:
+
    Real mXFactor;
    Real mYFactor;
    std::list<FocusPtr>           mFocusses;
    std::list<AffectorPtr>        mAffectors;
    ParticleContainer             mParticles;
    std::map<EmitterID, Emitter>  mEmitters;
-   //    METHODS
-   ///////////////////////////////////////////////////////////////////////
-   void updateParticles(Real theElapsedTime);
-   void updateFocusses (Real theElapsedTime);
 };
 }
 #endif

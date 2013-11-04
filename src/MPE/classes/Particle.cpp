@@ -191,4 +191,27 @@ bool Particle::belongToGroup(const GroupID theGroups) const
 {
    return mGroups & theGroups;
 }
+//--------------------------------------------------------------------------------------
+//       Class:  Particle
+//      Method:  modifyAlpha
+// Description:  
+//--------------------------------------------------------------------------------------
+void Particle::modifyAlpha ( int theAlphaInc )
+{
+   int anAlpha = mColor.a + theAlphaInc;
+   if (anAlpha > 255)
+      anAlpha = 255;
+   else if ( anAlpha < 0)
+      anAlpha = 0;
+   mColor.a = anAlpha;
+}
+//------------------------------------------------------------------------------
+//       Class:  Particle
+//      Method:  isTransparent
+// Description:  A stupid method 
+//------------------------------------------------------------------------------
+bool Particle::isTransparent()
+{
+   return mColor.a == 0;
+}
 } /* end namespace */

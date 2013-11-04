@@ -46,6 +46,9 @@ public:
 
    Color getColor() const;
    void  setColor(Color theColor);
+   void modifyAlpha(int theAlphaInc);
+   bool isTransparent();
+
 
    GroupID getGroups() const;
    void  setGroups(GroupID theGroup);

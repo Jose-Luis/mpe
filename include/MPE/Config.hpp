@@ -29,6 +29,9 @@ typedef unsigned char GroupID;
 typedef std::shared_ptr<Focus> FocusPtr;
 typedef std::shared_ptr<Affector> AffectorPtr;
 
+const bool FIXED = true;
+const bool NON_FIXED = false;
+
 const Integer MAX_INTEGER = std::numeric_limits<Integer>::max();
 const Real REAL_INFINITY = std::numeric_limits<Real>::infinity();
 

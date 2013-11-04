@@ -8,6 +8,28 @@
 namespace mpe
 {
 //------------------------------------------------------------------------------
+//       Class:  System
+//      Method:  System
+// Description:
+//------------------------------------------------------------------------------
+System::System ():
+   mXFactor{1},
+   mYFactor{1},
+   mParticles{0,true}
+{
+}
+//------------------------------------------------------------------------------
+//       Class:  System
+//      Method:  System
+// Description:
+//------------------------------------------------------------------------------
+System::System (size_t theNParticles,bool theFixed):
+   mXFactor{1},
+   mYFactor{1},
+   mParticles{theNParticles,theFixed}
+{
+}
+//------------------------------------------------------------------------------
 //      Class:        System
 //      Method:       getXFactor
 //      Description:
@@ -42,17 +64,6 @@ Real System::getYFactor() const
 void System::setYFactor(Real theYFactor)
 {
    mYFactor = theYFactor;
-}
-//------------------------------------------------------------------------------
-//       Class:  System
-//      Method:  System
-// Description:
-//------------------------------------------------------------------------------
-System::System (size_t theNParticles,bool theFixed):
-   mXFactor{1},
-   mYFactor{1},
-   mParticles{theNParticles,theFixed}
-{
 }
 //------------------------------------------------------------------------------
 //       Class:  Emitter
@@ -412,6 +423,15 @@ ParticleContainer::const_iterator System::getParticlesEnd() const
 ParticleContainer::const_iterator System::getParticlesBegin() const
 {
    return mParticles.begin();
+}
+//------------------------------------------------------------------------------
+//       Class:  System
+//      Method:  setSize
+// Description:  A stupid method 
+//------------------------------------------------------------------------------
+bool System::setSize(size_t theNumberOfParticles)
+{
+   return mParticles.setSize(theNumberOfParticles);
 }
 ////////////////////////////////////// END NAMESPACE  mpe //////////////////////
 }

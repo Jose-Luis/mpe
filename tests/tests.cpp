@@ -4,7 +4,8 @@
 
 int test1()
 {
-   mpe::System aParticleSystem{1024};
+   mpe::System aParticleSystem{};
+   aParticleSystem.setSize(2048);
    bool aBoolean = aParticleSystem.initFromFile("Emitter.xml");
 
    if (aBoolean)
