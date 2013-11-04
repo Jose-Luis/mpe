@@ -70,6 +70,7 @@ void Focus::initParticle()
 
       anParticle->resetLife(mEmitter.getParticleTOL());                  
       anParticle->setSize(mEmitter.getParticleSize());                  
+      anParticle->setTextRect(mEmitter.getTextRect());
       anParticle->setPosition(anPosition);                  
       anParticle->setAngle(mEmitter.getParticleAngle());                  
       anParticle->setLinearVelocity(anVelocity);                  
